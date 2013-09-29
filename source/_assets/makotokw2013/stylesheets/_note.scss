@@ -1,0 +1,78 @@
+/* = Note styling
+-------------------------------------------------------------- */
+
+
+@mixin note-block ($color, $bg, $border) {
+  display: block;
+  margin: 24px 0;
+  padding: 24px;
+  background-color: $bg;
+  border: 2px solid $border;
+  @include border-radius($border-radius-base);
+
+  a {
+    color: $color;
+  }
+
+  &:before {
+    @include block-awesome-icon(2em);
+    color: $color;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.note {
+  .syntaxhighlighter {
+    width: auto;
+  }
+}
+
+.note-link {
+  @extend .note;
+  &:before {
+    @extend .icon-bookmark:before;
+  }
+}
+
+.note-comment {
+  @extend .note;
+  &:before {
+    @extend .icon-comment:before;
+  }
+}
+
+.note-ins {
+  @extend .note;
+  &:before {
+    @extend .icon-comment:before;
+  }
+}
+
+.enclosure {
+  @extend .note;
+  &:before {
+    @extend .icon-file-alt:before;
+  }
+}
+.enclosure-evernote {
+  @extend .enclosure;
+  &:before {
+    @extend .icon-file-alt:before;
+  }
+}
+.enclosure-qiita {
+  @extend .enclosure;
+  &:before {
+    @extend .icon-search:before;
+  }
+}
+.enclosure-github {
+  @include note-block(#333, #f3f3f3, #f3f3f3);
+  @extend .enclosure;
+  &:before {
+    @extend .icon-github-alt:before;
+  }
+}
+

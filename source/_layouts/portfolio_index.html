@@ -1,0 +1,10 @@
+---
+layout: default
+footer: false
+---
+
+<ul>
+    {% for post in page.portfolio %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>

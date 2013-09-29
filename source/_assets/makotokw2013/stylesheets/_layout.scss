@@ -1,0 +1,53 @@
+
+.main-content {
+
+  .container {
+    padding: 12px;
+
+    @media screen and (min-width: 600px) {
+      padding: 24px;
+    }
+  }
+}
+
+.navigation-post,
+.comment-area {
+  @include clearfix;
+  margin-top: 20px;
+}
+
+.icon-japan {
+  .icon-circle {
+    color: $red;
+  }
+}
+
+.footer {
+  background-color: #edeff1;
+  color: #bac1c8;
+  font-size: $font-size-mini;
+  .copyright {
+    text-align: center;
+    margin-top:1.5em;
+    margin-bottom: 1.5em;
+  }
+  a {
+    color: #bac1c8;
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.error-unit {
+  h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-family:"Trebuchet MS",Verdana,Arial,sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+  }
+
+}

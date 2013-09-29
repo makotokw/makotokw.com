@@ -1,0 +1,30 @@
+.blog-archives {
+  .year {
+    color: $carrot;
+    margin-top: 0;
+  }
+  .hentry {
+    position: relative;
+    padding-left: 4.5em;
+    padding-bottom: .7em;
+    margin-bottom: 1em;
+
+    h1 {
+      font-size: 1.5em;
+      line-height: 1.4em;
+      margin: 5px 0 .5em;
+      font-weight: normal;
+      //font-size: $baseFontSize;
+    }
+    time {
+      position: absolute;
+      text-align: right;
+      left: 0;
+      top: 5px;
+    }
+    .categories {
+      font-family: $font-family-sans-serif-alt;
+      color: $gray-light;
+    }
+  }
+}

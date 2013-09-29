@@ -1,0 +1,171 @@
+
+/* site-icons */
+[class^="sicon48-"],
+[class*=" sicon48-"] {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  *margin-right: .3em;
+  line-height: 58px;
+  vertical-align: middle;
+  background-image: url(asset_path('domain-icons.png'));
+  background-repeat: no-repeat;
+
+  &:last-child {
+    *margin-left: 0;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+    background-image: url(asset_path('domain-icons@2x.png'));
+    background-size: 240px 48px;
+  }
+}
+
+.sicon48-trac {
+  background-position: 0 0;
+}
+.sicon48-blogen {
+  background-position: -48px 0;
+}
+.sicon48-blogja {
+  background-position: -96px 0;
+}
+.sicon48-github {
+  background-position: -144px 0;
+}
+
+.row-subdomain {
+  margin-bottom: 12px;
+
+  .site-item {
+    padding:10px;
+    margin-bottom:20px;
+  }
+  .site-thumb {
+    float:left;
+    display:block;width:60px;
+    clear: both;
+  }
+  .site-info {
+    display:block;
+    float:left;
+    width:210px;
+    p {
+      display:block;
+      margin-top:0.2em;
+      color: #464646;
+    }
+  }
+}
+
+.row-activity {
+  .feed {
+    h2 {
+      line-height: 1.4;
+      i {
+        margin-right:5px;
+      }
+    }
+  }
+  .feed-content {
+    .entrylist {
+      .entry {
+        margin-bottom: 1em;
+
+        a {
+          color: $text-color;
+
+          &:hover {
+            color: $link-hover-color;
+          }
+        }
+
+        .entry-title {
+          display: inline;
+          font-weight: normal;
+        }
+
+        .entry-published {
+          @extend .label;
+          font-size: $font-size-small;
+          display: inline;
+          margin-right:.5em;
+          padding: 2px 4px;
+          line-height: 1.2em;
+        }
+
+        .entry-content {
+          color: lighten($text-color, 10%);
+          font-size: $font-size-small;
+          padding: 6px 0;
+        }
+      }
+    }
+  }
+
+  .feed-blog {
+    .feed-content {
+      .entrylist {
+        .entry {
+          .entry-published {
+            background-color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+
+  .feed-github {
+    .feed-content {
+      .entrylist {
+        .entry {
+          .entry-published {
+            background-color: $githubOrange;
+          }
+        }
+      }
+    }
+  }
+
+  .feed-qiita {
+    .feed-content {
+      .entrylist {
+        .entry {
+          .entry-published {
+            background-color: $green;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-content {
+  padding: 12px;
+  a {
+    margin-right: 4px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.site-info > h2,
+.row-activity .feed > h2,
+#contact > h2 {
+  font-weight: normal;
+  letter-spacing:-1px;
+  color: #555;
+  text-transform:uppercase;
+}
+
+.site-info > h2 {
+  margin: 0;
+  line-height: 48px;
+}
+
+.row-activity .feed > h2 {
+  font-size: $font-size-base + 2px;
+}
+

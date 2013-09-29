@@ -1,0 +1,11 @@
+---
+layout: default
+footer: false
+---
+
+<div class="blog-archives blog-category-archives">
+    <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% for post in site.categories[page.category] %}
+    {% include archive_post.html %}
+    {% endfor %}
+</div>

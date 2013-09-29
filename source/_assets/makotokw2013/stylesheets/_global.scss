@@ -1,0 +1,63 @@
+
+.year, .month, .day,
+.published {
+  font-family: $font-family-sans-serif-alt;
+  text-transform: uppercase;
+  color: $gray-light;
+}
+
+.block-content {
+  @include block($border-radius-base);
+  color: $white;
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+
+.hentry {
+
+  .entry-header {
+
+    position: relative;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+
+    .entry-title {
+      color: $carrot;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .published {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .entry-content {
+    line-height: 1.831;
+    color: lighten($text-color, 25%);
+  }
+
+  .meta {
+    margin-top: 20px;
+    i {
+      color: $link-color;
+    }
+  }
+
+  .author {
+    display: none;
+  }
+
+
+}
+
+
+
+
+
