@@ -1,0 +1,35 @@
+{
+  "name": "makotokw.com",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "~2.0.2",
+    "sass-bootstrap": "~3.0.0",
+    "font-awesome": "3.2.1"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "js": [
+        "jquery*.js",
+        "jquery*.map"
+      ]
+    },
+    "jquery-ui": {
+      "js": "ui/jquery-ui.js"
+    },
+    "underscore": {
+      "js": [
+        "underscore*.js",
+        "underscore*.map"
+      ]
+    },
+    "sass-bootstrap": {
+      "js": "dist/js/*.js",
+      "sass": "lib/_*.scss",
+      "fonts": "dist/fonts/*.*"
+    },
+    "font-awesome": {
+      "sass": "scss/*.scss",
+      "font": "font/*.*"
+    }
+  }
+}

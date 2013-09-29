@@ -1,0 +1,35 @@
+/_tmp
+
+
+### Jekyll ###
+.sass-cache
+.rspec
+/.bundle
+/vendor/bundle
+/public
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+### Bower ###
+bower_components
+
+### Node ###
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules

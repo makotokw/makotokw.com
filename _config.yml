@@ -1,0 +1,61 @@
+safe: false
+pygments: true
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+permalink: /blog/:year/:month/:day/:title/
+#paginate: 10          # Posts per page on the blog index
+#pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+
+# Directory
+source: source
+destination: public
+plugins: plugins
+category_dir: blog
+
+author:
+  name: Makoto Kawasaki
+  email: makoto.kw@gmail.com
+  screen_name: makoto_kw
+  github: makotokw
+  twitter: makotokw
+  twitter_ja: makoto_kw
+  feedburner: feedname
+
+# Domain
+lang: en
+title: makotokw.com
+path:
+url: http://makotokw.com
+subscribe_url: http://feeds.feedburner.com/kwrogu
+blog_ja_url: http://blog.makotokw.com
+trac_url: http://projects.makotokw.com/trac/arcadia/
+github_url: https://github.com/makotokw
+twitter_url: https://twitter.com/makotokw
+twitter_ja_url: https://twitter.com/makoto_kw
+facebool_url: http://www.facebook.com/makoto.kw
+linkedin_url: http://www.linkedin.com/in/makotokw
+google_url: http://www.google.com/profiles/makoto.kw
+disqus_short_name: makotokw
+google_analytics:
+  account: UA-730110-3
+#download_url: /assets/downloads/
+download_url: https://dl.dropboxusercontent.com/u/8932138/downloads/
+addthis_profile_id: ra-51d5a54a1c992276
+
+# Plugin: jekyll-assets
+# http://ixti.net/jekyll-assets/
+assets:
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - _assets/components/fonts
+    - _assets/components/javascripts
+    - _assets/components/sass
+    - _assets/components/stylesheets
+    - _assets/makotokw2013/javascripts
+    - _assets/makotokw2013/stylesheets
+    - _assets/makotokw2013/images
+  compress:
+    js:   ~
+    css:  ~
