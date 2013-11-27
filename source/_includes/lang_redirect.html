@@ -1,0 +1,33 @@
+<script>
+    (function ($) {
+
+        function redirectPage(dest){
+            if (window.location.replace) {
+                window.location.replace(dest);
+            } else {
+                window.location = dest;
+            }
+        }
+
+        console.log(document.referrer);
+        var referer = document.referrer || '';
+        if ($.type(referer) == 'string') {
+            if (referer.indexOf(document.location.origin) !== 0) {
+                var lang = navigator.language || navigator.userLanguage;
+                var langCodes = ['ja'];
+                for (i=0; i<langCodes.length; i++){
+                    if (lang.substr(0,2) == langCodes[i]){
+                        var pathname = document.location.pathname || '';
+                        if ($.type(pathname) == 'string') {
+                            if (pathname.match(new RegExp('^/' + lang + '(/|$)'))) {
+                                break;
+                            }
+                        }
+                        redirectPage('/' + langCodes[i] + pathname + document.location.search);
+                        break
+                    }
+                }
+            }
+        }
+    })(jQuery);
+</script>

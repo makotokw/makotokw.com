@@ -34,17 +34,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            {% if page.lang == 'ja' %}
+            <a class="navbar-brand" href="/ja">makotokw.com</a>
+            {% else %}
             <a class="navbar-brand" href="/">makotokw.com</a>
+            {% endif %}
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right">
                 {% if page.lang == 'ja' %}
                 <li><a href="{{ site.blog_ja_url }}"><i class="icon-book"></i> Blog</a></li>
                 <li><a href="{{ site.github_url }}"><i class="icon-github-alt"></i> Github</a></li>
+                <li><a href="/"><i class="icon-globe"></i> English</a></li>
                 {% else %}
                 <li><a href="/blog/"><i class="icon-book"></i> Blog</a></li>
                 <li><a href="{{ site.github_url }}"><i class="icon-github-alt"></i> Github</a></li>
-                <li><a href="/ja"><i class="icon-sun"></i> Japanese</a></li>
+                <li><a href="/ja"><i class="icon-globe"></i> Japanese</a></li>
                 {% endif %}
             </ul>
         </nav>

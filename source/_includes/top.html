@@ -86,7 +86,7 @@
     <div class="row row-activity">
         <div class="col-md-4">
             <div class="feed feed-blog">
-                <h2><i class="icon-edit-sign"></i> <a href="{{ site.blog_url }}" title="kwLog">kwLog</a> Recent
+                <h2><i class="icon-edit-sign"></i> <a href="{{ site.blog_ja_url }}" title="kwLog">kwLog</a> Recent
                     Posts</h2>
                 <div id="feedBlogContent" class="feed-content">
                     <i class="icon-spinner icon-spin icon-large"></i>
@@ -154,7 +154,7 @@
         </div>
         <div class="col-md-3">
             <div class="feed feed-blog">
-                <h2><i class="icon-edit-sign"></i> <a href="{{ site.blog_url }}" title="kwLog">kwLog</a> Recent
+                <h2><i class="icon-edit-sign"></i> <a href="{{ site.blog_ja_url }}" title="kwLog">kwLog</a> Recent
                     Posts</h2>
                 <div id="feedBlogContent" class="feed-content">
                     <i class="icon-spinner icon-spin icon-large"></i>
@@ -212,32 +212,12 @@
         });
 
         $(window).load(function () {
-            $('#feedBlogContent').blogFeeds('http://feeds.feedburner.com/kwlog');
+            $('#feedBlogContent').blogFeeds('http://blog.makotokw.com/feed/');
             $('#feedQiitaContent').blogFeeds('http://qiita.com/makoto_kw/feed.atom');
             $('#feedGithubContent').blogFeeds('http://github.com/makotokw.atom');
         });
 
-        function redirectPage(dest){
-            if (window.location.replace) {
-                window.location.replace(dest);
-            } else {
-                window.location = dest;
-            }
-        }
-
-        var referer = document.referrer || '';
-        if ($.type(referer) == 'string') {
-            if (referer.indexOf(document.location.origin) !== 0) {
-                var lang = navigator.language || navigator.userLanguage;
-                var langCodes = ['ja'];
-                for (i=0; i<langCodes.length; i++){
-                    if (lang.substr(0,2) == langCodes[i]){
-                        redirectPage('/' + langCodes[i]);
-                        break
-                    }
-                }
-            }
-        }
-
     })(jQuery);
 </script>
+
+{% include lang_redirect.html %}
