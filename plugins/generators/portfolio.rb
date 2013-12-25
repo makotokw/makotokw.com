@@ -96,17 +96,18 @@ module Jekyll
 
     def generate(site)
 
-      portfolios = []
+      portfolios = {'en' => [], 'ja' => []}
       entries = site.get_entries('/', '_portfolios')
 
       # first pass processes, but does not yet render post content
       entries.each do |f|
         page = PortfolioPage.new(site, site.source, '/_portfolios/', f)
-        portfolios << page
+        portfolios[page.data['lang'] || 'en'] << page
         site.pages << page
       end
 
-      site.pages << PortfolioIndex.new(site, site.source, '/portfolio/', portfolios)
+      site.pages << PortfolioIndex.new(site, site.source, '/portfolio/', portfolios['en'])
+      site.pages << PortfolioIndex.new(site, site.source, '/ja/portfolio/', portfolios['ja'])
 
     end
   end
