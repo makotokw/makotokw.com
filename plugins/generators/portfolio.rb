@@ -10,7 +10,6 @@ module Jekyll
       @dir = dir
       @name = name
 
-      self.process(name)
       self.read_yaml(File.join(base, dir), name)
       self.fix_data
 
@@ -20,6 +19,7 @@ module Jekyll
                     else
                       ''
                     end
+      self.process(name)
     end
 
     # Extract information from the page filename.
@@ -32,6 +32,7 @@ module Jekyll
       name = File.basename(name)
       self.ext = File.extname(name)
       self.basename = name[0 .. -self.ext.length-1]
+      self.basename.gsub!(/\.#{@lang}/, '') unless @lang.empty?
     end
 
     def is_page?
