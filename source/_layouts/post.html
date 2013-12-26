@@ -3,10 +3,10 @@ layout: default
 single: true
 ---
 
-<article class="hentry" role="article">
+<article role="article" class="entry entry-post" >
     {% include post.html %}
-    <footer>
-        <p class="meta">
+    <footer class="entry-footer">
+        <p class="entry-meta">
             {% include post/categories.html %}
         </p>
         {% unless page.sharing == false %}

@@ -1,9 +1,45 @@
+
+
+.entry {
+
+  .entry-header {
+
+    position: relative;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+
+    .entry-title {
+      color: $carrot;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .published {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .entry-content {
+    line-height: 1.831;
+    color: lighten($text-color, 25%);
+    @include clearfix;
+  }
+
+  .entry-meta {
+    margin-top: 20px;
+    i {
+      color: $link-color;
+    }
+  }
+}
+
 .blog-archives {
   .year {
     color: $carrot;
     margin-top: 0;
   }
-  .hentry {
+  .entry {
     position: relative;
     padding-left: 4.5em;
     padding-bottom: .7em;
@@ -22,7 +58,7 @@
       left: 0;
       top: 5px;
     }
-    .categories {
+    .entry-categories {
       font-family: $font-family-sans-serif-alt;
       color: $gray-light;
     }

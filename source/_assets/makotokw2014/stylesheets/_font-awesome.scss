@@ -1,0 +1,51 @@
+
+//$fa-font-path: 'assets/font-awesome';
+
+//@import "font-awesome/variables";
+//@import "font-awesome/mixins";
+//
+//// hack!
+////@import "font-awesome/path";
+//@font-face {
+//  font-family: 'FontAwesome';
+//  src: url(asset_path('font-awesome/fontawesome-webfont.eot'));
+//  src: url(asset_path('font-awesome/fontawesome-webfont.eot?#iefix')) format('embedded-opentype'),
+//  url(asset_path('font-awesome/fontawesome-webfont.woff')) format('woff'),
+//  url(asset_path('font-awesome/fontawesome-webfont.ttf')) format('truetype'),
+//  url(asset_path('font-awesome/fontawesome-webfont.svg#fontawesomeregular')) format('svg');
+////  src: url(asset_path('FontAwesome.otf')) format('opentype'); // used when developing fonts
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@import "font-awesome/core";
+//@import "font-awesome/bootstrap";
+//@import "font-awesome/extras";
+//@import "font-awesome/icons";
+
+// font-awesome
+@import "font-awesome/variables";
+@import "font-awesome/mixins";
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url(asset_path('font-awesome/fontawesome-webfont.eot'));
+  src: url(asset_path('font-awesome/fontawesome-webfont.eot?#iefix')) format('embedded-opentype'),
+  url(asset_path('font-awesome/fontawesome-webfont.woff')) format('woff'),
+  url(asset_path('font-awesome/fontawesome-webfont.ttf')) format('truetype'),
+  url(asset_path('font-awesome/fontawesome-webfont.svg#fontawesomeregular')) format('svg');
+//  src: url(asset_path('FontAwesome.otf')) format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "font-awesome/path";
+@import "font-awesome/core";
+@import "font-awesome/larger";
+@import "font-awesome/fixed-width";
+@import "font-awesome/list";
+@import "font-awesome/bordered-pulled";
+@import "font-awesome/spinning";
+@import "font-awesome/rotated-flipped";
+@import "font-awesome/stacked";
+@import "font-awesome/icons";

@@ -6,7 +6,7 @@
       <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
     {% endif %}
     {% unless page.meta == false %}
-      <p class="meta">
+      <p class="entry-meta">
         {% include post/date.html %}{{ time }}
         {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
          | <a href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread">Comments</a>
@@ -19,7 +19,7 @@
   <div class="entry-content">{{ content | excerpt }}</div>
   {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
   {% if excerpted == 'true' %}
-    <footer>
+    <footer class="entry-footer">
       <a rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
     </footer>
   {% endif %}

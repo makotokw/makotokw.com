@@ -1,17 +1,19 @@
 ---
 layout: default
 ---
-<article role="article">
+<article role="article" class="entry entry-page">
   {% if page.title %}
-  <header>
+  <header class="entry-header">
     <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
-    {% if page.date %}<p class="meta">{% include post/date.html %}{{ time }}</p>{% endif %}
+    {% if page.date %}<p class="entry-meta">{% include post/date.html %}{{ time }}</p>{% endif %}
   </header>
   {% endif %}
-  {{ content }}
+    <div class="entry-content">
+        {{ content }}
+    </div>
   {% unless page.footer == false %}
-    <footer>
-      {% if page.date or page.author %}<p class="meta">
+    <footer class="entry-footer">
+      {% if page.date or page.author %}<p class="entry-meta">
         {% if page.author %}{% include post/author.html %}{% endif %}
         {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
         {% if page.categories %}{% include post/categories.html %}{% endif %}

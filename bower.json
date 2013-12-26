@@ -4,7 +4,7 @@
   "dependencies": {
     "jquery": "~2.0.2",
     "sass-bootstrap": "~3.0.0",
-    "font-awesome": "3.2.1"
+    "font-awesome": "~4.0.0"
   },
   "exportsOverride": {
     "jquery": {
@@ -29,7 +29,7 @@
     },
     "font-awesome": {
       "sass": "scss/*.scss",
-      "font": "font/*.*"
+      "fonts": "fonts/*.*"
     }
   }
 }

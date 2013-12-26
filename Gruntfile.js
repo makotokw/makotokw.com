@@ -23,5 +23,5 @@ module.exports = function (grunt) {
         }
     });
     grunt.loadNpmTasks('grunt-bower-task');
-    grunt.registerTask('default', []);
+    grunt.registerTask('default', ['bower']);
 };

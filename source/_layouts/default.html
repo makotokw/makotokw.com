@@ -43,13 +43,13 @@
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right">
                 {% if page.lang == 'ja' %}
-                <li><a href="{{ site.blog_ja_url }}"><i class="icon-book"></i> Blog</a></li>
-                <li><a href="{{ site.github_url }}"><i class="icon-github-alt"></i> Github</a></li>
-                <li><a href="/"><i class="icon-globe"></i> English</a></li>
+                <li><a href="{{ site.blog_ja_url }}"><i class="fa fa-book"></i> Blog</a></li>
+                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+                <li><a href="/"><i class="fa fa-globe"></i> English</a></li>
                 {% else %}
-                <li><a href="/blog/"><i class="icon-book"></i> Blog</a></li>
-                <li><a href="{{ site.github_url }}"><i class="icon-github-alt"></i> Github</a></li>
-                <li><a href="/ja"><i class="icon-globe"></i> Japanese</a></li>
+                <li><a href="/blog/"><i class="fa fa-book"></i> Blog</a></li>
+                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+                <li><a href="/ja"><i class="fa fa-globe"></i> Japanese</a></li>
                 {% endif %}
             </ul>
         </nav>
@@ -66,13 +66,13 @@
         <p class="copyright">
             &copy; Copyright 2013 makotokw.com.
             {% if page.lang == 'ja' %}
-            <a href="{{ site.twitter_ja_url }}" title="twitter"><i class="icon-twitter-sign"></i></a>
+            <a href="{{ site.twitter_ja_url }}" title="twitter"><i class="fa fa-twitter-square"></i></a>
             {% else %}
-            <a href="{{ site.twitter_url }}" title="twitter"><i class="icon-twitter-sign"></i></a>
+            <a href="{{ site.twitter_url }}" title="twitter"><i class="fa fa-twitter-square"></i></a>
             {% endif %}
-            <a href="{{ site.google_url }}" title="Google+"><i class="icon-google-plus-sign"></i></a>
-            <a href="{{ site.linkedin_url }}" title="LinkedIn"><i class="icon-linkedin-sign"></i></a>
-            <a href="{{ site.github_url }}" title="GitHub"><i class="icon-github-sign"></i></a>
+            <a href="{{ site.google_url }}" title="Google+"><i class="fa fa-google-plus-square"></i></a>
+            <a href="{{ site.linkedin_url }}" title="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+            <a href="{{ site.github_url }}" title="GitHub"><i class="fa fa-github-square"></i></a>
         </p>
     </div>
 
