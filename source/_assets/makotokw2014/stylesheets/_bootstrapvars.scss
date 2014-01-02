@@ -31,25 +31,35 @@ $orange: #F39C12;
 $pink: #ff6699;
 $purple: #8E44AD;
 
+// Trends colors
 $turquoise: #1ABC9C;
 $greenSea: #16A085;
 $emerald: #2ECC71;
 $nephritis: #27AE60;
 $peterRiver: #3498DB;
 $belizeHole: #2980B9;
-$alizarin: #e74c3c;
-$pomegranate: #c0392b;
-$sunflower: #f1c40f;
-$carrot: #e67e22;
-$pumpkin: #d35400;
-
+$amethyst: #9B59B6;
+$wisteria: #8E44AD;
 $mykonosBlue: #005b88;
 $monacoBlue: #344c80;
+$wetAsphalt: #34495E;
+$midnightBlue: #2C3E50;
+$sunFlower: #F1C40F;
+$orange: #F39C12;
+$carrot: #E67E22;
+$pumpkin: #D35400;
+$alizarin: #E74C3C;
+$pomegranate: #C0392B;
 $salmonPink: #f3a68c;
 $githubOrange: #D26911;
 $koi: #d25c3f;
 $samba: #a82b38;
 $vivacious: #a92a5c;
+$clouds: #ECF0F1;
+$silver: #BDC3C7;
+$concrete: #95A5A6;
+$asbestos: #7F8C8D;
+
 
 // Brand colors
 // -------------------------
@@ -80,9 +90,9 @@ $font-family-base: $font-family-sans-serif;
 $font-family-alt: $font-family-serif;
 
 $font-size-base:          16px;
-$font-size-large:         ceil($font-size-base * 1.25); // ~18px
-$font-size-small:         ceil($font-size-base * 0.85); // ~12px
-$font-size-mini:         ceil($font-size-base * 0.75); // ~11px
+$font-size-large:         ceil($font-size-base * 1.25); // ~20px
+$font-size-small:         ceil($font-size-base * 0.85); // ~14px
+$font-size-mini:          ceil($font-size-base * 0.75); // ~12px
 
 $line-height-base:        1.428571429; // 20/14
 $line-height-computed:    floor($font-size-base * $line-height-base); // ~20px

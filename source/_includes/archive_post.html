@@ -14,7 +14,7 @@
                 {{ post.date | date: "<span class='month'>%b</span> <span class='day'>%d</span>"}}
             </time>
             {% if category != '0' %}
-            <footer class="entry-footer">
+            <footer class="entry-header">
                 <span class="entry-categories"><i class="fa fa-folder"></i> {{ post.categories | category_links }}</span>
             </footer>
             {% endif %}
