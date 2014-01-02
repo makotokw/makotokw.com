@@ -20,21 +20,18 @@ author:
   github: makotokw
   twitter: makotokw
   twitter_ja: makoto_kw
-  feedburner: feedname
 
 # Domain
 lang: en
 title: makotokw.com
 path:
 url: http://makotokw.com
-subscribe_url: http://feeds.feedburner.com/kwrogu
+subscribe_url: http://makotokw.com/atom.xml
 blog_ja_url: http://blog.makotokw.com
-trac_url: http://projects.makotokw.com/trac/arcadia/
 github_url: https://github.com/makotokw
 qiita_url: http://qiita.com/makoto_kw
 twitter_url: https://twitter.com/makotokw
 twitter_ja_url: https://twitter.com/makoto_kw
-facebool_url: http://www.facebook.com/makoto.kw
 linkedin_url: http://www.linkedin.com/in/makotokw
 google_url: http://www.google.com/profiles/makoto.kw
 disqus_short_name: makotokw
@@ -60,3 +57,4 @@ assets:
   compress:
     js:   ~
     css:  ~
+  gzip: []

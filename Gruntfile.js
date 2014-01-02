@@ -16,6 +16,11 @@ module.exports = function (grunt) {
                         var renamedComponent = component;
                         if (component == 'sass-bootstrap') renamedComponent = 'bootstrap';
 
+                        // moved fonts dir to asset root
+                        if (renamedType == 'fonts') {
+                            return path.join('..', '..', 'assets', renamedType);
+                        }
+
                         return path.join(renamedType, renamedComponent);
                     }
                 }
