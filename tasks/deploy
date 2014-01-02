@@ -1,0 +1,1 @@
+rsync -avz --delete public/ aries.makotokw.com:/usr/local/arcadia/www.makotokw.com/public/
