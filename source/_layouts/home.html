@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+{% include html_head.html %}
+<body class="{{page.lang}}">
+{% include navbar_home.html %}
+{{ content }}
+{% include footer.html %}
+{% javascript app %}
+{% javascript home %}
+</body>
+</html>

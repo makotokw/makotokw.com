@@ -1,0 +1,19 @@
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="author" content="{{ site.author.screen_name }}">
+    {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+    <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | remove:'index.html' | strip_slash }}">
+    <link rel="alternate" href="{{ site.subscribe_url }}" title="{{site.title}}" type="application/atom+xml">
+    {% include link_icon.html %}
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    {% stylesheet app %}
+    {% javascript jquery/jquery %}
+    {% include google_analytics.html %}
+</head>

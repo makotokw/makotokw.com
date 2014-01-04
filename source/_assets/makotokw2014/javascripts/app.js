@@ -1,2 +1,3 @@
 //= require bootstrap/bootstrap
-//= require_tree .
+//= require jquery.githubRepoWidget
+//= require livereload

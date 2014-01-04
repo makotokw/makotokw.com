@@ -1,0 +1,30 @@
+<header id="headHomeNavBar" class="navbar navbar-default navbar-fixed-top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {% if page.lang == 'ja' %}
+            <a class="navbar-brand" href="/ja">makotokw.com</a>
+            {% else %}
+            <a class="navbar-brand" href="/">makotokw.com</a>
+            {% endif %}
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+            <ul id="menuNav" class="nav navbar-nav navbar-right">
+                {% if page.lang == 'ja' %}
+                <li><a href="{{ site.blog_ja_url }}"><i class="fa fa-book"></i> Blog</a></li>
+                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+                <li><a href="/"><i class="fa fa-globe"></i> English</a></li>
+                {% else %}
+                <li><a href="/blog/"><i class="fa fa-book"></i> Blog</a></li>
+                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+                <li><a href="/ja"><i class="fa fa-globe"></i> Japanese</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>
