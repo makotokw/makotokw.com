@@ -59,6 +59,6 @@ category: "Programing"
 <code class="CocoaFlatColor concreteFlatColor">UIColor *concreteFlatColor = [UIColor colorWithRed:0.5843137254901961 green:0.6470588235294118 blue:0.6509803921568628 alpha:1.0];</code>
 <code class="CocoaFlatColor asbestosFlatColor">UIColor *asbestosFlatColor = [UIColor colorWithRed:0.4980392156862745 green:0.5490196078431373 blue:0.5529411764705883 alpha:1.0];</code>
 
-Also I commit UIColor+FlatUI.{h,m} files to [GitHub repository](http://github.com/makotokw/CocoaFlatUIColor).
+Also I commit UIColor+FlatUI.{h,m} files to [GitHub repository](http://github.com/makotokw/CocoaWZYFlatUIColor).
 
-{% github makotokw/CocoaFlatUIColor %}
+{% github makotokw/CocoaWZYFlatUIColor %}
