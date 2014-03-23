@@ -21,9 +21,6 @@
   }
 }
 
-.sicon48-trac {
-  background-position: 0 0;
-}
 .sicon48-blogen {
   background-position: -48px 0;
 }
@@ -34,7 +31,15 @@
   background-position: -144px 0;
 }
 
-.row-subdomain {
+.section-title {
+  font-family: 'NovecentowideBookBold';
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.section-subdomain {
   margin-bottom: 12px;
 
   .site-item {
@@ -58,7 +63,7 @@
   }
 }
 
-.row-activity {
+.section-activity {
   .feed {
     h2 {
       line-height: 1.4;
@@ -152,7 +157,7 @@
 }
 
 .site-info > h2,
-.row-activity .feed > h2,
+.section-activity .feed > h2,
 #contact > h2 {
   font-weight: normal;
   letter-spacing:-1px;
@@ -165,7 +170,7 @@
   line-height: 48px;
 }
 
-.row-activity .feed > h2 {
+.section-activity .feed > h2 {
   font-size: $font-size-base + 2px;
 }
 

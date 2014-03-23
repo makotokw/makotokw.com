@@ -1,35 +1,41 @@
 {
-  "name": "makotokw.com",
-  "version": "1.0.0",
-  "dependencies": {
-    "jquery": "~2.0.2",
-    "sass-bootstrap": "~3.0.0",
-    "font-awesome": "~4.0.0"
-  },
-  "exportsOverride": {
-    "jquery": {
-      "js": [
-        "jquery*.js",
-        "jquery*.map"
-      ]
+    "name": "makotokw.com",
+    "version": "1.0.0",
+    "dependencies": {
+        "jquery": "~2.0.2",
+        "sass-bootstrap": "~3.0.0",
+        "font-awesome": "~4.0.0",
+        "backbone": "~1.1.2"
     },
-    "jquery-ui": {
-      "js": "ui/jquery-ui.js"
-    },
-    "underscore": {
-      "js": [
-        "underscore*.js",
-        "underscore*.map"
-      ]
-    },
-    "sass-bootstrap": {
-      "js": "dist/js/*.js",
-      "sass": "lib/_*.scss",
-      "fonts": "dist/fonts/*.*"
-    },
-    "font-awesome": {
-      "sass": "scss/*.scss",
-      "fonts": "fonts/*.*"
+    "exportsOverride": {
+        "jquery": {
+            "js": [
+                "jquery*.js",
+                "jquery*.map"
+            ]
+        },
+        "jquery-ui": {
+            "js": "ui/jquery-ui.js"
+        },
+        "underscore": {
+            "js": [
+                "underscore*.js",
+                "underscore*.map"
+            ]
+        },
+        "backbone": {
+            "js": [
+                "backbone*.js"
+            ]
+        },
+        "sass-bootstrap": {
+            "js": "dist/js/*.js",
+            "sass": "lib/_*.scss",
+            "fonts": "dist/fonts/*.*"
+        },
+        "font-awesome": {
+            "sass": "scss/*.scss",
+            "fonts": "fonts/*.*"
+        }
     }
-  }
 }

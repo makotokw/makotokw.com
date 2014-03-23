@@ -9,7 +9,7 @@ permalink: /blog/:year/:month/:day/:title/
 
 # Directory
 source: source
-destination: public
+destination: dist
 plugins: plugins
 category_dir: blog
 

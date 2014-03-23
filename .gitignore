@@ -1,3 +1,7 @@
+.jekyll
+.tmp
+.idea
+/dist
 /_tmp
 /source/_assets/components
 
@@ -6,7 +10,6 @@
 .rspec
 /.bundle
 /vendor/bundle
-/public
 
 ### OSX ###
 .DS_Store

@@ -1,3 +1,4 @@
 //= require bootstrap/bootstrap
-//= require jquery.githubRepoWidget
+//= require vendor/jquery.githubRepoWidget
 //= require livereload
+//= require main

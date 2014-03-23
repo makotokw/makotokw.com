@@ -1,2 +1,4 @@
-//= require jquery.easing
+//= require vendor/jquery.easing
 //= require sticky
+//= require templates/templates
+
