@@ -141,6 +141,21 @@ module.exports = function (grunt) {
                     drafts: true
                 }
             }
+        },
+        rsync: {
+            options: {
+                args: ['-avz', '--delete'],
+                exclude: ['.git*', '.DS_Store'],
+                recursive: true
+            },
+            dist: {
+                options: {
+                    src: './dist/',
+                    dest: '/usr/local/arcadia/www.makotokw.com/dist/',
+                    host: 'aries.makotokw.com',
+                    syncDestIgnoreExcl: true
+                }
+            }
         }
     });
 
@@ -151,9 +166,18 @@ module.exports = function (grunt) {
         ]);
     });
 
+    grunt.registerTask('deploy', function (/*target*/) {
+        grunt.task.run([
+            'rsync:dist'
+        ]);
+    });
+
     grunt.registerTask('serve', function (target) {
+        // call jekyll serve --watch directly
         if (target === 'jekyll') {
-            return grunt.task.run(['jekyll:serve']);
+            return grunt.task.run([
+                'jekyll:serve'
+            ]);
         }
         grunt.task.run([
             'jst',

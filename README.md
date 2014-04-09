@@ -11,6 +11,27 @@ npm install
 grunt bower:install
 ```
 
+## Development
+
+
+```
+grunt serve
+```
+
+or
+
+```
+grunt debug
+```
+
+
+## Deploy
+
+```
+grunt build
+task/deploy
+```
+
 ## Depends
 
 * [jekyll](http://jekyllrb.com/)
