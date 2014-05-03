@@ -173,12 +173,12 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('serve', function (target) {
-        // call jekyll serve --watch directly
-        if (target === 'jekyll') {
-            return grunt.task.run([
-                'jekyll:serve'
-            ]);
-        }
+        return grunt.task.run([
+            'jekyll:serve'
+        ]);
+    });
+
+    grunt.registerTask('debug', function (target) {
         grunt.task.run([
             'jst',
             'jekyll:dev',

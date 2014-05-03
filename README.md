@@ -13,13 +13,6 @@ grunt bower:install
 
 ## Development
 
-
-```
-grunt serve
-```
-
-or
-
 ```
 grunt debug
 ```
@@ -29,7 +22,7 @@ grunt debug
 
 ```
 grunt build
-task/deploy
+grunt deploy
 ```
 
 ## Depends
