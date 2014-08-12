@@ -142,6 +142,11 @@ module.exports = function (grunt) {
                 }
             }
         },
+        open: {
+            server: {
+                path: 'http://localhost:<%= jekyll.serve.options.port %>'
+            }
+        },
         rsync: {
             options: {
                 args: ['-avz', '--delete'],
@@ -183,10 +188,10 @@ module.exports = function (grunt) {
             'jst',
             'jekyll:dev',
             'connect:livereload',
+            'open:server',
             'watch'
         ]);
     });
-
 
     grunt.registerTask('default', ['build']);
 };
