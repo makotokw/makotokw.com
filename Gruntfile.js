@@ -14,9 +14,9 @@ module.exports = function (grunt) {
 
     // configurable paths
     var appConfig = {
+        source: 'source',
         components: 'source/_assets/components',
-        scripts: 'source/_assets/makotokw2014/javascripts',
-        styles: 'source/_assets/makotokw2014/stylesheets'
+        theme: 'source/_assets/makotokw2014'
     };
 
     grunt.initConfig({
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 
                         // moved fonts dir to asset root
                         if (renamedType === 'fonts') {
-                            return path.join('..', '..', 'assets', renamedType);
+                            return path.join('..', '..', 'assets', 'components', renamedType);
                         }
 
                         return path.join(renamedType, renamedComponent);
@@ -53,21 +53,22 @@ module.exports = function (grunt) {
         },
         watch: {
             options: {
-                nospawn: true,
-                interval: 5007
+                livereload: false
             },
             jst: {
                 files: [
-                    '<%= makotokw.scripts %>/templates/*.ejs'
+                    '<%= makotokw.theme %>/javascripts/templates/*.ejs'
                 ],
                 tasks: ['jst']
+            },
+            compass: {
+                files: ['<%= makotokw.theme %>/stylesheets/{,*/}*.{scss,sass}'],
+                tasks: ['compass']
             },
             jekyll: {
                 tasks: ['jekyll:dev'],
                 files: [
-                    'source/**/*.html',
-                    'source/**/*.js',
-                    'source/**/*.scss'
+                    'source/**/*.html'
                 ]
             },
             livereload: {
@@ -82,14 +83,14 @@ module.exports = function (grunt) {
         connect: {
             options: {
                 port: SERVER_PORT,
-                // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
                     middleware: function (connect) {
                         return [
                             lrSnippet,
+                            mountFolder(connect, '.tmp'),
                             mountFolder(connect, '.jekyll')
                         ];
                     }
@@ -103,7 +104,7 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= makotokw.scripts %>/{,*/}*.js'
+                '<%= makotokw.theme %>/javascripts/{,*/}*.js'
             ]
         },
         jst: {
@@ -114,8 +115,19 @@ module.exports = function (grunt) {
                     }
                 },
                 files: {
-                    '<%= makotokw.scripts %>/templates/templates.js': ['<%= makotokw.scripts %>/templates/*.ejs']
+                    '<%= makotokw.theme %>/javascripts/templates/templates.js': ['<%= makotokw.theme %>/javascripts/templates/*.ejs']
                 }
+            }
+        },
+        compass: {
+            options: {
+                sassDir: '<%= makotokw.theme %>/stylesheets',
+                cssDir: '.tmp/assets',
+                imagesDir: '<%= makotokw.source %>/assets/site/images',
+                javascriptsDir: '<%= makotokw.theme %>/javascripts',
+                fontsDir: '<%= makotokw.source %>/assets/site/fonts',
+                importPath: '<%= makotokw.components %>/sass',
+                relativeAssets: true
             }
         },
         jekyll: {
@@ -138,12 +150,13 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     dest: '.jekyll',
+                    config: '_config.yml,_config.development.yml',
                     drafts: true
                 }
             }
         },
         open: {
-            server: {
+            jekyll: {
                 path: 'http://localhost:<%= jekyll.serve.options.port %>'
             }
         },
@@ -177,7 +190,7 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('serve', function (target) {
+    grunt.registerTask('serve', function (/*target*/) {
         return grunt.task.run([
             'jekyll:serve'
         ]);
@@ -188,7 +201,7 @@ module.exports = function (grunt) {
             'jst',
             'jekyll:dev',
             'connect:livereload',
-            'open:server',
+            'open:jekyll',
             'watch'
         ]);
     });

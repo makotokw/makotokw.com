@@ -1,0 +1,6 @@
+<div class="portfolio-tag-category">
+    <h3 class="portfolio-category-title"><%= title %></h3>
+    <% _.each(list, function(tag) { %>
+    <a class="portfolio-tag" data-tag="<%= tag.get('id') %>"><%= tag.get('name') %></a>
+    <% }) %>
+</div>

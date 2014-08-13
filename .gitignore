@@ -1,9 +1,11 @@
+### makotokw.com ###
 .jekyll
 .tmp
 .idea
 /dist
 /_tmp
 /source/_assets/components
+/source/assets/components
 
 ### Jekyll ###
 .sass-cache
@@ -21,18 +23,5 @@ Icon
 bower_components
 
 ### Node ###
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-
-pids
-logs
-results
-
 npm-debug.log
 node_modules
