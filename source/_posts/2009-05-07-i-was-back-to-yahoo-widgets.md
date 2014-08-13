@@ -7,7 +7,7 @@ date: 2009-05-07
 ---
 My apology for stopping development My Outlook Today and SongWidget.
 
-<img src="/assets/images/2009/myoutlooktoday_20090425.jpg" alt="My Outlook Today" />
+<img src="/assets/site/images/2009/myoutlooktoday_20090425.jpg" alt="My Outlook Today" />
 
 Most of reason to stop development for My Outlook Today is that I don't use outlook. When I worked for Sony, I had many meetings every day and I had to work out time to write code. ( It was my motivation! )  However I left from Sony in Dec 2006 and lost motivation to develop it. 
 

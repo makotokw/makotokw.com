@@ -53,25 +53,25 @@ background using 9 files (nine-grid) and 1 file(divider).
 
 <table class="table table-bordered">
 <tr>
-<td>top_left.png<br/><img src="/assets/images/2009/dark/top_left.png"/></td>
-<td>top.png<br/><img src="/assets/images/2009/dark/top.png"/></td>
-<td>top_right.png<br/><img src="/assets/images/2009/dark/top_right.png"/></td>
+<td>top_left.png<br/><img src="/assets/site/images/2009/dark/top_left.png"/></td>
+<td>top.png<br/><img src="/assets/site/images/2009/dark/top.png"/></td>
+<td>top_right.png<br/><img src="/assets/site/images/2009/dark/top_right.png"/></td>
 </tr>
 
 <tr>
-<td>left.png<br/><img src="/assets/images/2009/dark/left.png"></td>
-<td>center.png<br/><img src="/assets/images/2009/dark/center.png"/></td>
-<td>right.png<br/><img src="/assets/images/2009/dark/right.png"/></td>
+<td>left.png<br/><img src="/assets/site/images/2009/dark/left.png"></td>
+<td>center.png<br/><img src="/assets/site/images/2009/dark/center.png"/></td>
+<td>right.png<br/><img src="/assets/site/images/2009/dark/right.png"/></td>
 </tr>
 
 <tr>
-<td>bottom_left.png<br/><img src="/assets/images/2009/dark/bottom_left.png"></td>
-<td>bottom.png<br/><img src="/assets/images/2009/dark/bottom.png"></td>
-<td>bottom_right.png<br/><img src="/assets/images/2009/dark/bottom_right.png"></td>
+<td>bottom_left.png<br/><img src="/assets/site/images/2009/dark/bottom_left.png"></td>
+<td>bottom.png<br/><img src="/assets/site/images/2009/dark/bottom.png"></td>
+<td>bottom_right.png<br/><img src="/assets/site/images/2009/dark/bottom_right.png"></td>
 </tr>
 
 <tr>
-<td colspan="3">line.png<br/><img src="/assets/images/2009/dark/line.png"/></td>
+<td colspan="3">line.png<br/><img src="/assets/site/images/2009/dark/line.png"/></td>
 </tr>
 
 </table>
@@ -81,17 +81,17 @@ Nine-grid rendering allows you to preserve the original dimensions of the corner
 ## icon files
 
 <table class="table table-bordered">
-<tr><td><img src="/assets/images/2009/dark/icon_current.png"/></td><td>icon_current.png</td><td>current or near appointment</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_event.png"/></td><td>icon_event.png</td><td>event icon</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_task.png"/></td><td>icon_task.png</td><td>task icon</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_next.png"/></td><td>icon_next.png</td><td>arrow right</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_prev.png"/></td><td>icon_prev.png</td><td>arrow left</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_schedule.png"/></td><td>icon_schedule.png</td><td>calendar view icon(My Google Calander never use)</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_tasklist.png"/></td><td>icon_tasklist.png</td><td>task view icon(My Google Calander never use)</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_today.png"/></td><td>icon_today.png</td><td>today icon</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_back.png"/></td><td>icon_back.png</td><td>today icon to return</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_forward.png"/></td><td>icon_forward.png</td><td>today icon for return</td></tr>
-<tr><td><img src="/assets/images/2009/dark/icon_loading.gif"/></td><td>icon_loading.gif</td><td>loading icon(My Outlook Today never use because it load sync)</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_current.png"/></td><td>icon_current.png</td><td>current or near appointment</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_event.png"/></td><td>icon_event.png</td><td>event icon</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_task.png"/></td><td>icon_task.png</td><td>task icon</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_next.png"/></td><td>icon_next.png</td><td>arrow right</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_prev.png"/></td><td>icon_prev.png</td><td>arrow left</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_schedule.png"/></td><td>icon_schedule.png</td><td>calendar view icon(My Google Calander never use)</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_tasklist.png"/></td><td>icon_tasklist.png</td><td>task view icon(My Google Calander never use)</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_today.png"/></td><td>icon_today.png</td><td>today icon</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_back.png"/></td><td>icon_back.png</td><td>today icon to return</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_forward.png"/></td><td>icon_forward.png</td><td>today icon for return</td></tr>
+<tr><td><img src="/assets/site/images/2009/dark/icon_loading.gif"/></td><td>icon_loading.gif</td><td>loading icon(My Outlook Today never use because it load sync)</td></tr>
 </table>
 
 ## for example
@@ -99,15 +99,15 @@ Nine-grid rendering allows you to preserve the original dimensions of the corner
 I tried to create new theme named "wood".
 
 <ol>
-<li>create image files by Fireworks CS4 :)<br/><img src="/assets/images/2009/customtheme_03thm.jpg"/></li>
-<li>copy style.js and image files to <em>C:\Users\makoto_kw\Documents\My Widgets\MyOutlookToday\theme\wood</em><br/> <img src="/assets/images/2009/customtheme_05thm.jpg"/></li>
-<li>run My Outlook Today widget and open preferences<br/><img src="/assets/images/2009/customtheme_04thm.jpg"/></li>
-<li>select wood at theme<br/><img src="/assets/images/2009/customtheme_06.jpg"/></li>
+<li>create image files by Fireworks CS4 :)<br/><img src="/assets/site/images/2009/customtheme_03thm.jpg"/></li>
+<li>copy style.js and image files to <em>C:\Users\makoto_kw\Documents\My Widgets\MyOutlookToday\theme\wood</em><br/> <img src="/assets/site/images/2009/customtheme_05thm.jpg"/></li>
+<li>run My Outlook Today widget and open preferences<br/><img src="/assets/site/images/2009/customtheme_04thm.jpg"/></li>
+<li>select wood at theme<br/><img src="/assets/site/images/2009/customtheme_06.jpg"/></li>
 </ol>
 
 That's all!
 
-<a href="/assets/images/2009/wood.zip"><strong>sample theme download</strong></a>
+<a href="/assets/site/images/2009/wood.zip"><strong>sample theme download</strong></a>
 
 I understand this function is very simple and is not usefule yet. Please let me know you have any problems , questions and ideas. # give me beautiful theme you designed also :)
 

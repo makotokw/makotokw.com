@@ -36,7 +36,7 @@ It also has the following problems oppositely.
 
 #### 2. Add MTSyntaxHighlighterInclude tag to “HTML Header” tempates.
 
-![](/assets/images/2009/mtsyntaxhighlighter_0.1_01en.jpg);
+![](/assets/site/images/2009/mtsyntaxhighlighter_0.1_01en.jpg);
 
 The MTSyntaxHighlighterInclude has brush and theme attributes. The brush attribute is required and the theme attribute is optional.
 
@@ -49,7 +49,7 @@ The MTSyntaxHighlighterInclude has brush and theme attributes. The brush attribu
 
 Select *SyntaxHighlighter* or *SyntaxHighlighter + Convert Line Breaks* as Format
 
-![](/assets/images/2009/mtsyntaxhighlighter_0.1_02en.jpg);
+![](/assets/site/images/2009/mtsyntaxhighlighter_0.1_02en.jpg);
 
 Write source code as following format:
 
@@ -87,17 +87,17 @@ source code
 
 After publishing, the entry is displayed.
 
-![](/assets/images/2009/mtsyntaxhighlighter_0.1_04.jpg);
+![](/assets/site/images/2009/mtsyntaxhighlighter_0.1_04.jpg);
 
 (When theme attributes is *emacs*)
 
-![](/assets/images/2009/mtsyntaxhighlighter_0.1_05.jpg);
+![](/assets/site/images/2009/mtsyntaxhighlighter_0.1_05.jpg);
 
 ## If you have already used the syntaxhighlighter 1.5
 
 The syntaxhighlighter 2.0 changed the target html tag from version 1.5. You have to set “compatible with 1.5″ in settings.
 
-![](/assets/images/2009/mtsyntaxhighlighter_0.1_07en.jpg);
+![](/assets/site/images/2009/mtsyntaxhighlighter_0.1_07en.jpg);
 
 See also: http://alexgorbatchev.com/wiki/SyntaxHighlighter:Upgrading
 

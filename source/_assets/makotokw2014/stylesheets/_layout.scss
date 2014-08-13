@@ -1,4 +1,22 @@
 
+.pre-page {
+  background: #fff;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
+}
+
+.menu-top {
+  font-family: 'NovecentowideBookBold';
+}
+
 .main-content {
   .container {
     padding: 12px;
