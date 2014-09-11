@@ -49,7 +49,6 @@ assets:
   dirname: assets
   baseurl: /assets/
   sources:
-    - _assets/components/fonts
     - _assets/components/javascripts
     - _assets/components/sass
     - _assets/components/stylesheets

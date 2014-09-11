@@ -63,7 +63,7 @@ module.exports = function (grunt) {
             },
             compass: {
                 files: ['<%= makotokw.theme %>/stylesheets/{,*/}*.{scss,sass}'],
-                tasks: ['compass']
+                tasks: ['compass:theme']
             },
             jekyll: {
                 tasks: ['jekyll:dev'],
@@ -76,7 +76,8 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '.jekyll/**/*'
+                    '.jekyll/**/*',
+                    '.tmp/assets/*.css'
                 ]
             }
         },
@@ -120,14 +121,16 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            options: {
-                sassDir: '<%= makotokw.theme %>/stylesheets',
-                cssDir: '.tmp/assets',
-                imagesDir: '<%= makotokw.source %>/assets/site/images',
-                javascriptsDir: '<%= makotokw.theme %>/javascripts',
-                fontsDir: '<%= makotokw.source %>/assets/site/fonts',
-                importPath: '<%= makotokw.components %>/sass',
-                relativeAssets: true
+            theme: {
+                options: {
+                    sassDir: '<%= makotokw.theme %>/stylesheets',
+                    cssDir: '.tmp/assets',
+                    imagesDir: '<%= makotokw.source %>/assets/site/images',
+                    javascriptsDir: '<%= makotokw.theme %>/javascripts',
+                    fontsDir: '<%= makotokw.source %>/assets/site/fonts',
+                    importPath: '<%= makotokw.components %>/sass',
+                    relativeAssets: true
+                }
             }
         },
         jekyll: {
@@ -157,7 +160,7 @@ module.exports = function (grunt) {
         },
         open: {
             jekyll: {
-                path: 'http://localhost:<%= jekyll.serve.options.port %>'
+                path: 'http://localhost:<%= jekyll.serve.options.port %>/ja/home.html'
             }
         },
         rsync: {

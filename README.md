@@ -27,9 +27,14 @@ grunt deploy
 
 ## Depends
 
+
+* [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget)
+
+### Jekyll and Grunt to build site
+
 * [jekyll](http://jekyllrb.com/)
 * [Jekyll::AssetsPlugin](https://github.com/ixti/jekyll-assets)
-* [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget)
+
 * [grunt-jekyll](https://github.com/dannygarcia/grunt-jekyll)
 * [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
 * [connect-livereload](https://github.com/intesso/connect-livereload)
