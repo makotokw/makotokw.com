@@ -82,12 +82,11 @@ module.exports = function (grunt) {
             }
         },
         connect: {
-            options: {
-                port: SERVER_PORT,
-                hostname: '0.0.0.0'
-            },
-            livereload: {
+            server: {
                 options: {
+                    port: SERVER_PORT,
+                    hostname: '0.0.0.0',
+                    livereload: LIVERELOAD_PORT,
                     middleware: function (connect) {
                         return [
                             lrSnippet,
@@ -203,7 +202,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'jst',
             'jekyll:dev',
-            'connect:livereload',
+            'connect:server',
             'open:jekyll',
             'watch'
         ]);
