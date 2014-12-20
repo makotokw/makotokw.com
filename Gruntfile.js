@@ -108,19 +108,24 @@ module.exports = function (grunt) {
             ]
         },
         jst: {
-            compile: {
-                options: {
-                    processName: function(filepath) {
-                        return filepath.match(/templates\/(.+)\.ejs/)[1];
-                    }
-                },
+            options: {
+                processName: function(filepath) {
+                    return filepath.match(/templates\/(.+)\.ejs/)[1];
+                }
+            },
+            source: {
                 files: {
                     '<%= makotokw.theme %>/javascripts/templates/templates.js': ['<%= makotokw.theme %>/javascripts/templates/*.ejs']
+                }
+            },
+            preload: {
+                files: {
+                    '.dist_development_preload/assets/templates/templates.js': ['<%= makotokw.theme %>/javascripts/templates/*.ejs']
                 }
             }
         },
         compass: {
-            theme: {
+            preload: {
                 options: {
                     sassDir: '<%= makotokw.theme %>/stylesheets',
                     cssDir: '.dist_development_preload/assets',
@@ -132,16 +137,19 @@ module.exports = function (grunt) {
                 }
             }
         },
-        //// TODO:
-        //uglify: {
-        //    dist: {
-        //        files: {
-        //            '.dist_development_preload/assets/app.js': [
-        //                '<%= makotokw.theme %>/javascripts'
-        //            ]
-        //        }
-        //    }
-        //},
+        uglify: {
+            preload: {
+                files: {
+                    '.dist_development_preload/assets/app.js': [
+                        '<%= makotokw.theme %>/javascripts/main.js',
+                        '<%= makotokw.theme %>/javascripts/routes/*.js',
+                        '<%= makotokw.theme %>/javascripts/models/*.js',
+                        '<%= makotokw.theme %>/javascripts/collections/*.js',
+                        '<%= makotokw.theme %>/javascripts/views/*.js'
+                    ]
+                }
+            }
+        },
         jekyll: {
             options: {
                 bundleExec: true
@@ -191,7 +199,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', function (/*target*/) {
         grunt.task.run([
-            'jst',
+            'jst:source',
             'jekyll:dist'
         ]);
     });
@@ -210,9 +218,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('debug', function (target) {
         grunt.task.run([
-            'jst',
+            'jst:source',
             'jekyll:dev',
-            'compass::theme',
+            'uglify:preload',
+            'jst:preload',
+            'compass:preload',
             'connect:server',
             'open:jekyll',
             'watch'
