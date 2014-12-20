@@ -12,7 +12,7 @@ window.makotokw = {
         'use strict';
 
         _.mixin(_.string.exports());
-        
+
         this.isTopPage = $('.feed-content').length > 0; // TBD
         this.isMobile = navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i) && !Modernizr.draganddrop;
         this.stageView = new makotokw.Views.StageView();

@@ -75,8 +75,9 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '.jekyll/**/*',
-                    '.tmp/assets/*.css'
+                    '.dist_development/**/*',
+                    '.dist_development_preload/assets/*.css',
+                    '.dist_development_preload/assets/*.js'
                 ]
             }
         },
