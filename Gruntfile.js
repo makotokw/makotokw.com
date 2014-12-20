@@ -16,7 +16,11 @@ module.exports = function (grunt) {
     var appConfig = {
         source: 'source',
         components: 'source/_assets/components',
-        theme: 'source/_assets/makotokw2014'
+        theme: 'source/_assets/makotokw2014',
+        distProduction: 'dist',
+        distDevelopment: '.dist_development',
+        distDevelopmentPreload: '.dist_development_preload',
+        distTest: '.dist_test'
     };
 
     grunt.initConfig({
@@ -54,6 +58,16 @@ module.exports = function (grunt) {
             options: {
                 livereload: false
             },
+            fixtures: {
+                files: ['<%= makotokw.source %>/_fixtures/*.yml'],
+                tasks: ['convert:development']
+            },
+            js: {
+                files: [
+                    '<%= makotokw.theme %>/javascripts/{,*/}*.js'
+                ],
+                tasks: ['uglify:preload']
+            },
             jst: {
                 files: [
                     '<%= makotokw.theme %>/javascripts/templates/*.ejs'
@@ -67,7 +81,7 @@ module.exports = function (grunt) {
             jekyll: {
                 tasks: ['jekyll:dev'],
                 files: [
-                    'source/**/*.html'
+                    '<%= makotokw.source %>/**/*.html'
                 ]
             },
             livereload: {
@@ -75,9 +89,9 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '.dist_development/**/*',
-                    '.dist_development_preload/assets/*.css',
-                    '.dist_development_preload/assets/*.js'
+                    '<%= makotokw.distDevelopment %>/**/*',
+                    '<%= makotokw.distDevelopmentPreload %>/assets/*.css',
+                    '<%= makotokw.distDevelopmentPreload %>/assets/*.js'
                 ]
             }
         },
@@ -90,8 +104,8 @@ module.exports = function (grunt) {
                     middleware: function (connect) {
                         return [
                             lrSnippet,
-                            mountFolder(connect, '.dist_development_preload'),
-                            mountFolder(connect, '.dist_development')
+                            mountFolder(connect, appConfig.distDevelopmentPreload),
+                            mountFolder(connect, appConfig.distDevelopment)
                         ];
                     }
                 }
@@ -128,7 +142,7 @@ module.exports = function (grunt) {
             preload: {
                 options: {
                     sassDir: '<%= makotokw.theme %>/stylesheets',
-                    cssDir: '.dist_development_preload/assets',
+                    cssDir: '<%= makotokw.distDevelopmentPreload %>/assets',
                     imagesDir: '<%= makotokw.source %>/assets/site/images',
                     javascriptsDir: '<%= makotokw.theme %>/javascripts',
                     fontsDir: '<%= makotokw.source %>/assets/site/fonts',
@@ -150,6 +164,33 @@ module.exports = function (grunt) {
                 }
             }
         },
+        convert: {
+            options: {
+                explicitArray: false
+            },
+            development: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= makotokw.source %>/_fixtures/',
+                        src: ['*.yml'],
+                        dest: '<%= makotokw.distDevelopmentPreload %>/data',
+                        ext: '.json'
+                    }
+                ]
+            },
+            production: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= makotokw.source %>/_fixtures/',
+                        src: ['*.yml'],
+                        dest: '<%= makotokw.distProduction %>/data',
+                        ext: '.json'
+                    }
+                ]
+            }
+        },
         jekyll: {
             options: {
                 bundleExec: true
@@ -160,7 +201,7 @@ module.exports = function (grunt) {
             },
             serve: {
                 options: {
-                    dest: '.dist_test',
+                    dest: '<%= makotokw.distTest %>',
                     serve: true,
                     port: SERVER_PORT,
                     watch: true,
@@ -169,7 +210,7 @@ module.exports = function (grunt) {
             },
             dev: {
                 options: {
-                    dest: '.dist_development',
+                    dest: '<%= makotokw.distDevelopment %>',
                     config: '_config.yml,_config.development.yml',
                     drafts: true
                 }
@@ -180,6 +221,11 @@ module.exports = function (grunt) {
                 path: 'http://localhost:<%= jekyll.serve.options.port %>/ja/home.html'
             }
         },
+        clean: {
+            test: ['<%= makotokw.distTest %>'],
+            development: ['<%= makotokw.distDevelopment %>', '<%= makotokw.distDevelopmentPreload %>'],
+            production: ['<%= makotokw.distProduction %>']
+        },
         rsync: {
             options: {
                 args: ['-avz', '--delete'],
@@ -188,7 +234,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    src: './dist/',
+                    src: './<%= makotokw.distProduction %>/',
                     dest: '/usr/local/arcadia/www.makotokw.com/dist/',
                     host: 'aries.makotokw.com',
                     syncDestIgnoreExcl: true
@@ -200,7 +246,8 @@ module.exports = function (grunt) {
     grunt.registerTask('build', function (/*target*/) {
         grunt.task.run([
             'jst:source',
-            'jekyll:dist'
+            'jekyll:dist',
+            'convert:development'
         ]);
     });
 
@@ -218,7 +265,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('debug', function (target) {
         grunt.task.run([
+            'clean:development',
             'jst:source',
+            'convert:development',
             'jekyll:dev',
             'uglify:preload',
             'jst:preload',
