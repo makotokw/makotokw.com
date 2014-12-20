@@ -89,8 +89,8 @@ module.exports = function (grunt) {
                     middleware: function (connect) {
                         return [
                             lrSnippet,
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, '.jekyll')
+                            mountFolder(connect, '.dist_development_preload'),
+                            mountFolder(connect, '.dist_development')
                         ];
                     }
                 }
@@ -122,7 +122,7 @@ module.exports = function (grunt) {
             theme: {
                 options: {
                     sassDir: '<%= makotokw.theme %>/stylesheets',
-                    cssDir: '.tmp/assets',
+                    cssDir: '.dist_development_preload/assets',
                     imagesDir: '<%= makotokw.source %>/assets/site/images',
                     javascriptsDir: '<%= makotokw.theme %>/javascripts',
                     fontsDir: '<%= makotokw.source %>/assets/site/fonts',
@@ -131,6 +131,16 @@ module.exports = function (grunt) {
                 }
             }
         },
+        //// TODO:
+        //uglify: {
+        //    dist: {
+        //        files: {
+        //            '.dist_development_preload/assets/app.js': [
+        //                '<%= makotokw.theme %>/javascripts'
+        //            ]
+        //        }
+        //    }
+        //},
         jekyll: {
             options: {
                 bundleExec: true
@@ -141,7 +151,7 @@ module.exports = function (grunt) {
             },
             serve: {
                 options: {
-                    dest: '.jekyll',
+                    dest: '.dist_test',
                     serve: true,
                     port: SERVER_PORT,
                     watch: true,
@@ -150,7 +160,7 @@ module.exports = function (grunt) {
             },
             dev: {
                 options: {
-                    dest: '.jekyll',
+                    dest: '.dist_development',
                     config: '_config.yml,_config.development.yml',
                     drafts: true
                 }

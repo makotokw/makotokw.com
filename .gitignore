@@ -1,6 +1,5 @@
 ### makotokw.com ###
-.jekyll
-.tmp
+.dist*
 .idea
 /dist
 /_tmp

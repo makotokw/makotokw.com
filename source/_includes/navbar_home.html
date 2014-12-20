@@ -1,30 +1,21 @@
-<header id="headHomeNavBar" class="navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+<div id="prePage" class="pre-page"></div>
+
+<header id="menuTop" class="menu-top" style="display: none;">
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            {% if page.lang == 'ja' %}
-            <a class="navbar-brand" href="/ja">makotokw.com</a>
-            {% else %}
-            <a class="navbar-brand" href="/">makotokw.com</a>
-            {% endif %}
-        </div>
-        <nav class="collapse navbar-collapse" role="navigation">
-            <ul id="menuNav" class="nav navbar-nav navbar-right">
-                {% if page.lang == 'ja' %}
-                <li><a href="{{ site.blog_ja_url }}"><i class="fa fa-book"></i> Blog</a></li>
-                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
-                <li><a href="/"><i class="fa fa-globe"></i> English</a></li>
-                {% else %}
-                <li><a href="/blog/"><i class="fa fa-book"></i> Blog</a></li>
-                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
-                <li><a href="/ja"><i class="fa fa-globe"></i> Japanese</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    </div>
+            <a class="navbar-brand" href="#home">makotokw.com</a>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </div><!-- /.nav-collapse -->
+        </div><!-- /.container -->
+    </div><!-- /.navbar -->
 </header>
