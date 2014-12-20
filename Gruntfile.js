@@ -27,26 +27,25 @@ module.exports = function (grunt) {
                     targetDir: '<%= makotokw.components %>',
                     cleanTargetDir: true,
                     layout: function (type, component) {
-                        var renamedType = type;
-                        if (type === 'js') {
-                            renamedType = 'javascripts';
-                        } else if (type === 'css') {
-                            renamedType = 'stylesheets';
-                        } else if (type === 'font') {
-                            renamedType = 'fonts';
-                        }
-
                         var renamedComponent = component;
-                        if (component === 'sass-bootstrap') {
+                        if (component === 'bootstrap-sass-official') {
                             renamedComponent = 'bootstrap';
                         }
 
-                        // moved fonts dir to asset root
-                        if (renamedType === 'fonts') {
-                            return path.join('..', '..', 'assets', 'components', renamedType);
+                        // parse sub directory
+                        var subPath = '';
+                        var matches = /^([\w]+)\/(.+)$/g.exec(type);
+                        if (matches) {
+                            type = matches[1];
+                            subPath = matches[2];
                         }
 
-                        return path.join(renamedType, renamedComponent);
+                        // moved fonts dir to asset root
+                        if (type === 'fonts') {
+                            return path.join('..', '..', 'assets', 'components', type);
+                        }
+
+                        return path.join(type, renamedComponent, subPath);
                     }
                 }
             }

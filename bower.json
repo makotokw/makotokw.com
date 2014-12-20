@@ -8,53 +8,66 @@
         "underscore.string": "~2.3.3",
         "backbone": "~1.1.2",
         "modernizr": "~2.6.2",
-        "sass-bootstrap": "~3.0.0",
-        "font-awesome": "~4.1",
+        "bootstrap-sass-official": "~3.3.0",
+        "font-awesome": "~4.2",
         "isotope": "~2.0.0",
         "queryloader2": "~2.9.0"
     },
     "exportsOverride": {
         "jquery": {
-            "js": [
+            "javascripts": [
                 "jquery*.js",
                 "jquery*.map"
             ]
         },
         "jquery.easing": {
-            "js": [
+            "javascripts": [
                 "js/jquery.easing.js"
             ]
         },
         "jquery-ui": {
-            "js": "ui/jquery-ui.js"
+            "javascripts": "ui/jquery-ui.js"
         },
         "underscore": {
-            "js": [
+            "javascripts": [
                 "underscore*.js",
                 "underscore*.map"
             ]
         },
+        "underscore.string": {
+            "javascripts": [
+                "lib/underscore.string.js"
+            ]
+        },
         "backbone": {
-            "js": [
+            "javascripts": [
                 "backbone*.js"
             ]
         },
-        "sass-bootstrap": {
-            "js": "dist/js/*.js",
-            "sass": "lib/_*.scss",
-            "fonts": "dist/fonts/*.*"
+        "modernizr": {
+            "javascripts": [
+                "modernizr.js"
+            ]
+        },
+        "bootstrap-sass-official": {
+            "javascripts": "assets/javascripts/*.js",
+            "javascripts/bootstrap": "assets/javascripts/bootstrap/*.js",
+            "stylesheets": "assets/stylesheets/*.scss",
+            "stylesheets/bootstrap": "assets/stylesheets/bootstrap/*.scss",
+            "stylesheets/bootstrap/mixins": "assets/stylesheets/bootstrap/mixins/*.scss",
+            "fonts": "assets/fonts/bootstrap/*.*"
         },
         "font-awesome": {
-            "sass": "scss/*.scss",
+            "stylesheets": "scss/*.scss",
             "fonts": "fonts/*.*"
         },
         "queryloader2": {
-            "js": [
+            "javascripts": [
                 "jquery.queryloader2.js"
             ]
         },
         "isotope": {
-            "js": [
+            "javascripts": [
                 "dist/isotope.pkgd.js"
             ]
         }
