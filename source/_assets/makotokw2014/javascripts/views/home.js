@@ -26,7 +26,7 @@ makotokw.Views = makotokw.Views || {};
                 $pageHome.addClass('page-home-full');
                 $(window).bind('resize.home', _.bind(this.onResizeWindow, this));
             }
-            $pageHome.css('background-image', 'url("/assets/site/images/bg-home.png")');
+            $pageHome.css('background-image', 'url("' + makotokw.staticAssetsPath +  'images/bg-home.png")');
 
             var me = this;
             $('body').queryLoader2({

@@ -50,7 +50,7 @@ assets:
   baseurl: /assets/
   sources:
     - _assets/components/javascripts
-    - _assets/components/sass
+    - _assets/components/stylesheets
     - _assets/components/stylesheets
     - _assets/makotokw2014/javascripts
     - _assets/makotokw2014/stylesheets

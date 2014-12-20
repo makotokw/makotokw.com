@@ -19,7 +19,7 @@ makotokw.Models = makotokw.Models || {};
             category: '',
             status: 'active', // active, inactive, maintanance
             tile_size: 'default', // default, mini, large
-            thumbnail: '/assets/site/images/icon.png',
+            thumbnail: makotokw.staticAssetsPath + 'images/icon.png',
             url: '',
             tags: [], // array of tag id
             display_tags: [], // array of tag id

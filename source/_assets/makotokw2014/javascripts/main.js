@@ -6,11 +6,13 @@ window.makotokw = {
     Views: {},
     Routers: {},
 
+    staticAssetsPath: '/assets/makotokw2015/',
+
     init: function () {
         'use strict';
 
         _.mixin(_.string.exports());
-
+        
         this.isTopPage = $('.feed-content').length > 0; // TBD
         this.isMobile = navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i) && !Modernizr.draganddrop;
         this.stageView = new makotokw.Views.StageView();

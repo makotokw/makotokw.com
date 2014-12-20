@@ -126,7 +126,7 @@ module.exports = function (grunt) {
                     imagesDir: '<%= makotokw.source %>/assets/site/images',
                     javascriptsDir: '<%= makotokw.theme %>/javascripts',
                     fontsDir: '<%= makotokw.source %>/assets/site/fonts',
-                    importPath: '<%= makotokw.components %>/sass',
+                    importPath: '<%= makotokw.components %>/stylesheets',
                     relativeAssets: true
                 }
             }
@@ -211,6 +211,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'jst',
             'jekyll:dev',
+            'compass::theme',
             'connect:server',
             'open:jekyll',
             'watch'
