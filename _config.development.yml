@@ -1,2 +1,4 @@
+development: true
+url: http://localhost:8084
 assets:
   cachebust: none

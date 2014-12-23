@@ -23,7 +23,7 @@ single: true
     </footer>
 </article>
 
-{% if site.disqus_short_name and page.commment != false %}
+{% if site.development != true and site.disqus_short_name and page.comment != false %}
 {% include post/disqus_comment.html %}
 {% endif %}
 

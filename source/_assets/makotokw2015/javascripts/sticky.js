@@ -33,36 +33,6 @@
     });
 
 
-    var stickyHeaderTop = 100;
-
-    // Bind to scroll
-    $(window).scroll(function(){
-        var scrollTop = $(this).scrollTop();
-        var fromTop = scrollTop + topMenuHeight;
-
-//        var cur = $scrollItems.map(function(){
-//            if ($(this).offset().top < fromTop) {
-//                return this;
-//            }
-//
-//        });
-
-//        cur = cur[cur.length-1];
-//        var id = cur && cur.length ? cur[0].id : "";
-//
-//        if (lastId !== id) {
-//            lastId = id;
-//            $menuItems
-//                .parent().removeClass("active")
-//                .end().filter("[href=#"+id+"]").parent().addClass("active");
-//        }
-        if (scrollTop > stickyHeaderTop) {
-            $headNavBar.fadeIn();
-        } else {
-            $headNavBar.fadeOut();
-        }
-    });
-
     $.fn.extend({
         stickyFooter: function(options) {
             var $footer = $(this);

@@ -1,4 +1,5 @@
 encoding: utf-8
+development: false
 safe: false
 highlighter: true
 markdown: redcarpet
