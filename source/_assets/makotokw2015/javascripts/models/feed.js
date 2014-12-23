@@ -1,5 +1,4 @@
-/*global makotokw, Backbone, google*/
-
+/*global google*/
 makotokw.Models = makotokw.Models || {};
 
 (function () {

@@ -25,6 +25,16 @@
                         <span class="arrow"><i class="fa fa-chevron-down"></i></span>
                     </li>
                 </ul>
+
+                <ul class="menu-lang">
+                    <li class="menu-lang-item">
+                        <a href="/">English</a>
+                    </li>
+                    <li class="menu-lang-item">
+                        <a href="/ja/">Japanese</a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </section>
@@ -33,14 +43,17 @@
     <section id="pageBlog" class="page page-section page-blog">
         <div class="container">
             {% if page.lang == 'ja' %}
-            <h2 class="section-title"><span>Blog</span> on <a href="{{ site.blog_ja_url }}" title="kwLog">Kwlog</a></h2>
+            <h2 class="section-title"><span>Blog</span> on <a href="{{ site.blog_ja_url }}" title="Kwlog">Kwlog</a></h2>
             <div id="feedBlogContent" class="feed-content feed-content-blog">
                 <i class="fa fa-spinner fa-spin"></i>
                 Loading...
             </div>
+            <div class="section-footer">
+                <a href="{{ site.blog_ja_url }}" title="Kwlog" target="_blank">Archives</a>
+            </div>
             {% else %}
-            <h2 class="section-title"><i class="fa fa-book"></i> <a href="{{ site.path }}/blog/" title="blog">Blog</a></h2>
-            <div class="feed-content  feed-content-blog">
+            <h2 class="section-title"><i class="fa fa-book"></i> <a href="{{ site.path }}/blog/" title="Blog">Blog</a></h2>
+            <div class="feed-content feed-content-blog">
                 <ul class="list-feed-entry list-unstyled">
                     {% for post in site.posts limit: 5 %}
                     <li class="feed-entry">
@@ -54,6 +67,9 @@
                     </li>
                     {% endfor %}
                 </ul>
+            </div>
+            <div class="section-footer">
+                <a href="{{ site.path }}/blog/" title="Blog">Archives</a>
             </div>
             {% endif %}
         </div>
@@ -75,7 +91,11 @@
                 <i class="fa fa-spinner fa-spin"></i>
                 Loading...
             </div>
+            <div class="section-footer">
+                <a href="{{ site.github_url }}" title="GitHub" target="_blank">Archives</a>
+            </div>
         </div>
+
     </section>
 
     <section id="pageProgramingMemo" class="page page-section page-memo">
@@ -84,6 +104,9 @@
             <div id="feedQiitaContent" class="feed-content feed-content-blog">
                 <i class="fa fa-spinner fa-spin"></i>
                 Loading...
+            </div>
+            <div class="section-footer">
+                <a href="{{ site.qiita_url }}" title="Qiita" target="_blank">Archives</a>
             </div>
         </div>
     </section>

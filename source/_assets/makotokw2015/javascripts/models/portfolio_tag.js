@@ -1,5 +1,3 @@
-/*global makotokw, Backbone*/
-
 makotokw.Models = makotokw.Models || {};
 
 (function () {

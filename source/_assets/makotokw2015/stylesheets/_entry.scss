@@ -48,9 +48,17 @@
 }
 
 .blog-archives {
+
+  .entry-title {
+    font-weight: normal;
+    font-family: 'NovecentowideBookBold';
+  }
+
   .year {
     color: $blue-dark;
     margin-top: 0;
+    font-weight: normal;
+    font-family: 'NovecentowideBookBold';
   }
   .entry {
     position: relative;

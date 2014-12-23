@@ -1,4 +1,3 @@
-/*global makotokw, _, Backbone*/
 makotokw.Views = makotokw.Views || {};
 
 (function () {
@@ -22,14 +21,17 @@ makotokw.Views = makotokw.Views || {};
         initialize: function () {
             this.$menuTop = $('#menuTop');
             if (makotokw.isTopPage) {
-                $(window).bind('scroll.stage', _.bind(this.refreshHeader, this));
+                $(window).bind('scroll.stage', _.bind(this.stickyHeader, this));
                 this.$menuTop.hide();
             } else {
+                $(window).bind('scroll.stage', _.bind(this.stickyFooter, this));
+                $(window).bind('resize.stage', _.bind(this.stickyFooter, this));
                 this.$menuTop.show();
+                this.stickyFooter();
             }
         },
 
-        refreshHeader: function (/*e*/) {
+        stickyHeader: function (/*e*/) {
             if ($(window).scrollTop() > this.stickyHeaderTop) {
                 if (makotokw.isTopPage) {
                     this.$menuTop.fadeIn();
@@ -43,6 +45,16 @@ makotokw.Views = makotokw.Views || {};
                     this.$menuTop.fadeIn();
                 }
             }
+        },
+
+        stickyFooter: function (/*e*/) {
+            var $margin = $('#footerMargin');
+            var docHeight = $(document.body).height() - $margin.height();
+            if(docHeight < $(window).height()){
+                var diff = $(window).height() - docHeight;
+                $margin.height(diff);
+            }
         }
+
     });
 })();

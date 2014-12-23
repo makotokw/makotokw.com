@@ -18,5 +18,7 @@
     "strict": true,
     "trailing": true,
     "smarttabs": true,
-    "jquery": true
+    "jquery": true,
+    "sub": true,
+    "predef": [ "makotokw", "JST", "_", "Backbone" ]
 }

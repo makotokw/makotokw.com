@@ -20,7 +20,6 @@ window.makotokw = {
             this.currentView = new makotokw.Views.HomeView();
         }
     }
-
 };
 
 (function () {

@@ -8,9 +8,10 @@ $circle-menu-font-size-xs: 12px;
 $circle-menu-size: 170px;
 $circle-menu-size-sm: 140px;
 $circle-menu-size-xs: 104px;
+$lang-menu-width: 300px;
 
 $page-home-title-font-size: 60px;
-$page-home-height: 350px;
+$page-home-height: 450px;
 $page-home-width: 1170px;
 
 .page-section {
@@ -161,6 +162,13 @@ $page-home-width: 1170px;
     z-index: 3;
     color: $white;
   }
+}
+
+.menu-lang {
+  list-style: none;
+  margin: 10px auto 10px auto;
+  padding: 0;
+  width: $lang-menu-width;
 }
 
 .circle-menu {

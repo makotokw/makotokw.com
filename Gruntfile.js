@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= makotokw.theme %>/javascripts/{,*/}*.js'
                 ],
-                tasks: ['uglify:preload']
+                tasks: ['jshint', 'uglify:preload']
             },
             jst: {
                 files: [
@@ -264,9 +264,10 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('debug', function (target) {
+    grunt.registerTask('debug', function (/*target*/) {
         grunt.task.run([
             'clean:development',
+            'jshint',
             'jst:source',
             'convert:development',
             'jekyll:dev',

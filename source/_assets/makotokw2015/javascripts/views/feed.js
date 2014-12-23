@@ -1,5 +1,3 @@
-/*global makotokw, _, Backbone, JST*/
-
 makotokw.Views = makotokw.Views || {};
 
 (function () {

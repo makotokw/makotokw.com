@@ -1,5 +1,3 @@
-/*global makotokw, Backbone*/
-
 makotokw.Collections = makotokw.Collections || {};
 
 (function () {

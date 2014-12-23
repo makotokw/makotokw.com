@@ -1,5 +1,3 @@
-/*global makotokw, Backbone*/
-
 makotokw.Routers = makotokw.Routers || {};
 
 (function () {

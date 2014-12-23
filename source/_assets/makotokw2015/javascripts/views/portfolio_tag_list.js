@@ -1,4 +1,4 @@
-/*global makotokw, Backbone, JST*/
+/*global makotokw, Backbone, _, JST*/
 
 makotokw.Views = makotokw.Views || {};
 
@@ -38,7 +38,7 @@ makotokw.Views = makotokw.Views || {};
             var group = this.collection.groupBy(function (portfolioTagModel) {
                 return portfolioTagModel.get('category');
             });
-            _.each(group, function(value, key, list){
+            _.each(group, function(value, key){
                 $el.append(JST['portfolio_tag_category']({
                     title: key,
                     list: value
