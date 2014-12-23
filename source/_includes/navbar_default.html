@@ -1,30 +1,41 @@
-<header class="navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+<header id="menuTop" class="menu-top">
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            {% if page.lang == 'ja' %}
-            <a class="navbar-brand" href="/ja">makotokw.com</a>
+
+            {% if page.is_top %}
+            <a class="navbar-brand" href="#home">makotokw.com</a>
             {% else %}
-            <a class="navbar-brand" href="/">makotokw.com</a>
-            {% endif %}
-        </div>
-        <nav class="collapse navbar-collapse" role="navigation">
-            <ul id="menuNav" class="nav navbar-nav navbar-right">
                 {% if page.lang == 'ja' %}
-                <li><a href="{{ site.blog_ja_url }}"><i class="fa fa-book"></i> Blog</a></li>
-                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
-                <li><a href="/"><i class="fa fa-globe"></i> English</a></li>
+            <a class="navbar-brand" href="/ja/">makotokw.com</a>
                 {% else %}
-                <li><a href="/blog/"><i class="fa fa-book"></i> Blog</a></li>
-                <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
-                <li><a href="/ja"><i class="fa fa-globe"></i> Japanese</a></li>
+            <a class="navbar-brand" href="/">makotokw.com</a>
                 {% endif %}
-            </ul>
-        </nav>
-    </div>
+            {% endif %}
+
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    {% if page.is_top %}
+                    <li><a class="active" href="#home"><i class="fa fa-home"></i> Home</a></li>
+                    {% endif %}
+                    {% if page.lang == 'ja' %}
+                    <li><a href="/ja/#blog"><i class="fa fa-book"></i> Blog</a></li>
+                    <li><a href="/ja/#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+                    <li><a href="/"><i class="fa fa-globe"></i> English</a></li>
+                    {% else %}
+                    <li><a href="/#blog"><i class="fa fa-book"></i> Blog</a></li>
+                    <li><a href="/#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+                    <li><a href="/ja"><i class="fa fa-globe"></i> Japanese</a></li>
+                    {% endif %}
+                </ul>
+            </div><!-- /.nav-collapse -->
+        </div><!-- /.container -->
+    </div><!-- /.navbar -->
 </header>

@@ -191,6 +191,7 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        // https://github.com/dannygarcia/grunt-jekyll
         jekyll: {
             options: {
                 bundleExec: true
@@ -218,7 +219,7 @@ module.exports = function (grunt) {
         },
         open: {
             jekyll: {
-                path: 'http://localhost:<%= jekyll.serve.options.port %>/ja/home.html'
+                path: 'http://localhost:<%= jekyll.serve.options.port %>/'
             }
         },
         clean: {

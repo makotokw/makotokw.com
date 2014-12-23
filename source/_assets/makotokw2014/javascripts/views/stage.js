@@ -20,16 +20,28 @@ makotokw.Views = makotokw.Views || {};
         },
 
         initialize: function () {
-            console.log('stage.initialize');
             this.$menuTop = $('#menuTop');
-            $(window).bind('scroll.stage', _.bind(this.onScrollWindow, this));
+            if (makotokw.isTopPage) {
+                $(window).bind('scroll.stage', _.bind(this.refreshHeader, this));
+                this.$menuTop.hide();
+            } else {
+                this.$menuTop.show();
+            }
         },
 
-        onScrollWindow: function (/*e*/) {
+        refreshHeader: function (/*e*/) {
             if ($(window).scrollTop() > this.stickyHeaderTop) {
-                this.$menuTop.fadeIn();
+                if (makotokw.isTopPage) {
+                    this.$menuTop.fadeIn();
+                } else {
+                    this.$menuTop.fadeOut();
+                }
             } else {
-                this.$menuTop.fadeOut();
+                if (makotokw.isTopPage) {
+                    this.$menuTop.fadeOut();
+                } else {
+                    this.$menuTop.fadeIn();
+                }
             }
         }
     });

@@ -23,12 +23,14 @@ makotokw.Models = makotokw.Models || {};
             return response;
         },
 
-        loadFeed: function() {
+        loadFeed: function(numEntries) {
             var me = this;
+            // https://developers.google.com/feed/v1/devguide
             var feed = new google.feeds.Feed(this.get('url'));
+            feed.setNumEntries(numEntries);
             feed.load(function (result) {
                 var f = result.feed || {};
-                me.set('entries', f.entries ? f.entries : []);
+                me.set('entries', f.entries || []);
             });
         }
 

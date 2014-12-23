@@ -2,14 +2,23 @@
 <html lang="{{ page.lang }}">
 {% include html_head.html %}
 <body class="{{page.lang}}">
+{% if !page.is_top %}
 <a href="#content" class="sr-only">Skip to content</a>
+{% endif %}
 {% include navbar_default.html %}
+{% if page.is_top %}
+<div role="main">
+{{ content }}
+</div>
+{% else %}
 <div class="main-content" role="main">
     <div id="content" class="container">
         {{ content }}
     </div>
 </div>
+{% endif %}
 {% include footer.html %}
+<script src="//www.google.com/jsapi?key=ABQIAAAAJeJU0o6FZh4wCRoY2rR1hBTM4kQKiN75QhlT21fiuH6xYoN22RRfwCUAvGWPjcKcTEexgGelQ9spLg"></script>
 {% javascript vendor %}
 {% javascript templates/templates %}
 {% javascript app %}

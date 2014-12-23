@@ -8,6 +8,7 @@ makotokw.Views = makotokw.Views || {};
     makotokw.Views.HomeView = Backbone.View.extend({
         events: {
         },
+        feedNumEntries: 5,
         feedConfig: {
             'Blog': 'http://blog.makotokw.com/feed/',
             // http://qiita.com/Qiita/items/9c0a57ad98a511e566ed
@@ -16,7 +17,6 @@ makotokw.Views = makotokw.Views || {};
         },
 
         initialize: function () {
-            console.log('home.initialize');
             this.loadFeeds();
 
             var $pageHome = this.$pageHome = $('.page-home');
@@ -127,8 +127,8 @@ makotokw.Views = makotokw.Views || {};
                     el: $('#feed' + key + 'Content'),
                     model: model
                 });
-                model.loadFeed();
-            });
+                model.loadFeed(this.feedNumEntries);
+            }, this);
         }
     });
 
