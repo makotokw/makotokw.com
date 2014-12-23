@@ -76,7 +76,7 @@ module.exports = function (grunt) {
             },
             compass: {
                 files: ['<%= makotokw.theme %>/stylesheets/{,*/}*.{scss,sass}'],
-                tasks: ['compass:theme']
+                tasks: ['compass:preload']
             },
             jekyll: {
                 tasks: ['jekyll:dev'],

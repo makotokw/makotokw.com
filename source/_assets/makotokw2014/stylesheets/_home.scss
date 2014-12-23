@@ -33,9 +33,55 @@ $page-home-width: 1170px;
     font-family: 'NovecentowideBookBold';
   }
 
+  .list-feed-entry {
+    .feed-entry {
+      margin-bottom: 1em;
+
+      a {
+        color: $text-color;
+
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
+
+      .entry-title {
+        font-size: $font-size-h4;
+        display: inline;
+        font-weight: normal;
+      }
+
+      .entry-published {
+        @extend .label;
+        font-size: $font-size-small;
+        display: inline;
+        margin-right:.5em;
+        padding: 2px 4px;
+        line-height: 1.2em;
+      }
+
+      .entry-summary {
+        font-size: $font-size-small;
+        color: $gray-dark;
+        padding: 6px 0;
+      }
+    }
+  }
+
   &:nth-child(even) {
     background: $blue-dark;
     color: $white;
+    .feed-entry {
+      a {
+        color: $white;
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
+      .entry-summary {
+        color: $silver;
+      }
+    }
   }
 }
 
@@ -150,62 +196,55 @@ $page-home-width: 1170px;
   }
 }
 
-// page-portfolio
-.portfolio-tag-list-view {
-  @include clearfix;
-  .portfolio-tag {
-    text-transform: lowercase;
-  }
-  .portfolio-category-title {
-    margin-top: 0px;
-  }
-  .portfolio-tag-category {
-    width: 300px;
-    float: left;
-  }
-}
-
-.portfolio-tag {
-  font-size: 10px;
-  @include border-radius(9px);
-  margin: 4px;
-  padding: 4px 8px;
-  background-color: $blue-dark;
-  color: $white;
-}
-
-.portfolio-list-view {
-  margin-top: 20px;
-  .portfolio {
-    width: 25%;
-    min-width: 310px;
-    margin: 4px;
-
-    &.portfolio-large {
-      width: 50%;
-    }
-  }
-  .portfolio-image {
-    margin-bottom: 4px;
-  }
-  .portfolio-name,
-  .portfolio-tags {
-    display: inline;
-  }
-  .portfolio-name {
-    font-weight: bold;
-  }
-
-}
+@import "top/page-portfolio";
 
 // page-blog
 
 .page-blog {
-  .entry-title {
-    font-size: $font-size-h4;
-    display: block;
+  .section-title {
+    a {
+      color: $blue;
+    }
   }
+  .list-feed-entry {
+    .feed-entry {
+      .entry-title {
+      }
+      .entry-published {
+        background-color: $blue;
+      }
+    }
+  }
+}
 
+.page-code {
+  .section-title {
+    a {
+      color: $githubOrange;
+    }
+  }
+  .list-feed-entry {
+    .feed-entry {
+      .entry-published {
+        background-color: $githubOrange;
+      }
+    }
+  }
+}
+
+.page-memo {
+  .section-title {
+    a {
+      color: $green;
+    }
+  }
+  .list-feed-entry {
+    .feed-entry {
+      .entry-published {
+        background-color: $green;
+      }
+    }
+  }
 }
 
 // ======================================

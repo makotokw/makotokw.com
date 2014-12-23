@@ -1,0 +1,47 @@
+// page-portfolio
+.portfolio-tag-list-view {
+  @include clearfix;
+  .portfolio-tag {
+    text-transform: lowercase;
+  }
+  .portfolio-category-title {
+    margin-top: 0px;
+  }
+  .portfolio-tag-category {
+    width: 300px;
+    float: left;
+  }
+}
+
+.portfolio-tag {
+  font-size: 10px;
+  @include border-radius(9px);
+  margin: 4px;
+  padding: 4px 8px;
+  background-color: $blue-dark;
+  color: $white;
+}
+
+.portfolio-list-view {
+  margin-top: 20px;
+  .portfolio {
+    width: 25%;
+    min-width: 310px;
+    margin: 4px;
+
+    &.portfolio-large {
+      width: 50%;
+    }
+  }
+  .portfolio-image {
+    margin-bottom: 4px;
+  }
+  .portfolio-name,
+  .portfolio-tags {
+    display: inline;
+  }
+  .portfolio-name {
+    font-weight: bold;
+  }
+
+}

@@ -28,15 +28,36 @@
         </div>
     </section>
 
+
     <section id="pageBlog" class="page page-section page-blog">
         <div class="container">
+            {% if page.lang == 'ja' %}
             <h2 class="section-title"><span>Blog</span> on <a href="{{ site.blog_ja_url }}" title="kwLog">Kwlog</a></h2>
             <div id="feedBlogContent" class="feed-content feed-content-blog">
                 <i class="fa fa-spinner fa-spin"></i>
                 Loading...
             </div>
+            {% else %}
+            <h2 class="section-title"><i class="fa fa-book"></i> <a href="{{ site.path }}/blog/" title="blog">Blog</a></h2>
+            <div class="feed-content  feed-content-blog">
+                <ul class="list-feed-entry list-unstyled">
+                    {% for post in site.posts limit: 4 %}
+                    <li class="feed-entry">
+                            <span class="entry-published">
+                                {{ post.date|date: "%Y/%m/%d" }}
+                            </span>
+                            <span class="entry-title">
+                                <a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a>
+                            </span>
+                        <p class="entry-summary">{{ post.content|strip_html|truncate:100 }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
         </div>
     </section>
+
 
     <section id="pagePortfolio" class="page page-section page-portfolio">
         <div class="container">
