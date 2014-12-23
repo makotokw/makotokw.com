@@ -20,5 +20,5 @@
     "smarttabs": true,
     "jquery": true,
     "sub": true,
-    "predef": [ "makotokw", "JST", "_", "Backbone" ]
+    "predef": [ "makotokw", "JST", "_", "Backbone", "google", "Modernizr" ]
 }

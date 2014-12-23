@@ -1,4 +1,3 @@
-/*global google*/
 makotokw.Models = makotokw.Models || {};
 
 (function () {
