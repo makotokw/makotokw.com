@@ -52,9 +52,9 @@ assets:
     - _assets/components/javascripts
     - _assets/components/stylesheets
     - _assets/components/stylesheets
-    - _assets/makotokw2014/javascripts
-    - _assets/makotokw2014/stylesheets
-    - _assets/makotokw2014/images
+    - _assets/makotokw2015/javascripts
+    - _assets/makotokw2015/stylesheets
+    - _assets/makotokw2015/images
   compress:
     js:   ~
     css:  ~

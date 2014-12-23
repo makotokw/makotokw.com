@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     var appConfig = {
         source: 'source',
         components: 'source/_assets/components',
-        theme: 'source/_assets/makotokw2014',
+        theme: 'source/_assets/makotokw2015',
         distProduction: 'dist',
         distDevelopment: '.dist_development',
         distDevelopmentPreload: '.dist_development_preload',
