@@ -55,7 +55,7 @@ window.makotokw = {
                             break;
                         }
                     }
-                    redirectPage('/' + langCodes[i] + pathname + document.location.search);
+                    redirectPage('/' + langCodes[i] + pathname + document.location.search + document.location.hash);
                     break;
                 }
             }
