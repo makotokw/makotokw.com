@@ -37,10 +37,10 @@ $page-home-width: 1170px;
   position: relative;
   background-size: cover;
   background-position: top center;
+  z-index: -1; // TODO: fixed value with fadeIn/Out navbar
 
   .container {
     position: relative;
-    z-index: 3;
   }
 
   .section-title {
@@ -177,7 +177,6 @@ $page-home-width: 1170px;
     position: absolute;
     bottom: 20px;
     left: 50%;
-    z-index: 3;
     color: $white;
   }
 }
@@ -224,7 +223,6 @@ $page-home-width: 1170px;
   position: relative;
   font-size: $circle-menu-font-size;
   letter-spacing: 0px;
-  z-index: 0;
 
   .label-link {
     position: relative;
