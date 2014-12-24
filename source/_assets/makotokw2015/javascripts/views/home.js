@@ -84,6 +84,7 @@ makotokw.Views = makotokw.Views || {};
             this.portfolioRouter.on(
                 'route:index',
                 function () {
+                    this.scrollToPortfolioPage();
                     this.portfolioListView.clearFilter();
                 },
                 this
@@ -91,6 +92,7 @@ makotokw.Views = makotokw.Views || {};
             this.portfolioRouter.on(
                 'route:tag',
                 function (tag) {
+                    this.scrollToPortfolioPage();
                     this.portfolioListView.filter(tag);
                 },
                 this
@@ -115,16 +117,18 @@ makotokw.Views = makotokw.Views || {};
                 }
             });
             var me = this;
-            $menuItems.click(function (e) {
+            var onMenuClick = function (e) {
                 var href = this.hash;
                 // TODO: check external link
                 if (href.length > 0) {
                     me.scrollToPage(href.replace('#', ''));
                     e.preventDefault();
                 }
-
-            });
+            };
+            $menuItems.click(onMenuClick);
             this.$menuItems = $menuItems;
+
+            $('#menuHome').find('.circle-menu').click(onMenuClick);
 
             // TODO: enable or delete
             //$(window).bind('scroll.home', _.bind(this.refreshHeader, this));
@@ -140,15 +144,19 @@ makotokw.Views = makotokw.Views || {};
             this.$pageHome.css('height', window.innerHeight + 'px');
         },
 
-        refreshHeader: function () {
+        findCurrentPage: function() {
             var scrollTop = $(window).scrollTop() + this.menuTopHeight;
             var $pages = this.$scrollItems.map(function () {
                 if ($(this).offset().top < scrollTop) {
                     return this;
                 }
             });
-            if ($pages.length) {
-                var $currentPage = $pages[$pages.length - 1];
+            return ($pages.length) ? $pages[$pages.length - 1] : null;
+        },
+
+        refreshHeader: function () {
+            var $currentPage = this.findCurrentPage();
+            if ($currentPage) {
                 var currentPageId = '#' + $currentPage.attr('id')|| '';
                 this.$menuItems.each(function () {
                     if ($(this).data('target') === currentPageId) {
@@ -162,6 +170,8 @@ makotokw.Views = makotokw.Views || {};
 
         scrollToPage: function (page) {
 
+            console.log('scrollToPage', page);
+
             var target = '#page' + _.str.capitalize(page);
             var $target = $(target);
             if ($target.length === 0) {
@@ -174,6 +184,16 @@ makotokw.Views = makotokw.Views || {};
             $('html, body').stop().animate({
                 scrollTop: offsetTop
             }, window.speed, 'easeInOutExpo');
+        },
+
+        scrollToPortfolioPage: function() {
+            var $currentPage = this.findCurrentPage();
+            if ($currentPage) {
+                if ($currentPage.attr('id') === 'pagePortfolio') {
+                    return;
+                }
+            }
+            this.scrollToPage('portfolio');
         },
 
         loadFeeds: function () {
