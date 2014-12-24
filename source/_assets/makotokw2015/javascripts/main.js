@@ -43,20 +43,20 @@ window.makotokw = {
 
     // content negotiation on top page
     var referer = document.referrer || '';
-    if ($.type(referer) == 'string') {
+    if ($.type(referer) === 'string') {
         if (referer.indexOf(document.location.origin) !== 0) {
             var lang = navigator.language || navigator.userLanguage;
             var langCodes = ['ja'];
             for (var i = 0; i < langCodes.length; i++) {
-                if (lang.substr(0, 2) == langCodes[i]) {
+                if (lang.substr(0, 2) === langCodes[i]) {
                     var pathname = document.location.pathname || '';
-                    if ($.type(pathname) == 'string') {
+                    if ($.type(pathname) === 'string') {
                         if (pathname.match(new RegExp('^/' + lang + '(/|$)'))) {
                             break;
                         }
                     }
                     redirectPage('/' + langCodes[i] + pathname + document.location.search);
-                    break
+                    break;
                 }
             }
         }

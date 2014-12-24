@@ -143,14 +143,15 @@ makotokw.Views = makotokw.Views || {};
         refreshHeader: function () {
             var scrollTop = $(window).scrollTop() + this.menuTopHeight;
             var $pages = this.$scrollItems.map(function () {
-                if ($(this).offset().top < scrollTop)
+                if ($(this).offset().top < scrollTop) {
                     return this;
+                }
             });
             if ($pages.length) {
                 var $currentPage = $pages[$pages.length - 1];
                 var currentPageId = '#' + $currentPage.attr('id')|| '';
                 this.$menuItems.each(function () {
-                    if ($(this).data('target') == currentPageId) {
+                    if ($(this).data('target') === currentPageId) {
                         $(this).parent().addClass('active');
                     } else {
                         $(this).parent().removeClass('active');
@@ -163,7 +164,7 @@ makotokw.Views = makotokw.Views || {};
 
             var target = '#page' + _.str.capitalize(page);
             var $target = $(target);
-            if ($target.length == 0) {
+            if ($target.length === 0) {
                 return;
             }
 

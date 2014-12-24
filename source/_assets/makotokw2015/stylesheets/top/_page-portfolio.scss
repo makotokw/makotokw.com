@@ -2,10 +2,10 @@
 .portfolio-tag-list-view {
   @include clearfix;
   .portfolio-tag {
-    text-transform: lowercase;
   }
   .portfolio-category-title {
     margin-top: 0px;
+    font-family: 'NovecentowideLightRegular';
   }
   .portfolio-tag-category {
     width: 300px;
@@ -20,6 +20,7 @@
   padding: 4px 8px;
   background-color: $blue-dark;
   color: $white;
+  font-family: 'NovecentowideLightRegular';
 }
 
 .portfolio-list-view {

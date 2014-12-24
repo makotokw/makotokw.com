@@ -33,14 +33,12 @@ $page-home-width: 1170px;
 
 .page-section {
   padding: 60px 0;
-  overflow: hidden;
-  position: relative;
   background-size: cover;
   background-position: top center;
-  z-index: -1; // TODO: fixed value with fadeIn/Out navbar
 
   .container {
     position: relative;
+    overflow: hidden;
   }
 
   .section-title {
@@ -108,8 +106,7 @@ $page-home-width: 1170px;
 
 .page-home {
   padding: 0;
-  position: relative;
-  display: block;
+
   .container {
     padding: 50px 0;
   }
@@ -190,7 +187,8 @@ $page-home-width: 1170px;
   .menu-lang-item {
     display: inline-block;
     @include transition(all 1s ease);
-    font-family: 'NovecentowideBookBold';
+//    font-family: 'NovecentowideBookBold';
+    font-family: 'NovecentowideLightRegular';
     background: $blue-dark;
     width: $lang-menu-item-width;
     height: $lang-menu-item-height;
@@ -229,7 +227,8 @@ $page-home-width: 1170px;
     display: inline-block;
     @include transition(all 1s ease);
     color: $white;
-    font-family: 'NovecentowideBookBold';
+//    font-family: 'NovecentowideBookBold';
+    font-family: 'NovecentowideLightRegular';
   }
 
   &:hover {
