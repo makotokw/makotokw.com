@@ -4,8 +4,7 @@ makotokw.Views = makotokw.Views || {};
     'use strict';
 
     makotokw.Views.HomeView = Backbone.View.extend({
-        events: {
-        },
+        events: {},
         feedNumEntries: 5,
         feedConfig: {
             'Blog': 'http://blog.makotokw.com/feed/',
@@ -24,7 +23,7 @@ makotokw.Views = makotokw.Views || {};
                 $pageHome.addClass('page-home-full');
                 $(window).bind('resize.home', _.bind(this.onResizeWindow, this));
             }
-            $pageHome.css('background-image', 'url("' + makotokw.staticAssetsPath +  'images/bg-home.png")');
+            $pageHome.css('background-image', 'url("' + makotokw.staticAssetsPath + 'images/bg-home.png")');
 
             var me = this;
             $('body').queryLoader2({
@@ -42,6 +41,7 @@ makotokw.Views = makotokw.Views || {};
 
             this.initializePortfolio();
             this.initializeRouter();
+            this.initializeScroller();
         },
 
         initializePortfolio: function () {
@@ -75,10 +75,11 @@ makotokw.Views = makotokw.Views || {};
         },
 
         initializeRouter: function () {
+            // page routing
             this.router = new makotokw.Routers.HomeRouter();
             this.router.on('route:page', this.scrollToPage, this);
 
-            //
+            // portfolio routing
             this.portfolioRouter = new makotokw.Routers.PortfolioRouter();
             this.portfolioRouter.on(
                 'route:index',
@@ -96,6 +97,39 @@ makotokw.Views = makotokw.Views || {};
             );
         },
 
+        initializeScroller: function () {
+            var $menuTop = $('#menuTop');
+            var $menuItems = $menuTop.find('a');
+            this.menuTopHeight = $menuTop.outerHeight() + 15;
+
+            this.$scrollItems = $menuItems.map(function () {
+                var href = $(this).attr('href');
+                var matches = /#([\w]+)/.exec(href);
+                if (matches) {
+                    var target = '#page' + _.str.capitalize(matches[1]);
+                    $(this).data('target', target);
+                    var $item = $(target);
+                    if ($item.length) {
+                        return $item;
+                    }
+                }
+            });
+            var me = this;
+            $menuItems.click(function (e) {
+                var href = this.hash;
+                // TODO: check external link
+                if (href.length > 0) {
+                    me.scrollToPage(href.replace('#', ''));
+                    e.preventDefault();
+                }
+
+            });
+            this.$menuItems = $menuItems;
+
+            // TODO: enable or delete
+            //$(window).bind('scroll.home', _.bind(this.refreshHeader, this));
+        },
+
         onLoad: function () {
             $(function () {
                 Backbone.history.start();
@@ -106,10 +140,35 @@ makotokw.Views = makotokw.Views || {};
             this.$pageHome.css('height', window.innerHeight + 'px');
         },
 
+        refreshHeader: function () {
+            var scrollTop = $(window).scrollTop() + this.menuTopHeight;
+            var $pages = this.$scrollItems.map(function () {
+                if ($(this).offset().top < scrollTop)
+                    return this;
+            });
+            if ($pages.length) {
+                var $currentPage = $pages[$pages.length - 1];
+                var currentPageId = '#' + $currentPage.attr('id')|| '';
+                this.$menuItems.each(function () {
+                    if ($(this).data('target') == currentPageId) {
+                        $(this).parent().addClass('active');
+                    } else {
+                        $(this).parent().removeClass('active');
+                    }
+                });
+            }
+        },
+
         scrollToPage: function (page) {
+
             var target = '#page' + _.str.capitalize(page);
-            var topMenuHeight = makotokw.Views.StageView.prototype.stickyHeaderTop;
-            var offsetTop = target === '#pageHome' ? 0 : $(target).offset().top - topMenuHeight + 30;
+            var $target = $(target);
+            if ($target.length == 0) {
+                return;
+            }
+
+            var offsetTop = target === '#pageHome' ? 0 : $target.offset().top - this.menuTopHeight;
+
             // TODO: isMobile
             $('html, body').stop().animate({
                 scrollTop: offsetTop

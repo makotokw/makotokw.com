@@ -50,7 +50,7 @@ makotokw.Views = makotokw.Views || {};
         stickyFooter: function (/*e*/) {
             var $margin = $('#footerMargin');
             var docHeight = $(document.body).height() - $margin.height();
-            if(docHeight < $(window).height()){
+            if (docHeight < $(window).height()) {
                 var diff = $(window).height() - docHeight;
                 $margin.height(diff);
             }

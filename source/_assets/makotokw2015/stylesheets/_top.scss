@@ -8,11 +8,28 @@ $circle-menu-font-size-xs: 12px;
 $circle-menu-size: 170px;
 $circle-menu-size-sm: 140px;
 $circle-menu-size-xs: 104px;
-$lang-menu-width: 300px;
+
+$lang-menu-item-width: 170px;
+$lang-menu-item-height: 30px;
 
 $page-home-title-font-size: 60px;
 $page-home-height: 450px;
 $page-home-width: 1170px;
+
+//.site-top {
+//  .menu-top {
+//    .nav {
+//      a {
+//        color: $silver;
+//      }
+//      .active {
+//        a {
+//          color: $white;
+//        }
+//      }
+//    }
+//  }
+//}
 
 .page-section {
   padding: 60px 0;
@@ -54,10 +71,11 @@ $page-home-width: 1170px;
 
       .entry-published {
         @extend .label;
+        border-radius: 0;
         font-size: $font-size-small;
         display: inline;
         margin-right:.5em;
-        padding: 2px 4px;
+        padding: 3px 6px;
         line-height: 1.2em;
       }
 
@@ -166,9 +184,30 @@ $page-home-width: 1170px;
 
 .menu-lang {
   list-style: none;
-  margin: 10px auto 10px auto;
+  margin: 35px auto 10px auto;
   padding: 0;
-  width: $lang-menu-width;
+  width: $lang-menu-item-width * 2 + 20;
+
+  .menu-lang-item {
+    display: inline-block;
+    @include transition(all 1s ease);
+    font-family: 'NovecentowideBookBold';
+    background: $blue-dark;
+    width: $lang-menu-item-width;
+    height: $lang-menu-item-height;
+    text-align: center;
+
+    a {
+      width: $lang-menu-item-width;
+      height: $lang-menu-item-height;
+      display: block;
+      display: table-cell;
+      background: $link-color;
+      vertical-align: middle;
+      text-align: center;
+      color: $white;
+    }
+  }
 }
 
 .circle-menu {

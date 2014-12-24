@@ -27,12 +27,21 @@
                 </ul>
 
                 <ul class="menu-lang">
-                    <li class="menu-lang-item">
+                    {% if page.lang == 'ja' %}
+                    <li class="menu-lang-item menu-lang-item-en">
                         <a href="/">English</a>
                     </li>
-                    <li class="menu-lang-item">
+                    <li class="menu-lang-item menu-lang-item-ja menu-lang-item-active">
                         <a href="/ja/">Japanese</a>
                     </li>
+                    {% else %}
+                    <li class="menu-lang-item menu-lang-item-en menu-lang-item-active">
+                        <a href="/">English</a>
+                    </li>
+                    <li class="menu-lang-item menu-lang-item-ja">
+                        <a href="/ja/">Japanese</a>
+                    </li>
+                    {% endif %}
                 </ul>
 
             </div>
