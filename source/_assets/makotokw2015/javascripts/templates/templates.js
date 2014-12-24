@@ -25,9 +25,9 @@ with (obj) {
 __p += '<div class="portfolio-image"><img src="' +
 ((__t = ( thumbnail )) == null ? '' : __t) +
 '" alt="' +
-((__t = ( title )) == null ? '' : __t) +
+((__t = ( name )) == null ? '' : __t) +
 '"></div>\n<div class="portfolio-name">' +
-((__t = ( title )) == null ? '' : __t) +
+((__t = ( name )) == null ? '' : __t) +
 '</div>\n<div class="portfolio-tags"></div>\n<div class="portfolio-over" style="opacity: 0;"></div>\n';
 
 }

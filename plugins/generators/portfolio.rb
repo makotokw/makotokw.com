@@ -77,15 +77,29 @@ module Jekyll
 
   class PortfolioIndex < Page
 
-    def initialize(site, base, dir, portfolio)
+    def initialize(site, base, dir, portfolio, lang)
       @site = site
       @base = base
       @dir  = dir
+      @lang = lang
       @name = 'index.html'
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'portfolio_index.html')
       self.data['portfolio'] = portfolio
+
+      portfolios = YAML.load_file(File.join(base, '_fixtures', 'portfolio.yml'))
+
+      # override item.download_url.ja to item.download_url
+      portfolios.each do |item|
+        item.each do |key, value|
+          if /^([\w_-]+)\.(#{lang})$/ === key.to_s
+            item[$~[1]] = value
+          end
+        end
+      end
+      portfolios.sort_by! { |p| p['copyright_year'] ? p['copyright_year'] : 1990 }
+      self.data['portfolios'] = portfolios.reverse
     end
 
   end
@@ -107,8 +121,8 @@ module Jekyll
         site.pages << page
       end
 
-      site.pages << PortfolioIndex.new(site, site.source, '/portfolio/', portfolios['en'])
-      site.pages << PortfolioIndex.new(site, site.source, '/ja/portfolio/', portfolios['ja'])
+      site.pages << PortfolioIndex.new(site, site.source, '/portfolio/', portfolios['en'], 'en')
+      site.pages << PortfolioIndex.new(site, site.source, '/ja/portfolio/', portfolios['ja'], 'ja')
 
     end
   end

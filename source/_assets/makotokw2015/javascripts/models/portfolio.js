@@ -12,7 +12,7 @@ makotokw.Models = makotokw.Models || {};
 
         /*jshint camelcase: false */
         defaults: {
-            title: '',
+            name: '',
             summary: '',
             category: '',
             status: 'active', // active, inactive, maintanance

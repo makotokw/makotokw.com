@@ -1,12 +1,12 @@
 {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-<div class="row-fluid">
-    <div class="span2">
+<div class="row">
+    <div class="col-md-2">
         {% unless year == this_year %}
         {% assign year = this_year %}
         <h2 class="year">{{ year }}</h2>
         {% endunless %}
     </div>
-    <div class="span10">
+    <div class="col-md-10">
         <article class="entry entry-post">
             {% capture category %}{{ post.categories | size }}{% endcapture %}
             <h1><a href="{{ post.url }}">{{post.title}}</a></h1>

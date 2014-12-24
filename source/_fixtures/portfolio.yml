@@ -1,39 +1,90 @@
 -
-  title: AmazonJS
+  name: Garanchu
+  name.ja: ガランチュ
+  category: ios
+  tags: [objc]
+  copyright_year: 2013
+  last_updated_year: 2013
+-
+  name: Today’s Schedule in Google Calendar™
+  name.ja: 今日の予定 in Google Calendar™
+  category: crx
+  tags: [js]
+  url: https://chrome.google.com/webstore/detail/todays-schedule-in-google/mkaaneppndljkmpgdcglnpfagfhjhipc
+  copyright_year: 2010
+  last_updated_year: 2014
+-
+  name: World Clocks
+  name.ja: 世界時計
+  category: crx
+  tags: [js]
+  url: https://chrome.google.com/webstore/detail/world-clocks/innfmeekncjandlanpgdmmogkcimekgo
+  copyright_year: 2010
+  last_updated_year: 2012
+-
+  name: AmazonJS
   category: wp
-  url: http://blog.makotokw.com/portfolio/wordpress/amazonjs/
+  url: http://wordpress.org/plugins/amazonjs/
+  url.ja: http://blog.makotokw.com/portfolio/wordpress/amazonjs/
   download_url: http://wordpress.org/plugins/amazonjs/
   source_url: https://github.com/makotokw/wp-amazonjs
   tags: [php, js]
   copyright_year: 2011
   last_updated_year: 2014
 -
-  title: wp-gfm
+  name: GitHub Flavored Markdown for WordPress
   category: wp
   url: https://github.com/makotokw/wp-gfm
+  url.ja: http://blog.makotokw.com/portfolio/wordpress/github-flavored-markdown-for-wordpress/
   download_url: https://github.com/makotokw/wp-gfm/releases
   source_url: https://github.com/makotokw/wp-gfm
   tags: [php]
+  copyright_year: 2013
+  last_updated_year: 2014
 -
-  title: wp-pukiwiki
+  name: Awasete Yomitai for WordPress
+  name.ja: あわせてよみたい for WordPress
+  category: wp
+  url: http://wordpress.org/extend/plugins/awasete-yomitai-for-wordpress/
+  url.ja: http://blog.makotokw.com/portfolio/wordpress/github-flavored-markdown-for-wordpress/
+  download_url: http://wordpress.org/extend/plugins/awasete-yomitai-for-wordpress/
+  tags: [php]
+  copyright_year: 2009
+  last_updated_year: 2009
+-
+  name: Inline Archives
+  category: wp
+  url: https://wordpress.org/plugins/inline-archives/
+  url.ja: http://blog.makotokw.com/portfolio/wordpress/inline-archives/
+  download_url: https://wordpress.org/plugins/inline-archives/
+  tags: [php]
+  copyright_year: 2012
+  last_updated_year: 2012
+-
+  name: PukiWiki for WordPress
   category: wp
   url: http://blog.makotokw.com/portfolio/wordpress/pukiwiki_for_wordpress/
   download_url: http://wordpress.org/extend/plugins/pukiwiki-for-wordpress/
   source_url:
   tags: [php]
+  copyright_year: 2009
+  last_updated_year: 2009
 -
-  title: Garanchu
-  category: ios
-  tags: [objc]
--
-  title: PukiWiki for Movable Type
+  name: PukiWiki for Movable Type
   category: mt
+  url: http://blog.makotokw.com/portfolio/movabletype/pukiwiki_for_movable_type/
   tags: [php, perl]
+  copyright_year: 2009
+  last_updated_year: 2009
 -
-  title: SyntaxHighlighter for Movable Type
+  name: SyntaxHighlighter for Movable Type
   category: mt
   tags: [php, perl, js]
+  copyright_year: 2009
+  last_updated_year: 2009
 -
-  title: Gravatar for Movable Type
+  name: Gravatar for Movable Type
   category: mt
   tags: [php, perl, js]
+  copyright_year: 2009
+  last_updated_year: 2009

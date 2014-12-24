@@ -2,6 +2,30 @@
 layout: default
 footer: false
 ---
+<div class="archives archives-portfolio">
+    <h1 class="entry-title">Portfolio</h1>
+    <div class="archives-entries archives-entries-portfolio">
+        <div class="container-fluid">
+            {% for p in page.portfolios %}
+            {% capture this_year %}{{ p.copyright_year }}{% endcapture %}
+            <div class="row">
+                <div class="col-md-2">
+                    {% unless year == this_year %}
+                    {% assign year = this_year %}
+                    <h2 class="year">{{ year }}</h2>
+                    {% endunless %}
+                </div>
+                <div class="col-md-10">
+                    <article class="entry entry-post">
+                        <h1><a href="{{ p.url }}">{{p.name}}</a></h1>
+                    </article>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<hr/>
 
 <ul>
     {% for post in page.portfolio %}

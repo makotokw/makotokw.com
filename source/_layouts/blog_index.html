@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<div class="archives archives-blog">
+    <h1 class="entry-title">Blog Archive</h1>
+    <div class="archives-entries archives-entries-blog">
+        <div class="container-fluid">
+        {% for post in site.posts %}
+        {% include archive_post.html %}
+        {% endfor %}
+        </div>
+    </div>
+</div>

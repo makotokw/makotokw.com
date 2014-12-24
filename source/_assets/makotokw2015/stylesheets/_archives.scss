@@ -1,0 +1,49 @@
+.archives {
+
+  .entry-title {
+    font-weight: normal;
+    font-family: 'NovecentowideBookBold';
+  }
+
+  .year {
+    color: $blue-dark;
+    margin-top: 0;
+    font-weight: normal;
+    font-family: 'NovecentowideBookBold';
+  }
+
+  .entry {
+    position: relative;
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 1.5em;
+      //font-size: $baseFontSize;
+      line-height: 1.4em;
+      font-weight: normal;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .archives-entries {
+    margin-top: 40px;
+    .row-fluid {
+      margin-top: 20px;
+    }
+  }
+}
+
+.archives-blog {
+  .entry {
+    padding-left: 4.5em;
+    padding-bottom: .7em;
+    margin-bottom: 1em;
+
+    time {
+      position: absolute;
+      text-align: right;
+      left: 0;
+      top: 5px;
+    }
+  }
+}
