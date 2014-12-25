@@ -86,6 +86,7 @@ module Jekyll
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'portfolio_index.html')
+      self.data['lang'] = lang
       self.data['portfolio'] = portfolio
 
       portfolios = YAML.load_file(File.join(base, '_fixtures', 'portfolio.yml'))

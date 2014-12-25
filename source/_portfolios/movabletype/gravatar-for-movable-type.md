@@ -42,3 +42,6 @@ This tag is only into ``<$mt:Comments$>``, and to display the image is required 
 http://gravatar.com/site/implement/url
 
 
+## License
+
+This code is released under the Artistic License. The terms of the Artistic License are described at [http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html).

@@ -1,9 +1,9 @@
 ---
 layout: default
+cls: site-archives-blog
 footer: false
 ---
-
-<div class="blog-archives blog-category-archives">
+<div class="archives archives-blog archives-blog-category">
     <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
     <div class="blog-archives-entries">
     {% for post in site.categories[page.category] %}

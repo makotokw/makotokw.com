@@ -81,7 +81,7 @@ module.exports = function (grunt) {
             jekyll: {
                 tasks: ['jekyll:dev'],
                 files: [
-                    '<%= makotokw.source %>/**/*.html'
+                    '<%= makotokw.source %>/**/*.{md,html}'
                 ]
             },
             livereload: {
