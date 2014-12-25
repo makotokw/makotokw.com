@@ -13,13 +13,15 @@ single: true
         {{ content }}
     </div>
     <footer class="entry-footer">
-        {% if page.author %}<p class="entry-meta">
-        {% if page.author %}{% include post/author.html %}{% endif %}
-        {% if page.categories %}{% include post/categories.html %}{% endif %}
-    </p>{% endif %}
-        {% unless page.sharing == false %}
+        {% if page.author or page.categories %}
+        <p class="entry-meta">
+            {% if page.author %}{% include post/author.html %}{% endif %}
+            {% if page.categories %}{% include post/categories.html %}{% endif %}
+        </p>
+        {% endif %}
+        {% if site.development != true and page.sharing != false %}
         {% include post/sharing.html %}
-        {% endunless %}
+        {% endif %}
     </footer>
 </article>
 

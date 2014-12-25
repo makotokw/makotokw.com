@@ -14,8 +14,8 @@ makotokw.Models = makotokw.Models || {};
         defaults: {
             name: '',
             summary: '',
-            category: '',
-            status: 'active', // active, inactive, maintanance
+            categories: [],
+            status: 'active', // active, inactive, maintenance
             tile_size: 'default', // default, mini, large
             thumbnail: makotokw.staticAssetsPath + 'images/icon.png',
             url: '',
@@ -31,8 +31,8 @@ makotokw.Models = makotokw.Models || {};
         parse: function (response/*, options*/) {
             response.display_tags = response.display_tags || [];
 
-            if (!_(response.category).isBlank()) {
-                response.display_tags.push(response.category);
+            if (response.categories && response.categories.length > 0) {
+                response.display_tags.push(response.categories);
             }
 
             if (response.copyright_year > 0) {

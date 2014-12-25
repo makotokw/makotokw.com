@@ -17,6 +17,9 @@ footer: false
                 </div>
                 <div class="col-md-10">
                     <article class="entry entry-post">
+                        {% for c in p.categories %}
+                        <span class="entry-category entry-category-{{ c }}">{{ c }}</span>
+                        {% endfor %}
                         <h1><a href="{{ p.url }}">{{p.name}}</a></h1>
                     </article>
                 </div>

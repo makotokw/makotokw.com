@@ -1,21 +1,53 @@
-encoding: utf-8
-gems: ["jekyll-assets", "jekyll-assets/compass"]
+# http://jekyllrb.com/docs/configuration/
+
 development: false
+
+
+# Where things are
+source: ./source
+destination: ./dist
+plugins: ./plugins
+
+# Handling Reading
 safe: false
-highlighter: true
-markdown: redcarpet
+encoding: utf-8
+
+# Plugins
+whitelist: []
+gems:      ["jekyll-assets", "jekyll-assets/compass"]
+
+# Conversion
+markdown:    kramdown
+highlighter: pygments
+lsi:         false
+excerpt_separator: "\n\n"
+
+# Markdown Processors
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-permalink: /blog/:year/:month/:day/:title/
-#paginate: 10          # Posts per page on the blog index
-#pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+kramdown:
+  auto_ids:      false
+  footnote_nr:   1
+  entity_output: as_char
+  toc_levels:    1..6
+  smart_quotes:  lsquo,rsquo,ldquo,rdquo
+  use_coderay:   true
+  input:         GFM
 
-# Directory
-source: source
-destination: dist
-plugins: plugins
+  coderay:
+    coderay_wrap:              div
+    coderay_line_numbers:      inline
+    coderay_line_number_start: 1
+    coderay_tab_width:         4
+    coderay_bold_every:        10
+    coderay_css:               style
+
+# Outputting
+permalink: /blog/:year/:month/:day/:title/
+
 category_dir: blog
 
+# Author
 author:
   name: Makoto Kawasaki
   email: makoto.kw@gmail.com
@@ -24,7 +56,7 @@ author:
   twitter: makotokw
   twitter_ja: makoto_kw
 
-# Domain
+# makotokw.com
 lang: en
 title: makotokw.com
 path:
