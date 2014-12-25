@@ -1,4 +1,5 @@
 encoding: utf-8
+gems: ["jekyll-assets", "jekyll-assets/compass"]
 development: false
 safe: false
 highlighter: true
