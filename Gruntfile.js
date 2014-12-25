@@ -236,8 +236,8 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     src: './<%= makotokw.distProduction %>/',
-                    dest: '/usr/local/arcadia/www.makotokw.com/dist/',
-                    host: 'aries.makotokw.com',
+                    dest: process.env.MAKOTOKWCOM_DEST,
+                    host: process.env.MAKOTOKWCOM_HOST,
                     syncDestIgnoreExcl: true
                 }
             }
