@@ -62,6 +62,13 @@ window.makotokw = {
         }
     }
 
+    /*jshint camelcase: false */
+    // remove hash http://support.addthis.com/customer/portal/questions/352733-how-to-remove-hash-from-url-
+    var addthis_config = window.addthis_config || {};
+    addthis_config.data_track_addressbar = false;
+    window.addthis_config = addthis_config;
+    /*jshint camelcase: true */
+
     if ($('.feed-content').length > 0) { // TBD
         makotokw.isTopPage = true;
         google.load('feeds', '1');

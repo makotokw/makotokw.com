@@ -27,8 +27,8 @@
 {% else %}
 <div class="entry-content">{{ content }}</div>
 <footer class="entry-footer">
-    {% unless page.sharing == false %}
+    {% if site.development != true and page.sharing != false %}
     {% include post/sharing.html %}
-    {% endunless %}
+    {% endif %}
 </footer>
 {% endif %}
