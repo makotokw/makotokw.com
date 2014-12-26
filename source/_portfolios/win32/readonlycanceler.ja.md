@@ -16,9 +16,8 @@ CD-ROM からコピーしたファイルはすべて読取専用ファイルに�
 
 ## ダウンロード
 
-[rocancel120.zip ( 8,405 byte )]({% download_url trac_attachments/ReadOnlyCanceler/rocancel120.zip %} 2004.01.11 Update
-
-ミラー(vector): http://www.vector.co.jp/soft/win95/util/se207261.html
+* [rocancel120.zip ( 8,405 byte )]({% download_url trac_attachments/ReadOnlyCanceler/rocancel120.zip %}) 2004.01.11 Update
+* [ミラー(vector)](http://www.vector.co.jp/soft/win95/util/se207261.html)
 
 |インストール方法|上のファイルをダウンロードして解凍してください。あとは解凍してできたフォルダの中の実行ファイルを実行するだけです。レジストリはいじっていません。 |
 |対応 OS|Windows 98/Me/NT4.0/2000/XP|
@@ -34,11 +33,17 @@ CD-ROM からコピーしたファイルはすべて読取専用ファイルに�
 
 ## 更新履歴
 
-|バージョン|ダウンロード 更新日 説明|
-|Ver1.20|[rocancel120.zip ( 8,405 byte )]({% download_url trac_attachments/ReadOnlyCanceler/rocancel120.zip %} 2004.01.11 Update|
-|~|リソース見直し&br;内部処理見直しで若干の高速化&br;Unicode ビルド対応&br;MFC ランタイムを共有 DLL でビルド|
-|Ver1.10|[ddroc110.lzh ( 114,911 byte )]({% download_url trac_attachments/ReadOnlyCanceler/ddroc110.lzh %} 2002.08.20 Update|
-|~|ドロップしたフォルダの属性の変更ができなかった点を修正[[BR]]コンパイラの Visual C++ の SP4 を SP5 にする|
-|Ver1.00|[ddroc100.lzh ( 114,716 byte )]({% download_url trac_attachments/ReadOnlyCanceler/ddroc100.lzh %} 2001.08.28 Update|
-|~|初公開バージョン|
+* Ver1.20 (2004.01.11)
+  * [rocancel120.zip ( 8,405 byte )]({% download_url trac_attachments/ReadOnlyCanceler/rocancel120.zip %})
+  * リソース見直し
+  * 内部処理見直しで若干の高速化
+  * Unicode ビルド対応
+  * MFC ランタイムを共有 DLL でビルド
+* Ver1.10 (2002.08.20)
+  * [ddroc110.lzh ( 114,911 byte )]({% download_url trac_attachments/ReadOnlyCanceler/ddroc110.lzh %})
+  * ドロップしたフォルダの属性の変更ができなかった点を修正
+  * コンパイラの Visual C++ の SP4 を SP5 にする
+* Ver1.00 (2001.08.28)
+  * [ddroc100.lzh ( 114,716 byte )]({% download_url trac_attachments/ReadOnlyCanceler/ddroc100.lzh %})
+  * 初公開バージョン
 

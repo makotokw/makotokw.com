@@ -69,21 +69,22 @@ active: false
 なおパーマリンクを取得するためMTSocialBookmakrsテンプレートタグはMTEntryブロック内で記述する必要があります。
 
 ### 属性
-image
+
+``image``
   値が0以外の場合にアイコン画像を表示する。
-  表示する画像はmt-static/plugins/mtsocialbookmarks/にある画像になる。
+  表示する画像は ``mt-static/plugins/mtsocialbookmarks/`` にある画像になる。
   表示する画像サイズがプラグイン内にハードコーディングしてあるので
   画像ファイルの置き換えには注意すること。
-  デフォルトは"1"(表示する)
-text
+  デフォルトは ``1`` (表示する)
+``text``
   値が 0以外の場合にテキスト文字を表示する。
   表示するテキスト文字列は現在プラグインにハードコーディングしてある。
-  デフォルトは"0"(表示しない)
-users
+  デフォルトは ``0``(表示しない)
+``users``
   値が0以外のエントリのブックマークした人数を表示する。
   このパラメータが利用できるのは一部のサービスだけである。
-  デフォルトは"0"(表示しない)
-domain
+  デフォルトは ``0`` (表示しない)
+``domain``
   複数地域でリリースされているサービスの場合に利用するドメイン文字列を入力する。
   現状はとりあえず無視してよい。
 
@@ -104,6 +105,7 @@ domain
 
 *1: Yahoo!ブックマークの人数取得APIでは現在表示されているページの人数を取りに行ってしまうため記事リストでは使えない。
 Movable Type 4のデフォルトテンプレートであれば
+
 ```xml
 <MTIf name="entry_template">
  <$MTSBYahooBookmark text="0" users="1" $>
@@ -111,6 +113,7 @@ Movable Type 4のデフォルトテンプレートであれば
  <$MTSBYahooBookmark text="0" $>
 </MTIf>
 ```
+
 のように記述する必要がある。
 
 *2: テンプレートタグ名に"if"が含まれるとphpダイナミックパブリッシングでエラーになるため
@@ -152,24 +155,24 @@ Movable Type 4のデフォルトテンプレートであれば
 1. 対応サービスの拡充
 
 ## 更新履歴
+
 * ver 0.1.4 2009/02/26
   * プラグインのファイル構成を変更
-   * Movable Type 4.x  => [mt-MTSocialBookmarks_0.1.4.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.1.4.zip %}
+   * Movable Type 4.x  => [mt-MTSocialBookmarks_0.1.4.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.1.4.zip %})
 * ver 0.1.3 2009/02/04
   * Yahoo!ブックマークのタグの不正を修正
-   * Movable Type 4.x  => [mt-MTSocialBookmarks_0.1.3.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.1.3.zip %}
+   * Movable Type 4.x  => [mt-MTSocialBookmarks_0.1.3.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.1.3.zip %})
 * ver 0.1.2 2008/04/10
   * 出力するHTMLをXHTML Validに修正
-   * Movable Type 4.0  => [mt-MTSocialBookmarks_0.1.2.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.1.2.zip %}
+   * Movable Type 4.0  => [mt-MTSocialBookmarks_0.1.2.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.1.2.zip %})
 * ver 0.1.0 2007/09/12
   * 初リリース
-   * Movable Type 4.0  => [mt-MTSocialBookmarks_0.1.0.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.10.zip %}
-
-## See Also
+   * Movable Type 4.0  => [mt-MTSocialBookmarks_0.1.0.zip]({% download_url trac_attachments/MovableType/MTSocialBookmarks/mt-MTSocialBookmarks_0.10.zip %})
 
 ## License
 
-This code is released under the Artistic License. The terms of the Artistic License are described at [http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html).
+This code is released under the Artistic License.
+The terms of the Artistic License are described at [http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html).
 
 ## Author & Copyright
 

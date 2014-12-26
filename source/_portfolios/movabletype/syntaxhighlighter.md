@@ -10,9 +10,9 @@ SyntaxHighlighter for Movable Type allows you to easily post syntax highlighted 
 ## Download
 
 * version 0.1.1 (2009/10/04 updated)
- * [mt-SyntaxHighlighter_0.1.1.0910040.zip]({% download_url trac_attachments/MovableType/MTSyntaxHighlighter/mt-SyntaxHighlighter_0.1.1.0910040.zip %}) (within syntaxhighlighter 2.0.320)
+  * [mt-SyntaxHighlighter_0.1.1.0910040.zip]({% download_url trac_attachments/MovableType/MTSyntaxHighlighter/mt-SyntaxHighlighter_0.1.1.0910040.zip %}) (within syntaxhighlighter 2.0.320)
 * version 0.1.0 (2009/03/05 updated)
- * [mt-SyntaxHighlighter_0.1.0.090305.zip]({% download_url trac_attachments/MovableType/MTSyntaxHighlighter/mt-SyntaxHighlighter_0.1.0.090305.zip%}) (within syntaxhighlighter 2.0.296)
+  * [mt-SyntaxHighlighter_0.1.0.090305.zip]({% download_url trac_attachments/MovableType/MTSyntaxHighlighter/mt-SyntaxHighlighter_0.1.0.090305.zip%}) (within syntaxhighlighter 2.0.296)
 
 ## Functions and Limitations
 
@@ -97,9 +97,9 @@ After publishing, the entry is displayed.
 
 The syntaxhighlighter 2.0 changed the target html tag from version 1.5. You have to set “compatible with 1.5″ in settings.
 
-![](/assets/site/images/2009/mtsyntaxhighlighter_0.1_07en.jpg);
+![](/assets/site/images/2009/mtsyntaxhighlighter_0.1_07en.jpg)
 
-See also: http://alexgorbatchev.com/wiki/SyntaxHighlighter:Upgrading
+See also: [http://alexgorbatchev.com/wiki/SyntaxHighlighter:Upgrading](http://alexgorbatchev.com/wiki/SyntaxHighlighter:Upgrading)
 
 ## License
 

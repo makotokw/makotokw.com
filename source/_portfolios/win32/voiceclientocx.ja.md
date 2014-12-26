@@ -11,21 +11,21 @@ VoiceClient ActiveX コントロールは DirectX8 の DirectPlayVoice を使っ
 ## ダウンロード
 
 * Ver1.00 2002.12.16 Update
-  * [vcctrl100.lzh ( 26,683 byte )]({% download_url trac_attachments/VoiceClientOcx/vcctrl100.lzh %} ：本体 
-  * [vsdx8dpv100.lzh ( 19,003 byte )]({% download_url trac_attachments/VoiceClientOcx/vsdx8dpv100.lzh %} ：音声サーバ 
-  * [vbsmvc100.lzh ( 9,325 byte )]({% download_url trac_attachments/VoiceClientOcx/vbsmvc100.lzh %} ：Visual Basic サンプルプログラム 
+  * [vcctrl100.lzh ( 26,683 byte )]({% download_url trac_attachments/VoiceClientOcx/vcctrl100.lzh %}) ：本体
+  * [vsdx8dpv100.lzh ( 19,003 byte )]({% download_url trac_attachments/VoiceClientOcx/vsdx8dpv100.lzh %}) ：音声サーバ
+  * [vbsmvc100.lzh ( 9,325 byte )]({% download_url trac_attachments/VoiceClientOcx/vbsmvc100.lzh %}) ：Visual Basic サンプルプログラム
 
 ## インストール方法
 
 上のファイルをダウンロードして解凍してください。 
 
-なおActiveX コントロールを使用するにはコントロールの登録が必要です。 Visual Basicではコントロールを参照すると自動で登録されます。手動で登録または、削除を行うには regsvr32.exe を使用します。 ( regsvr32.exe は Visual Studio と共にインストールされます。) 
+なおActiveX コントロールを使用するにはコントロールの登録が必要です。 Visual Basicではコントロールを参照すると自動で登録されます。手動で登録または、削除を行うには ``regsvr32.exe`` を使用します。 ( ``regsvr32.exe`` は Visual Studio と共にインストールされます。)
 
 コマンドプロンプトなどで
--regsvr32 コントロールのファイル名( フルパス名＆ショートファイル名 )で登録。
--regsvr32 /u コントロールのファイル名( フルパス名＆ショートファイル名 )で削除します。
+``regsvr32 コントロールのファイル名( フルパス名＆ショートファイル名 )``で登録。
+``regsvr32 /u コントロールのファイル名( フルパス名＆ショートファイル名 )``で削除します。
 
-また、解凍して出来たファイルにこのコマンドを記述したバッチファイル _Regist.bat、_UnRegist.batがありますので、これを使ってもらっても構いません。 
+また、解凍して出来たファイルにこのコマンドを記述したバッチファイル ``_Regist.bat``、``_UnRegist.bat``がありますので、これを使ってもらっても構いません。
 
 ## 対応 OS
 
@@ -41,13 +41,10 @@ VoiceClient ActiveX コントロールは DirectX8 の DirectPlayVoice を使っ
 * Microsoft Visual C++ 6.0 & SP5 
 * DirectX SDK 8
 
-## 掲載情報
-
-|日付|雑誌|バージョン|
-
 ## 更新履歴
 
-|バージョン|ダウンロード 更新日 説明|
-|Ver1.00|Ver1.00 2002.12.16 Update[[BR]][vcctrl100.lzh ( 26,683 byte )]({% download_url trac_attachments/VoiceClientOcx/vcctrl100.lzh %} ：本体[[BR]][vsdx8dpv100.lzh ( 19,003 byte )]({% download_url trac_attachments/VoiceClientOcx/vsdx8dpv100.lzh %} ：音声サーバ[[BR]][vbsmvc100.lzh ( 9,325 byte )]({% download_url trac_attachments/VoiceClientOcx/vbsmvc100.lzh %} ：Visual Basic サンプルプログラム|
-|~|初公開バージョン|
+* Ver1.00 (2002.12.16)
+  * [vcctrl100.lzh ( 26,683 byte )]({% download_url trac_attachments/VoiceClientOcx/vcctrl100.lzh %}) ：本体
+  * [vsdx8dpv100.lzh ( 19,003 byte )]({% download_url trac_attachments/VoiceClientOcx/vsdx8dpv100.lzh %}) ：音声サーバ
+  * [vbsmvc100.lzh ( 9,325 byte )]({% download_url trac_attachments/VoiceClientOcx/vbsmvc100.lzh %}) ：Visual Basic サンプルプログラム
 

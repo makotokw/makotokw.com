@@ -13,9 +13,9 @@ Microsoft Visual C++ でビルドを行うと各ソースファイルやリソ�
 BuildClearnerを使えば、指定されたフォルダから中間ファイルを検索して削除することができハードディスクを有効に使えます。
 
 ## ダウンロード
-[bcleaner130.zip ( 23,320 byte )]({% download_url trac_attachments/BuildCleaner/bcleaner130.zip %} 2004.01.11 Update
 
-ミラー(vector): http://www.vector.co.jp/soft/win95/prog/se207027.html
+* [bcleaner130.zip ( 23,320 byte )]({% download_url trac_attachments/BuildCleaner/bcleaner130.zip %}) 2004.01.11 Update
+* [ミラー(vector)](http://www.vector.co.jp/soft/win95/prog/se207027.html)
 
 |インストール方法|上のファイルをダウンロードして解凍してください。あとは解凍してできたフォルダの中の実行ファイルを実行するだけです|
 |対応 OS|Windows 98/Me/NT4.0/2000/XP|
@@ -30,12 +30,17 @@ BuildClearnerを使えば、指定されたフォルダから中間ファイル�
 
 ## 更新履歴
 
-|バージョン|ダウンロード 更新日 説明|
-|Ver1.30|[bcleaner130.zip ( 23,320 byte )]({% download_url trac_attachments/BuildCleaner/bcleaner130.zip %} 2004.01.11 Update|
-|~|マルチユーザ対応&br;検索フォルダの履歴の保存機能を追加(レジストリを使用) |
-|Ver1.22|[bucle122.lzh ( 21,008 byte )]({% download_url trac_attachments/BuildCleaner/bucle122.lzh %} 2001.10.10 Update|
-|~|リストビューの選択を一行選択にする&br;読み取り専用ファイルが削除できないバグを修正&br;bscファイルに対応|
-|Ver1.21|[bucle121.lzh ( 20,598 byte )]({% download_url trac_attachments/BuildCleaner/bucle121.lzh %} 2001.08.25 Update|
-|~|初公開バージョン|
+* Ver1.30 (2004.01.11)
+  * [bcleaner130.zip ( 23,320 byte )]({% download_url trac_attachments/BuildCleaner/bcleaner130.zip %})
+  * マルチユーザ対応
+  * 検索フォルダの履歴の保存機能を追加(レジストリを使用)
+* Ver1.22 (2001.10.10)
+  * [bucle122.lzh ( 21,008 byte )]({% download_url trac_attachments/BuildCleaner/bucle122.lzh %})
+  * リストビューの選択を一行選択にする
+  * 読み取り専用ファイルが削除できないバグを修正
+  * bscファイルに対応
+* Ver1.21 (2001.08.25)
+  * [bucle121.lzh ( 20,598 byte )]({% download_url trac_attachments/BuildCleaner/bucle121.lzh %})
+  * 初公開バージョン
 
 

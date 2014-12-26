@@ -4,7 +4,7 @@ title: "Gravatar for Movable Type"
 category: Movable Type
 date: 2009-09-21
 ---
-Displays the Gravatar image into comments by using [Gravator](http://gravatar.com/)
+Displays the Gravatar image into comments by using [Gravator](http://gravatar.com/).
 
 ## Download
 
@@ -39,9 +39,7 @@ This tag is only into ``<$mt:Comments$>``, and to display the image is required 
 <img class="avatar avatar-32" width="32" height="32" src="http://www.gravatar.com/avatar.php?gravatar_id=d7c1272e4d1025a72ecb8f052fb58c3d&amp;size=32" alt="makoto_kw"/>
 ```
 
-http://gravatar.com/site/implement/url
-
-
 ## License
 
-This code is released under the Artistic License. The terms of the Artistic License are described at [http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html).
+This code is released under the Artistic License.
+The terms of the Artistic License are described at [http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html).

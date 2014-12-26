@@ -13,45 +13,46 @@ My Outlook Today is for all busy businesspeople who use Microsoft Outlook. For e
 * Version 1.2.1 (2009/07/04)
   * Changes
   * Download
-   *  [MyOutlookToday_yw_1.2.1_200907040.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.2.1_200907040.zip %}(Yahoo! Widget) 
+    * [MyOutlookToday_yw_1.2.1_200907040.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.2.1_200907040.zip %})
   * Note
-   * Please use My Outlook Today Version 1.1.5([MyOutlookToday_yw_1.1.5_200702210.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.5_200702210.zip %}) if you have any problems with Yahoo! Widget Engine Version 3.x or older.
+    * Please use My Outlook Today Version 1.1.5. if you have any problems with Yahoo! Widget Engine Version 3.x or older.
 
 ## History
+
 * Version 1.2.0 (2009/05/01)
   * Changes
-   * Completed Re-writing with My Google Calendar
-   * Completed to localize in Japanese
-   * Modified a way to search the appointments by using Date.toLocalString
+    * Completed Re-writing with My Google Calendar
+    * Completed to localize in Japanese
+    * Modified a way to search the appointments by using Date.toLocalString
   * Download
-   *  [MyOutlookToday_yw_1.2.0_200905010.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.2.0_200905010.zip %}(Yahoo! Widget) 
+    * [MyOutlookToday_yw_1.2.0_200905010.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.2.0_200905010.zip %})
 * Version 1.1.6 (2007/04/01)
   * Bugfix
     * Supports Yahoo! Widget Engine Version 4
   * Download
-    *  [MyOutlookToday_yw_1.1.6_200704010.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.6_200704010.zip %}(Yahoo! Widget)
+    *  [MyOutlookToday_yw_1.1.6_200704010.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.6_200704010.zip %})
 * Version 1.1.5 (2007/02/21)
   *  Bugfix
-   * Fixed to display event for Outlook2000
+    * Fixed to display event for Outlook2000
   * Download
-   *  [MyOutlookToday_yw_1.1.5_200702210.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.5_200702210.zip %}(Yahoo! Widget)
+    * [MyOutlookToday_yw_1.1.5_200702210.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.5_200702210.zip %})
 * Version 1.1.4 (2007/02/06)
-   * Functions
+  * Functions
     * Remove limitation for Outlook2000. (It's not mean to support Outlook2000, only remove code to check version)
-   * Bugfix
+  * Bugfix
     * Fixed to get event handler on default personal folder
     * Fixed to re-connect outlook when resume or update on context menu
     * Changed to check new version via a weeek
     * Fixed to query events on February
   * Download
-    *  [MyOutlookToday_yw_1.1.4_200702060.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.4_200702060.zip %}(Yahoo! Widget)
+    * [MyOutlookToday_yw_1.1.4_200702060.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.4_200702060.zip %})
 * Version 1.1.3 (2006/10/27)
   * Functions
     * Added setting to switch "MM/DD" or "DD/MM"
   * Bugfix
     * Fixed valid date on Create New Event
   * Download
-    *  [MyOutlookToday_yw_1.1.3_200610270.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.3_200610270.zip %}(Yahoo! Widget)
+    * [MyOutlookToday_yw_1.1.3_200610270.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.3_200610270.zip %})
 * Version 1.1.2 (2006/10/14)
   * Functions
     * Added setting for Font
@@ -59,10 +60,10 @@ My Outlook Today is for all busy businesspeople who use Microsoft Outlook. For e
     * Added setting to switch "MM/DD" or "DD/MM"
     * Added to display multiple days
   * Download
-    *  [MyOutlookToday_yw_1.1.2_200610140.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.2_200610140.zip %}(Yahoo! Widget)
+    * [MyOutlookToday_yw_1.1.2_200610140.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1.2_200610140.zip %})
 * Version 1.1.1 (2006/xx/xx)
   * Functions
-   * Added check "MM/DD" locale or "DD/MM" locale
+    * Added check "MM/DD" locale or "DD/MM" locale
 * Version 1.1 (2006/09/23)
   * Functions
     * Supported Outlook 2002
@@ -71,20 +72,19 @@ My Outlook Today is for all busy businesspeople who use Microsoft Outlook. For e
   * Bugfix
     * Fixed to display All Day Events, re-events.
   * Doawnload
-    *  [MyOutlookToday_yw_1.1_200609230.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1_200609230.zip %}(Yahoo! Widget)
+    * [MyOutlookToday_yw_1.1_200609230.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.1_200609230.zip %})
 * Version 1.0 (2006/09/19)
   * Functions
     * Initial Release(Yahoo!Widget(English,Japanese))
   * Doawnload
-    *  [MyOutlookToday_yw_1.0_200609190.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.0_200609190.zip %}(Yahoo! Widget)
-
+    * [MyOutlookToday_yw_1.0_200609190.zip]({% download_url trac_attachments/MyOutlookToday/MyOutlookToday_yw_1.0_200609190.zip %})
 
 ## See Also
-* http://widgets.yahoo.com/ Yahoo! Widgets.
-  * http://widgets.yahoo.com/widgets/my-outlook-today 
-* {% portfolio_url yahoowidget/myoutlooktoday.ja %} (Japanese document) 
+
+* [Japanese document]({% portfolio_url yahoowidget/myoutlooktoday.ja %})
 
 ## License
+
 This code is released under the BSD License.
 
 ## Author & Copyright

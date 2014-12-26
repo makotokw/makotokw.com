@@ -21,12 +21,13 @@ Movable Type 4 の Dashboard ではてな注目キーワードを表示する Wi
 
 ## 更新履歴
 
-* Version 0.1.1 (2009/10/04)
-  * Movable Type 5.0に対応
-  * Date/Simpleモジュールのない環境で動作しない不具合を修正
-
-* Version 0.1.0 (2007/09/02)
-  * 初リリース
+ * Version 0.1.1 (2009/10/04)
+   * Movable Type 5.0に対応
+   * Date/Simpleモジュールのない環境で動作しない不具合を修正
+   * [mt-DashboardHatenaTrends_0.1.1.0910040.zip]({% download_url trac_attachments/MovableType/DashboardHatenaTrends/mt-DashboardHatenaTrends_0.1.1.0910040.zip %})
+ * Version 0.1.0 (2007/09/02)
+   * 初リリース
+   * [mt-DashboardHatenaTrends_0.10]({% download_url trac_attachments/MovableType/DashboardHatenaTrends/mt-DashboardHatenaTrends_0.10.zip %})
 
 ## See Also
 
@@ -34,7 +35,8 @@ Movable Type 4 の Dashboard ではてな注目キーワードを表示する Wi
 
 ## License
 
-This code is released under the Artistic License. The terms of the Artistic License are described at [http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html).
+This code is released under the Artistic License.
+The terms of the Artistic License are described at [http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html).
 
 ## Author & Copyright
 

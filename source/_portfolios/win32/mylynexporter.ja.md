@@ -6,8 +6,7 @@ category: Win32
 date: 2008-02-02
 active: false
 ---
-Eclipseのタスク管理プラグインmylyn(旧名mylar)(http://www.eclipse.org/mylyn/)のデータファイルをExcelに出力ツールです。
-Tracなどを使って無く、個人のメモとして使っていたのですが、ある日人にタスクを見せたくなってエクセルに出力するコードを書いてみました。
+Eclipseのタスク管理プラグイン[mylyn(旧名mylar)](http://www.eclipse.org/mylyn/)のデータファイルをExcelに出力ツールです。Tracなどを使って無く、個人のメモとして使っていたのですが、ある日人にタスクを見せたくなってエクセルに出力するコードを書いてみました。
 
 ## ダウンロード
 
@@ -20,12 +19,12 @@ Tracなどを使って無く、個人のメモとして使っていたのです�
 ## 使い方
 
 1. データファイルを解凍する
-  * ワークスペース\.mylar_'または'_ワークスペース\.metadata\.mylyn*にあるtasklist.xml.zipを解凍します
-1. 解凍するとtasklist.xmlが現れます
-  * MylarExpoter.exeを起動
+  * ``ワークスペース/.mylar``または``ワークスペース/.metadata/.mylyn*`` にある``tasklist.xml.zip``を解凍します
+1. 解凍すると``tasklist.xml``が現れます
+  * ``MylarExporter.exe``を起動
   * 要.NET
-1. _Export Excel_ボタンを押す
-1. ファイルダイアログがでるのでtasklist.xmlを選択する
+1. ``Export Excel``ボタンを押す
+1. ファイルダイアログがでるので``tasklist.xml``を選択する
 1. Excelが起動されワークシートにタスクが出力されている
   * 要Excel
 
@@ -37,4 +36,4 @@ Tracなどを使って無く、個人のメモとして使っていたのです�
 ## コードの仕組み
 
 * C#でxmlファイルをそのままオブジェクトにunserializeして、あとはExcelのautomationにどかどかセルをつっこんでいるだけです
-* タスクのうち出力するか否かをForm1.csの*private bool isExport(Task task)*で決められます。てきとうに変更してください・・・
+* タスクのうち出力するか否かを ``Form1.cs`` の ``private bool isExport(Task task)`` で決められます。てきとうに変更してください・・・
