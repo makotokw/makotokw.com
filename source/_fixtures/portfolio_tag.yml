@@ -10,6 +10,22 @@
   name: Movable Type
   category: platform
 -
+  id: yw
+  name: Yahoo! Widget
+  category: platform
+-
+  id: jquery
+  name: jQuery
+  category: platform
+-
+  id: crx
+  name: Chrome Extension
+  category: platform
+-
+  id: win32
+  name: Windows
+  category: platform
+-
   id: ios
   name: iOS
   category: platform
@@ -28,6 +44,22 @@
 -
   id: objc
   name: Objective-C
+  category: toolkit
+-
+  id: cpp
+  name: C++
+  category: toolkit
+-
+  id: csharp
+  name: C#
+  category: toolkit
+-
+  id: mfc
+  name: MFC
+  category: toolkit
+-
+  id: dotnet
+  name: .NET
   category: toolkit
 -
   id: 2009

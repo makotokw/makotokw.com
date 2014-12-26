@@ -5,6 +5,7 @@
   tags: [objc]
   copyright_year: 2013
   last_updated_year: 2013
+  status: active
 -
   name: Today’s Schedule in Google Calendar™
   name.ja: 今日の予定 in Google Calendar™
@@ -13,6 +14,8 @@
   url: https://chrome.google.com/webstore/detail/todays-schedule-in-google/mkaaneppndljkmpgdcglnpfagfhjhipc
   copyright_year: 2010
   last_updated_year: 2014
+  status: active
+  deprecated: true
 -
   name: World Clocks
   name.ja: 世界時計
@@ -21,6 +24,15 @@
   url: https://chrome.google.com/webstore/detail/world-clocks/innfmeekncjandlanpgdmmogkcimekgo
   copyright_year: 2010
   last_updated_year: 2012
+  status: pending
+-
+  name: jquery.ui.potato.menu
+  categories: [jquery]
+  tags: [js]
+  url: /portfolio/jquery/ui_potato_menu/
+  copyright_year: 2010
+  last_updated_year: 2012
+  status: pending
 -
   name: AmazonJS
   categories: [wp]
@@ -31,6 +43,7 @@
   tags: [php, js]
   copyright_year: 2011
   last_updated_year: 2014
+  status: active
 -
   name: GitHub Flavored Markdown for WordPress
   categories: [wp]
@@ -41,6 +54,7 @@
   tags: [php]
   copyright_year: 2013
   last_updated_year: 2014
+  status: active
 -
   name: Awasete Yomitai for WordPress
   name.ja: あわせてよみたい for WordPress
@@ -49,8 +63,11 @@
   url.ja: http://blog.makotokw.com/portfolio/wordpress/github-flavored-markdown-for-wordpress/
   download_url: http://wordpress.org/extend/plugins/awasete-yomitai-for-wordpress/
   tags: [php]
+  locales: [ja]
   copyright_year: 2009
   last_updated_year: 2009
+  status: done
+  deprecated: true
 -
   name: Inline Archives
   categories: [wp]
@@ -60,6 +77,7 @@
   tags: [php]
   copyright_year: 2012
   last_updated_year: 2012
+  status: pending
 -
   name: PukiWiki for WordPress
   categories: [wp]
@@ -69,6 +87,7 @@
   tags: [php]
   copyright_year: 2009
   last_updated_year: 2009
+  status: pending
 -
   name: PukiWiki for Movable Type
   categories: [mt]
@@ -76,15 +95,147 @@
   tags: [php, perl]
   copyright_year: 2009
   last_updated_year: 2009
+  status: done
 -
   name: SyntaxHighlighter for Movable Type
   categories: [mt]
+  url: /portfolio/movabletype/syntaxhighlighter/
   tags: [php, perl, js]
   copyright_year: 2009
   last_updated_year: 2009
+  status: done
 -
   name: Gravatar for Movable Type
   categories: [mt]
-  tags: [php, perl, js]
+  url: /portfolio/movabletype/gravatar-for-movable-type/
+  tags: [php, perl]
   copyright_year: 2009
   last_updated_year: 2009
+  status: done
+-
+  name: MTmylo
+  categories: [mt]
+  url: /ja/portfolio/movabletype/mtmylo/
+  tags: [perl]
+  copyright_year: 2008
+  last_updated_year: 2008
+  status: done
+-
+  name: DashboardHatenaTrends
+  categories: [mt]
+  url: /ja/portfolio/movabletype/dashboardhatenatrends/
+  tags: [perl]
+  locales: [ja]
+  copyright_year: 2007
+  last_updated_year: 2009
+  status: done
+-
+  name: MTSocialBookmarks
+  categories: [mt]
+  url: /ja/portfolio/movabletype/mtsocialbookmarks/
+  tags: [perl]
+  copyright_year: 2007
+  last_updated_year: 2009
+  status: done
+-
+  name: HatenaTrends
+  categories: [yw]
+  url: /ja/portfolio/yahoowidget/hatenatrends/
+  tags: [js]
+  locales: [ja]
+  copyright_year: 2007
+  last_updated_year: 2009
+  status: done
+  deprecated: true
+-
+  name: MyGoogleCalendar
+  categories: [yw]
+  url: /portfolio/yahoowidget/mygooglecalendar/
+  url.ja: /ja/portfolio/yahoowidget/mygooglecalendar/
+  tags: [js]
+  copyright_year: 2009
+  last_updated_year: 2009
+  status: done
+  deprecated: true
+-
+  name: MyOutlookToday
+  categories: [yw]
+  url: /portfolio/yahoowidget/myoutlooktoday/
+  url.ja: /ja/portfolio/yahoowidget/myoutlooktoday/
+  tags: [js]
+  copyright_year: 2006
+  last_updated_year: 2009
+  status: done
+  deprecated: true
+-
+  name: SongWidget
+  categories: [yw]
+  url: /portfolio/yahoowidget/songwidget/
+  url.ja: /ja/portfolio/yahoowidget/songwidget/
+  tags: [js]
+  copyright_year: 2006
+  last_updated_year: 2009
+  status: done
+  deprecated: true
+-
+  name: WorldClocks
+  categories: [yw]
+  url: /portfolio/yahoowidget/worldclocks/
+  url.ja: /ja/portfolio/yahoowidget/worldclocks/
+  tags: [js]
+  copyright_year: 2006
+  last_updated_year: 2007
+  status: done
+  deprecated: true
+-
+  name: BuildCleaner
+  categories: [win32]
+  url: /ja/portfolio/win32/buildcleaner/
+  tags: [cpp,mfc]
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2004
+  status: done
+-
+  name: MylynExporter
+  categories: [win32]
+  url: /ja/portfolio/win32/mylynexporter/
+  tags: [csharp,dotnet]
+  copyright_year: 2007
+  last_updated_year: 2007
+  status: done
+-
+  name: PasswordCreator
+  categories: [win32]
+  url: /ja/portfolio/win32/passwordcreator/
+  tags: [cpp,mfc]
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2007
+  status: done
+-
+  name: ReadOnlyCanceler
+  categories: [win32]
+  url: /ja/portfolio/win32/readonlycanceler/
+  tags: [cpp,mfc]
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2004
+  status: done
+-
+  name: ReversiGamma
+  categories: [win32]
+  url: /ja/portfolio/win32/reversigamma/
+  tags: [cpp,mfc]
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2007
+  status: done
+-
+  name: VoiceClientOcx
+  categories: [win32]
+  url: /ja/portfolio/win32/voiceclientocx/
+  tags: [cpp]
+  copyright_year: 2002
+  last_updated_year: 2002
+  status: done
