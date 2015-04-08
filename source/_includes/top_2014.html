@@ -1,0 +1,213 @@
+<div class="container">
+    <div class="row section section-subdomain">
+
+        <div class="col-md-4 thinking">
+            <div class="site-item">
+                {% if page.lang == 'en' %}
+                <div class="site-thumb">
+                    <a href="{{ site.path }}/blog/" title="blog"><i class="sicon48-blogen"></i></a>
+                </div>
+                <div class="site-info">
+                    <h2><a href="{{ site.path }}/blog/" title="blog">Blog</a></h2>
+                    <p>Another blog that is in English by Jekyll.</p>
+                </div>
+                {% endif %}
+
+                <div class="site-thumb">
+                    <a href="{{ site.blog_ja_url }}" title="kwLog"><i class="sicon48-blogja"></i></a>
+                </div>
+                <div class="site-info">
+                    <h2><a href="{{ site.blog_ja_url }}" title="kwLog">kwLog</a></h2>
+                    {% if page.lang == 'ja' %}
+                    <p>2001年から黙々と書き続けているひとりごとな日記。いろいろ渡り歩いた末、現在はWordPressを使用。Jekyllに移行したい今日このごろ。</p>
+                    {% else %}
+                    <p>Main blog that is in Japanese since 2001. Using WordPress also.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 creating">
+            <div class="site-item">
+                <div class="site-thumb">
+                    <a href="{{ site.github_url }}" title="github"><i class="sicon48-github"></i></a>
+                </div>
+                <div class="site-info">
+                    <h2><a href="{{ site.github_url }}" title="github">github</a></h2>
+                    {% if page.lang == 'ja' %}
+                    <p>最近(?)書いたOpenSourceなど</p>
+                    {% else %}
+                    <p>OpenSource I am writing</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 about">
+
+            {% if page.lang == 'ja' %}
+            {% assign twitter_account = 'makoto_kw' %}
+            {% assign twitter_widget_id = '299481749132558336' %}
+            {% else %}
+            {% assign twitter_account = 'makotokw' %}
+            {% assign twitter_widget_id = '345920602630131713' %}
+            {% endif %}
+
+            <a class="twitter-timeline" height="200" data-chrome="noheader nofooter noscrollbar transparent"
+               href="https://twitter.com/makoto_kw" data-widget-id="{{twitter_widget_id}}">Tweets by @{{twitter_account}} tweets</a>
+            <script>!function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + "://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");</script>
+
+        </div>
+    </div>
+    <!-- row -->
+
+    {% if page.lang == 'ja' %}
+    <div class="row section section-activity">
+        <h2 class="section-title">Current <span>Activities</span></h2>
+
+        <div class="col-md-4">
+            <div class="feed feed-blog">
+                <h2><i class="fa fa-book"></i> <a href="{{ site.blog_ja_url }}" title="kwLog">kwLog</a> Recent
+                    Posts</h2>
+                <div id="feedBlogContent" class="feed-content">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Loading...
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feed feed-github">
+                <h2><i class="fa fa-github-square"></i> <a href="{{ site.github_url }}" title="github">github</a>
+                    Recent
+                    Activities</h2>
+                <div id="feedGithubContent" class="feed-content">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Loading...
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feed feed-qiita">
+                <h2><i class="fa fa-search"></i> <a href="{{ site.qiita_url }}" title="qiita">Qiita</a> Recent
+                    Posts
+                </h2>
+                <div id="feedQiitaContent" class="feed-content">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+
+    <div class="row section section-activity">
+
+        <div class="col-md-3">
+            <div class="feed feed-blog">
+                <h2><i class="fa fa-book"></i> <a href="{{ site.path }}/blog/" title="blog">Blog</a> Recent
+                    Posts</h2>
+                <div class="feed-content">
+                    <ul class="entrylist list-unstyled">
+                        {% for post in site.posts limit: 4 %}
+                        <li class="entry">
+                            <span class="entry-published">
+                                {{ post.date|date: "%Y/%m/%d" }}
+                            </span>
+                            <span class="entry-title">
+                                <a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a>
+                            </span>
+                            <p class="entry-content">{{ post.content|strip_html|truncate:100 }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feed feed-github">
+                <h2><i class="fa fa-github-square"></i> <a href="{{ site.github_url }}" title="github">github</a>
+                    Recent
+                    Activities</h2>
+                <div id="feedGithubContent" class="feed-content">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Loading...
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feed feed-blog">
+                <h2><i class="fa fa-book"></i> <a href="{{ site.blog_ja_url }}" title="kwLog">kwLog</a> Recent
+                    Posts</h2>
+                <div id="feedBlogContent" class="feed-content">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Loading...
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="feed feed-qiita">
+                <h2><i class="fa fa-search"></i> <a href="{{ site.qiita_url }}" title="qiita">Qiita</a> Recent
+                    Posts
+                </h2>
+                <div id="feedQiitaContent" class="feed-content">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div><!-- !container -->
+
+
+<!-- Dynamic Feed Control and Stylesheet -->
+<script src="//www.google.com/jsapi?key=ABQIAAAAJeJU0o6FZh4wCRoY2rR1hBTM4kQKiN75QhlT21fiuH6xYoN22RRfwCUAvGWPjcKcTEexgGelQ9spLg"></script>
+<script src="//www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"></script>
+
+<script>
+    (function ($) {
+        google.load('feeds', '1');
+        function dateFormat() {
+            var a = [this.getFullYear(), this.getMonth() + 1, this.getDate()];
+            for (var i = 0; i < a.length; i++) if (a[i] < 10) a[i] = '0' + a[i];
+            return a.join('/');
+        }
+        $.fn.extend({
+            blogFeeds: function (opt) {
+                var $me = $(this), url = opt.url || opt, feed = new google.feeds.Feed(url);
+                feed.load(function (result) {
+                    $me.empty();
+                    var f = result.feed || {};
+                    if (!f.entries) return;
+                    var $entries = $('<ul/>').addClass('entrylist list-unstyled');
+                    for (var i = 0, len = f.entries.length; i < len; i++) {
+                        var entry = f.entries[i], $entry = $('<li/>').addClass('entry');
+                        $entry.append($('<span/>').addClass('entry-published').html(dateFormat.apply(new Date(entry.publishedDate), [])));
+                        $entry.append($('<span/>').addClass('entry-title').append($('<a/>').attr('href', entry.link).html(entry.title)));
+                        $entry.append($('<p/>').addClass('entry-content').html(entry.contentSnippet));
+                        $entries.append($entry);
+                    }
+                    $me.append($entries);
+                });
+                return this;
+            }
+        });
+
+        $(window).load(function () {
+            $('#feedBlogContent').blogFeeds('http://blog.makotokw.com/feed/');
+            $('#feedQiitaContent').blogFeeds('http://qiita.com/makoto_kw/feed.atom');
+            $('#feedGithubContent').blogFeeds('http://github.com/makotokw.atom');
+        });
+
+    })(jQuery);
+</script>
+
+{% include lang_redirect.html %}
