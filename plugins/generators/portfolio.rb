@@ -77,30 +77,28 @@ module Jekyll
 
   class PortfolioIndex < Page
 
-    def initialize(site, base, dir, portfolio, lang)
+    def initialize(site, base, portfolios, dir, lang)
       @site = site
       @base = base
       @dir  = dir
-      @lang = lang
       @name = 'index.html'
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'portfolio_index.html')
       self.data['lang'] = lang
-      self.data['portfolio'] = portfolio
-
-      portfolios = YAML.load_file(File.join(base, '_fixtures', 'portfolio.yml'))
 
       # override item.download_url.ja to item.download_url
-      portfolios.each do |item|
+      list = []
+      portfolios.each do |portfolio|
+        item = portfolio.clone
         item.each do |key, value|
           if /^([\w_-]+)\.(#{lang})$/ === key.to_s
             item[$~[1]] = value
           end
         end
+        list << item
       end
-      portfolios.sort_by! { |p| p['copyright_year'] ? p['copyright_year'] : 1990 }
-      self.data['portfolios'] = portfolios.reverse
+      self.data['portfolios'] = list.reverse
     end
 
   end
@@ -112,18 +110,23 @@ module Jekyll
 
     def generate(site)
 
-      portfolios = {'en' => [], 'ja' => []}
+      portfolios = YAML.load_file(File.join(site.source, '_fixtures', 'portfolio.yml'))
+      portfolios.sort_by! { |p| p['copyright_year'] ? p['copyright_year'] : 2000 }
+
       entries = site.get_entries('/', '_portfolios')
 
       # first pass processes, but does not yet render post content
       entries.each do |f|
+        puts f
+        portfolio_path = /^([^\.]+)/.match(f).to_a[1]
+        # val = portfolios.find{|p| p.url.find%2==0 }
         page = PortfolioPage.new(site, site.source, '/_portfolios/', f)
-        portfolios[page.data['lang'] || 'en'] << page
         site.pages << page
       end
 
-      site.pages << PortfolioIndex.new(site, site.source, '/portfolio/', portfolios['en'], 'en')
-      site.pages << PortfolioIndex.new(site, site.source, '/ja/portfolio/', portfolios['ja'], 'ja')
+      # add PortfolioIndex page via locale
+      site.pages << PortfolioIndex.new(site, site.source, portfolios, '/portfolio/', 'en')
+      site.pages << PortfolioIndex.new(site, site.source, portfolios, '/ja/portfolio/', 'ja')
 
     end
   end
