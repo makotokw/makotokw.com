@@ -97,8 +97,8 @@ module.exports = function (grunt) {
         },
         connect: {
             server: {
-                options: {
-                    port: SERVER_PORT,
+            options: {
+                port: SERVER_PORT,
                     hostname: '0.0.0.0',
                     livereload: LIVERELOAD_PORT,
                     middleware: function (connect) {
@@ -122,11 +122,11 @@ module.exports = function (grunt) {
             ]
         },
         jst: {
-            options: {
-                processName: function(filepath) {
-                    return filepath.match(/templates\/(.+)\.ejs/)[1];
-                }
-            },
+                options: {
+                    processName: function(filepath) {
+                        return filepath.match(/templates\/(.+)\.ejs/)[1];
+                    }
+                },
             source: {
                 files: {
                     '<%= makotokw.theme %>/javascripts/templates/templates.js': ['<%= makotokw.theme %>/javascripts/templates/*.ejs']
