@@ -15,7 +15,7 @@
 
 .portfolio-tag {
   font-size: 10px;
-  @include border-radius(9px);
+  border-radius: 9px;
   margin: 4px;
   padding: 4px 8px;
   background-color: $blue-dark;

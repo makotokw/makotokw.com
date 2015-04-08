@@ -1,7 +1,7 @@
-@import "compass/css3";
 @import "vars";
 @import "bootstrapvars";
-@import "bootstrap/bootstrap";
+@import "bootstrap";
+$fa-font-path: './components/fonts';
 @import "font-awesome";
 @import "functions";
 @import "global";

@@ -214,7 +214,7 @@ $page-home-width: 1170px;
   display: block;
   display: table-cell;
   background: $link-color;
-  @include border-radius(50%);
+  border-radius: 50%;
   text-align: center;
   color: $white;
   vertical-align: middle;
@@ -235,7 +235,7 @@ $page-home-width: 1170px;
   &:hover {
     background: $link-hover-color;
     .label-link {
-      @include transform(rotate(360deg));
+      transform: rotate(360deg);
       color: $white;
     }
   }
@@ -376,7 +376,7 @@ $page-home-width: 1170px;
       font-size: $circle-menu-font-size-xs;
       &:hover {
         .label-link {
-          @include transform( scale(1) rotate(0deg) translate(0px) );
+          transform: scale(1) rotate(0deg) translate(0px);
           color: $white;
         }
       }
@@ -476,7 +476,7 @@ $page-home-width: 1170px;
     height: $circle-menu-size-xs;
     &:hover {
       .label-link {
-        @include transform( scale(1) rotate(0deg) translate(0px) );
+        transform: scale(1) rotate(0deg) translate(0px);
         color: $white;
       }
     }

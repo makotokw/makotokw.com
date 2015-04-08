@@ -8,7 +8,7 @@
   padding: 24px;
   background-color: $bg;
   border: 2px solid $border;
-  @include border-radius($border-radius-base);
+  border-radius: $border-radius-base;
 
   a {
     color: $color;

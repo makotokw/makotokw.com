@@ -365,7 +365,7 @@ legend {
 
 .form-actions {
   border-top: none;
-  @include border-radius($border-radius-base);
+  border-radius: $border-radius-base;
   background-color: darken($gray-lighter, 5%);
 }
 

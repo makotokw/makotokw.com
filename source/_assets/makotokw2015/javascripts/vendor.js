@@ -1,8 +1,8 @@
-//= require jquery.easing/jquery.easing
-//= require queryloader2/jquery.queryloader2
-//= require isotope/isotope.pkgd
-//= require underscore/underscore
-//= require underscore.string/underscore.string
-//= require backbone/backbone
-//= require bootstrap/bootstrap
+//= require jquery.easing/js/jquery.easing
+//= require queryloader2/js/jquery.queryloader2
+//= require isotope/js/isotope.pkgd
+//= require underscore/js/underscore
+//= require underscore.string/js/underscore.string
+//= require backbone/js/backbone
+//= require bootstrap-sass-official/js/bootstrap
 //= require vendor/jquery.githubRepoWidget

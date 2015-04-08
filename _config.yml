@@ -14,7 +14,7 @@ encoding: utf-8
 
 # Plugins
 whitelist: []
-gems:      ["jekyll-assets", "jekyll-assets/compass"]
+gems:      ["jekyll-assets"]
 
 # Conversion
 markdown:    kramdown
@@ -27,12 +27,12 @@ excerpt_separator: "\n\n"
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 kramdown:
+  input:          GFM
   auto_ids:       false
   use_coderay:    true
-  input:          GFM
 
   coderay:
-    coderay_tab_width:         4
+    coderay_tab_width:         2
     coderay_css:               style
 
 # Outputting
@@ -76,9 +76,9 @@ assets:
   dirname: assets
   baseurl: /assets/
   sources:
-    - _assets/components/javascripts
-    - _assets/components/stylesheets
-    - _assets/components/stylesheets
+    - ../bower_components/bootstrap-sass-official/assets/stylesheets
+    - ../bower_components/font-awesome/scss
+    - _assets/components
     - _assets/makotokw2015/javascripts
     - _assets/makotokw2015/stylesheets
     - _assets/makotokw2015/images
