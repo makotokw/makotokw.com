@@ -6,7 +6,7 @@ window.makotokw = {
 
     isTopPage: false,
     isMobile: false,
-    staticAssetsPath: '/assets/makotokw2015/',
+    staticAssetsPath: '/assets/makotokw2016/',
 
     init: function () {
         'use strict';
