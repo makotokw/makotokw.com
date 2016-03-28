@@ -11,7 +11,7 @@ var del = require('del');
 var appConfig = {
     source: 'source',
     components: 'source/_assets/components',
-    theme: 'source/_assets/makotokw2015',
+    theme: 'source/_assets/makotokw2016',
     distProduction: 'dist',
     distDevelopment: '.dist_development',
     distDevelopmentPreload: '.dist_development_preload',

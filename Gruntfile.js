@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     var appConfig = {
         source: 'source',
         components: 'source/_assets/components',
-        theme: 'source/_assets/makotokw2015',
+        theme: 'source/_assets/makotokw2016',
         distProduction: 'dist',
         distDevelopment: '.dist_development',
         distDevelopmentPreload: '.dist_development_preload',
@@ -122,11 +122,11 @@ module.exports = function (grunt) {
             ]
         },
         jst: {
-                options: {
-                    processName: function(filepath) {
-                        return filepath.match(/templates\/(.+)\.ejs/)[1];
-                    }
-                },
+            options: {
+                processName: function(filepath) {
+                    return filepath.match(/templates\/(.+)\.ejs/)[1];
+                }
+            },
             source: {
                 files: {
                     '<%= makotokw.theme %>/javascripts/templates/templates.js': ['<%= makotokw.theme %>/javascripts/templates/*.ejs']

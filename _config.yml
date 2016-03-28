@@ -79,9 +79,9 @@ assets:
     - ../bower_components/bootstrap-sass-official/assets/stylesheets
     - ../bower_components/font-awesome/scss
     - _assets/components
-    - _assets/makotokw2015/javascripts
-    - _assets/makotokw2015/stylesheets
-    - _assets/makotokw2015/images
+    - _assets/makotokw2016/javascripts
+    - _assets/makotokw2016/stylesheets
+    - _assets/makotokw2016/images
   compress:
     js:   ~
     css:  ~
