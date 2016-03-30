@@ -21,7 +21,14 @@ footer: false
                         {% for c in p.categories %}
                         <span class="entry-category entry-category-{{ c }}">{{ c }}</span>
                         {% endfor %}
-                        <h1><a href="{{ p.url }}">{{p.name}}</a></h1>
+
+                        <h1>
+                            {% if p.url %}
+                            <a href="{{ p.url }}">{{p.name}}</a>
+                            {% else %}
+                            {{p.name}}
+                            {% endif %}
+                        </h1>
                     </article>
                 </div>
             </div>
