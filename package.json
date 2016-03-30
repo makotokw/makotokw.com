@@ -4,23 +4,8 @@
   "description": "makotokw.com",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.5.3",
-    "connect-livereload": "~0.3.2",
+    "browser-sync": "^2.8.2",
     "del": "^1.1.1",
-    "grunt": "~0.4.1",
-    "grunt-bower-task": "~0.3.2",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-compass": "^0.9.1",
-    "grunt-contrib-connect": "~0.7.1",
-    "grunt-contrib-jshint": "~0.9.2",
-    "grunt-contrib-jst": "~0.6.0",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-convert": "^0.1.12",
-    "grunt-jekyll": "~0.4.1",
-    "grunt-newer": "~0.7.0",
-    "grunt-open": "^0.2.3",
-    "grunt-rsync": "~0.5.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-bower-normalize": "^1.0.4",
@@ -34,7 +19,7 @@
     "gulp-util": "^3.0.4",
     "gulp-yaml": "^0.2.4",
     "jshint-stylish": "~0.1.5",
-    "load-grunt-tasks": "~0.4.0",
-    "main-bower-files": "^2.6.2"
+    "main-bower-files": "^2.6.2",
+    "run-sequence": "^1.1.5"
   }
 }

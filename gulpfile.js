@@ -3,8 +3,8 @@
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
+var runSequence = require('run-sequence');
+var browserSync = require('browser-sync').create();
 var del = require('del');
 
 // configurable paths
@@ -47,7 +47,8 @@ function sass(env, dest) {
             cascade: false
         }))
         .pipe(gulp.dest(dest))
-        .pipe(reload({stream: true, once: true}));
+        .pipe(browserSync.stream({match: '**/*.css'}))
+    ;
 }
 
 gulp.task('sass:dev', function () {
@@ -76,12 +77,14 @@ gulp.task('clean:dev', function () {
     ]);
 });
 
-gulp.task('jekyll:dev', function () {
+gulp.task('jekyll:dev', function (cb) {
     var exec = require('child_process').exec;
-    exec(
-        'bundle exec jekyll build --config _config.yml,_config.development.yml --drafts -d ' + appConfig.distDevelopment,
-        function (err) {
-            if (err) return cb(err); // return error
+    exec('bundle exec jekyll build --config _config.yml,_config.development.yml --drafts -d ' + appConfig.distDevelopment,
+        function (error, stdout, stderr) {
+            if (error !== null) {
+                console.log('jekyll build error: ' + error);
+            }
+            return cb();
         });
 });
 
@@ -92,18 +95,25 @@ gulp.task('build:dev', [
     'jekyll:dev',
     'browser-sync'
 ], function () {
+    gulp.watch(appConfig.source + '/**/*.{md,html}', function() {
+        runSequence(
+            'jekyll:dev',
+            browserSync.reload
+        )
+    });
     gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint']);
     gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
 });
 
 gulp.task('browser-sync', function () {
-    browserSync({
+    browserSync.init({
         port: 8084,
         server: {
             baseDir: [
                 appConfig.distDevelopmentPreload,
                 appConfig.distDevelopment
             ]
-        }
+        },
+        reloadDebounce: 2000
     });
 });
