@@ -113,7 +113,7 @@ module Jekyll
       portfolios = YAML.load_file(File.join(site.source, '_fixtures', 'portfolio.yml'))
       portfolios.sort_by! { |p| p['copyright_year'] ? p['copyright_year'] : 2000 }
 
-      entries = site.get_entries('/', '_portfolios')
+      entries = site.reader.get_entries('/', '_portfolios')
 
       # first pass processes, but does not yet render post content
       entries.each do |f|

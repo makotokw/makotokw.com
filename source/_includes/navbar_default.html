@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            {% if page.is_top %}
+            {% if layout.is_top %}
             <a class="navbar-brand" href="#home">makotokw.com</a>
             {% else %}
             {% if page.lang == 'ja' %}
@@ -19,18 +19,18 @@
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    {% if page.is_top == true %}
+                    {% if layout.is_top == true %}
                     <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
                     {% endif %}
                     {% if page.lang == 'ja' %}
-                    {% if page.is_top != true %}
+                    {% if layout.is_top != true %}
                     <li><a href="/ja/#home"><i class="fa fa-home"></i> Home</a></li>
                     {% endif %}
                     <li><a href="/ja/#blog"><i class="fa fa-book"></i> Blog</a></li>
                     <li><a href="/ja/portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
                     <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
                     {% else %}
-                    {% if page.is_top != true %}
+                    {% if layout.is_top != true %}
                     <li><a href="/#home"><i class="fa fa-home"></i> Home</a></li>
                     {% endif %}
                     <li><a href="/#blog"><i class="fa fa-book"></i> Blog</a></li>

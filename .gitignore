@@ -7,6 +7,7 @@
 /source/assets/components*
 
 ### Jekyll ###
+.asset-cache
 .sass-cache
 .rspec
 /.bundle
@@ -20,6 +21,7 @@ Icon
 
 ### Bower ###
 bower_components
+_bower_components
 
 ### Node ###
 npm-debug.log

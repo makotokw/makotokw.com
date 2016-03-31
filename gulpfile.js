@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
+var fs = require('fs');
 var del = require('del');
 
 // configurable paths
@@ -12,6 +13,7 @@ var appConfig = {
     source: 'source',
     components: 'source/_assets/components',
     theme: 'source/_assets/makotokw2016',
+    bowerRc: JSON.parse(fs.readFileSync('.bowerrc')),
     distProduction: 'dist',
     distDevelopment: '.dist_development',
     distDevelopmentPreload: '.dist_development_preload',
@@ -25,19 +27,19 @@ gulp.task('jshint', function () {
         .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
 
-gulp.task('bower:install', function () {
+gulp.task('bower:install', plugins.shell.task(['bower install']));
+gulp.task('bower:main-files', ['bower:install'], function () {
     var bower = require('main-bower-files');
-    plugins.shell.task(['bower install']);
-    gulp.src(bower(), {base: './bower_components'})
+    return gulp.src(bower(), {base: appConfig.bowerRc.directory})
         .pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
         .pipe(gulp.dest(appConfig.components));
 });
 
 function sass(env, dest) {
-    plugins.rubySass(appConfig.theme + '/stylesheets', {
+    return plugins.rubySass(appConfig.theme + '/stylesheets', {
         loadPath: [
-            'bower_components/bootstrap-sass-official/assets/stylesheets',
-            'bower_components/font-awesome/scss'
+            appConfig.bowerRc.directory + '/bootstrap-sass-official/assets/stylesheets',
+            appConfig.bowerRc.directory + '/font-awesome/scss'
         ],
         lineNumbers: env == 'development'
     })
@@ -52,21 +54,21 @@ function sass(env, dest) {
 }
 
 gulp.task('sass:dev', function () {
-    sass('development', appConfig.distDevelopmentPreload + '/assets');
+    return sass('development', appConfig.distDevelopmentPreload + '/assets');
 });
 
 function fixtures(env, dest) {
-    gulp.src(appConfig.source + '/_fixtures/*.yml')
+    return gulp.src(appConfig.source + '/_fixtures/*.yml')
         .pipe(plugins.yaml())
         .pipe(gulp.dest(dest))
 }
 
 gulp.task('fixtures:dev', function () {
-    fixtures('development', appConfig.distDevelopmentPreload + '/data')
+    return fixtures('development', appConfig.distDevelopmentPreload + '/data')
 });
 
 gulp.task('fixtures:prod', function () {
-    fixtures('production', appConfig.distProduction + '/data')
+    return fixtures('production', appConfig.distProduction + '/data')
 });
 
 gulp.task('clean:dev', function () {
@@ -88,23 +90,6 @@ gulp.task('jekyll:dev', function (cb) {
         });
 });
 
-gulp.task('build:dev', [
-    'bower:install',
-    'fixtures:dev',
-    'sass:dev',
-    'jekyll:dev',
-    'browser-sync'
-], function () {
-    gulp.watch(appConfig.source + '/**/*.{md,html}', function() {
-        runSequence(
-            'jekyll:dev',
-            browserSync.reload
-        )
-    });
-    gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint']);
-    gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
-});
-
 gulp.task('browser-sync', function () {
     browserSync.init({
         port: 8084,
@@ -116,4 +101,28 @@ gulp.task('browser-sync', function () {
         },
         reloadDebounce: 2000
     });
+});
+
+gulp.task('build:dev', function (cb) {
+    return runSequence(
+        'bower:main-files',
+        ['fixtures:dev', 'sass:dev'],
+        'jekyll:dev',
+        cb
+    );
+});
+
+gulp.task('serve:dev', function () {
+    runSequence(
+        'build:dev',
+        'browser-sync'
+    );
+    gulp.watch(appConfig.source + '/**/*.{md,html}', function() {
+        runSequence(
+            'jekyll:dev',
+            browserSync.reload
+        )
+    });
+    gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint']);
+    gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
 });

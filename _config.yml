@@ -6,7 +6,7 @@ development: false
 # Where things are
 source: ./source
 destination: ./dist
-plugins: ./plugins
+plugins_dir: ./plugins
 
 # Handling Reading
 safe: false
@@ -14,11 +14,12 @@ encoding: utf-8
 
 # Plugins
 whitelist: []
-gems:      ["jekyll-assets"]
+gems:
+  - jekyll-assets
 
 # Conversion
 markdown:    kramdown
-highlighter: pygments
+highlighter: coderay
 lsi:         false
 excerpt_separator: "\n\n"
 
@@ -27,9 +28,9 @@ excerpt_separator: "\n\n"
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 kramdown:
-  input:          GFM
-  auto_ids:       false
-  use_coderay:    true
+  input:            GFM
+  auto_ids:         false
+  enable_coderay:   true
 
   coderay:
     coderay_tab_width:         2
@@ -70,14 +71,11 @@ download_url: https://dl.dropboxusercontent.com/u/8932138/downloads/
 addthis_profile_id: ra-51d5a54a1c992276
 
 # Plugin: jekyll-assets
-# https://github.com/ixti/jekyll-assets
-# http://ixti.net/jekyll-assets/
+# http://jekyll.github.io/jekyll-assets/
 assets:
-  dirname: assets
-  baseurl: /assets/
   sources:
-    - ../bower_components/bootstrap-sass-official/assets/stylesheets
-    - ../bower_components/font-awesome/scss
+    - _bower_components/bootstrap-sass-official/assets/stylesheets
+    - _bower_components/font-awesome/scss
     - _assets/components
     - _assets/makotokw2016/javascripts
     - _assets/makotokw2016/stylesheets
@@ -85,4 +83,3 @@ assets:
   compress:
     js:   ~
     css:  ~
-  gzip: []

@@ -12,7 +12,7 @@ cls: site-portfolio
     <div class="entry-content">
         {{ content }}
     </div>
-  {% unless page.footer == false %}
+  {% unless layout.footer == false %}
     <footer class="entry-footer">
       {% if page.date or page.author %}<p class="entry-meta">
         {% if page.author %}{% include post/author.html %}{% endif %}
