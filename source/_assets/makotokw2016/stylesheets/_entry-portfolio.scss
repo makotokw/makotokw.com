@@ -2,6 +2,7 @@
 .entry-portfolio {
 
   table {
+    @extend .table;
     @extend .table-bordered;
   }
 }
