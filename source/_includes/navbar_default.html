@@ -19,18 +19,18 @@
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    {% if layout.is_top == true %}
+                    {% if layout.is_top %}
                     <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
                     {% endif %}
                     {% if page.lang == 'ja' %}
-                    {% if layout.is_top != true %}
+                    {% if !layout.is_top %}
                     <li><a href="/ja/#home"><i class="fa fa-home"></i> Home</a></li>
                     {% endif %}
                     <li><a href="/ja/#blog"><i class="fa fa-book"></i> Blog</a></li>
                     <li><a href="/ja/portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
                     <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
                     {% else %}
-                    {% if layout.is_top != true %}
+                    {% if !layout.is_top %}
                     <li><a href="/#home"><i class="fa fa-home"></i> Home</a></li>
                     {% endif %}
                     <li><a href="/#blog"><i class="fa fa-book"></i> Blog</a></li>
