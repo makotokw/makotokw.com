@@ -14,23 +14,24 @@ footer: true
                 <h1 class="site-name"><span class="domain-site">makotokw</span>.<span class="domain-top">com</span></h1>
             </div>
             <div class="row row-site-menu">
-                <ul id="menuHome" class="menu-home">
+                <ul id="menuHome" class="menu-home {% if page.lang == 'ja' %}menu-home-4{% else %}menu-home-3{% endif %}">
                     <li class="menu-home-item">
-                        <a class="circle-menu" href="#blog"><span class="label-link">Blog</span></a>
+                        <a class="menu-label" href="#blog"><span class="label-link">Blog</span></a>
                         <span class="arrow"><i class="fa fa-chevron-down"></i></span>
                     </li>
                     <li class="menu-home-item">
-                        <a class="circle-menu" href="./portfolio/"><span class="label-link">portfolio</span></a>
-                        <span class="arrow"><i class="fa fa-chevron-down"></i></span>
+                        <a class="menu-label" href="./portfolio/"><span class="label-link">Portfolio</span></a>
                     </li>
                     <li class="menu-home-item">
-                        <a class="circle-menu" href="#socialCoding"><span class="label-link">Social Coding</span></a>
+                        <a class="menu-label" href="#github"><span class="label-link">GitHub</span></a>
                         <span class="arrow"><i class="fa fa-chevron-down"></i></span>
                     </li>
+                    {% if page.lang == 'ja' %}
                     <li class="menu-home-item">
-                        <a class="circle-menu" href="#programingMemo"><span class="label-link">Programing Memo</span></a>
+                        <a class="menu-label" href="#qiita"><span class="label-link">Qiita</span></a>
                         <span class="arrow"><i class="fa fa-chevron-down"></i></span>
                     </li>
+                    {% endif %}
                 </ul>
 
                 <ul class="menu-lang">
@@ -65,7 +66,7 @@ footer: true
                 Loading...
             </div>
             <div class="section-footer">
-                <a href="{{ site.blog_ja_url }}" title="Kwlog" target="_blank">Archives</a>
+                <a href="{{ site.blog_ja_url }}" class="btn btn-default btn-archives" title="kwLog Archives" target="_blank">Archives</a>
             </div>
             {% else %}
             <h2 class="section-title"><i class="fa fa-book"></i> <a href="{{ site.path }}/blog/" title="Blog">Blog</a></h2>
@@ -85,7 +86,7 @@ footer: true
                 </ul>
             </div>
             <div class="section-footer">
-                <a href="{{ site.path }}/blog/" title="Blog">Archives</a>
+                <a href="{{ site.path }}/blog/" class="btn btn-default btn-archives" title="Blog Archives">Archives</a>
             </div>
             {% endif %}
         </div>
@@ -103,36 +104,39 @@ footer: true
         <!--</div>-->
     <!--</section>-->
 
-    <section id="pageSocialCoding" class="page page-section page-code">
+    <section id="pageGithub" class="page page-section page-github">
         <div class="container">
-            <h2 class="section-title"><span>Social Coding</span> on <a href="{{ site.github_url }}" title="GitHub">GitHub</a></h2>
+            <h2 class="section-title"><a href="{{ site.github_url }}" title="GitHub">GitHub</a></h2>
+            <h3>Activities</h3>
             <div id="feedGithubContent" class="feed-content feed-content-blog">
                 <i class="fa fa-spinner fa-spin"></i>
                 Loading...
             </div>
             <div class="section-footer">
-                <a href="{{ site.github_url }}" title="GitHub" target="_blank">Archives</a>
+                <a href="{{ site.github_url }}" class="btn btn-default btn-archives" title="GitHub Archives" target="_blank">Archives</a>
             </div>
-            <script src="http://lab.lepture.com/github-cards/widget.js"></script>
-            <script
-                    data-name="makotokw"
-                    data-modules="base,details,stats,repos,eventsStatis,orgs"
-                    data-reposNum="3"
-                    src="http://octocard.in/o.js">
-            </script>
+            <div class="github-widget">
+                <script src="http://lab.lepture.com/github-cards/widget.js"></script>
+                <script
+                        data-name="makotokw"
+                        data-modules="base,details,stats,repos,eventsStatis,orgs"
+                        data-reposNum="3"
+                        src="http://octocard.in/o.js">
+                </script>
+            </div>
         </div>
 
     </section>
 
-    <section id="pageProgramingMemo" class="page page-section page-memo">
+    <section id="pageQiita" class="page page-section page-qiita">
         <div class="container">
-            <h2 class="section-title"><span>Programing Memo</span> on <a href="{{ site.qiita_url }}" title="Qiita">Qiita</a></h2>
+            <h2 class="section-title"><a href="{{ site.qiita_url }}" title="Qiita">Qiita</a></h2>
             <div id="feedQiitaContent" class="feed-content feed-content-blog">
                 <i class="fa fa-spinner fa-spin"></i>
                 Loading...
             </div>
             <div class="section-footer">
-                <a href="{{ site.qiita_url }}" title="Qiita" target="_blank">Archives</a>
+                <a href="{{ site.qiita_url }}" class="btn btn-default btn-archives" title="Qiita Archives" target="_blank">Archives</a>
             </div>
         </div>
     </section>

@@ -14,6 +14,8 @@ makotokw.Views = makotokw.Views || {};
         },
 
         initialize: function () {
+            var me = this;
+
             this.loadFeeds();
 
             var $pageHome = this.$pageHome = $('.page-home');
@@ -25,7 +27,7 @@ makotokw.Views = makotokw.Views || {};
             }
             $pageHome.css('background-image', 'url("' + makotokw.staticAssetsPath + 'images/bg-home.png")');
 
-            var me = this;
+            /*
             $('body').queryLoader2({
                 barColor: '#2C3E50',
                 backgroundColor: '#fff',
@@ -36,12 +38,16 @@ makotokw.Views = makotokw.Views || {};
                     me.onLoad();
                 }
             });
+             $('#prePage').fadeOut().remove();
+            */
 
-            $('#prePage').fadeOut().remove();
+            $('#prePage').remove();
 
-            this.initializePortfolio();
+            // this.initializePortfolio();
             this.initializeRouter();
             this.initializeScroller();
+
+            me.onLoad();
         },
 
         initializePortfolio: function () {
@@ -128,7 +134,7 @@ makotokw.Views = makotokw.Views || {};
             $menuItems.click(onMenuClick);
             this.$menuItems = $menuItems;
 
-            $('#menuHome').find('.circle-menu').click(onMenuClick);
+            $('#menuHome').find('.menu-label').click(onMenuClick);
 
             // TODO: enable or delete
             //$(window).bind('scroll.home', _.bind(this.refreshHeader, this));
@@ -169,9 +175,7 @@ makotokw.Views = makotokw.Views || {};
         },
 
         scrollToPage: function (page) {
-
-            console.log('scrollToPage', page);
-
+            // console.log('scrollToPage', page);
             var target = '#page' + _.str.capitalize(page);
             var $target = $(target);
             if ($target.length === 0) {
