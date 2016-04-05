@@ -26,6 +26,20 @@ gulp.task('jshint', function () {
         .pipe(plugins.jshint.reporter('jshint-stylish'))
         .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
+gulp.task('js:dev', function() {
+    return gulp.src([
+            appConfig.theme + '/javascripts/main.js',
+            appConfig.theme + '/javascripts/routes/*.js',
+            appConfig.theme + '/javascripts/models/*.js',
+            appConfig.theme + '/javascripts/collections/*.js',
+            appConfig.theme + '/javascripts/views/*.js'
+        ])
+        .pipe(plugins.concat('app.js'))
+        .pipe(gulp.dest(appConfig.distDevelopmentPreload + '/assets'))
+        .pipe(browserSync.stream({match: '**/*.js'}))
+        ;
+});
+
 
 gulp.task('bower:install', plugins.shell.task(['bower install']));
 gulp.task('bower:main-files', ['bower:install'], function () {
@@ -41,7 +55,7 @@ function sass(env, dest) {
             appConfig.bowerRc.directory + '/bootstrap-sass-official/assets/stylesheets',
             appConfig.bowerRc.directory + '/font-awesome/scss'
         ],
-        lineNumbers: env == 'development'
+        lineNumbers: env === 'development'
     })
         .pipe(plugins.plumber())
         .pipe(plugins.autoprefixer({
@@ -61,14 +75,15 @@ function fixtures(env, dest) {
     return gulp.src(appConfig.source + '/_fixtures/*.yml')
         .pipe(plugins.yaml())
         .pipe(gulp.dest(dest))
+    ;
 }
 
 gulp.task('fixtures:dev', function () {
-    return fixtures('development', appConfig.distDevelopmentPreload + '/data')
+    return fixtures('development', appConfig.distDevelopmentPreload + '/data');
 });
 
 gulp.task('fixtures:prod', function () {
-    return fixtures('production', appConfig.distProduction + '/data')
+    return fixtures('production', appConfig.distProduction + '/data');
 });
 
 gulp.task('clean:dev', function () {
@@ -82,7 +97,7 @@ gulp.task('clean:dev', function () {
 gulp.task('jekyll:dev', function (cb) {
     var exec = require('child_process').exec;
     exec('bundle exec jekyll build --config _config.yml,_config.development.yml --drafts -d ' + appConfig.distDevelopment,
-        function (error, stdout, stderr) {
+        function (error/*, stdout, stderr*/) {
             if (error !== null) {
                 console.log('jekyll build error: ' + error);
             }
@@ -117,12 +132,14 @@ gulp.task('serve:dev', function () {
         'build:dev',
         'browser-sync'
     );
-    gulp.watch(appConfig.source + '/**/*.{md,html}', function() {
+    gulp.watch(appConfig.source + '/**/*.{md,html,yml}', function() {
         runSequence(
             'jekyll:dev',
             browserSync.reload
-        )
+        );
     });
-    gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint']);
+    gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint', 'js:dev']);
     gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
+    gulp.watch(appConfig.source + '/_fixtures/*.yml', ['fixtures:dev']);
+
 });
