@@ -22,6 +22,31 @@ grunt debug
 ```
 
 
+### Directory Structure
+
+```
+source/
+├── _assets             assets source
+│   ├── components          vendor assets installed by Bower
+│   └── makotokw2016        theme assets source
+│       ├── images
+│       ├── javascripts
+│       └── stylesheets
+├── _drafts             [page] draft post page
+├── _fixtures           static data
+├── _includes           [template] partial template
+│   └── post                [template] partial template for post
+├── _layouts            [template] layout template
+├── _portfolios         [page] portolio page
+├── _posts              [page] post page
+├── assets              static assets
+│   ├── components          vendor static assets
+│   ├── makotokw2016        theme static assets
+│   └── site                common static assets (not depend on theme)
+├── blog                [page] blog archive page
+└── ja                  [page] japanese page
+```
+
 ## Build for production
 
 ```
