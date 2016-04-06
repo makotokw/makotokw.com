@@ -141,5 +141,7 @@ gulp.task('serve:dev', function () {
     gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint', 'js:dev']);
     gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
     gulp.watch(appConfig.source + '/_fixtures/*.yml', ['fixtures:dev']);
+});
 
+gulp.task('default', ['serve:dev'], function() {
 });
