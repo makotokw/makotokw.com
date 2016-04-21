@@ -8,40 +8,55 @@
     "underscore.string": "~2.3.3",
     "backbone": "~1.1.2",
     "modernizr": "~2.8.3",
-    "bootstrap-sass-official": "~3.3.0",
+    "bootstrap-sass": "~3.3.0",
     "font-awesome": "~4.2",
     "isotope": "~2.0.0",
     "queryloader2": "~2.9.0"
   },
   "overrides": {
     "jquery": {
-      "main": ["jquery.js"]
+      "main": [
+        "jquery.js"
+      ]
     },
     "underscore.string": {
-      "main": ["lib/underscore.string.js"]
+      "main": [
+        "lib/underscore.string.js"
+      ]
     },
     "modernizr": {
-      "main": ["modernizr.js"]
+      "main": [
+        "modernizr.js"
+      ]
     },
-    "bootstrap-sass-official": {
+    "bootstrap-sass": {
       "main": [
         "assets/javascripts/bootstrap.js",
         "assets/fonts/bootstrap/*"
       ],
       "normalize": {
-        "fonts": ["glyphicons-*"]
+        "fonts": [
+          "glyphicons-*"
+        ]
       }
     },
     "font-awesome": {
       "normalize": {
-        "fonts": ["*.otf", "*-webfont.*"]
+        "fonts": [
+          "*.otf",
+          "*-webfont.*"
+        ]
       }
     },
     "isotope": {
-      "main": ["dist/isotope.pkgd.js"]
+      "main": [
+        "dist/isotope.pkgd.js"
+      ]
     },
     "queryloader2": {
-      "main": ["jquery.queryloader2.js"]
+      "main": [
+        "jquery.queryloader2.js"
+      ]
     }
   },
   "exportsOverride": {

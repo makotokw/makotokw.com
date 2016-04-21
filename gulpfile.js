@@ -52,7 +52,7 @@ gulp.task('bower:main-files', ['bower:install'], function () {
 function sass(env, dest) {
     return plugins.rubySass(appConfig.theme + '/stylesheets', {
         loadPath: [
-            appConfig.bowerRc.directory + '/bootstrap-sass-official/assets/stylesheets',
+            appConfig.bowerRc.directory + '/bootstrap-sass/assets/stylesheets',
             appConfig.bowerRc.directory + '/font-awesome/scss'
         ],
         lineNumbers: env === 'development'

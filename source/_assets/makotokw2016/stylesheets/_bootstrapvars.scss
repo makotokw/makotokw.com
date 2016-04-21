@@ -103,6 +103,13 @@ $headings-line-height:    1.1;
 
 $blockquote-font-size:    $font-size-base;
 
+// Components
+// -------------------------
+
+$border-radius-base:        4px;
+$border-radius-large:       6px;
+$border-radius-small:       3px;
+
 // Navbar
 // -------------------------
 
@@ -128,3 +135,4 @@ $navbar-default-brand-hover-bg:            transparent;
 $navbar-default-toggle-hover-bg:           $blue;
 $navbar-default-toggle-icon-bar-bg:        $white;
 $navbar-default-toggle-border-color:       $white;
+
