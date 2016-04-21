@@ -37,17 +37,17 @@ footer: true
                 <ul class="menu-lang">
                     {% if page.lang == 'ja' %}
                     <li class="menu-lang-item menu-lang-item-en">
-                        <a href="/">English</a>
+                        <a href="/" class="btn btn-lang">English</a>
                     </li>
                     <li class="menu-lang-item menu-lang-item-ja menu-lang-item-active">
-                        <a href="/ja/">Japanese</a>
+                        <a href="/ja/" class="btn btn-lang">Japanese</a>
                     </li>
                     {% else %}
                     <li class="menu-lang-item menu-lang-item-en menu-lang-item-active">
-                        <a href="/">English</a>
+                        <a href="/" class="btn btn-lang">English</a>
                     </li>
                     <li class="menu-lang-item menu-lang-item-ja">
-                        <a href="/ja/">Japanese</a>
+                        <a href="/ja/" class="btn btn-lang">Japanese</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -66,7 +66,7 @@ footer: true
                 Loading...
             </div>
             <div class="section-footer">
-                <a href="{{ site.blog_ja_url }}" class="btn btn-default btn-archives" title="kwLog Archives" target="_blank">Archives</a>
+                <a href="{{ site.blog_ja_url }}" class="btn btn-default btn-raised btn-archives" title="kwLog Archives" target="_blank">Archives</a>
             </div>
             {% else %}
             <h2 class="section-title"><i class="fa fa-book"></i> <a href="{{ site.path }}/blog/" title="Blog">Blog</a></h2>
@@ -86,7 +86,7 @@ footer: true
                 </ul>
             </div>
             <div class="section-footer">
-                <a href="{{ site.path }}/blog/" class="btn btn-default btn-archives" title="Blog Archives">Archives</a>
+                <a href="{{ site.path }}/blog/" class="btn btn-default btn-raised btn-archives" title="Blog Archives">Archives</a>
             </div>
             {% endif %}
         </div>
@@ -113,9 +113,9 @@ footer: true
                 Loading...
             </div>
             <div class="section-footer">
-                <a href="{{ site.github_url }}" class="btn btn-default btn-archives" title="GitHub Archives" target="_blank">Archives</a>
+                <a href="{{ site.github_url }}" class="btn btn-default btn-raised btn-archives" title="GitHub Archives" target="_blank">Archives</a>
             </div>
-            <div class="github-widget">
+            <div class="github-cards">
                 <script src="http://lab.lepture.com/github-cards/widget.js"></script>
                 <script
                         data-name="makotokw"
@@ -136,7 +136,7 @@ footer: true
                 Loading...
             </div>
             <div class="section-footer">
-                <a href="{{ site.qiita_url }}" class="btn btn-default btn-archives" title="Qiita Archives" target="_blank">Archives</a>
+                <a href="{{ site.qiita_url }}" class="btn btn-default btn-raised btn-archives" title="Qiita Archives" target="_blank">Archives</a>
             </div>
         </div>
     </section>
