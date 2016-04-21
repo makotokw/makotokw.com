@@ -11,7 +11,8 @@
     "bootstrap-sass": "~3.3.0",
     "font-awesome": "~4.2",
     "isotope": "~2.0.0",
-    "queryloader2": "~2.9.0"
+    "queryloader2": "~2.9.0",
+    "bootstrap-material-design": "^0.5.9"
   },
   "overrides": {
     "jquery": {
@@ -56,65 +57,6 @@
     "queryloader2": {
       "main": [
         "jquery.queryloader2.js"
-      ]
-    }
-  },
-  "exportsOverride": {
-    "jquery": {
-      "javascripts": [
-        "jquery*.js",
-        "jquery*.map"
-      ]
-    },
-    "jquery.easing": {
-      "javascripts": [
-        "js/jquery.easing.js"
-      ]
-    },
-    "jquery-ui": {
-      "javascripts": "ui/jquery-ui.js"
-    },
-    "underscore": {
-      "javascripts": [
-        "underscore*.js",
-        "underscore*.map"
-      ]
-    },
-    "underscore.string": {
-      "javascripts": [
-        "lib/underscore.string.js"
-      ]
-    },
-    "backbone": {
-      "javascripts": [
-        "backbone*.js"
-      ]
-    },
-    "modernizr": {
-      "javascripts": [
-        "modernizr.js"
-      ]
-    },
-    "bootstrap-sass-official": {
-      "javascripts": "assets/javascripts/*.js",
-      "javascripts/bootstrap": "assets/javascripts/bootstrap/*.js",
-      "stylesheets": "assets/stylesheets/*.scss",
-      "stylesheets/bootstrap": "assets/stylesheets/bootstrap/*.scss",
-      "stylesheets/bootstrap/mixins": "assets/stylesheets/bootstrap/mixins/*.scss",
-      "fonts": "assets/fonts/bootstrap/*.*"
-    },
-    "font-awesome": {
-      "stylesheets": "scss/*.scss",
-      "fonts": "fonts/*.*"
-    },
-    "queryloader2": {
-      "javascripts": [
-        "jquery.queryloader2.js"
-      ]
-    },
-    "isotope": {
-      "javascripts": [
-        "dist/isotope.pkgd.js"
       ]
     }
   }

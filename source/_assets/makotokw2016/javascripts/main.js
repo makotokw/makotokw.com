@@ -24,6 +24,9 @@ window.makotokw = {
 (function ($) {
     'use strict';
 
+    // bootstrap-material-design
+    $.material.init();
+
     // console.log
     if (!window.console) {
         window.console = {

@@ -53,6 +53,7 @@ function sass(env, dest) {
     return plugins.rubySass(appConfig.theme + '/stylesheets', {
         loadPath: [
             appConfig.bowerRc.directory + '/bootstrap-sass/assets/stylesheets',
+            appConfig.bowerRc.directory + '/bootstrap-material-design/sass',
             appConfig.bowerRc.directory + '/font-awesome/scss'
         ],
         lineNumbers: env === 'development'

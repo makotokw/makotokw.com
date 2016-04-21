@@ -75,6 +75,7 @@ addthis_profile_id: ra-51d5a54a1c992276
 assets:
   sources:
     - _bower_components/bootstrap-sass/assets/stylesheets
+    - _bower_components/bootstrap-material-design/sass
     - _bower_components/font-awesome/scss
     - _assets/components
     - _assets/makotokw2016/javascripts
