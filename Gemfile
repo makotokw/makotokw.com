@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'jekyll'
+gem 'jekyll', '~> 3.1.0'
 
 # for Markdown
 gem 'redcarpet'
@@ -13,4 +13,3 @@ gem 'compass'
 group :jekyll_plugins do
   gem 'jekyll-assets'
 end
-
