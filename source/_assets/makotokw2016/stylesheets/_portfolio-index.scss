@@ -1,0 +1,16 @@
+.label-portfolio {
+  background-color: $blue-dark;
+  color: $silver;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-bottom: 5px;
+  margin-right: 3px;
+  //border-radius: 0;
+  a {
+    color: $silver;
+  }
+}
+.label-portfolio-source {
+  padding-right: 4px;
+}

@@ -1,11 +1,42 @@
 -
+  name: IRKit Remote
+  name.ja: IRKit Remote
+  categories: [pebble]
+  tags: [c, js]
+  url: https://apps.getpebble.com/applications/54b7e129986a229c5700004c
+  source_url: https://github.com/makotokw/pebble-irkit-remote
+  copyright_year: 2015
+  last_updated_year: 2016
+  status: active
+-
+  name: fukidashi generator
+  name.ja: ふきだしジェネレーター
+  categories: [web]
+  tags: [js]
+  url: http://makotokw.github.io/fukidashi-generator/
+  source_url: https://github.com/makotokw/fukidashi-generator
+  copyright_year: 2014
+  last_updated_year: 2014
+  status: pending
+-
   name: Garanchu
   name.ja: ガランチュ
   categories: [ios]
   tags: [objc]
   url: https://itunes.apple.com/jp/app/garanchu/id715054277?mt=8
+  source_url: https://github.com/makotokw/GaranchuForiOS
   copyright_year: 2013
-  last_updated_year: 2013
+  last_updated_year: 2015
+  status: active
+-
+  name: Tokyo Ame
+  name.ja: Tokyo Ame
+  categories: [crx]
+  tags: [js]
+  url: https://chrome.google.com/webstore/detail/tokyo-ame/cmidngbgkimeejhcdnggnnlnkjhhjkkp
+  source_url: https://github.com/makotokw/crx-tokyo-ame
+  copyright_year: 2015
+  last_updated_year: 2015
   status: active
 -
   name: Today’s Schedule in Google Calendar™
@@ -23,6 +54,7 @@
   categories: [crx]
   tags: [js]
   url: https://chrome.google.com/webstore/detail/world-clocks/innfmeekncjandlanpgdmmogkcimekgo
+  source_url: https://github.com/makotokw/world-clocks
   copyright_year: 2010
   last_updated_year: 2012
   status: pending
@@ -31,6 +63,7 @@
   categories: [jquery]
   tags: [js]
   url: /portfolio/jquery/ui_potato_menu/
+  source_url: https://github.com/makotokw/jquery.ui.potato.menu
   copyright_year: 2010
   last_updated_year: 2012
   status: pending
@@ -43,16 +76,16 @@
   source_url: https://github.com/makotokw/wp-amazonjs
   tags: [php, js]
   copyright_year: 2011
-  last_updated_year: 2014
+  last_updated_year: 2016
   status: active
 -
   name: GitHub Flavored Markdown for WordPress
   categories: [wp]
+  tags: [php]
   url: https://github.com/makotokw/wp-gfm
   url.ja: http://blog.makotokw.com/portfolio/wordpress/github-flavored-markdown-for-wordpress/
   download_url: https://github.com/makotokw/wp-gfm/releases
   source_url: https://github.com/makotokw/wp-gfm
-  tags: [php]
   copyright_year: 2013
   last_updated_year: 2014
   status: active
@@ -60,10 +93,10 @@
   name: Awasete Yomitai for WordPress
   name.ja: あわせてよみたい for WordPress
   categories: [wp]
+  tags: [php]
   url: http://wordpress.org/extend/plugins/awasete-yomitai-for-wordpress/
   url.ja: http://blog.makotokw.com/portfolio/wordpress/github-flavored-markdown-for-wordpress/
   download_url: http://wordpress.org/extend/plugins/awasete-yomitai-for-wordpress/
-  tags: [php]
   locales: [ja]
   copyright_year: 2009
   last_updated_year: 2009
@@ -72,60 +105,65 @@
 -
   name: Inline Archives
   categories: [wp]
+  tags: [php]
   url: https://wordpress.org/plugins/inline-archives/
   url.ja: http://blog.makotokw.com/portfolio/wordpress/inline-archives/
   download_url: https://wordpress.org/plugins/inline-archives/
-  tags: [php]
   copyright_year: 2012
   last_updated_year: 2012
   status: pending
 -
   name: PukiWiki for WordPress
   categories: [wp]
+  tags: [php]
   url: http://blog.makotokw.com/portfolio/wordpress/pukiwiki_for_wordpress/
   download_url: http://wordpress.org/extend/plugins/pukiwiki-for-wordpress/
   source_url:
-  tags: [php]
   copyright_year: 2009
   last_updated_year: 2009
   status: pending
 -
   name: PukiWiki for Movable Type
   categories: [mt]
-  url: http://blog.makotokw.com/portfolio/movabletype/pukiwiki_for_movable_type/
   tags: [php, perl]
+  url: http://blog.makotokw.com/portfolio/movabletype/pukiwiki_for_movable_type/
+  source_url: https://github.com/makotokw/mt-plugins/tree/master/pukiwiki
   copyright_year: 2009
   last_updated_year: 2009
   status: done
 -
   name: SyntaxHighlighter for Movable Type
   categories: [mt]
-  url: /portfolio/movabletype/syntaxhighlighter/
   tags: [php, perl, js]
+  url: /portfolio/movabletype/syntaxhighlighter/
+  source_url: https://github.com/makotokw/mt-plugins/tree/master/syntaxhighlighter
   copyright_year: 2009
   last_updated_year: 2009
   status: done
 -
   name: Gravatar for Movable Type
   categories: [mt]
-  url: /portfolio/movabletype/gravatar-for-movable-type/
   tags: [php, perl]
+  url: /portfolio/movabletype/gravatar-for-movable-type/
+  source_url: https://github.com/makotokw/mt-plugins/tree/master/gravatar
   copyright_year: 2009
   last_updated_year: 2009
   status: done
 -
   name: MTmylo
   categories: [mt]
-  url: /ja/portfolio/movabletype/mtmylo/
   tags: [perl]
+  url: /ja/portfolio/movabletype/mtmylo/
+  source_url: https://github.com/makotokw/mt-plugins/tree/master/mtmylo
   copyright_year: 2008
   last_updated_year: 2008
   status: done
 -
   name: DashboardHatenaTrends
   categories: [mt]
-  url: /ja/portfolio/movabletype/dashboardhatenatrends/
   tags: [perl]
+  url: /ja/portfolio/movabletype/dashboardhatenatrends/
+  source_url: https://github.com/makotokw/mt-plugins/tree/master/dashboardhatenatrends
   locales: [ja]
   copyright_year: 2007
   last_updated_year: 2009
@@ -133,16 +171,18 @@
 -
   name: MTSocialBookmarks
   categories: [mt]
-  url: /ja/portfolio/movabletype/mtsocialbookmarks/
   tags: [perl]
+  url: /ja/portfolio/movabletype/mtsocialbookmarks/
+  source_url: hhttps://github.com/makotokw/mt-plugins/tree/master/mtsocialbookmarks
   copyright_year: 2007
   last_updated_year: 2009
   status: done
 -
   name: HatenaTrends
   categories: [yw]
-  url: /ja/portfolio/yahoowidget/hatenatrends/
   tags: [js]
+  url: /ja/portfolio/yahoowidget/hatenatrends/
+  source_url: https://github.com/makotokw/YahooWidgets
   locales: [ja]
   copyright_year: 2007
   last_updated_year: 2009
@@ -151,9 +191,10 @@
 -
   name: MyGoogleCalendar
   categories: [yw]
+  tags: [js]
   url: /portfolio/yahoowidget/mygooglecalendar/
   url.ja: /ja/portfolio/yahoowidget/mygooglecalendar/
-  tags: [js]
+  source_url: https://github.com/makotokw/YahooWidgets/tree/master/mygooglecalendar
   copyright_year: 2009
   last_updated_year: 2009
   status: done
@@ -161,9 +202,10 @@
 -
   name: MyOutlookToday
   categories: [yw]
+  tags: [js]
   url: /portfolio/yahoowidget/myoutlooktoday/
   url.ja: /ja/portfolio/yahoowidget/myoutlooktoday/
-  tags: [js]
+  source_url: https://github.com/makotokw/YahooWidgets/tree/master/myoutlooktoday
   copyright_year: 2006
   last_updated_year: 2009
   status: done
@@ -171,9 +213,10 @@
 -
   name: SongWidget
   categories: [yw]
+  tags: [js]
   url: /portfolio/yahoowidget/songwidget/
   url.ja: /ja/portfolio/yahoowidget/songwidget/
-  tags: [js]
+  source_url: https://github.com/makotokw/YahooWidgets/tree/master/songwidget
   copyright_year: 2006
   last_updated_year: 2009
   status: done
@@ -181,9 +224,10 @@
 -
   name: WorldClocks
   categories: [yw]
+  tags: [js]
   url: /portfolio/yahoowidget/worldclocks/
   url.ja: /ja/portfolio/yahoowidget/worldclocks/
-  tags: [js]
+  source_url: https://github.com/makotokw/YahooWidgets/tree/master/worldclocks
   copyright_year: 2006
   last_updated_year: 2007
   status: done
@@ -191,8 +235,8 @@
 -
   name: BuildCleaner
   categories: [win32]
-  url: /ja/portfolio/win32/buildcleaner/
   tags: [cpp,mfc]
+  url: /ja/portfolio/win32/buildcleaner/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2004
@@ -200,16 +244,16 @@
 -
   name: MylynExporter
   categories: [win32]
-  url: /ja/portfolio/win32/mylynexporter/
   tags: [csharp,dotnet]
+  url: /ja/portfolio/win32/mylynexporter/
   copyright_year: 2007
   last_updated_year: 2007
   status: done
 -
   name: PasswordCreator
   categories: [win32]
-  url: /ja/portfolio/win32/passwordcreator/
   tags: [cpp,mfc]
+  url: /ja/portfolio/win32/passwordcreator/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2007
@@ -217,8 +261,8 @@
 -
   name: ReadOnlyCanceler
   categories: [win32]
-  url: /ja/portfolio/win32/readonlycanceler/
   tags: [cpp,mfc]
+  url: /ja/portfolio/win32/readonlycanceler/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2004
@@ -226,8 +270,8 @@
 -
   name: ReversiGamma
   categories: [win32]
-  url: /ja/portfolio/win32/reversigamma/
   tags: [cpp,mfc]
+  url: /ja/portfolio/win32/reversigamma/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2007
@@ -235,8 +279,8 @@
 -
   name: VoiceClientOcx
   categories: [win32]
-  url: /ja/portfolio/win32/voiceclientocx/
   tags: [cpp]
+  url: /ja/portfolio/win32/voiceclientocx/
   copyright_year: 2002
   last_updated_year: 2002
   status: done

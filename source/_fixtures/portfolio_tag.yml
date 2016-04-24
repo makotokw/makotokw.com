@@ -2,9 +2,14 @@
   name: Any
   category: platform
 -
+  id: web
+  name: Web
+  category: platform
+-
   id: wp
   name: WordPress
   category: platform
+  icon_class: fa fa-wordpress
 -
   id: mt
   name: Movable Type
@@ -30,6 +35,10 @@
   name: iOS
   category: platform
 -
+  id: pebble
+  name: Pebble
+  category: platform
+-
   id: php
   name: PHP
   category: toolkit
@@ -44,6 +53,10 @@
 -
   id: objc
   name: Objective-C
+  category: toolkit
+-
+  id: c
+  name: C
   category: toolkit
 -
   id: cpp
@@ -80,4 +93,12 @@
 -
   id: 2013
   name: 2013
+  category: date
+-
+  id: 2014
+  name: 2014
+  category: date
+-
+  id: 2015
+  name: 2015
   category: date
