@@ -98,10 +98,11 @@ gulp.task('clean:dev', function () {
 gulp.task('jekyll:dev', function (cb) {
     var exec = require('child_process').exec;
     exec('bundle exec jekyll build --config _config.yml,_config.development.yml --drafts -d ' + appConfig.distDevelopment,
-        function (error/*, stdout, stderr*/) {
+        function (error, stdout/*, stderr*/) {
             if (error !== null) {
                 console.log('jekyll build error: ' + error);
             }
+            console.log(stdout);
             return cb();
         });
 });

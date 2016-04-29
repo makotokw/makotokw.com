@@ -21,7 +21,7 @@ footer: false
                 <div class="col-md-10">
                     <article class="entry entry-post">
                         {% for c in p.categories %}
-                        <span class="label label-portfolio label-portfolio-{{ c }}">{{ c }}</span>
+                        <span class="label label-portfolio label-portfolio-{{ c }}">{{ c|portfolio_tag_name }}</span>
                         {% endfor %}
                         {% if p.source_url %}
                         <span class="label label-portfolio label-portfolio-source">

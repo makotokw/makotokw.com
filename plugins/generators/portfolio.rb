@@ -75,34 +75,6 @@ module Jekyll
 
   end
 
-  class PortfolioIndex < Page
-
-    def initialize(site, base, portfolios, dir, lang)
-      @site = site
-      @base = base
-      @dir  = dir
-      @name = 'index.html'
-
-      self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'portfolio_index.html')
-      self.data['lang'] = lang
-
-      # override item.download_url.ja to item.download_url
-      list = []
-      portfolios.each do |portfolio|
-        item = portfolio.clone
-        item.each do |key, value|
-          if /^([\w_-]+)\.(#{lang})$/ === key.to_s
-            item[$~[1]] = value
-          end
-        end
-        list << item
-      end
-      self.data['portfolios'] = list.reverse
-    end
-
-  end
-
   class PortfolioPageGenerator < Generator
     safe true
 
@@ -111,8 +83,6 @@ module Jekyll
     def generate(site)
 
       portfolios = YAML.load_file(File.join(site.source, '_fixtures', 'portfolio.yml'))
-      portfolios.sort_by! { |p| p['copyright_year'] ? p['copyright_year'] : 2000 }
-
       entries = site.reader.get_entries('/', '_portfolios')
 
       # first pass processes, but does not yet render post content
@@ -123,10 +93,6 @@ module Jekyll
         page = PortfolioPage.new(site, site.source, '/_portfolios/', f)
         site.pages << page
       end
-
-      # add PortfolioIndex page via locale
-      site.pages << PortfolioIndex.new(site, site.source, portfolios, '/portfolio/', 'en')
-      site.pages << PortfolioIndex.new(site, site.source, portfolios, '/ja/portfolio/', 'ja')
 
     end
   end
