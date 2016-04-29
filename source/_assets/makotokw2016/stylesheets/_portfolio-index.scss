@@ -1,12 +1,26 @@
+.archives-portfolio {
+  .entry {
+    h1 {
+      margin-left: 10px;
+      margin-bottom: 0;
+      display: inline-block;
+    }
+    .entry-category {
+      padding: 4px 8px;
+      background-color: $blue-dark;
+      color: $white;
+      font-family: 'NovecentowideLightRegular';
+    }
+  }
+}
+
 .label-portfolio {
   background-color: $blue-dark;
   color: $silver;
   text-transform: uppercase;
   font-size: 0.9em;
   font-weight: 300;
-  margin-bottom: 5px;
-  margin-right: 3px;
-  //border-radius: 0;
+  margin-right: 5px;
   a {
     color: $silver;
   }

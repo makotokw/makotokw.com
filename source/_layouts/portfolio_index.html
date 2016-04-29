@@ -23,17 +23,17 @@ footer: false
                         {% for c in p.categories %}
                         <span class="label label-portfolio label-portfolio-{{ c }}">{{ c }}</span>
                         {% endfor %}
+                        {% if p.source_url %}
+                        <span class="label label-portfolio label-portfolio-source">
+                            <a href="{{ p.source_url }}"><i class="fa fa-github"></i></a>
+                        </span>
+                        {% endif %}
                         {% if p.deprecated %}
-                        <span class="label label-portfolio label-portfolio-deprecated">deprecated</span>
+                        <span class="label label-portfolio label-portfolio-deprecated"><i class="fa fa-exclamation"></i> deprecated</span>
                         {% else %}
                             {% if p.status == 'active' %}
-                            <span class="label label-portfolio label-portfolio-active">active</span>
+                        <span class="label label-portfolio label-portfolio-active">active</span>
                             {% endif %}
-                        {% endif %}
-                        {% if p.source_url %}
-                            <span class="label label-portfolio label-portfolio-source">
-                                <a href="{{ p.source_url }}"><i class="fa fa-github" aria-hidden="true"></i></a>
-                            </span>
                         {% endif %}
                         <h1>
                             {% if p.url %}

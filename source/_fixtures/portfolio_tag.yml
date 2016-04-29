@@ -19,6 +19,10 @@
   name: Yahoo! Widget
   category: platform
 -
+  id: redmine
+  name: Redmine
+  category: platform
+-
   id: jquery
   name: jQuery
   category: platform
