@@ -7,6 +7,13 @@
     {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ site.url }}{{ page.url | remove:'index.html' | strip_slash }}">
+    {% if layout.is_top %}
+    {% if page.lang == 'ja' %}
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/"/>
+    {% else %}
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ site.baseurl }}/ja/"/>
+    {% endif %}
+    {% endif %}
     <link rel="alternate" href="{{ site.subscribe_url }}" title="{{site.title}}" type="application/atom+xml">
     {% include link_icon.html %}
     <!--[if lt IE 9]>
