@@ -40,7 +40,6 @@ gulp.task('js:dev', function() {
         ;
 });
 
-
 gulp.task('bower:install', plugins.shell.task(['bower install']));
 gulp.task('bower:main-files', ['bower:install'], function () {
     var bower = require('main-bower-files');
@@ -123,7 +122,7 @@ gulp.task('browser-sync', function () {
 gulp.task('build:dev', function (cb) {
     return runSequence(
         'bower:main-files',
-        ['fixtures:dev', 'sass:dev'],
+        ['fixtures:dev', 'sass:dev', 'js:dev'],
         'jekyll:dev',
         cb
     );
@@ -143,6 +142,9 @@ gulp.task('serve:dev', function () {
     gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint', 'js:dev']);
     gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
     gulp.watch(appConfig.source + '/_fixtures/*.yml', ['fixtures:dev']);
+});
+
+gulp.task('debug', ['serve:dev'], function() {
 });
 
 gulp.task('default', ['serve:dev'], function() {
