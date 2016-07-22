@@ -11,7 +11,8 @@ var del = require('del');
 // configurable paths
 var appConfig = {
     source: 'source',
-    components: 'source/_assets/components',
+    _components: 'source/_assets/components',
+    components: 'source/assets/components',
     theme: 'source/_assets/makotokw2016',
     bowerRc: JSON.parse(fs.readFileSync('.bowerrc')),
     distProduction: 'dist',
@@ -41,11 +42,20 @@ gulp.task('js:dev', function() {
 });
 
 gulp.task('bower:install', plugins.shell.task(['bower install']));
-gulp.task('bower:main-files', ['bower:install'], function () {
+gulp.task('bower:clean-main-files', function () {
+    del([
+        appConfig._components,
+        appConfig.components
+    ]);
+});
+gulp.task('bower:main-files', ['bower:install', 'bower:clean-main-files'], function () {
     var bower = require('main-bower-files');
     return gulp.src(bower(), {base: appConfig.bowerRc.directory})
+        // https://github.com/cthrax/gulp-bower-normalize
         .pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
-        .pipe(gulp.dest(appConfig.components));
+        .pipe(plugins.if('*.js', gulp.dest(appConfig._components)))
+        .pipe(plugins.if('*/fonts/*.*', gulp.dest(appConfig.components)))
+    ;
 });
 
 function sass(env, dest) {
@@ -86,9 +96,8 @@ gulp.task('fixtures:prod', function () {
     return fixtures('production', appConfig.distProduction + '/data');
 });
 
-gulp.task('clean:dev', function () {
+gulp.task('clean:dev', ['bower:clean-main-files'], function () {
     del([
-        appConfig.components,
         appConfig.distDevelopment,
         appConfig.distDevelopmentPreload
     ]);
@@ -121,6 +130,7 @@ gulp.task('browser-sync', function () {
 
 gulp.task('build:dev', function (cb) {
     return runSequence(
+        'clean:dev',
         'bower:main-files',
         ['fixtures:dev', 'sass:dev', 'js:dev'],
         'jekyll:dev',
