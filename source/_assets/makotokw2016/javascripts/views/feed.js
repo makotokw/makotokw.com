@@ -21,7 +21,7 @@ makotokw.Views = makotokw.Views || {};
             var $entries = $('<ul/>').addClass('list-feed-entry list-unstyled').appendTo($content);
             _.each(entries, function (entry){
                 _.extend(entry, {friendlyPublishedDate: me.dateFormat(new Date(entry.publishedDate))});
-                $('<li/>').html(JST['feed_entry'](entry)).appendTo($entries);
+                $('<li/>').html(JST['feed_entry.html'](entry)).appendTo($entries);
             });
         },
 

@@ -21,26 +21,16 @@ var appConfig = {
     distTest: '.dist_test'
 };
 
-gulp.task('jshint', function () {
-    return gulp.src(['gulpfile.js', appConfig.theme + '/javascripts/**/*.js'])
-        .pipe(plugins.jshint())
-        .pipe(plugins.jshint.reporter('jshint-stylish'))
-        .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
-});
-gulp.task('js:dev', function() {
-    return gulp.src([
-            appConfig.theme + '/javascripts/main.js',
-            appConfig.theme + '/javascripts/routes/*.js',
-            appConfig.theme + '/javascripts/models/*.js',
-            appConfig.theme + '/javascripts/collections/*.js',
-            appConfig.theme + '/javascripts/views/*.js'
-        ])
-        .pipe(plugins.concat('app.js'))
-        .pipe(gulp.dest(appConfig.distDevelopmentPreload + '/assets'))
-        .pipe(browserSync.stream({match: '**/*.js'}))
-        ;
+// Clean tasks
+gulp.task('clean:dev', ['bower:clean-main-files'], function () {
+    del([
+        appConfig.distDevelopment,
+        appConfig.distDevelopmentPreload
+    ]);
 });
 
+// Dependencies
+//noinspection JSUnresolvedVariable
 gulp.task('bower:install', plugins.shell.task(['bower install']));
 gulp.task('bower:clean-main-files', function () {
     del([
@@ -50,15 +40,56 @@ gulp.task('bower:clean-main-files', function () {
 });
 gulp.task('bower:main-files', ['bower:install', 'bower:clean-main-files'], function () {
     var bower = require('main-bower-files');
+    //noinspection JSUnresolvedFunction
     return gulp.src(bower(), {base: appConfig.bowerRc.directory})
-        // https://github.com/cthrax/gulp-bower-normalize
+    // https://github.com/cthrax/gulp-bower-normalize
         .pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
         .pipe(plugins.if('*.js', gulp.dest(appConfig._components)))
         .pipe(plugins.if('*/fonts/*.*', gulp.dest(appConfig.components)))
-    ;
+        ;
 });
 
+// Javascripts
+gulp.task('jshint', function () {
+    //noinspection JSUnresolvedVariable,JSUnresolvedFunction
+    return gulp.src(['gulpfile.js', appConfig.theme + '/javascripts/**/*.js'])
+        .pipe(plugins.jshint())
+        .pipe(plugins.jshint.reporter('jshint-stylish'))
+        ;
+});
+gulp.task('jst', function () {
+    //noinspection JSUnresolvedFunction
+    gulp.src(appConfig.theme + '/javascripts/templates/*.html')
+        .pipe(plugins.templateCompile({
+            namespace: 'JST',
+            name: function (file) {
+                return file.relative;
+            }
+        }))
+        .pipe(plugins.concat('templates.js'))
+        .pipe(gulp.dest(appConfig.theme + '/javascripts/templates'));
+});
+gulp.task('js:dev', ['jst'], function() {
+    //noinspection JSUnresolvedFunction,JSUnresolvedVariable
+    return gulp.src([
+            appConfig.theme + '/javascripts/main.js',
+            appConfig.theme + '/javascripts/routes/*.js',
+            appConfig.theme + '/javascripts/models/*.js',
+            appConfig.theme + '/javascripts/collections/*.js',
+            appConfig.theme + '/javascripts/templates/*.js',
+            appConfig.theme + '/javascripts/views/*.js'
+        ])
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.concat('app.js'))
+        .pipe(plugins.sourcemaps.write('.', {}))
+        .pipe(gulp.dest(appConfig.distDevelopmentPreload + '/assets'))
+        .pipe(browserSync.stream({match: '**/*.js'}))
+        ;
+});
+
+// Stylesheets
 function sass(env, dest) {
+    //noinspection JSUnresolvedFunction
     return plugins.rubySass(appConfig.theme + '/stylesheets', {
         loadPath: [
             appConfig.bowerRc.directory + '/bootstrap-sass/assets/stylesheets',
@@ -76,45 +107,56 @@ function sass(env, dest) {
         .pipe(browserSync.stream({match: '**/*.css'}))
     ;
 }
-
 gulp.task('sass:dev', function () {
     return sass('development', appConfig.distDevelopmentPreload + '/assets');
 });
 
-function fixtures(env, dest) {
+// Fixtures(Data)
+function fixtures(dest) {
+    //noinspection JSUnresolvedFunction
     return gulp.src(appConfig.source + '/_fixtures/*.yml')
         .pipe(plugins.yaml())
         .pipe(gulp.dest(dest))
     ;
 }
-
 gulp.task('fixtures:dev', function () {
-    return fixtures('development', appConfig.distDevelopmentPreload + '/data');
+    return fixtures(appConfig.distDevelopmentPreload + '/data');
 });
-
 gulp.task('fixtures:prod', function () {
-    return fixtures('production', appConfig.distProduction + '/data');
+    return fixtures(appConfig.distProduction + '/data');
 });
 
-gulp.task('clean:dev', ['bower:clean-main-files'], function () {
-    del([
-        appConfig.distDevelopment,
-        appConfig.distDevelopmentPreload
-    ]);
-});
-
+// Jekyll
 gulp.task('jekyll:dev', function (cb) {
     var exec = require('child_process').exec;
     exec('bundle exec jekyll build --config _config.yml,_config.development.yml --drafts -d ' + appConfig.distDevelopment,
         function (error, stdout/*, stderr*/) {
-            if (error !== null) {
-                console.log('jekyll build error: ' + error);
-            }
             console.log(stdout);
-            return cb();
+            return cb(error);
         });
 });
 
+// Build
+gulp.task('build:dev', function (cb) {
+    return runSequence(
+        'clean:dev',
+        'bower:main-files',
+        ['fixtures:dev', 'sass:dev', 'js:dev'],
+        'jekyll:dev',
+        cb
+    );
+});
+gulp.task('build:prod', function (cb) {
+    return runSequence(
+        'clean:prod',   // TODO
+        'bower:main-files',
+        ['fixtures:prod', 'jst'],
+        'jekyll:prod',  // TODO
+        cb
+    );
+});
+
+// Serve
 gulp.task('browser-sync', function () {
     browserSync.init({
         port: 8084,
@@ -127,28 +169,20 @@ gulp.task('browser-sync', function () {
         reloadDebounce: 2000
     });
 });
-
-gulp.task('build:dev', function (cb) {
-    return runSequence(
-        'clean:dev',
-        'bower:main-files',
-        ['fixtures:dev', 'sass:dev', 'js:dev'],
-        'jekyll:dev',
-        cb
-    );
-});
-
-gulp.task('serve:dev', function () {
+gulp.task('serve:dev', function (cb) {
     runSequence(
         'build:dev',
-        'browser-sync'
+        'browser-sync',
+        cb
     );
-    gulp.watch(appConfig.source + '/**/*.{md,html,yml}', function() {
+    gulp.watch(appConfig.source + '/**/*.{md,html,yml}', function(cb) {
         runSequence(
             'jekyll:dev',
-            browserSync.reload
+            browserSync.reload,
+            cb
         );
     });
+    gulp.watch(appConfig.theme + '/javascripts/templates/*.html', ['jst']);
     gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint', 'js:dev']);
     gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
     gulp.watch(appConfig.source + '/_fixtures/*.yml', ['fixtures:dev']);

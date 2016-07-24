@@ -6,7 +6,7 @@ makotokw.Views = makotokw.Views || {};
     makotokw.Views.PortfolioListView = Backbone.View.extend({
         tagName: 'div',
         className: 'portfolio-list-view',
-        template: JST['portfolio_list'],
+        template: JST['portfolio_list.html'],
 
         filters: {},
         events: {},
@@ -27,7 +27,7 @@ makotokw.Views = makotokw.Views || {};
         render: function () {
             var $el = $(this.el).empty();
             if (!this.collection.length) {
-                $el.html(JST['portfolio_loading']());
+                $el.html(JST['portfolio_loading.html']());
                 return this;
             }
             this.$content = $el;

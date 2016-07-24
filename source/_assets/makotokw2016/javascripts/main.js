@@ -74,15 +74,10 @@ window.makotokw = {
 
     if ($('.feed-content').length > 0) { // TBD
         makotokw.isTopPage = true;
-        google.load('feeds', '1');
-        google.setOnLoadCallback(function () {
-            makotokw.init();
-        });
-    } else {
-        $(document).ready(function () {
-            makotokw.init();
-        });
     }
+    $(document).ready(function () {
+        makotokw.init();
+    });
 })(jQuery);
 
 

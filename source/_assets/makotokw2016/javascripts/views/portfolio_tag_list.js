@@ -7,7 +7,7 @@ makotokw.Views = makotokw.Views || {};
 
     makotokw.Views.PortfolioTagListView = Backbone.View.extend({
 
-        template: JST['portfolio_tag_list'],
+        template: JST['portfolio_tag_list.html'],
 
         className: 'portfolio-tag-list-view',
 
@@ -39,7 +39,7 @@ makotokw.Views = makotokw.Views || {};
                 return portfolioTagModel.get('category');
             });
             _.each(group, function(value, key){
-                $el.append(JST['portfolio_tag_category']({
+                $el.append(JST['portfolio_tag_category.html']({
                     title: key,
                     list: value
                 }));

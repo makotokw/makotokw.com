@@ -6,7 +6,7 @@ makotokw.Views = makotokw.Views || {};
     makotokw.Views.PortfolioView = Backbone.View.extend({
         tagName: 'div',
         className: 'portfolio',
-        template: JST['portfolio'],
+        template: JST['portfolio.html'],
 
         render: function () {
             var atts = this.model.attributes;

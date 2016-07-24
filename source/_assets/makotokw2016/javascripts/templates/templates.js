@@ -1,8 +1,9 @@
-this["JST"] = this["JST"] || {};
+(function() {
+window["JST"] = window["JST"] || {};
 
-this["JST"]["feed_entry"] = function(obj) {
+window["JST"]["feed_entry.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '';
 with (obj) {
 __p += '<div class="feed-entry">\n    <span class="entry-published entry-published-feed">' +
 ((__t = ( friendlyPublishedDate )) == null ? '' : __t) +
@@ -16,11 +17,13 @@ __p += '<div class="feed-entry">\n    <span class="entry-published entry-publish
 
 }
 return __p
-};
+}})();
+(function() {
+window["JST"] = window["JST"] || {};
 
-this["JST"]["portfolio"] = function(obj) {
+window["JST"]["portfolio.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '';
 with (obj) {
 __p += '<div class="portfolio-image"><img src="' +
 ((__t = ( thumbnail )) == null ? '' : __t) +
@@ -32,41 +35,49 @@ __p += '<div class="portfolio-image"><img src="' +
 
 }
 return __p
-};
+}})();
+(function() {
+window["JST"] = window["JST"] || {};
 
-this["JST"]["portfolio_list"] = function(obj) {
+window["JST"]["portfolio_list.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '';
 with (obj) {
 __p += '\n\n';
 
 }
 return __p
-};
+}})();
+(function() {
+window["JST"] = window["JST"] || {};
 
-this["JST"]["portfolio_loading"] = function(obj) {
+window["JST"]["portfolio_loading.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '';
 with (obj) {
 __p += '<p><i class="fa fa-spinner fa-spin"></i> Loading...</p>';
 
 }
 return __p
-};
+}})();
+(function() {
+window["JST"] = window["JST"] || {};
 
-this["JST"]["portfolio_tag"] = function(obj) {
+window["JST"]["portfolio_tag.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '';
 with (obj) {
 __p += '<a href="#"></a>\n\n';
 
 }
 return __p
-};
+}})();
+(function() {
+window["JST"] = window["JST"] || {};
 
-this["JST"]["portfolio_tag_category"] = function(obj) {
+window["JST"]["portfolio_tag_category.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+var __t, __p = '', __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<div class="portfolio-tag-category">\n    <h3 class="portfolio-category-title">' +
@@ -83,14 +94,16 @@ __p += '\n</div>';
 
 }
 return __p
-};
+}})();
+(function() {
+window["JST"] = window["JST"] || {};
 
-this["JST"]["portfolio_tag_list"] = function(obj) {
+window["JST"]["portfolio_tag_list.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '';
 with (obj) {
 __p += '';
 
 }
 return __p
-};
+}})();
