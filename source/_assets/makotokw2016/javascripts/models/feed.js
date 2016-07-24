@@ -26,7 +26,7 @@ makotokw.Models = makotokw.Models || {};
 
             // https://developer.yahoo.com/yql/console/
             // select * from feednormalizer where url='http://example.com/rss' and output='atom_1.0'
-            var yql = "select * from feednormalizer where url='" + this.get('url') + "' and output='atom_1.0'";
+            var yql = 'select * from feednormalizer where url=\'' + this.get('url') + '\' and output=\'atom_1.0\'';
             $.ajax('https://query.yahooapis.com/v1/public/yql', {
                 data: {q: yql, format: 'json'},
                 dataType: 'jsonp',
@@ -44,7 +44,7 @@ makotokw.Models = makotokw.Models || {};
                             entry.publishedDate = entry.published;
                             var minLength = 180;
                             var contentText = $('<div/>').html(entry.content.content).text();
-                            entry.contentSnippet = contentText.length > minLength ? contentText.substr(0, minLength) + "..." : contentText;
+                            entry.contentSnippet = contentText.length > minLength ? contentText.substr(0, minLength) + '...' : contentText;
                             entries.push(entry);
                         }
                     });
