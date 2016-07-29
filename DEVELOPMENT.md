@@ -13,6 +13,7 @@ A => f(x) => B
 ### Javascripts
 
 * ``source/_bower_components/*/*.js`` => ``main-bower-files`` with ``gulp-bower-normalize`` => ``source/_assets/components/*/*.js``
+* ``source/_assets/{theme}/templates/*.html`` => ``gulp-template-compile`` => ``source/_assets/{theme}/templates/templates.js``
 * ``source/_assets/components/*/*.js`` + ``source/_assets/{theme}/javascripts/*.js`` => ``jekyll`` with ``jekyll-assets`` => ``.dist/app.js``
 * ``source/_assets/components/*/*.js`` + ``source/_assets/{theme}/javascripts/*.js`` => ``gulp-concat`` => ``.dist_development_preload/app.js``
 
