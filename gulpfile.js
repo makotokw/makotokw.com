@@ -175,11 +175,10 @@ gulp.task('serve:dev', function (cb) {
         'browser-sync',
         cb
     );
-    gulp.watch(appConfig.source + '/**/*.{md,html,yml}', function(cb) {
-        runSequence(
+    gulp.watch(appConfig.source + '/**/*.{md,html,yml}', function() {
+        return runSequence(
             'jekyll:dev',
-            browserSync.reload,
-            cb
+            browserSync.reload
         );
     });
     gulp.watch(appConfig.theme + '/javascripts/templates/*.html', ['jst']);
