@@ -81,7 +81,7 @@ window.makotokw = {
     window.addthis_config = addthis_config;
     /*jshint camelcase: true */
 
-    if ($('.feed-content').length > 0) { // TBD
+    if ($('.topSection').length > 0) { // TBD
         makotokw.isTopPage = true;
     }
     $(document).ready(function () {

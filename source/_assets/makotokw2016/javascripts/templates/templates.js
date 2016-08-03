@@ -5,13 +5,13 @@ window["JST"]["feed_entry.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '';
 with (obj) {
-__p += '<div class="feed-entry">\n    <span class="entry-published entry-published-feed">' +
+__p += '<div class="article">\n    <span class="articlePublished">' +
 ((__t = ( friendlyPublishedDate )) == null ? '' : __t) +
-'</span>\n    <span class="entry-title entry-title-feed"><a href="' +
+'</span>\n    <span class="articleTitle"><a href="' +
 ((__t = ( link )) == null ? '' : __t) +
 '">' +
 ((__t = ( title )) == null ? '' : __t) +
-'</a></span>\n    <p class="entry-summary entry-summary-feed">' +
+'</a></span>\n    <p class="articleSummary">' +
 ((__t = ( contentSnippet )) == null ? '' : __t) +
 '<p>\n</div>\n\n\n';
 

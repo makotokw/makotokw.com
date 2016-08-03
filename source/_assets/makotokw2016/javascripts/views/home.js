@@ -9,8 +9,7 @@ makotokw.Views = makotokw.Views || {};
         feedConfig: {
             'Blog': 'http://blog.makotokw.com/feed/',
             // http://qiita.com/Qiita/items/9c0a57ad98a511e566ed
-            'Qiita': 'http://qiita.com/makoto_kw/feed.atom',
-            'Github': 'http://github.com/makotokw.atom'
+            'Qiita': 'http://qiita.com/makoto_kw/feed.atom'
         },
 
         initialize: function () {
@@ -18,7 +17,7 @@ makotokw.Views = makotokw.Views || {};
 
             this.loadFeeds();
 
-            var $pageHome = this.$pageHome = $('.page-home');
+            var $pageHome = this.$pageHome = $('.topSection-home');
 
             if (!makotokw.isMobile) {
                 $pageHome.css('height', window.innerHeight + 'px');
@@ -26,20 +25,6 @@ makotokw.Views = makotokw.Views || {};
                 $(window).bind('resize.home', _.bind(this.onResizeWindow, this));
             }
             $pageHome.css('background-image', 'url("' + makotokw.staticAssetsPath + 'images/bg-home.png")');
-
-            /*
-            $('body').queryLoader2({
-                barColor: '#2C3E50',
-                backgroundColor: '#fff',
-                percentage: true,
-                barHeight: 30,
-                completeAnimation: 'grow',
-                onComplete: function () {
-                    me.onLoad();
-                }
-            });
-             $('#prePage').fadeOut().remove();
-            */
 
             $('#prePage').remove();
 
@@ -176,13 +161,13 @@ makotokw.Views = makotokw.Views || {};
 
         scrollToPage: function (page) {
             // console.log('scrollToPage', page);
-            var target = '#page' + _.str.capitalize(page);
+            var target = '#' + page;
             var $target = $(target);
             if ($target.length === 0) {
                 return;
             }
 
-            var offsetTop = target === '#pageHome' ? 0 : $target.offset().top - this.menuTopHeight;
+            var offsetTop = target === '#home' ? 0 : $target.offset().top - this.menuTopHeight;
 
             // TODO: isMobile
             $('html, body').stop().animate({
@@ -193,7 +178,7 @@ makotokw.Views = makotokw.Views || {};
         scrollToPortfolioPage: function() {
             var $currentPage = this.findCurrentPage();
             if ($currentPage) {
-                if ($currentPage.attr('id') === 'pagePortfolio') {
+                if ($currentPage.attr('id') === 'portfolio') {
                     return;
                 }
             }

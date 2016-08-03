@@ -18,7 +18,7 @@ makotokw.Views = makotokw.Views || {};
             var $content = $(this.el).empty();
             var entries = this.model.get('entries');
             var me = this;
-            var $entries = $('<ul/>').addClass('list-feed-entry list-unstyled').appendTo($content);
+            var $entries = $('<ul/>').addClass('feedArticleList list-unstyled').appendTo($content);
             _.each(entries, function (entry){
                 _.extend(entry, {friendlyPublishedDate: me.dateFormat(new Date(entry.publishedDate))});
                 $('<li/>').html(JST['feed_entry.html'](entry)).appendTo($entries);

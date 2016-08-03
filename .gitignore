@@ -6,7 +6,8 @@
 /source/_assets/components*
 /source/assets/components*
 
-### Jekyll ###
+### Ruby, Jekyll, Sass ###
+.ruby-version
 .asset-cache
 .sass-cache
 .rspec
