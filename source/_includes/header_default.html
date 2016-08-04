@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="catchImage"></div>
+  <div class="container">
+    <div class="authorIcon"></div>
+    <p class="authorSummary">I am makoto_kw.</p>
+    <div class="row">
+      <ul class="menuLang">
+        {% if page.lang == 'ja' %}
+        <li class="menuLangItem menuLangItem-en">
+          <a href="/" class="btn menuLangButton">English</a>
+        </li>
+        <li class="menuLangItem menuLangItem-ja menuLangItem-active">
+          <a href="/ja/" class="btn menuLangButton">Japanese</a>
+        </li>
+        {% else %}
+        <li class="menuLangItem menuLangItem-en menuLangItem-active">
+          <a href="/" class="btn menuLangButton">English</a>
+        </li>
+        <li class="menuLangItem menuLangItem-ja">
+          <a href="/ja/" class="btn menuLangButton">Japanese</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</header>
