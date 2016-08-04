@@ -18,7 +18,8 @@ var appConfig = {
     distProduction: 'dist',
     distDevelopment: '.dist_development',
     distDevelopmentPreload: '.dist_development_preload',
-    distTest: '.dist_test'
+    distTest: '.dist_test',
+    design: 'design'
 };
 
 // Clean tasks
@@ -157,7 +158,7 @@ gulp.task('build:prod', function (cb) {
 });
 
 // Serve
-gulp.task('browser-sync', function () {
+gulp.task('browserSync:dev', function () {
     browserSync.init({
         port: 8084,
         server: {
@@ -170,14 +171,43 @@ gulp.task('browser-sync', function () {
     });
 });
 gulp.task('serve:dev', function (cb) {
+  runSequence(
+    'build:dev',
+    'browserSync:dev',
+    cb
+  );
+  // gulp.watch(appConfig.source + '/**/*.{md,html,yml}', function() {
+  //     return runSequence(
+  //         'jekyll:dev',
+  //         browserSync.reload
+  //     );
+  // });
+  gulp.watch(appConfig.theme + '/javascripts/templates/*.html', ['jst']);
+  gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint', 'js:dev']);
+  gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
+  gulp.watch(appConfig.source + '/_fixtures/*.yml', ['fixtures:dev']);
+});
+
+gulp.task('browserSync:design', function () {
+  browserSync.init({
+    port: 8085,
+    server: {
+      baseDir: [
+        appConfig.distDevelopmentPreload,
+        appConfig.design,
+        appConfig.distDevelopment
+      ]
+    },
+    reloadDebounce: 2000
+  });
+});
+gulp.task('serve:design', function (cb) {
     runSequence(
-        'build:dev',
-        'browser-sync',
+        'browserSync:design',
         cb
     );
-    gulp.watch(appConfig.source + '/**/*.{md,html,yml}', function() {
+    gulp.watch(appConfig.design + '/*.{html}', function() {
         return runSequence(
-            'jekyll:dev',
             browserSync.reload
         );
     });
