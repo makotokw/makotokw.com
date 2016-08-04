@@ -1,12 +1,12 @@
 makotokw.Routers = makotokw.Routers || {};
 
 (function () {
-    'use strict';
+  'use strict';
 
-    makotokw.Routers.HomeRouter = Backbone.Router.extend({
-        routes: {
-            ':page': 'page'
-        }
-    });
+  makotokw.Routers.HomeRouter = Backbone.Router.extend({
+    routes: {
+      ':page': 'page'
+    }
+  });
 
 })();

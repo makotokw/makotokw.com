@@ -1,16 +1,16 @@
 makotokw.Collections = makotokw.Collections || {};
 
 (function () {
-    'use strict';
+  'use strict';
 
-    makotokw.Collections.PortfolioCollection = Backbone.Collection.extend({
+  makotokw.Collections.PortfolioCollection = Backbone.Collection.extend({
 
-        model: makotokw.Models.PortfolioModel,
+    model: makotokw.Models.PortfolioModel,
 
-        initialize: function (models, options) {
-            this.url = options.url;
-        }
+    initialize: function (models, options) {
+      this.url = options.url;
+    }
 
-    });
+  });
 
 })();

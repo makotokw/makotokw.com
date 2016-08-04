@@ -1,20 +1,20 @@
 makotokw.Models = makotokw.Models || {};
 
 (function () {
-    'use strict';
+  'use strict';
 
-    makotokw.Models.PortfolioTagModel = Backbone.Model.extend({
+  makotokw.Models.PortfolioTagModel = Backbone.Model.extend({
 
-        url: '',
+    url: '',
 
-        initialize: function() {
-        },
+    initialize: function () {
+    },
 
-        defaults: {
-            name: '',
-            category: '',
-            selected: false
-        }
-    });
+    defaults: {
+      name: '',
+      category: '',
+      selected: false
+    }
+  });
 
 })();

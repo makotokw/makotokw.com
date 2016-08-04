@@ -1,75 +1,75 @@
 makotokw.Models = makotokw.Models || {};
 
 (function () {
-    'use strict';
+  'use strict';
 
-    makotokw.Models.FeedModel = Backbone.Model.extend({
+  makotokw.Models.FeedModel = Backbone.Model.extend({
 
-        url: '',
+    url: '',
 
-        initialize: function() {
-        },
+    initialize: function () {
+    },
 
-        defaults: {
-            entries: []
-        },
+    defaults: {
+      entries: []
+    },
 
-        validate: function(/*attrs, options*/) {
-        },
+    validate: function (/*attrs, options*/) {
+    },
 
-        parse: function(response/*, options*/)  {
-            return response;
-        },
+    parse: function (response/*, options*/) {
+      return response;
+    },
 
-        loadFeedByYql: function(numEntries) {
-            var me = this;
+    loadFeedByYql: function (numEntries) {
+      var me = this;
 
-            // https://developer.yahoo.com/yql/console/
-            // select * from feednormalizer where url='http://example.com/rss' and output='atom_1.0'
-            var yql = 'select * from feednormalizer where url=\'' + this.get('url') + '\' and output=\'atom_1.0\'';
-            $.ajax('https://query.yahooapis.com/v1/public/yql', {
-                data: {q: yql, format: 'json'},
-                dataType: 'jsonp',
-                cache: true
-            }).done(function (data) {
-                if (data && data.query && data.query.results && data.query.results) {
-                    var f = data.query.results.feed || {};
-                    var entries = [];
-                    _.each(f.entry || [], function(entry, index) {
-                        if (index < numEntries) {
-                            if (_.isObject(entry.title)) {
-                                entry.title = entry.title.content;
-                            }
-                            entry.link = entry.link.href;
-                            entry.publishedDate = entry.published;
-                            var minLength = 180;
-                            var contentText = $('<div/>').html(entry.content.content).text();
-                            entry.contentSnippet = contentText.length > minLength ? contentText.substr(0, minLength) + '...' : contentText;
-                            entries.push(entry);
-                        }
-                    });
-                    me.set('entries', entries);
-                }
-            });
-        },
-
-        loadFeedByGoogleFeedApi: function(numEntries) {
-            var me = this;
-
-            // https://developers.google.com/feed/v1/devguide
-            var feed = new google.feeds.Feed(this.get('url'));
-            feed.setNumEntries(numEntries);
-            feed.load(function (result) {
-                var f = result.feed || {};
-                me.set('entries', f.entries || []);
-            });
-        },
-
-        loadFeed: function(numEntries) {
-            this.loadFeedByYql(numEntries);
-            // this.loadFeedByGoogleFeedApi(numEntries);
+      // https://developer.yahoo.com/yql/console/
+      // select * from feednormalizer where url='http://example.com/rss' and output='atom_1.0'
+      var yql = 'select * from feednormalizer where url=\'' + this.get('url') + '\' and output=\'atom_1.0\'';
+      $.ajax('https://query.yahooapis.com/v1/public/yql', {
+        data: {q: yql, format: 'json'},
+        dataType: 'jsonp',
+        cache: true
+      }).done(function (data) {
+        if (data && data.query && data.query.results && data.query.results) {
+          var f = data.query.results.feed || {};
+          var entries = [];
+          _.each(f.entry || [], function (entry, index) {
+            if (index < numEntries) {
+              if (_.isObject(entry.title)) {
+                entry.title = entry.title.content;
+              }
+              entry.link = entry.link.href;
+              entry.publishedDate = entry.published;
+              var minLength = 180;
+              var contentText = $('<div/>').html(entry.content.content).text();
+              entry.contentSnippet = contentText.length > minLength ? contentText.substr(0, minLength) + '...' : contentText;
+              entries.push(entry);
+            }
+          });
+          me.set('entries', entries);
         }
+      });
+    },
 
-    });
+    loadFeedByGoogleFeedApi: function (numEntries) {
+      var me = this;
+
+      // https://developers.google.com/feed/v1/devguide
+      var feed = new google.feeds.Feed(this.get('url'));
+      feed.setNumEntries(numEntries);
+      feed.load(function (result) {
+        var f = result.feed || {};
+        me.set('entries', f.entries || []);
+      });
+    },
+
+    loadFeed: function (numEntries) {
+      this.loadFeedByYql(numEntries);
+      // this.loadFeedByGoogleFeedApi(numEntries);
+    }
+
+  });
 
 })();
