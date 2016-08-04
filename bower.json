@@ -14,8 +14,16 @@
     "queryloader2": "~2.9.0",
     "bootstrap-material-design": "~0.5.10"
   },
+  "resolutions": {
+    "jquery": "1.9.1"
+  },
   "overrides_comment": "for main-bower-file: https://github.com/ck86/main-bower-files#overrides-options",
   "overrides": {
+    "jquery": {
+      "main": [
+        "jquery.js"
+      ]
+    },
     "underscore.string": {
       "main": [
         "lib/underscore.string.js"
