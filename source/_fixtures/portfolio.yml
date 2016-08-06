@@ -1,4 +1,14 @@
 -
+  name: Mineclock
+  name.ja: Mineclock
+  categories: [pebble]
+  tags: [c]
+  url: https://apps.getpebble.com/applications/568aa41c6518afe93f000012
+  source_url: https://github.com/makotokw/pebble-mineclock
+  copyright_year: 2016
+  last_updated_year: 2016
+  status: active
+-
   name: IRKit Remote
   name.ja: IRKit Remote
   categories: [pebble]
