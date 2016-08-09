@@ -1,43 +1,41 @@
 <nav id="mainNavBar" class="mainNavBar">
-    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-                {% if layout.is_top %}
-                <a class="navbarBrand" href="#home">makotokw.com</a>
-                {% else %}
-                {% if page.lang == 'ja' %}
-                <a class="navbarBrand" href="/ja/">makotokw.com</a>
-                {% else %}
-                <a class="navbarBrand" href="/">makotokw.com</a>
-                {% endif %}
-                {% endif %}
-            </div>
+        <ul class="navBarItems navBarItems-home">
+          <li class="navItem navItem-home">
+            {% if layout.is_top %}
+            <a href="#home"><i class="fa fa-home"></i></a>
+            {% else %}
+            {% if page.lang == 'ja' %}
+            <a href="/ja/#home"><i class="fa fa-home"></i></a>
+            {% else %}
+            <a href="/#home"><i class="fa fa-home"></i></a>
+            {% endif %}
+            {% endif %}
+          </li>
+        </ul>
+      </div>
 
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    {% if page.lang == 'ja' %}
-                    {% if !layout.is_top %}
-                    <li><a href="/ja/#home"><i class="fa fa-home"></i> Home</a></li>
-                    {% endif %}
-                    <li><a href="/ja/#blog"><i class="fa fa-book"></i> Blog</a></li>
-                    <li><a href="/ja/portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
-                    <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
-                    {% else %}
-                    {% if !layout.is_top %}
-                    <li><a href="/#home"><i class="fa fa-home"></i> Home</a></li>
-                    {% endif %}
-                    <li><a href="/#blog"><i class="fa fa-book"></i> Blog</a></li>
-                    <li><a href="/portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
-                    <li><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
-                    {% endif %}
-                </ul>
-            </div><!-- /.nav-collapse -->
-        </div><!-- /.container -->
-    </div><!-- /.navbar -->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right navBarItems">
+          {% if page.lang == 'ja' %}
+          <li class="navItem navItem-blog"><a href="/ja/#blog"><i class="fa fa-book"></i> Blog</a></li>
+          <li class="navItem navItem-portfolio"><a href="/ja/portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+          <li class="navItem navItem-gitHub"><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+          {% else %}
+          <li class="navItem navItem-blog"><a href="/#blog"><i class="fa fa-book"></i> Blog</a></li>
+          <li class="navItem navItem-portfolio"><a href="/portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+          <li class="navItem navItem-gitHub"><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Github</a></li>
+          {% endif %}
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </div><!-- /.navbar -->
 </nav>

@@ -1,0 +1,55 @@
+.mainNavBar {
+  .navbar {
+    min-height: 60px;
+    font-size: $font-size-small;
+
+    .navbar-toggle {
+      padding: 10px 10px;
+      margin-top: 10px;
+    }
+
+    .navBarItems > .navItem > a {
+      font-weight: 400;
+      text-transform: uppercase;
+      padding-top: 20px;
+      padding-bottom: 15px;
+      min-height: 60px;
+
+      color: $grey-300;
+      &:hover {
+        color: $grey-100;
+      }
+    }
+
+    .navBarItems-home {
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+      > .navItem {
+        font-size: 1.5em;
+        position: relative;
+        display: block;
+        > a {
+          position: relative;
+          display: block;
+          padding: 15px 15px;
+          color: $grey-300;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .navbar-collapse.in {
+      border-bottom: 1px solid ;
+    }
+    .collapsing,.in {
+      .navBarItems > .navItem > a {
+        min-height: unset;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

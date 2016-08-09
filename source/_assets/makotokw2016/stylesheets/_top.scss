@@ -1,7 +1,7 @@
 $section-title-font-size: 50px;
 
 $lang-menu-item-width: 170px;
-$lang-menu-item-height: 30px;
+$lang-menu-item-height: 45px;
 
 $page-home-title-font-size: 60px;
 $page-home-height: 450px;
@@ -34,9 +34,20 @@ $page-home-width: 1170px;
     font-family: 'NovecentowideBookBold';
   }
 
+  .topSubSectionFooter {
+    @include clearfix();
+  }
+
   .archiveButton {
+    @include ghostButton($lang-menu-item-width, $lang-menu-item-height, 12px, 8px);
+    border: 1px solid $blue-dark;
+    color: $blue-dark;
+    &:hover {
+      border: 1px solid rgba($blue-dark, .5);
+      color: rgba($blue-dark, .5);
+      background: transparent;
+    }
     @extend .pull-right;
-    font-family: 'NovecentowideBookBold';
   }
 
   .feedArticleList {
@@ -61,7 +72,7 @@ $page-home-width: 1170px;
         border-radius: 0;
         font-size: $font-size-small;
         display: inline;
-        margin-right:.5em;
+        margin-right: .5em;
         padding: 3px 6px;
         line-height: 1.2em;
       }
@@ -73,7 +84,7 @@ $page-home-width: 1170px;
       }
     }
   }
-  
+
   &:nth-child(odd) {
     background: $blue-dark;
     color: $white;
@@ -130,22 +141,9 @@ $site-title-border: rgba(0, 0, 0, 0.1);
   }
 
   .menuLangButton {
-    @include transition(all .3s ease);
-    //font-family: 'NovecentowideBookBold';
-    font-family: 'NovecentowideLightRegular';
+    @include ghostButton($lang-menu-item-width, $lang-menu-item-height, 12px, 8px);
     border: 1px solid $blue-dark;
-    border-radius: 0;
-    background: transparent;
     color: $blue-dark;
-    padding: 12px 8px;
-    width: $lang-menu-item-width;
-    height: $lang-menu-item-height;
-    display: block;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    text-decoration: none;
-
     &:hover {
       border: 1px solid rgba($blue-dark, .5);
       color: rgba($blue-dark, .5);
@@ -222,7 +220,6 @@ $site-title-border: rgba(0, 0, 0, 0.1);
 // -----------------
 @media (min-width: $screen-lg-min) {
 }
-
 
 // - large desktop
 // --------------------

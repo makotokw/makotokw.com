@@ -1,0 +1,16 @@
+
+@mixin ghostButton($witdh, $height, $paddingLeft, $paddingTop) {
+  @include transition(all .3s ease);
+  //font-family: 'NovecentowideBookBold';
+  font-family: 'NovecentowideLightRegular';
+  border-radius: 0;
+  background: transparent;
+  padding: $paddingLeft $paddingTop;
+  width: $witdh;
+  height: $height;
+  display: block;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+}
