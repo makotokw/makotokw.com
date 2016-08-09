@@ -12,19 +12,44 @@
       font-family: 'NovecentowideLightRegular';
     }
   }
+  .entry-isActive {
+    h1 {
+      font-weight: bold;
+    }
+  }
+  .entry-isDeprecated {
+    h1 {
+      font-weight: normal;
+      a {
+        color: $grey-500;
+        text-decoration: line-through;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 
 .label-portfolio {
   background-color: $blue-dark;
-  color: $silver;
+  color: $grey-50;
   text-transform: uppercase;
   font-size: 0.9em;
   font-weight: 300;
   margin-right: 5px;
   a {
-    color: $silver;
+    color: $grey-50;
   }
 }
 .label-portfolio-source {
-  padding-right: 4px;
+  margin-left: 4px;
+  background-color: $grey-200;
+  color: $blue-dark;
+  a {
+    color: $blue-dark;
+  }
+  .fa {
+    font-size: 1.3em;
+  }
 }
