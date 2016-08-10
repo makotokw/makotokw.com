@@ -2,25 +2,24 @@
   <div class="navbar navbar-fixed-top navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <ul class="navBarItems navBarItems-home">
-          <li class="navItem navItem-home">
-            {% if layout.is_top %}
-            <a href="#home"><i class="fa fa-home"></i></a>
-            {% else %}
-            {% if page.lang == 'ja' %}
-            <a href="/ja/#home"><i class="fa fa-home"></i></a>
-            {% else %}
-            <a href="/#home"><i class="fa fa-home"></i></a>
-            {% endif %}
-            {% endif %}
-          </li>
-        </ul>
+        <div class="navBar-buttonContainer">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navItem navItem-home">
+          {% if layout.is_top %}
+          <a href="#home"><i class="fa fa-home"></i></a>
+          {% else %}
+          {% if page.lang == 'ja' %}
+          <a href="/ja/#home"><i class="fa fa-home"></i></a>
+          {% else %}
+          <a href="/#home"><i class="fa fa-home"></i></a>
+          {% endif %}
+          {% endif %}
+        </div>
       </div>
 
       <div class="collapse navbar-collapse">

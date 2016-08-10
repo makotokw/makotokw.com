@@ -1,55 +1,65 @@
+$mainNavBarHeight: 65px;
 .mainNavBar {
-  .navbar {
-    min-height: 60px;
-    font-size: $font-size-small;
+  min-height: $mainNavBarHeight;
+  line-height: $mainNavBarHeight;
 
+  // reset bootstrap nav-nav
+  .navbar-nav {
+    min-height: $mainNavBarHeight;
+    line-height: $mainNavBarHeight;
+    > li > a {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .navBar-buttonContainer {
+    float: right;
+    min-height: $mainNavBarHeight;
+    line-height: $mainNavBarHeight;
     .navbar-toggle {
-      padding: 10px 10px;
+      float: none;
+      padding: 0 10px;
       margin-top: 10px;
     }
+  }
 
-    .navBarItems > .navItem > a {
+  .navItem {
+    min-height: $mainNavBarHeight;
+    line-height: $mainNavBarHeight;
+    font-size: $font-size-small;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    > a {
       font-weight: 400;
       text-transform: uppercase;
-      padding-top: 20px;
-      padding-bottom: 15px;
-      min-height: 60px;
-
+      min-height: $mainNavBarHeight;
+      line-height: $mainNavBarHeight;
       color: $grey-300;
       &:hover {
         color: $grey-100;
       }
     }
+  }
 
-    .navBarItems-home {
-      margin-bottom: 0;
-      padding-left: 0;
-      list-style: none;
-      > .navItem {
+  .navItem-home {
+    > a {
+      .fa {
         font-size: 1.5em;
-        position: relative;
-        display: block;
-        > a {
-          position: relative;
-          display: block;
-          padding: 15px 15px;
-          color: $grey-300;
-          &:hover {
-            color: $white;
-          }
-        }
       }
     }
+  }
 
-    .navbar-collapse.in {
-      border-bottom: 1px solid ;
-    }
-    .collapsing,.in {
-      .navBarItems > .navItem > a {
-        min-height: unset;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
+  .navbar-collapse.in {
+    border-bottom: 1px solid;
+  }
+  .collapsing, .in {
+    .navBarItems > .navItem > a {
+      min-height: unset;
+      line-height: normal;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   }
 }
