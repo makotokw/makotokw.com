@@ -9,7 +9,6 @@ footer: true
 
   <section id="portfolio" class="topSection topSection-portfolio">
     <div class="container">
-      <h2 class="topSectionTitle"><span>Portfolio</span></h2>
       <div class="topSectionContent">
         <div class="row">
           <div class="col-md-6">
@@ -17,7 +16,7 @@ footer: true
             <a href="./portfolio/" class="btn archiveButton" title="Portfolio Archives">Archives</a>
           </div>
           <div class="col-md-6">
-            <h3 class="topSubSectionTitle">Source Code</h3>
+            <h3 class="topSubSectionTitle">Code</h3>
             <div class="githHubCards">
               <script src="http://lab.lepture.com/github-cards/widget.js"></script>
               <script
@@ -35,25 +34,22 @@ footer: true
     </div>
   </section>
 
-
   <section id="article" class="topSection topSection-article">
     <div class="container">
-      <h2 class="topSectionTitle"><span>Article</span></h2>
       <div class="topSectionContent">
         <div class="row">
           <div class="col-md-6">
             {% if page.lang == 'ja' %}
-            <h3 class="topSubSectionTitle"><span>Blog</span> on <a href="{{ site.blog_ja_url }}" title="Kwlog">Kwlog</a></h3>
+            <h3 class="topSubSectionTitle">Blog</h3>
             <div id="feedBlogContent" class="feedContent feedContent-blog">
               <i class="fa fa-spinner fa-spin"></i>
               Loading...
             </div>
             <div class="topSubSectionFooter">
-              <a href="{{ site.blog_ja_url }}" class="btn archiveButton" title="kwLog Archives"
-                 target="_blank">Archives</a>
+              <a href="{{ site.blog_ja_url }}" class="btn archiveButton" title="Blog Archives" target="_blank">Archives</a>
             </div>
             {% else %}
-            <h2 class="topSubSectionTitle"><i class="fa fa-book"></i> <a href="{{ site.path }}/blog/" title="Blog">Blog</a></h2>
+            <h3 class="topSubSectionTitle">Blog</h3>
             <div class="feedContent feedContent-blog">
               <ul class="feedArticleList list-unstyled">
                 {% for post in site.posts limit: 5 %}
@@ -66,20 +62,18 @@ footer: true
               </ul>
             </div>
             <div class="topSubSectionFooter">
-              <a href="{{ site.path }}/blog/" class="btn archiveButton"
-                 title="Blog Archives">Archives</a>
+              <a href="{{ site.path }}/blog/" class="btn archiveButton" title="Blog Archives">Archives</a>
             </div>
             {% endif %}
           </div>
           <div class="col-md-6">
-            <h3 class="topSubSectionTitle"><a href="{{ site.qiita_url }}" title="Qiita">Qiita</a></h3>
+            <h3 class="topSubSectionTitle">Qiita</h3>
             <div id="feedQiitaContent" class="feedContent feedContent-qiita">
               <i class="fa fa-spinner fa-spin"></i>
               Loading...
             </div>
             <div class="topSubSectionFooter">
-              <a href="{{ site.qiita_url }}" class="btn archiveButton" title="Qiita Archives"
-                 target="_blank">Archives</a>
+              <a href="{{ site.qiita_url }}" class="btn archiveButton" title="Qiita Archives" target="_blank">Archives</a>
             </div>
           </div>
         </div>
