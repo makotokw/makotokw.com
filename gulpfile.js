@@ -88,6 +88,22 @@ gulp.task('js:dev', ['jst'], function() {
         ;
 });
 
+// Fixtures(json data)
+function fixtures(dest) {
+  //noinspection JSUnresolvedFunction
+  return gulp.src(appConfig.source + '/_fixtures/*.yml')
+    .pipe(plugins.yaml())
+    .pipe(gulp.dest(dest))
+    ;
+}
+gulp.task('fixtures:dev', function () {
+  return fixtures(appConfig.distDevelopmentPreload + '/data');
+});
+gulp.task('fixtures:prod', function () {
+  return fixtures(appConfig.distProduction + '/data');
+});
+
+
 // Stylesheets
 function sass(env, dest) {
     //noinspection JSUnresolvedFunction
@@ -110,21 +126,6 @@ function sass(env, dest) {
 }
 gulp.task('sass:dev', function () {
     return sass('development', appConfig.distDevelopmentPreload + '/assets');
-});
-
-// Fixtures(Data)
-function fixtures(dest) {
-    //noinspection JSUnresolvedFunction
-    return gulp.src(appConfig.source + '/_fixtures/*.yml')
-        .pipe(plugins.yaml())
-        .pipe(gulp.dest(dest))
-    ;
-}
-gulp.task('fixtures:dev', function () {
-    return fixtures(appConfig.distDevelopmentPreload + '/data');
-});
-gulp.task('fixtures:prod', function () {
-    return fixtures(appConfig.distProduction + '/data');
 });
 
 // Jekyll

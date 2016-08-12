@@ -1,6 +1,7 @@
 -
   name: Mineclock
   name.ja: Mineclock
+  description: Pebble watchface looks like Minecraft clock
   categories: [pebble]
   tags: [c]
   url: https://apps.getpebble.com/applications/568aa41c6518afe93f000012
@@ -66,7 +67,7 @@
   url: https://chrome.google.com/webstore/detail/todays-schedule-in-google/mkaaneppndljkmpgdcglnpfagfhjhipc
   copyright_year: 2010
   last_updated_year: 2014
-  status: active
+  status: pending
   deprecated: true
 -
   name: World Clocks

@@ -102,33 +102,6 @@ $page-home-width: 1170px;
   }
 }
 
-// page-home
-$site-title-border: rgba(0, 0, 0, 0.1);
-.topSection-home {
-  padding: 0;
-
-  .container {
-    padding: 50px 0;
-  }
-
-  .siteTitle {
-    margin: 0;
-    font-size: $page-home-title-font-size;
-    text-align: center;
-    font-family: 'NovecentowideBookBold';
-    font-weight: normal;
-    //text-shadow: -1px 0 $site-title-border, 0 1px $site-title-border, 1px 0 $site-title-border, 0 -1px $site-title-border;
-    color: $white;
-
-    .siteDomain {
-      //color: $link-color;
-    }
-    .siteTopDomain {
-      //color: $blue-dark;
-    }
-  }
-}
-
 .menuLang {
   list-style: none;
   margin: 35px auto 10px auto;
@@ -154,8 +127,18 @@ $site-title-border: rgba(0, 0, 0, 0.1);
 
 @import "top/page-portfolio";
 
-// page-blog
+.topSection-portfolio {
+  .portfolioItem-title {
+    font-size: $font-size-h4;
+    display: inline;
+    font-weight: normal;
+  }
+  .portfolioItem-category {
 
+  }
+}
+
+// page-blog
 .topSection-article {
   .topSectionTitle {
     a {
@@ -224,11 +207,6 @@ $site-title-border: rgba(0, 0, 0, 0.1);
 // - large desktop
 // --------------------
 @media (max-width: $screen-md-max) {
-  .topSection-home {
-    .siteTitle {
-      font-size: $page-home-title-font-size;
-    }
-  }
 }
 
 // small desktop
@@ -251,45 +229,20 @@ $site-title-border: rgba(0, 0, 0, 0.1);
   .topSection {
     padding: 30px 20px 30px 20px;
   }
-  .topSection-home {
-    padding: 30px 0 30px 0;
-    .row-site-info {
-      margin-bottom: 30px;
-    }
-    .siteTitle {
-      text-align: center;
-      float: none;
-    }
-  }
-
-  .page-home-full {
-    height: auto !important;
-    .container {
-      height: auto;
-      width: auto;
-      position: relative;
-      padding: 0;
-      top: auto;
-      left: auto;
-      margin: 0;
-    }
-  }
-
-  .footer {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   .topSectionTitle {
     font-size: 30px;
     line-height: 30px;
     margin-bottom: 20px;
+  }
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .navbar {
     .nav {
       float: left;
     }
   }
-
   .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
     margin: 0;
   }
@@ -302,8 +255,10 @@ $site-title-border: rgba(0, 0, 0, 0.1);
 }
 
 @media print {
-  .siteInfo {
-    margin-bottom: 0;
+  .header {
+    .catchImage {
+      display: none;
+    }
   }
   .menuLang {
     display: none;

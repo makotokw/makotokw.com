@@ -6,17 +6,15 @@ makotokw.Views = makotokw.Views || {};
   makotokw.Views.PortfolioTagView = Backbone.View.extend({
 
     tagName: 'a',
-    className: 'portfolio-tag',
+    className: 'portfolioTag',
 
     render: function () {
       var $el = $(this.el)
-        .attr({
-          class: 'portfolio-tag'
-        })
+        .attr({class: this.className})
         .html(this.model.escape('name'));
 
       if (this.model.get('selected')) {
-        $el.addClass('portfolio-tag-selected');
+        $el.addClass('portfolioTag-isSelected');
       }
 
       $el.click(_.bind(this.onClick, this));

@@ -15,43 +15,17 @@ makotokw.Views = makotokw.Views || {};
     initialize: function () {
       this.initializeRouter();
       this.initializeHistory();
-      // this.initializePortfolio();
+      this.initializeNavBar();
+      this.initializePortfolio();
       this.loadFeeds();
     },
 
-    initializePortfolio: function () {
-      // create portfolio and tag connection
-      makotokw.portfolioTagCollection = new makotokw.Collections.PortfolioTagCollection([], {
-        url: '/data/portfolio_tag.json'
-      });
-      makotokw.portfolioCollection = new makotokw.Collections.PortfolioCollection([], {
-        url: '/data/portfolio.json'
-      });
-      // request portfolio-list after portfolio-tag
-      makotokw.portfolioTagCollection.on('sync', function () {
-        makotokw.portfolioCollection.fetch();
-      });
-
-      this.portfolioTagListView = new makotokw.Views.PortfolioTagListView({
-        collection: makotokw.portfolioTagCollection
-      });
-      this.portfolioListView = new makotokw.Views.PortfolioListView({
-        collection: makotokw.portfolioCollection
-      });
-
-      $('#portfolioTagListView').empty().append(this.portfolioTagListView.$el);
-      this.portfolioTagListView.render();
-
-      $('#portfolioListView').empty().append(this.portfolioListView.$el);
-      this.portfolioListView.render();
-
-      makotokw.portfolioTagCollection.fetch();
-    },
-
     initializeNavBar: function () {
+      console.log('initializeNavBar');
       var $mainNavBar = $('#mainNavBar');
       var $navItems = $mainNavBar.find('a');
       this.mainNavBarHeight = $navItems.outerHeight() + 15;
+      this.$scrollItems = $('#home,.topSection');
     },
 
     initializeRouter: function () {
@@ -84,6 +58,41 @@ makotokw.Views = makotokw.Views || {};
         Backbone.history.start();
       });
     },
+
+    initializePortfolio: function () {
+      // create portfolio and tag connection
+      makotokw.portfolioTagCollection = new makotokw.Collections.PortfolioTagCollection([], {
+        url: '/data/portfolio_tag.json'
+      });
+      makotokw.portfolioCollection = new makotokw.Collections.PortfolioCollection([], {
+        url: '/data/portfolio.json'
+      });
+      // request portfolio-list after portfolio-tag
+      makotokw.portfolioTagCollection.on('sync', function () {
+        makotokw.portfolioCollection.fetch();
+      });
+
+      this.recentPortfolioListView = new makotokw.Views.RecentPortfolioListView({
+        collection: makotokw.portfolioCollection
+      });
+      $('#recentPortfolioList').empty().append(this.recentPortfolioListView.$el);
+      this.recentPortfolioListView.render();
+
+      // TODO: isotope version
+      // this.portfolioTagListView = new makotokw.Views.PortfolioTagListView({
+      //   collection: makotokw.portfolioTagCollection
+      // });
+      // this.portfolioListView = new makotokw.Views.PortfolioListView({
+      //   collection: makotokw.portfolioCollection
+      // });
+      // $('#portfolioTagList').empty().append(this.portfolioTagListView.$el);
+      // this.portfolioTagListView.render();
+      // $('#portfolioList').empty().append(this.portfolioListView.$el);
+      // this.portfolioListView.render();
+
+      makotokw.portfolioTagCollection.fetch();
+    },
+
 
     findCurrentPage: function () {
       var scrollTop = $(window).scrollTop() + this.mainNavBarHeight;

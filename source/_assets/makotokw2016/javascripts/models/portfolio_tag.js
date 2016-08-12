@@ -4,12 +4,7 @@ makotokw.Models = makotokw.Models || {};
   'use strict';
 
   makotokw.Models.PortfolioTagModel = Backbone.Model.extend({
-
     url: '',
-
-    initialize: function () {
-    },
-
     defaults: {
       name: '',
       category: '',

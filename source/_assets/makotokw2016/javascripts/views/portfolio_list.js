@@ -3,9 +3,12 @@ makotokw.Views = makotokw.Views || {};
 (function () {
   'use strict';
 
+  /**
+   * PortfolioListView with isotope
+   */
   makotokw.Views.PortfolioListView = Backbone.View.extend({
     tagName: 'div',
-    className: 'portfolio-list-view',
+    className: 'portfolioList',
     template: JST['portfolio_list.html'],
 
     filters: {},
@@ -27,12 +30,11 @@ makotokw.Views = makotokw.Views || {};
     render: function () {
       var $el = $(this.el).empty();
       if (!this.collection.length) {
-        $el.html(JST['portfolio_loading.html']());
         return this;
       }
       this.$content = $el;
       this.collection.each(function (model) {
-        var view = new makotokw.Views.PortfolioView({model: model});
+        var view = new makotokw.Views.PortfolioItemView({model: model});
         this.$content.append(view.render().el);
       }, this);
 
@@ -40,7 +42,7 @@ makotokw.Views = makotokw.Views || {};
       setTimeout(
         function () {
           me.$content.isotope({
-            itemSelector: '.portfolio',
+            itemSelector: '.portfolioItem',
             layoutMode: 'masonry'
           });
         },

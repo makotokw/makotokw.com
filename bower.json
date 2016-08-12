@@ -11,7 +11,6 @@
     "bootstrap-sass": "~3.3.0",
     "font-awesome": "~4.6",
     "isotope": "~2.0.0",
-    "queryloader2": "~2.9.0",
     "bootstrap-material-design": "~0.5.10"
   },
   "resolutions": {

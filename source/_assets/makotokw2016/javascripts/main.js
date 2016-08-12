@@ -4,6 +4,7 @@ window.makotokw = {
   Views: {},
   Routers: {},
 
+  lang: 'en',
   isTopPage: false,
   isMobile: false,
   staticAssetsPath: '/assets/makotokw2016/',
@@ -12,6 +13,12 @@ window.makotokw = {
     'use strict';
 
     _.mixin(_.string.exports());
+
+    if (document.location && document.location.pathname) {
+      if (document.location.pathname.match(/^\/ja\//)) {
+        this.lang = 'ja';
+      }
+    }
 
     this.isMobile = navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i) && !Modernizr.draganddrop;
     this.stageView = new makotokw.Views.StageView();

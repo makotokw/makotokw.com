@@ -1,19 +1,19 @@
 // page-portfolio
-.portfolio-tag-list-view {
+.portfolioTagList {
   @include clearfix;
-  .portfolio-tag {
+  .portfolioTag {
   }
-  .portfolio-category-title {
-    margin-top: 0px;
-    font-family: 'NovecentowideLightRegular';
-  }
-  .portfolio-tag-category {
+  .portfolio-tagCategory {
     width: 300px;
     float: left;
   }
+  .portfolio-tagCategory-title {
+    margin-top: 0;
+    font-family: 'NovecentowideLightRegular';
+  }
 }
 
-.portfolio-tag {
+.portfolioTag {
   font-size: 10px;
   border-radius: 9px;
   margin: 4px;
@@ -23,25 +23,26 @@
   font-family: 'NovecentowideLightRegular';
 }
 
-.portfolio-list-view {
+.portfolioList {
   margin-top: 20px;
-  .portfolio {
+
+  .portfolioItem {
     width: 25%;
     min-width: 310px;
     margin: 4px;
 
-    &.portfolio-large {
+    &.portfolioItem-large {
       width: 50%;
     }
   }
-  .portfolio-image {
+  .portfolioItem-image {
     margin-bottom: 4px;
   }
-  .portfolio-name,
-  .portfolio-tags {
+  .portfolioItem-title,
+  .portfolioItem-tags {
     display: inline;
   }
-  .portfolio-name {
+  .portfolioItem-title {
     font-weight: bold;
   }
 

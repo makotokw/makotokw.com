@@ -16,7 +16,7 @@ A => f(x) => B
 * ``source/_assets/{theme}/templates/*.html`` => ``gulp-template-compile`` => ``source/_assets/{theme}/templates/templates.js``
 * ``source/_assets/components/*/*.js`` + ``source/_assets/{theme}/javascripts/*.js`` => ``jekyll`` with ``jekyll-assets`` => ``.dist/app.js``
 * ``source/_assets/components/*/*.js`` + ``source/_assets/{theme}/javascripts/*.js`` => ``gulp-concat`` => ``.dist_development_preload/app.js``
-
+* ``source/_fixtures/*.yaml`` => ``gulp-yaml`` => ``.dist_development_preload/data/*.json``
 
 ### Stylesheets 
 

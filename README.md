@@ -56,11 +56,12 @@ grunt build
 
 ## Depends / Tools
 
-* [Jekyll](http://jekyllrb.com/)
+* Build tools
+ * [Jekyll](http://jekyllrb.com/)
  * [Jekyll::AssetsPlugin](https://github.com/ixti/jekyll-assets)
-* [gulp](http://gulpjs.com/)
-* [Bower](http://bower.io/)
-* [Sass](http://sass-lang.com/)
+ * [gulp](http://gulpjs.com/)
+ * [Bower](http://bower.io/)
+ * [Sass](http://sass-lang.com/)
 * Assets
  * [jQuery](http://jquery.com/) v1.x
  * [Underscore.js](http://underscorejs.org/) v1.x
@@ -69,4 +70,3 @@ grunt build
  * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) v4.x
  * [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget)
  * [Isotope](http://isotope.metafizzy.co/) v2.x
- * [queryloader2](https://github.com/Gaya/queryloader2) v2.x
