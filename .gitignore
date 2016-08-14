@@ -1,5 +1,5 @@
 ### makotokw.com ###
-.dist*
+.tmp
 .idea
 /dist
 /_tmp
