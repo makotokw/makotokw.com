@@ -12,31 +12,33 @@ footer: true
       <div class="topSectionContent">
         <div class="row">
           <div class="col-md-6">
-            <h3 class="topSubSectionTitle">Software</h3>
-
-            <div id="recentPortfolioList">
-              <i class="fa fa-spinner fa-spin"></i>
-              Loading...
-            </div>
-
-            <div class="topSubSectionFooter">
-              <a href="./portfolio/" class="btn archiveButton" title="Portfolio Archives">Archives</a>
+            <div class="topSubSection topSubSection-software">
+              <h3 class="topSubSectionTitle">Software</h3>
+              <div id="recentPortfolioList">
+                <i class="fa fa-spinner fa-spin"></i>
+                Loading...
+              </div>
+              <div class="topSubSectionFooter">
+                <a href="./portfolio/" class="btn archiveButton" title="Portfolio Archives">Archives</a>
+              </div>
             </div>
           </div>
           <div class="col-md-6">
-            <h3 class="topSubSectionTitle">Code</h3>
-            <div class="gitHubCards">
-              <script src="http://lab.lepture.com/github-cards/widget.js"></script>
-              <script
-                data-name="makotokw"
-                data-modules="base,details,stats,repos,eventsStatis,orgs"
-                data-reposNum="3"
-                src="http://octocard.in/o.js">
-              </script>
-            </div>
-            <div class="topSubSectionFooter">
-              <a href="{{ site.github_url }}" class="btn archiveButton" title="GitHub Archives"
-                 target="_blank">Archives</a>
+            <div class="topSubSection topSubSection-github">
+              <h3 class="topSubSectionTitle">Code</h3>
+              <div class="gitHubCards">
+                <script src="http://lab.lepture.com/github-cards/widget.js"></script>
+                <script
+                  data-name="makotokw"
+                  data-modules="base,details,stats,repos,eventsStatis,orgs"
+                  data-reposNum="3"
+                  src="http://octocard.in/o.js">
+                </script>
+              </div>
+              <div class="topSubSectionFooter">
+                <a href="{{ site.github_url }}" class="btn archiveButton" title="GitHub Archives"
+                   target="_blank">Archives</a>
+              </div>
             </div>
           </div>
         </div>
@@ -49,41 +51,48 @@ footer: true
       <div class="topSectionContent">
         <div class="row">
           <div class="col-md-6">
-            {% if page.lang == 'ja' %}
-            <h3 class="topSubSectionTitle">Blog</h3>
-            <div id="feedBlogContent" class="feedContent feedContent-blog">
-              <i class="fa fa-spinner fa-spin"></i>
-              Loading...
+            <div class="topSubSection topSubSection-blog">
+              {% if page.lang == 'ja' %}
+              <h3 class="topSubSectionTitle">Blog</h3>
+              <div id="feedBlogContent" class="feedContent feedContent-blog">
+                <i class="fa fa-spinner fa-spin"></i>
+                Loading...
+              </div>
+              <div class="topSubSectionFooter">
+                <a href="{{ site.blog_ja_url }}" class="btn archiveButton" title="Blog Archives" target="_blank">Archives</a>
+              </div>
+              {% else %}
+              <h3 class="topSubSectionTitle">Blog</h3>
+              <div class="feedContent feedContent-blog">
+                <ul class="feedArticleList list-unstyled">
+                  {% for post in site.posts limit: 5 %}
+                  <li class="entry">
+                    <div class="entry-header">
+                      <span class="entry-date">{{ post.date|date: "%Y/%m/%d" }}</span>
+                      <span class="entry-title"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></span>
+                    </div>
+                    <p class="entry-summary">{{ post.content|strip_html|truncate:100 }}</p>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="topSubSectionFooter">
+                <a href="{{ site.path }}/blog/" class="btn archiveButton" title="Blog Archives">Archives</a>
+              </div>
+              {% endif %}
             </div>
-            <div class="topSubSectionFooter">
-              <a href="{{ site.blog_ja_url }}" class="btn archiveButton" title="Blog Archives" target="_blank">Archives</a>
-            </div>
-            {% else %}
-            <h3 class="topSubSectionTitle">Blog</h3>
-            <div class="feedContent feedContent-blog">
-              <ul class="feedArticleList list-unstyled">
-                {% for post in site.posts limit: 5 %}
-                <li class="article">
-                  <span class="articlePublished">{{ post.date|date: "%Y/%m/%d" }}</span>
-                  <span class="articleTitle"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></span>
-                  <p class="articleSummary">{{ post.content|strip_html|truncate:100 }}</p>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-            <div class="topSubSectionFooter">
-              <a href="{{ site.path }}/blog/" class="btn archiveButton" title="Blog Archives">Archives</a>
-            </div>
-            {% endif %}
           </div>
           <div class="col-md-6">
-            <h3 class="topSubSectionTitle">Qiita</h3>
-            <div id="feedQiitaContent" class="feedContent feedContent-qiita">
-              <i class="fa fa-spinner fa-spin"></i>
-              Loading...
-            </div>
-            <div class="topSubSectionFooter">
-              <a href="{{ site.qiita_url }}" class="btn archiveButton" title="Qiita Archives" target="_blank">Archives</a>
+            <div class="topSubSection topSubSection-qiita">
+              <h3 class="topSubSectionTitle">Qiita</h3>
+              <div id="feedQiitaContent" class="feedContent feedContent-qiita">
+                <i class="fa fa-spinner fa-spin"></i>
+                Loading...
+              </div>
+              <div class="topSubSectionFooter">
+                <a href="{{ site.qiita_url }}" class="btn archiveButton" title="Qiita Archives"
+                   target="_blank">Archives</a>
+              </div>
             </div>
           </div>
         </div>

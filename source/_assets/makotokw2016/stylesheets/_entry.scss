@@ -19,18 +19,14 @@
     }
     .entry-date {
       color: $silver;
-      &:before {
-        font-family: FontAwesome;
-        content: $fa-var-clock-o;
-        margin-right: 3px;
-      }
       .published {
         text-transform: uppercase;
       }
     }
   }
 
-  .entry-content {
+  .entry-content,
+  .entry-summary {
     line-height: 1.831;
     color: lighten($text-color, 25%);
     @include clearfix;

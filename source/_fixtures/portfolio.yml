@@ -1,7 +1,7 @@
 -
   name: Mineclock
   name.ja: Mineclock
-  description: Pebble watchface looks like Minecraft clock
+  description: Pebble watchface that looks like Minecraft clock.
   categories: [pebble]
   tags: [c]
   url: https://apps.getpebble.com/applications/568aa41c6518afe93f000012
@@ -12,6 +12,7 @@
 -
   name: IRKit Remote
   name.ja: IRKit Remote
+  description: Pebble watchapp that sends IR signal to IRKit. (IRKit device is IR remote controller and is seller in only Japan)
   categories: [pebble]
   tags: [c, js]
   url: https://apps.getpebble.com/applications/54b7e129986a229c5700004c
@@ -32,6 +33,7 @@
 -
   name: gitmike theme
   name.ja: gitmike テーマ
+  description: This is github-like theme for Redmine.
   categories: [redmine]
   tags: []
   url: https://github.com/makotokw/redmine-theme-gitmike
@@ -42,6 +44,7 @@
 -
   name: Garanchu
   name.ja: ガランチュ
+  description: iOS TV application for GaraponTV (Japanese TV tuner).
   categories: [ios]
   tags: [objc]
   url: https://itunes.apple.com/jp/app/garanchu/id715054277?mt=8
@@ -52,6 +55,7 @@
 -
   name: Tokyo Ame
   name.ja: Tokyo Ame
+  description: Chrome application that displays rain-map in Tokyo.
   categories: [crx]
   tags: [js]
   url: https://chrome.google.com/webstore/detail/tokyo-ame/cmidngbgkimeejhcdnggnnlnkjhhjkkp
@@ -90,6 +94,7 @@
   status: pending
 -
   name: AmazonJS
+  description: Wordpress Pluign. Easy to add an Amazon product to your post and you can customize display it by using jQuery template.
   categories: [wp]
   url: http://wordpress.org/plugins/amazonjs/
   url.ja: http://blog.makotokw.com/portfolio/wordpress/amazonjs/
@@ -101,6 +106,7 @@
   status: active
 -
   name: GitHub Flavored Markdown for WordPress
+  description: WordPress Plugin for PHP-Markdown and GitHub Flavored Markdown.
   categories: [wp]
   tags: [php]
   url: https://github.com/makotokw/wp-gfm

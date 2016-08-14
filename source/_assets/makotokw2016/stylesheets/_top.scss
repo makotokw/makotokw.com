@@ -7,6 +7,65 @@ $page-home-title-font-size: 60px;
 $page-home-height: 450px;
 $page-home-width: 1170px;
 
+%entry-link {
+  color: $text-color;
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+%entry-title {
+  font-size: $font-size-h4;
+  display: inline;
+  font-weight: normal;
+}
+%entry-dateLabel {
+  @extend .label;
+  border-radius: 0;
+  font-size: $font-size-small;
+  display: inline;
+  margin-right: .5em;
+  padding: 3px 6px;
+  line-height: 1.2em;
+  color: $white;
+  background-color: $blue;
+}
+%entry-summary {
+  font-size: $font-size-small;
+  color: $gray-dark;
+  padding: 6px 0;
+}
+
+%entry-link-isInverted {
+  color: $white;
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+%entry-summary-isInverted {
+  color: $silver;
+}
+
+%topSection-ghostButton {
+  @include ghostButton($lang-menu-item-width, $lang-menu-item-height, 12px, 8px);
+  border: 1px solid $blue-dark;
+  color: $blue-dark;
+  &:hover {
+    border: 1px solid rgba($blue-dark, .5);
+    color: rgba($blue-dark, .5);
+    background: transparent;
+  }
+}
+
+%topSection-ghostButton-isInverted {
+  border: 1px solid $white;
+  color: $white;
+  &:hover {
+    border: 1px solid rgba($white, .5);
+    color: rgba($white, .5);
+    background: transparent;
+  }
+}
+
 .topSection {
   padding: 60px 0;
   background-size: cover;
@@ -39,65 +98,41 @@ $page-home-width: 1170px;
   }
 
   .archiveButton {
-    @include ghostButton($lang-menu-item-width, $lang-menu-item-height, 12px, 8px);
-    border: 1px solid $blue-dark;
-    color: $blue-dark;
-    &:hover {
-      border: 1px solid rgba($blue-dark, .5);
-      color: rgba($blue-dark, .5);
-      background: transparent;
-    }
+    @extend %topSection-ghostButton;
     @extend .pull-right;
   }
 
-  .feedArticleList {
-    .article {
-      margin-bottom: 1em;
-
-      a {
-        color: $text-color;
-        &:hover {
-          color: $link-hover-color;
-        }
+  .entry {
+    margin-bottom: 1em;
+    a {
+      @extend %entry-link;
+    }
+    .entry-header {
+      .entry-title {
+        @extend %entry-title;
       }
-
-      .articleTitle {
-        font-size: $font-size-h4;
-        display: inline;
-        font-weight: normal;
+      .entry-date {
+        @extend %entry-dateLabel;
       }
-
-      .articlePublished {
-        @extend .label;
-        border-radius: 0;
-        font-size: $font-size-small;
-        display: inline;
-        margin-right: .5em;
-        padding: 3px 6px;
-        line-height: 1.2em;
-      }
-
-      .articleSummary {
-        font-size: $font-size-small;
-        color: $gray-dark;
-        padding: 6px 0;
-      }
+    }
+    .entry-summary {
+      @extend %entry-summary;
     }
   }
 
   &:nth-child(odd) {
     background: $blue-dark;
     color: $white;
-    .article {
+    .entry {
       a {
-        color: $white;
-        &:hover {
-          color: $link-hover-color;
-        }
+        @extend %entry-link-isInverted;
       }
-      .articleSummary {
-        color: $silver;
+      .entry-summary {
+        @extend %entry-summary-isInverted;
       }
+    }
+    .archiveButton {
+      @extend %topSection-ghostButton-isInverted;
     }
   }
 }
@@ -114,59 +149,16 @@ $page-home-width: 1170px;
   }
 
   .menuLangButton {
-    @include ghostButton($lang-menu-item-width, $lang-menu-item-height, 12px, 8px);
-    border: 1px solid $blue-dark;
-    color: $blue-dark;
-    &:hover {
-      border: 1px solid rgba($blue-dark, .5);
-      color: rgba($blue-dark, .5);
-      background: transparent;
-    }
+    @extend %topSection-ghostButton;
   }
 }
 
-@import "top/page-portfolio";
+//@import "top/page-portfolio";
 
 .topSection-portfolio {
-  .portfolioItem-title {
-    font-size: $font-size-h4;
-    display: inline;
-    font-weight: normal;
-  }
-  .portfolioItem-category {
-
-  }
-}
-
-// page-blog
-.topSection-article {
-  .topSectionTitle {
-    a {
-      color: $blue;
-    }
-  }
-  .feedArticleList {
-    .article {
-      .articlePublished {
-        background-color: $blue;
-      }
-    }
-  }
 }
 
 .topSubSection-github {
-  .topSubSectionTitle {
-    a {
-      color: $githubOrange;
-    }
-  }
-  .feedArticleList {
-    .article {
-      .articlePublished {
-        background-color: $githubOrange;
-      }
-    }
-  }
   .gitHubCards {
     clear: both;
     padding: 15px;
@@ -175,14 +167,9 @@ $page-home-width: 1170px;
 }
 
 .topSubSection-qiita {
-  .topSubSectionTitle {
-    a {
-      color: $green;
-    }
-  }
-  .feedArticleList {
-    .article {
-      .articlePublished {
+  .entry {
+    .entry-header {
+      .entry-date {
         background-color: $green;
       }
     }

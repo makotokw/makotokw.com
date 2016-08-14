@@ -5,15 +5,15 @@ window["JST"]["feed_entry.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '';
 with (obj) {
-__p += '<div class="article">\n    <span class="articlePublished">' +
+__p += '<div class="entry">\n  <div class="entry-header">\n    <span class="entry-date">' +
 ((__t = ( friendlyPublishedDate )) == null ? '' : __t) +
-'</span>\n    <span class="articleTitle"><a href="' +
+'</span>\n    <span class="entry-title"><a href="' +
 ((__t = ( link )) == null ? '' : __t) +
 '">' +
 ((__t = ( title )) == null ? '' : __t) +
-'</a></span>\n    <p class="articleSummary">' +
+'</a></span>\n  </div>\n  <p class="entry-summary">' +
 ((__t = ( contentSnippet )) == null ? '' : __t) +
-'<p>\n</div>\n\n\n';
+'\n  <p>\n</div>\n\n\n';
 
 }
 return __p
@@ -116,15 +116,15 @@ window["JST"]["recent_portfolio_item.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '';
 with (obj) {
-__p += '<span class="portfolioItem-copyrightYear">\n  ' +
-((__t = ( copyright_year )) == null ? '' : __t) +
-'\n</span>\n<span class="portfolioItem-title">\n  <a href="' +
+__p += '<div class="entry-header">\n<span class="entry-date">\n  ' +
+((__t = ( last_updated_year )) == null ? '' : __t) +
+'\n</span>\n  <span class="entry-title">\n  <a href="' +
 ((__t = ( url )) == null ? '' : __t) +
 '">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</a>\n</span>\n<span class="portfolioItem-category">' +
+'</a>\n</span>\n  <span class="entry-categories">' +
 ((__t = ( categories )) == null ? '' : __t) +
-'</span>\n<p class="portfolioItem-description">' +
+'</span>\n</div>\n<p class="entry-summary">' +
 ((__t = ( description )) == null ? '' : __t) +
 '</p>\n';
 
