@@ -1,0 +1,17 @@
+.footer {
+  background-color: #edeff1;
+  color: #bac1c8;
+  font-size: $font-size-small;
+  padding: 30px 0;
+  text-align: center;
+
+  .copyright {
+  }
+  a {
+    color: #bac1c8;
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
+}
