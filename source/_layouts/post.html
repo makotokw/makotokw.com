@@ -1,6 +1,6 @@
 ---
 layout: default
-cls: site-portfolio
+cls: site-post
 single: true
 is_top: false
 footer: true
@@ -10,7 +10,7 @@ footer: true
     {% include post.html %}
 </article>
 
-<nav role="navigation" class="navigation-post">
+<nav role="navigation" class="navigationPostSection">
     {% if page.previous.url %}
     <a class="pull-left" href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>
     {% endif %}

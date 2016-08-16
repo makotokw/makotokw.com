@@ -72,16 +72,19 @@ $mainNavBarHeight: 65px;
   }
 }
 
-body {
-  padding-top: $mainNavBarHeight;
-}
-
 .mainNavBar {
   position: fixed;
   z-index: 10;
   right: 0;
   left: 0;
-  top: 0
+  top: 0;
+  .navbar {
+    margin-bottom: 0;
+  }
+}
+
+.mainContent {
+  margin-top: $mainNavBarHeight;
 }
 
 .headroom {

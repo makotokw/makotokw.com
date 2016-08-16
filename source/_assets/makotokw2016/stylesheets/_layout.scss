@@ -1,4 +1,4 @@
-.main-content {
+.mainContent {
   padding-top: 12px;
   .container {
     padding: 12px;
@@ -8,20 +8,10 @@
   }
 }
 
-.navigation-post,
-.comment-area {
+.navigationPostSection,
+.commentSection {
   @include clearfix;
   margin-top: 20px;
 }
 
-.error-unit {
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-    font-family:"Trebuchet MS",Verdana,Arial,sans-serif;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    text-transform:uppercase;
-  }
-}
 

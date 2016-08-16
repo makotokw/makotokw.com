@@ -5,7 +5,7 @@ single: true
 is_top: false
 footer: true
 ---
-<article role="article" class="entry entry-portfolio">
+<article role="article" class="entry">
     {% if page.title %}
     <header class="entry-header">
         {% for c in page.categories %}
@@ -15,7 +15,7 @@ footer: true
         {% if page.date %}<p class="entry-meta">{% include post/date.html %}{{ time }}</p>{% endif %}
     </header>
     {% endif %}
-    <div class="entry-content">
+    <div class="entry-content autoTableBordered">
         {{ content }}
     </div>
     <footer class="entry-footer">

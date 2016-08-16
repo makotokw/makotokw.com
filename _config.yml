@@ -1,7 +1,5 @@
 # http://jekyllrb.com/docs/configuration/
-
 development: false
-
 
 # Where things are
 source: ./source

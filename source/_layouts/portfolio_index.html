@@ -3,11 +3,11 @@ layout: default
 cls: site-archives-portfolio
 single: false
 is_top: false
-footer: false
+footer: true
 ---
 <div class="archives archives-portfolio">
-  <h1 class="entry-title">Portfolio</h1>
-  <div class="archives-entries archives-entries-portfolio">
+  <h1 class="archives-title">Portfolio</h1>
+  <div class="archives-entries">
     <div class="container-fluid">
       {% for p in page.portfolios %}
       {% capture this_year %}{{ p.copyright_year }}{% endcapture %}
@@ -31,7 +31,7 @@ footer: false
             {% for c in p.categories %}
             <span class="label label-portfolio label-portfolio-{{ c }}">{{ c|portfolio_tag_name }}</span>
             {% endfor %}
-            <h1>
+            <h1 class="entry-title">
               {% if p.url %}
               <a href="{{ p.url }}">{{p.name}}</a>
               {% else %}
