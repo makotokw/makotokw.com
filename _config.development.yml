@@ -1,4 +1,5 @@
 development: true
 url: http://localhost:8084
+google_analytics: false
 assets:
   cachebust: none
