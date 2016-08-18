@@ -39,19 +39,7 @@ module Jekyll
 
     def generate(site)
 
-      unless site.portfolio_tags then
-        portfolio_tags = YAML.load_file(File.join(site.source, '_fixtures', 'portfolio_tag.yml'))
-        portfolio_tags.each do |t|
-          if !t.has_key?('slug') then
-            slug = t['name'].to_s.downcase.gsub(/(\s|[^\w])/, '')
-            t['slug'] = slug
-          end
-        end
-        site.portfolio_tags = portfolio_tags
-      end
-
-      portfolios = YAML.load_file(File.join(site.source, '_fixtures', 'portfolio.yml'))
-      portfolios.sort_by! { |p| p['copyright_year'] ? p['copyright_year'] : 2000 }
+      portfolios = site.data['portfolios'].sort_by { |p| p['copyright_year'] ? p['copyright_year'] : 2000 }
 
       # add PortfolioIndex page via locale
       site.pages << PortfolioIndex.new(site, site.source, portfolios, '/portfolio/', 'en')
@@ -60,4 +48,16 @@ module Jekyll
     end
   end
 
+end
+
+Jekyll::Hooks.register :site, :post_read do |site|
+  if site.data['portfolio_tags']
+    site.data['portfolio_tags'].each do |t|
+      # fixed slug from name
+      if !t.has_key?('slug') then
+        slug = t['name'].to_s.downcase.gsub(/(\s|[^\w])/, '')
+        t['slug'] = slug
+      end
+    end
+  end
 end

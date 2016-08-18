@@ -3,8 +3,8 @@
 .idea
 /dist
 /_tmp
-/source/_assets/components*
-/source/assets/components*
+/source/_assets/vendor/
+/source/assets/vendor/
 
 ### Ruby, Jekyll, Sass ###
 .ruby-version
@@ -21,8 +21,8 @@
 Icon
 
 ### Bower ###
-bower_components
-_bower_components
+bower*
+_bower*
 
 ### Node ###
 npm-debug.log

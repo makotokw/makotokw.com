@@ -82,7 +82,6 @@ module Jekyll
 
     def generate(site)
 
-      portfolios = YAML.load_file(File.join(site.source, '_fixtures', 'portfolio.yml'))
       entries = site.reader.get_entries('/', '_portfolios')
 
       # first pass processes, but does not yet render post content

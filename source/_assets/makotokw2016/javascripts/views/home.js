@@ -62,10 +62,10 @@ makotokw.Views = makotokw.Views || {};
     initializePortfolio: function () {
       // create portfolio and tag connection
       makotokw.portfolioTagCollection = new makotokw.Collections.PortfolioTagCollection([], {
-        url: '/data/portfolio_tag.json'
+        url: '/data/portfolio_tags.json'
       });
       makotokw.portfolioCollection = new makotokw.Collections.PortfolioCollection([], {
-        url: '/data/portfolio.json'
+        url: '/data/portfolios.json'
       });
       // request portfolio-list after portfolio-tag
       makotokw.portfolioTagCollection.on('sync', function () {

@@ -1,16 +1,13 @@
 # http://jekyllrb.com/docs/configuration/
-development: false
-
-# Where things are
 source: ./source
 destination: ./dist
-plugins_dir: ./plugins
-
-# Handling Reading
 safe: false
+keep_files: ['data']
+timezone: Asia/Tokyo
 encoding: utf-8
 
 # Plugins
+plugins_dir: ./plugins
 whitelist: []
 gems:
   - jekyll-assets
@@ -72,10 +69,10 @@ addthis_profile_id: ra-51d5a54a1c992276
 # http://jekyll.github.io/jekyll-assets/
 assets:
   sources:
-    - _bower_components/bootstrap-sass/assets/stylesheets
-    - _bower_components/bootstrap-material-design/sass
-    - _bower_components/font-awesome/scss
-    - _assets/components
+    - _bower/bootstrap-sass/assets/stylesheets
+    - _bower/bootstrap-material-design/sass
+    - _bower/font-awesome/scss
+    - _assets/vendor
     - _assets/makotokw2016/javascripts
     - _assets/makotokw2016/stylesheets
     - _assets/makotokw2016/images
