@@ -5,8 +5,7 @@
     background: $blue-dark url('makotokw2016/images/bg-home.png') center;
   }
   .authorIcon {
-    background: $blue-dark url('makotokw2016/images/icon.png') center;
-    background-size: cover;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     height: 100px;

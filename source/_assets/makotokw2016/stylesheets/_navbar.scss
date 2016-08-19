@@ -52,9 +52,50 @@ $mainNavBarHeight: 65px;
   }
 
   .navItem-home {
-    > a {
-      .fa {
-        font-size: 1.5em;
+    .logo-image,
+    .logo-suffixText {
+      width: 3em;
+      height: 3em;
+      border-radius: 1.5em;
+      display: inline-block;
+      line-height: 3;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+
+    .logo-suffixText {
+      background: $logoBackgroundColor;
+      color: white;
+      font-weight: bold;
+      margin-left: -0.75em;
+      padding: 0 1.25em 0 0.75em;
+      text-align: left;
+      -webkit-transition: width ease-out 0.2s;
+      -moz-transition: width ease-out 0.2s;
+      transition: width ease-out 0.2s;
+      -webkit-transform: translateZ(0px);
+
+      .logo-suffixText-first {
+        display: none;
+      }
+      .logo-suffixText-last {
+        display: inline;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      &:hover,
+      &:active,
+      &:focus {
+        .logo-suffixText {
+          width: 7.25em;
+        }
+        .logo-suffixText-first {
+          display: inline;
+        }
+        .logo-suffixText-last {
+        }
       }
     }
   }
@@ -94,7 +135,7 @@ $mainNavBarHeight: 65px;
 .headroom--pinned {
   transform: translateY(0%);
   .navbar {
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid rgba($grey-300, 0.3);
   }
 }
 .headroom--unpinned {

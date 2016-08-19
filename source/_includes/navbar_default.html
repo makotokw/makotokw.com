@@ -1,3 +1,12 @@
+{% if layout.is_top %}
+{% assign home_url = "#home" %}
+{% else %}
+{% if page.lang == 'ja' %}
+{% assign home_url = "/ja/" %}
+{% else %}
+{% assign home_url = "/" %}
+{% endif %}
+{% endif %}
 <nav id="mainNavBar" class="mainNavBar">
   <div class="navbar" role="navigation">
     <div class="container-fluid">
@@ -11,15 +20,10 @@
         </div>
         <div class="navBarItems">
           <div class="navItem navItem-home">
-            {% if layout.is_top %}
-            <a href="#home"><i class="fa fa-home"></i></a>
-            {% else %}
-            {% if page.lang == 'ja' %}
-            <a href="/ja/"><i class="fa fa-home"></i></a>
-            {% else %}
-            <a href="/"><i class="fa fa-home"></i></a>
-            {% endif %}
-            {% endif %}
+            <a href="{{ home_url }}">
+              <img class="logo-image" src="{% asset_path logo-200.png %}" alt="{{ site.author.screen_name }}" />
+              <div class="logo-suffixText"><span class="logo-suffixText-first">AKOTO_</span><span class="logo-suffixText-last">KW</span></div>
+            </a>
           </div>
         </div>
       </div>
@@ -29,12 +33,12 @@
           {% if page.lang == 'ja' %}
           <li class="navItem navItem-portfolio"><a href="/ja/portfolio"><i class="fa fa-briefcase"></i> Software</a></li>
           <li class="navItem navItem-gitHub"><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Code</a></li>
-          <li class="navItem navItem-blog"><a href="/ja/#blog"><i class="fa fa-book"></i> Blog</a></li>
+          <li class="navItem navItem-blog"><a href="{{ site.blog_ja_url }}"><i class="fa fa-book"></i> Blog</a></li>
           <li class="navItem navItem-qiita"><a href="{{ site.qiita_url }}"><i class="fa fa-search"></i> Qiita</a></li>
           {% else %}
           <li class="navItem navItem-portfolio"><a href="/portfolio"><i class="fa fa-briefcase"></i> Software</a></li>
           <li class="navItem navItem-gitHub"><a href="{{ site.github_url }}"><i class="fa fa-github-alt"></i> Code</a></li>
-          <li class="navItem navItem-blog"><a href="/#blog"><i class="fa fa-book"></i> Blog</a></li>
+          <li class="navItem navItem-blog"><a href="/blog"><i class="fa fa-book"></i> Blog</a></li>
           {% endif %}
         </ul>
       </div><!-- /.nav-collapse -->
