@@ -5,4 +5,3 @@ module Jekyll
     attr_accessor :portfolio_tags
   end
 end
-

@@ -36,7 +36,7 @@
       {% unless page.meta == false %}
       <div class="header-meta">
         {% include post/categories.html %}
-        {% include post/date.html %}
+        {% include post/capture_dates.html %}{{ post_published }}
       </div>
       {% endunless %}
     </div>

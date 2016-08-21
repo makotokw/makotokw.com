@@ -11,7 +11,6 @@ module Jekyll
       @name = name
 
       self.read_yaml(File.join(base, dir), name)
-      self.fix_data
 
       @lang = (self.data['lang'] && self.data['lang'] != 'en') ? self.data['lang'] : ''
       @categories = if self.data['category']
