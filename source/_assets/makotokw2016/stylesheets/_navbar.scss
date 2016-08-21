@@ -1,22 +1,32 @@
 $mainNavBarHeight: 65px;
+$mainNavBarBackgroundColor: $white;
+$mainNavLinkColor: $blue-dark;
+$mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
+
 .mainNavBar {
   min-height: $mainNavBarHeight;
   line-height: $mainNavBarHeight;
 
   // reset bootstrap nav-nav
-  .navbar-nav {
-    min-height: $mainNavBarHeight;
-    line-height: $mainNavBarHeight;
-    > li > a {
-      padding-top: 0;
-      padding-bottom: 0;
+  .navbar {
+    background: none;
+    .navbar-nav {
+      min-height: $mainNavBarHeight;
+      line-height: $mainNavBarHeight;
+      > li > a {
+        padding-top: 0;
+        padding-bottom: 0;
+        color: $mainNavLinkColor;
+        &:hover {
+          color: $mainNavLinkOverColor;
+        }
+      }
     }
   }
   
   .navbar-header {
     margin-left: 0;
     .navBarItems {
-
       float: left;
     }
   }
@@ -44,10 +54,7 @@ $mainNavBarHeight: 65px;
       text-transform: uppercase;
       min-height: $mainNavBarHeight;
       line-height: $mainNavBarHeight;
-      color: $grey-300;
-      &:hover {
-        color: $grey-100;
-      }
+
     }
   }
 
@@ -124,11 +131,9 @@ $mainNavBarHeight: 65px;
   }
 }
 
-.mainContent {
-  margin-top: $mainNavBarHeight;
-}
-
 .headroom {
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
   will-change: transform;
   transition: transform 200ms linear;
 }
@@ -141,8 +146,14 @@ $mainNavBarHeight: 65px;
 .headroom--unpinned {
   transform: translateY(-100%);
 }
+.headroom--not-top {
+  .navbar {
+    background: $mainNavBarBackgroundColor;
+  }
+}
 .headroom--top {
   .navbar {
     border-bottom: none;
+    background: none;
   }
 }

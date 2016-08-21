@@ -1,20 +1,9 @@
 ---
 layout: default
 cls: site-portfolio
-single: true
-is_top: false
-footer: true
+is_single: true
 ---
 <article role="article" class="entry">
-    {% if page.title %}
-    <header class="entry-header">
-        {% for c in page.categories %}
-        <span class="entry-category entry-category-{{ c }}">{{ c }}</span>
-        {% endfor %}
-        <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
-        {% if page.date %}<p class="entry-meta">{% include post/date.html %}{{ time }}</p>{% endif %}
-    </header>
-    {% endif %}
     <div class="entry-content autoTableBordered">
         {{ content }}
     </div>

@@ -1,8 +1,9 @@
-{% if layout.is_top %}
+{% if layout.is_top == true %}
 <header id="home" class="header">
   <div class="catchImage"></div>
   <div class="container">
-    <img class="authorIcon" src="{% asset_path logo-200.png %}" alt="{{ site.author.screen_name }}" />
+    <img class="authorIcon authorIcon-isPinned" src="{% asset_path logo-200.png %}"
+         alt="{{ site.author.screen_name }}"/>
     <p class="authorSummary">I'm makoto_kw, a Software Engineer, Full Stack, Japanese and live in Tokyo.</p>
     <div class="row">
       <ul class="menuLang">
@@ -25,4 +26,28 @@
     </div>
   </div>
 </header>
+{% else %}
+
+{% if layout.is_single == true %}
+<header class="header header-single">
+  <div class="catchImage">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+      {% unless page.meta == false %}
+      <div class="header-meta">
+        {% include post/categories.html %}
+        {% include post/date.html %}
+      </div>
+      {% endunless %}
+    </div>
+  </div>
+</header>
+{% else %}
+<header class="header">
+  <div class="catchImage">
+  </div>
+</header>
 {% endif %}
+
+{% endif %}
+

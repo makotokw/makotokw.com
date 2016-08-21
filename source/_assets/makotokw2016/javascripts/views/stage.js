@@ -8,7 +8,7 @@ makotokw.Views = makotokw.Views || {};
    */
   makotokw.Views.StageView = Backbone.View.extend({
 
-    stickyHeaderTop: 100,
+    stickyHeaderTop: 65,
 
     constructor: function () {
       if (!makotokw.Views.StageView.instance) {
