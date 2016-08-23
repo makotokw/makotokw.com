@@ -1,7 +1,7 @@
 $mainNavBarHeight: 65px;
 $mainNavBarBackgroundColor: $white;
-$mainNavLinkColor: $blue-dark;
-$mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
+$mainNavLinkColor: $mainNav-color;
+$mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
 
 .mainNavBar {
   min-height: $mainNavBarHeight;
@@ -10,9 +10,7 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
   // reset bootstrap nav-nav
   .navbar {
     background: none;
-    .navbar-nav {
-      min-height: $mainNavBarHeight;
-      line-height: $mainNavBarHeight;
+    .navbar-content {
       > li > a {
         padding-top: 0;
         padding-bottom: 0;
@@ -31,20 +29,7 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
     }
   }
 
-  .navBar-buttonContainer {
-    float: right;
-    min-height: $mainNavBarHeight;
-    line-height: $mainNavBarHeight;
-    .navbar-toggle {
-      float: none;
-      padding: 0 10px;
-      margin-top: 10px;
-    }
-  }
-
   .navItem {
-    min-height: $mainNavBarHeight;
-    line-height: $mainNavBarHeight;
     font-size: $font-size-small;
     margin-top: 0;
     margin-bottom: 0;
@@ -54,7 +39,29 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
       text-transform: uppercase;
       min-height: $mainNavBarHeight;
       line-height: $mainNavBarHeight;
+    }
+  }
 
+  @include desktopScreen() {
+    .navbar-content {
+      float: right;
+      margin-right: -15px;
+    }
+  }
+
+  @include unlessDesktopScreen() {
+    .navbar-content {
+      line-height: normal;
+      margin-top: 0;
+      margin-left: 5px;
+    }
+    .navItem {
+      display: inline-block;
+      > a {
+        min-height: unset;
+        line-height: normal;
+        padding: 5px 5px;
+      }
     }
   }
 
@@ -71,7 +78,7 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
     }
 
     .logo-suffixText {
-      background: $logoBackgroundColor;
+      background: $logo-backgroundColor;
       color: white;
       font-weight: bold;
       margin-left: -0.75em;
@@ -104,18 +111,6 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
         .logo-suffixText-last {
         }
       }
-    }
-  }
-
-  .navbar-collapse.in {
-    border-bottom: 1px solid;
-  }
-  .collapsing, .in {
-    .navBarItems > .navItem > a {
-      min-height: unset;
-      line-height: normal;
-      padding-top: 10px;
-      padding-bottom: 10px;
     }
   }
 }
@@ -154,6 +149,6 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 20%);
 .headroom--top {
   .navbar {
     border-bottom: none;
-    background: none;
+    background: rgba($mainNavBarBackgroundColor, 0.5);
   }
 }

@@ -21,7 +21,6 @@ makotokw.Views = makotokw.Views || {};
     },
 
     initializeNavBar: function () {
-      console.log('initializeNavBar');
       var $mainNavBar = $('#mainNavBar');
       var $navItems = $mainNavBar.find('a');
       this.mainNavBarHeight = $navItems.outerHeight() + 15;
@@ -34,23 +33,23 @@ makotokw.Views = makotokw.Views || {};
       this.router.on('route:page', this.scrollToPage, this);
 
       // portfolio routing
-      this.portfolioRouter = new makotokw.Routers.PortfolioRouter();
-      this.portfolioRouter.on(
-        'route:index',
-        function () {
-          this.scrollToPortfolioPage();
-          this.portfolioListView.clearFilter();
-        },
-        this
-      );
-      this.portfolioRouter.on(
-        'route:tag',
-        function (tag) {
-          this.scrollToPortfolioPage();
-          this.portfolioListView.filter(tag);
-        },
-        this
-      );
+      // this.portfolioRouter = new makotokw.Routers.PortfolioRouter();
+      // this.portfolioRouter.on(
+      //   'route:index',
+      //   function () {
+      //     this.scrollToPortfolioPage();
+      //     this.portfolioListView.clearFilter();
+      //   },
+      //   this
+      // );
+      // this.portfolioRouter.on(
+      //   'route:tag',
+      //   function (tag) {
+      //     this.scrollToPortfolioPage();
+      //     this.portfolioListView.filter(tag);
+      //   },
+      //   this
+      // );
     },
 
     initializeHistory: function () {
@@ -105,16 +104,14 @@ makotokw.Views = makotokw.Views || {};
     },
 
     scrollToPage: function (page) {
-      // console.log('scrollToPage', page);
+      console.log('scrollToPage', page);
       var target = '#' + page;
       var $target = $(target);
       if ($target.length === 0) {
         return;
       }
 
-      var offsetTop = target === '#home' ? 0 : $target.offset().top - this.mainNavBarHeight;
-
-      // TODO: isMobile
+      var offsetTop = target === '#top' ? 0 : $target.offset().top;
       $('html, body').stop().animate({
         scrollTop: offsetTop
       }, window.speed, 'easeInOutExpo');

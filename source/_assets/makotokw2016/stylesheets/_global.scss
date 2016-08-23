@@ -39,7 +39,9 @@
   }
 }
 
-
-
+::selection {
+  color: $white;
+  background: $cyan-300;
+}
 
 

@@ -1,6 +1,20 @@
-{% if layout.is_top == true %}
-<header id="home" class="header">
-  <div class="catchImage"></div>
+<header class="header">
+  <div class="catchImage">
+    <div class="container">
+      {% unless layout.is_top == true %}
+      <h1>{{ page.title }}</h1>
+      {% if layout.is_single == true %}
+      {% unless page.meta == false %}
+      <div class="header-meta">
+        {% include post/categories.html %}
+        {% include post/capture_dates.html %}{{ post_published }}
+      </div>
+      {% endunless %}
+      {% endif %}
+      {% endunless %}
+    </div>
+  </div>
+  {% if layout.is_top == true %}
   <div class="container">
     <img class="authorIcon authorIcon-isPinned" src="{% asset_path logo-200.png %}"
          alt="{{ site.author.screen_name }}"/>
@@ -25,29 +39,5 @@
       </ul>
     </div>
   </div>
+  {% endif %}
 </header>
-{% else %}
-
-{% if layout.is_single == true %}
-<header class="header header-single">
-  <div class="catchImage">
-    <div class="container">
-      <h1>{{ page.title }}</h1>
-      {% unless page.meta == false %}
-      <div class="header-meta">
-        {% include post/categories.html %}
-        {% include post/capture_dates.html %}{{ post_published }}
-      </div>
-      {% endunless %}
-    </div>
-  </div>
-</header>
-{% else %}
-<header class="header">
-  <div class="catchImage">
-  </div>
-</header>
-{% endif %}
-
-{% endif %}
-

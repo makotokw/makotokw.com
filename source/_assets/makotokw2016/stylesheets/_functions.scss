@@ -31,3 +31,25 @@
   text-align: center;
   text-decoration: none;
 }
+
+// ======================================
+// responsive
+// ======================================
+
+@mixin desktopScreen() {
+  @media screen and (min-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+@mixin mobileScreen() {
+  @media screen and (min-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+@mixin unlessDesktopScreen() {
+  @media screen and (max-width: $screen-xs-max) {
+    @content;
+  }
+}
