@@ -114,7 +114,7 @@ gulp.task('fixtures:prod', function () {
 // Stylesheets
 function sass(env, dest) {
   //noinspection JSUnresolvedFunction
-  return plugins.rubySass(appConfig.theme + '/stylesheets', {
+  return plugins.rubySass(appConfig.theme + '/stylesheets/*.scss', {
     loadPath: [
       appConfig.bowerRc.directory + '/bootstrap-sass/assets/stylesheets',
       appConfig.bowerRc.directory + '/bootstrap-material-design/sass',
@@ -123,6 +123,7 @@ function sass(env, dest) {
     cacheLocation: appConfig.sassCache,
     lineNumbers: env === 'development'
   })
+    .on('error', plugins.rubySass.logError)
     .pipe(plugins.plumber())
     .pipe(plugins.autoprefixer({
       browsers: ['last 2 versions'],
