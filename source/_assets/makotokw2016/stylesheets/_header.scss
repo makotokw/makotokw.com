@@ -1,8 +1,15 @@
 .header {
   .catchImage {
     min-height: 300px;
+    background-color: $blue-dark;
+    background: linear-gradient(rgba($blue-dark, .4), rgba($blue-dark, .4)), 50% url('makotokw2016/images/bg_header.jpg');
     background-size: cover;
-    background: $blue-dark url('makotokw2016/images/bg-home.png') center;
+
+    .site-top & {
+      background: 50% url('makotokw2016/images/bg_header.jpg');
+      background-size: cover;
+    }
+
     .container {
       padding: 2em;
       color: $white;
