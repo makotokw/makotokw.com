@@ -23,7 +23,7 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
   }
   
   .navbar-header {
-    margin-left: 0;
+    maring: 0;
     .navBarItems {
       float: left;
     }
@@ -42,18 +42,28 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
     }
   }
 
-  @include desktopScreen() {
+  .navItem-home {
+    margin-top: -2px;
+  }
+
+  @include unlessMobileScreen() {
+    .navbar-header {
+      float: left;
+      margin: 0 0 0 0;
+    }
     .navbar-content {
       float: right;
-      margin-right: -15px;
+      margin: 0 -5px 0 0;
+    }
+    .navItem {
+      float: left;
     }
   }
 
-  @include unlessDesktopScreen() {
+  @include mobileScreen() {
     .navbar-content {
       line-height: normal;
-      margin-top: 0;
-      margin-left: 5px;
+      margin: 0 0 5px 5px;
     }
     .navItem {
       display: inline-block;

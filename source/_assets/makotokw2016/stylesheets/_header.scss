@@ -12,8 +12,9 @@
       h1 {
         font-family: $pageTitle-font;
         font-weight: $pageTitle-fontWeight;
-        margin: 2em auto 0;
-        //font-size: 3.2rem;
+        margin: 90px auto 0;
+        font-size: 46px;
+        word-wrap: break-word;
         color: $white;
 
         .site-single & {
@@ -25,7 +26,7 @@
         font-size: 2rem;
         font-style: italic;
         line-height: 1.8;
-        margin: 0 auto 2em;
+        margin: 0 auto 32px;
       }
       .entry-categories {
         text-transform: uppercase;
@@ -38,6 +39,20 @@
       }
     }
   }
+
+  @include mobileScreen() {
+    .catchImage {
+      min-height: 200px;
+      .container {
+        text-align: left;
+        h1 {
+          margin: 115px auto 0;
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
   .authorIcon {
     display: block;
     margin-left: auto;
