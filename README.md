@@ -5,20 +5,20 @@ Project for [makotokw.com](http://makotokw.com)
 
 ## Setup Project
 
-Require Git, Node.js(npm), Grunt, Bower and Ruby(Bundler) for setup.
+Require Git, Node.js(npm), Gulp, Bower and Ruby(Bundler) for setup.
+
 
 ```
-git clone git@bitbucket.org:makotokw/makotokw.com.git www.makotokw.com
+git clone git@github.com:makotokw/makotokw.com.git www.makotokw.com
 cd www.makotokw.com
 bundle install --path=vendor/bundle
 npm install
-grunt bower:install
 ```
 
 ## Development
 
 ```
-grunt debug
+gulp debug
 ```
 
 
@@ -51,7 +51,7 @@ source/
 ## Build for production
 
 ```
-grunt build
+gulp build
 ```
 
 ## Depends / Tools
@@ -67,6 +67,6 @@ grunt build
  * [Underscore.js](http://underscorejs.org/) v1.x
  * [Backbone.js](http://backbonejs.org/) v1.x
  * [Twitter Bootstrap](http://getbootstrap.com/) v3.x
+ * [Material Design for Bootstrap](http://fezvrasta.github.io/bootstrap-material-design/) v3.x
  * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) v4.x
  * [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget)
- * [Isotope](http://isotope.metafizzy.co/) v2.x
