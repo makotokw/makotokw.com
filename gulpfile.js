@@ -1,6 +1,8 @@
 /*jshint node: true */
 'use strict';
 
+require('dotenv').config();
+
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
@@ -249,6 +251,20 @@ gulp.task('serve:design', function (cb) {
   gulp.watch(appConfig.theme + '/javascripts/**/*.js', ['jshint', 'js:dev']);
   gulp.watch(appConfig.theme + '/stylesheets/**/*.scss', ['sass:dev']);
   gulp.watch(appConfig.source + '/_fixtures/*.yml', ['fixtures:dev']);
+});
+
+gulp.task('deploy', function (cb) {
+  if (!process.env.MAKOTOKWCOM_WWW_HOST || !process.env.MAKOTOKWCOM_WWW_DEST) {
+    cb('require env');
+  }
+  return gulp.src(appConfig.distProduction + '/**')
+    .pipe(plugins.rsync({
+      root: appConfig.distProduction + '/',
+      archive: true,
+      clean: true,
+      hostname: process.env.MAKOTOKWCOM_WWW_HOST,
+      destination: process.env.MAKOTOKWCOM_WWW_DEST
+    }));
 });
 
 gulp.task('debug', ['serve:dev'], function () {

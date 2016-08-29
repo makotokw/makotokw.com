@@ -1,5 +1,6 @@
 ### makotokw.com ###
 .tmp
+.env
 .idea
 /dist
 /_tmp
