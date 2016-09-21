@@ -12,6 +12,8 @@
     "font-awesome": "~4.6",
     "isotope": "~2.0.0",
     "bootstrap-material-design": "~0.5.10",
+    "octocard": "http://octocard.in/o.js",
+    "jquery.githubRepoWidget": "https://raw.githubusercontent.com/JoelSutherland/GitHub-jQuery-Repo-Widget/master/jquery.githubRepoWidget.js",
     "headroom.js": "https://unpkg.com/headroom.js/bower.zip"
   },
   "resolutions": {

@@ -8,4 +8,4 @@
 //= require bootstrap-sass/js/bootstrap
 //= require bootstrap-material-design/js/material
 //= require bootstrap-material-design/js/ripples
-//= require vendor/jquery.githubRepoWidget
+//= require jquery.githubRepoWidget/js/index

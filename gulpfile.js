@@ -82,7 +82,7 @@ gulp.task('jst', function () {
 gulp.task('js:dev', ['jst'], function () {
   //noinspection JSUnresolvedFunction,JSUnresolvedVariable
   return gulp.src([
-    appConfig.theme + '/javascripts/main.js',
+    appConfig.theme + '/javascripts/libs/main.js',
     appConfig.theme + '/javascripts/routes/*.js',
     appConfig.theme + '/javascripts/models/*.js',
     appConfig.theme + '/javascripts/collections/*.js',

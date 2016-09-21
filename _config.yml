@@ -49,14 +49,14 @@ author:
 lang: en
 title: makotokw.com
 path:
-url: http://makotokw.com
+url: https://makotokw.com
 subscribe_url: http://makotokw.com/atom.xml
 blog_ja_url: http://blog.makotokw.com
 github_url: https://github.com/makotokw
 qiita_url: http://qiita.com/makoto_kw
 twitter_url: https://twitter.com/makotokw
 twitter_ja_url: https://twitter.com/makoto_kw
-linkedin_url: http://www.linkedin.com/in/makotokw
+linkedin_url: https://www.linkedin.com/in/makotokw
 disqus_short_name: makotokw
 google_analytics:
   account: UA-730110-3

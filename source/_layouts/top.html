@@ -27,13 +27,7 @@ footer: true
             <div class="topSubSection topSubSection-github">
               <h3 class="topSubSectionTitle">Code</h3>
               <div class="gitHubCards">
-                <script src="http://lab.lepture.com/github-cards/widget.js"></script>
-                <script
-                  data-name="makotokw"
-                  data-modules="base,details,stats,repos,eventsStatis,orgs"
-                  data-reposNum="3"
-                  src="http://octocard.in/o.js">
-                </script>
+                <div id="octocard"></div>
               </div>
               <div class="topSubSectionFooter">
                 <a href="{{ site.github_url }}" class="btn archiveButton" title="GitHub Archives"
@@ -118,3 +112,4 @@ footer: true
   <!--</section>-->
 
 </div>
+{% javascript top %}
