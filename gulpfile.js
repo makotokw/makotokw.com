@@ -54,7 +54,6 @@ gulp.task('bower:main-files', ['bower:install', 'bower:clean-main-files'], funct
   return gulp.src(bower(), {base: appConfig.bowerRc.directory})
   // https://github.com/cthrax/gulp-bower-normalize
     .pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
-    .pipe(plugins.if('*.js', gulp.dest(appConfig._assetsVendor)))
     .pipe(plugins.if('*/fonts/*.*', gulp.dest(appConfig.assetsVendor)))
     ;
 });

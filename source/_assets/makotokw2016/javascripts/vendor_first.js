@@ -1,3 +1,3 @@
-//= require modernizr/js/modernizr
-//= require jquery/js/jquery
+//= require modernizr/modernizr
+//= require jquery/jquery
 

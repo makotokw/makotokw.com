@@ -31,15 +31,10 @@ window.makotokw = {
 (function ($) {
   'use strict';
 
+  moment().zone('+09:00');
+
   // bootstrap-material-design
   $.material.init();
-
-  // octocard
-  // https://github.com/zmmbreeze/octocard/wiki/HOW-TO-USE
-  window.OCTOCARD = {
-    name: 'makotokw',
-    element: 'octocard'
-  };
 
   // console.log
   if (!window.console) {

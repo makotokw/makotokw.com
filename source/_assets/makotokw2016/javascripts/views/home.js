@@ -5,6 +5,7 @@ makotokw.Views = makotokw.Views || {};
 
   makotokw.Views.HomeView = Backbone.View.extend({
     events: {},
+    gitHub: false,
     feedNumEntries: 5,
     feedConfig: {
       'Blog': 'http://blog.makotokw.com/feed/',
@@ -17,6 +18,7 @@ makotokw.Views = makotokw.Views || {};
       this.initializeHistory();
       this.initializeNavBar();
       this.initializePortfolio();
+      this.loadGitHub();
       this.loadFeeds();
     },
 
@@ -92,7 +94,6 @@ makotokw.Views = makotokw.Views || {};
       makotokw.portfolioTagCollection.fetch();
     },
 
-
     findCurrentPage: function () {
       var scrollTop = $(window).scrollTop() + this.mainNavBarHeight;
       var $pages = this.$scrollItems.map(function () {
@@ -125,6 +126,17 @@ makotokw.Views = makotokw.Views || {};
         }
       }
       this.scrollToPage('portfolio');
+    },
+
+    loadGitHub: function() {
+      this.gitHub = new makotokw.Models.GitHubModel({
+        userName: 'makotokw'
+      });
+      new makotokw.Views.GitHubView({
+        el: $('#gitHubContent'),
+        model: this.gitHub
+      });
+      this.gitHub.load(8);
     },
 
     loadFeeds: function () {

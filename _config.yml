@@ -72,7 +72,7 @@ assets:
     - _bower/bootstrap-sass/assets/stylesheets
     - _bower/bootstrap-material-design/sass
     - _bower/font-awesome/scss
-    - _assets/vendor
+    - _bower
     - _assets/makotokw2016/javascripts
     - _assets/makotokw2016/stylesheets
     - _assets/makotokw2016/images

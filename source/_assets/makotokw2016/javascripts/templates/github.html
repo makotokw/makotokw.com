@@ -1,0 +1,16 @@
+<% _.each(repos, function (repo) { %>
+<div class="entry">
+  <div class="entry-header">
+    <span class="entry-date">
+      <%= moment(repo.pushed_at).format('YYYY/MM/DD') %>
+    </span>
+    <span class="entry-title">
+      <a href="<%= repo.html_url %>"><%= repo.name %></a>
+      <span>★<%= repo.stargazers_count %></span>
+    </span>
+  </div>
+  <p class="entry-summary"><%= repo.description %></p>
+</div>
+<% }); %>
+
+

@@ -5,20 +5,9 @@ makotokw.Models = makotokw.Models || {};
 
   makotokw.Models.FeedModel = Backbone.Model.extend({
 
-    url: '',
-
-    initialize: function () {
-    },
-
     defaults: {
+      url: '',
       entries: []
-    },
-
-    validate: function (/*attrs, options*/) {
-    },
-
-    parse: function (response/*, options*/) {
-      return response;
     },
 
     loadFeedByYql: function (numEntries) {
@@ -56,7 +45,5 @@ makotokw.Models = makotokw.Models || {};
     loadFeed: function (numEntries) {
       this.loadFeedByYql(numEntries);
     }
-
   });
-
 })();
