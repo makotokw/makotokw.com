@@ -32,9 +32,9 @@ __p += '\n<div class="entry">\n  <div class="entry-header">\n    <span class="en
 ((__t = ( moment(repo.pushed_at).format('YYYY/MM/DD') )) == null ? '' : __t) +
 '\n    </span>\n    <span class="entry-title">\n      <a href="' +
 ((__t = ( repo.html_url )) == null ? '' : __t) +
-'">' +
+'" target="_blank">' +
 ((__t = ( repo.name )) == null ? '' : __t) +
-'</a>\n      <span>★' +
+'</a>\n      <span><i class="fa fa-star" aria-hidden="true"></i>' +
 ((__t = ( repo.stargazers_count )) == null ? '' : __t) +
 '</span>\n    </span>\n  </div>\n  <p class="entry-summary">' +
 ((__t = ( repo.description )) == null ? '' : __t) +

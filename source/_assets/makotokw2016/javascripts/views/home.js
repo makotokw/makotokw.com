@@ -6,6 +6,7 @@ makotokw.Views = makotokw.Views || {};
   makotokw.Views.HomeView = Backbone.View.extend({
     events: {},
     gitHub: false,
+    gitHubRepoEntries: 8,
     feedNumEntries: 5,
     feedConfig: {
       'Blog': 'http://blog.makotokw.com/feed/',
@@ -136,7 +137,7 @@ makotokw.Views = makotokw.Views || {};
         el: $('#gitHubContent'),
         model: this.gitHub
       });
-      this.gitHub.load(8);
+      this.gitHub.load(this.gitHubRepoEntries);
     },
 
     loadFeeds: function () {

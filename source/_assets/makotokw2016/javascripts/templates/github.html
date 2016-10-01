@@ -5,8 +5,8 @@
       <%= moment(repo.pushed_at).format('YYYY/MM/DD') %>
     </span>
     <span class="entry-title">
-      <a href="<%= repo.html_url %>"><%= repo.name %></a>
-      <span>★<%= repo.stargazers_count %></span>
+      <a href="<%= repo.html_url %>" target="_blank"><%= repo.name %></a>
+      <span><i class="fa fa-star" aria-hidden="true"></i><%= repo.stargazers_count %></span>
     </span>
   </div>
   <p class="entry-summary"><%= repo.description %></p>

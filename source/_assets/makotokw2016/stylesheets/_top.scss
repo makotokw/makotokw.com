@@ -127,6 +127,11 @@ $page-home-width: 1170px;
       a {
         @extend %entry-link-isInverted;
       }
+      .entry-header {
+        .entry-title {
+          color: $white;
+        }
+      }
       .entry-summary {
         @extend %entry-summary-isInverted;
       }

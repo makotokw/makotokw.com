@@ -50,7 +50,7 @@ makotokw.Models = makotokw.Models || {};
             /*jshint camelcase: true */
 
             sumStarts += repo.stars;
-            if (stars === 0) {
+            if (stars < 3) {
               return false;
             }
             return (count++ < numRepos);

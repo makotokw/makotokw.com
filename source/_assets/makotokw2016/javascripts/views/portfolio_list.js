@@ -48,7 +48,6 @@ makotokw.Views = makotokw.Views || {};
         },
         1
       );
-
       return this;
     }
 

@@ -31,7 +31,7 @@ window.makotokw = {
 (function ($) {
   'use strict';
 
-  moment().zone('+09:00');
+  moment().utcOffset('+09:00');
 
   // bootstrap-material-design
   $.material.init();
