@@ -50,7 +50,7 @@ lang: en
 title: makotokw.com
 path:
 url: https://makotokw.com
-subscribe_url: http://makotokw.com/atom.xml
+subscribe_url: https://makotokw.com/atom.xml
 blog_ja_url: http://blog.makotokw.com
 github_url: https://github.com/makotokw
 qiita_url: http://qiita.com/makoto_kw

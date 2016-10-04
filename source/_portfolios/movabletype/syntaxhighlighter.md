@@ -103,7 +103,7 @@ See also: [http://alexgorbatchev.com/wiki/SyntaxHighlighter:Upgrading](http://al
 
 ## License
 
-**SyntaxHighlighter for Movable Type. Copyright (C) 2009 makoto_kw ( http://makotokw.com )**
+**SyntaxHighlighter for Movable Type. Copyright (C) 2009 makoto_kw ( https://makotokw.com )**
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

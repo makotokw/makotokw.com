@@ -7,7 +7,7 @@ date: 2010-01-05
 ---
 
 Here is "Guides: Using the EGit Eclipse Plugin with GitHub":
-http://github.com/guides/using-the-egit-eclipse-plugin-with-github
+https://github.com/guides/using-the-egit-eclipse-plugin-with-github
 
 However, Egit could not connect by ssh on Windows when I used cygwin for ssh+git.
 Egit try to find .ssh on HOME directory on Windows(C:\Users\makoto_kw), but it is on HOME directory on cygwin(/cygwin/home/makoto_kw).

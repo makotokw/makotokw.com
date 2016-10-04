@@ -36,7 +36,7 @@ This tag is only into ``<$mt:Comments$>``, and to display the image is required 
 ### Output
 
 ```html
-<img class="avatar avatar-32" width="32" height="32" src="http://www.gravatar.com/avatar.php?gravatar_id=d7c1272e4d1025a72ecb8f052fb58c3d&amp;size=32" alt="makoto_kw"/>
+<img class="avatar avatar-32" width="32" height="32" src="https://www.gravatar.com/avatar.php?gravatar_id=d7c1272e4d1025a72ecb8f052fb58c3d&amp;size=32" alt="makoto_kw"/>
 ```
 
 ## License

@@ -13,7 +13,7 @@ I used the Syntaxhighlighter Evolved on WordPress.  I have to make it apply to s
 
 change Syntaxhighlighter for Movable Type style(code:lang) to Syntaxhighlighter Evolved style(code class="lang")
 
-<script src="http://gist.github.com/253118.js?file=syntaxhighlighter-for-movable-type-to-evolved.php"></script>
+<script src="https://gist.github.com/253118.js?file=syntaxhighlighter-for-movable-type-to-evolved.php"></script>
 
 2) for Legacy style (Syntaxhighlighter 1.5 style)
 
@@ -21,7 +21,7 @@ highlightcode &lt;pre name=&quot;code&quot; class=&quot;c&quot;&gt;&lt;/pre&gt;
 Syntaxhighlighter Evolved (2.3.6) dose not support legacy style. It needs to ugrade:
 <a href="http://alexgorbatchev.com/wiki/SyntaxHighlighter:Upgrading">http://alexgorbatchev.com/wiki/SyntaxHighlighter:Upgrading</a>
 
-<script src="http://gist.github.com/263869.js?file=syntaxhighlighter-for-legacy.php"></script>
+<script src="https://gist.github.com/263869.js?file=syntaxhighlighter-for-legacy.php"></script>
 
 
 
