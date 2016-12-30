@@ -61,8 +61,7 @@ disqus_short_name: makotokw
 google_analytics:
   account: UA-730110-3
   domain: makotokw.com
-#download_url: /assets/downloads/
-download_url: https://dl.dropboxusercontent.com/u/8932138/downloads/
+download_url: https://makotokw.com/downloads/
 addthis_profile_id: ra-51d5a54a1c992276
 
 # Plugin: jekyll-assets

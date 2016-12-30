@@ -6,7 +6,7 @@ category: "Product"
 
 I have updated gitmike redmine theme. It looks like GitHub.
 
-[screenshot1]: https://dl.dropboxusercontent.com/u/8932138/screenshot/gitmike/gitmike_2013-07-12_0706.png "gitmike screenshot"
+[screenshot1]: https://makotokw.com/downloads/screenshot/gitmike/gitmike_2013-07-12_0706.png "gitmike screenshot"
 
 ![gitmike screenshot][screenshot1]
 
