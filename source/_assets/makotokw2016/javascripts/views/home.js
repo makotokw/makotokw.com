@@ -9,9 +9,9 @@ makotokw.Views = makotokw.Views || {};
     gitHubRepoEntries: 8,
     feedNumEntries: 5,
     feedConfig: {
-      'Blog': 'http://blog.makotokw.com/feed/',
-      // http://qiita.com/Qiita/items/9c0a57ad98a511e566ed
-      'Qiita': 'http://qiita.com/makoto_kw/feed.atom'
+      'Blog': 'https://blog.makotokw.com/feed/',
+      // https://qiita.com/Qiita/items/9c0a57ad98a511e566ed
+      'Qiita': 'https://qiita.com/makoto_kw/feed.atom'
     },
 
     initialize: function () {
