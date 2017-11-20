@@ -8,7 +8,7 @@
   source_url: https://github.com/makotokw/pebble-mineclock
   copyright_year: 2016
   last_updated_year: 2016
-  status: active
+  status: pending
 -
   name: IRKit Remote
   name.ja: IRKit Remote
@@ -19,7 +19,7 @@
   source_url: https://github.com/makotokw/pebble-irkit-remote
   copyright_year: 2015
   last_updated_year: 2016
-  status: active
+  status: pending
 -
   name: fukidashi generator
   name.ja: ふきだしジェネレーター
@@ -62,7 +62,7 @@
   source_url: https://github.com/makotokw/crx-tokyo-ame
   copyright_year: 2015
   last_updated_year: 2015
-  status: active
+  status: pending
 -
   name: Today’s Schedule in Google Calendar™
   name.ja: 今日の予定 in Google Calendar™
@@ -90,7 +90,7 @@
   url: /portfolio/jquery/ui_potato_menu/
   source_url: https://github.com/makotokw/jquery.ui.potato.menu
   copyright_year: 2010
-  last_updated_year: 2012
+  last_updated_year: 2017
   status: pending
 -
   name: AmazonJS
