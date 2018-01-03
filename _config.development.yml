@@ -3,3 +3,7 @@ url: http://localhost:8084
 google_analytics: false
 assets:
   cachebust: none
+
+# https://github.com/envygeeks/jekyll-assets
+assets:
+  source_maps: true

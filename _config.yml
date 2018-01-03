@@ -9,7 +9,7 @@ encoding: utf-8
 # Plugins
 plugins_dir: ./plugins
 whitelist: []
-gems:
+plugins:
   - jekyll-assets
 
 # Conversion
@@ -65,8 +65,13 @@ download_url: https://makotokw.com/downloads/
 addthis_profile_id: ra-51d5a54a1c992276
 
 # Plugin: jekyll-assets
-# http://jekyll.github.io/jekyll-assets/
+# https://github.com/envygeeks/jekyll-assets
 assets:
+  source_maps: false
+  defaults:
+    js: { integrity: true }
+    css: { integrity: true }
+    img: { integrity: true }
   sources:
     - _bower/bootstrap-sass/assets/stylesheets
     - _bower/bootstrap-material-design/sass
@@ -75,6 +80,3 @@ assets:
     - _assets/makotokw2016/javascripts
     - _assets/makotokw2016/stylesheets
     - _assets/makotokw2016/images
-  compress:
-    js:   ~
-    css:  ~

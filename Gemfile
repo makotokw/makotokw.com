@@ -1,15 +1,15 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'jekyll', '~> 3.2.0'
+gem 'jekyll', '~> 3.6.0'
+gem 'stringex', '~> 1.4.0'
 
 # for Markdown
 gem 'redcarpet'
-
-gem 'stringex', '~> 1.4.0'
 
 # for Sass on jekyll-assets
 gem 'compass'
 
 group :jekyll_plugins do
-  gem 'jekyll-assets'
+  # https://github.com/envygeeks/jekyll-assets
+  gem 'jekyll-assets', '~> 2.4.0'
 end
