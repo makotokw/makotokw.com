@@ -22,8 +22,7 @@
 Icon
 
 ### Bower ###
-bower*
-_bower*
+source/_bower*
 
 ### Node ###
 npm-debug.log
