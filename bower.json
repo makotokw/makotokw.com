@@ -13,7 +13,7 @@
     "font-awesome": "~4.6",
     "isotope": "~2.0.0",
     "bootstrap-material-design": "~0.5.10",
-    "jquery.githubRepoWidget": "https://raw.githubusercontent.com/JoelSutherland/GitHub-jQuery-Repo-Widget/master/jquery.githubRepoWidget.js",
+    "jquery.githubRepoWidget": "./source/_assets/bower_packages/jquery.githubRepoWidget.zip",
     "headroom.js": "./source/_assets/bower_packages/headroom.js.zip"
   },
   "resolutions": {
