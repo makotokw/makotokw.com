@@ -1,0 +1,6 @@
+{
+  "permalink": "/portfolio/jquery/{{ page.fileSlug }}/index.html",
+  "tags": [
+    "portfolio"
+  ]
+}

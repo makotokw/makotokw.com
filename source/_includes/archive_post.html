@@ -8,16 +8,13 @@
     </div>
     <div class="col-md-10">
         <article class="entry entry-post">
-            {% capture category %}{{ post.categories | size }}{% endcapture %}
-            <h1 class="entry-title"><a href="{{ post.url }}">{{post.title}}</a></h1>
+            <h1 class="entry-title"><a href="{{ post.url }}">{{post.data.title}}</a></h1>
             <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>
                 {{ post.date | date: "<span class='month'>%b</span> <span class='day'>%d</span>"}}
             </time>
-            {% if category != '0' %}
             <footer class="entry-header">
-                <span class="entry-categories"><i class="fa fa-folder"></i> {{ post.categories | category_links }}</span>
+                <span class="entry-categories"><i class="fa fa-folder"></i> {{ post.category | category_links }}</span>
             </footer>
-            {% endif %}
         </article>
     </div>
 </div>

@@ -1,0 +1,6 @@
+{
+  "permalink": "/portfolio/{{ page.data.foo }}/{{ page.fileSlug }}/index.html",
+  "tags": [
+    "portfolio"
+  ]
+}

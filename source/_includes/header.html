@@ -1,10 +1,10 @@
 <header class="header">
   <div class="catchImage">
     <div class="container">
-      {% unless layout.is_top == true %}
-      <h1>{{ page.title }}</h1>
-      {% if layout.is_single == true %}
-      {% unless page.meta == false %}
+      {% unless is_top == true %}
+      <h1>{{ title }}</h1>
+      {% if is_single == true %}
+      {% unless meta == false %}
       <div class="header-meta">
         {% include post/categories.html %}
         {% include post/capture_dates.html %}{{ post_published }}
@@ -14,14 +14,14 @@
       {% endunless %}
     </div>
   </div>
-  {% if layout.is_top == true %}
+  {% if is_top == true %}
   <div class="container">
     <img class="authorIcon authorIcon-isPinned" src="{% asset_path logo-200.png %}"
          alt="{{ site.author.screen_name }}"/>
     <p class="authorSummary">I'm makoto_kw, a Software Engineer, Full Stack, Japanese and live in Tokyo.</p>
     <div class="row">
       <ul class="menuLang">
-        {% if page.lang == 'ja' %}
+        {% if lang == 'ja' %}
         <li class="menuLangItem menuLangItem-en">
           <a href="/" class="btn menuLangButton">English</a>
         </li>

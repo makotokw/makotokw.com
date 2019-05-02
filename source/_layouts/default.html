@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html lang="{{ lang }}">
 {% include html_head.html %}
-<body class="site site-{{page.lang}} {{layout.cls}}">
+<body class="site site-{{lang}} {{cls}}">
 <div id="top"></div>
-{% if !layout.is_top %}
+{% if is_top != true %}
 <a href="#content" class="sr-only">Skip to content</a>
 {% endif %}
 {% include navbar.html %}
 {% include header.html %}
-{% if layout.is_top %}
+{% if is_top == true %}
 <div role="main">
 {{ content }}
 </div>
@@ -21,7 +21,6 @@
 </div>
 {% endif %}
 {% include footer.html %}
-{% javascript vendor %}
-{% javascript app %}
+<script src="{% bundle 'app.js' %}"></script>
 </body>
 </html>
