@@ -1,6 +1,6 @@
 @import url("//fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300,400,700,900,400italic");
 
-$fonts-path: "./makotokw2016/fonts";
+$fonts-path: "../fonts";
 
 $default-font: 'Open Sans', Helvetica, Arial, sans-serif;
 $pageTitle-font: 'NovecentowideBookBold';
@@ -13,8 +13,8 @@ $mainNav-color: $blue-dark;
 // Font paths for vendor
 // ------------------------------
 
-$fa-font-path: './vendor/font-awesome/fonts';
-$icon-font-path: './vendor/bootstrap-sass/fonts';
+$fa-font-path: '~bower/font-awesome/fonts';
+$icon-font-path: '~bower/bootstrap-sass/assets/fonts/bootstrap/';
 
 // ------------------------------
 // Brand colors for bootstrap-sass

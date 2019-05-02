@@ -1,13 +1,13 @@
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
     app: [
       './source/_assets/scripts/app.js',
-      './source/_assets/styles/app.scss'
+      './source/_assets/styles/app.scss',
     ],
   },
-  externals: /\/makotokw2016\/fonts\//,
   module: {
     rules: [
       {
@@ -45,7 +45,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               config: {
-                path: '_config/postcss.config.js',
+                path: 'build/postcss.config.js',
               },
             },
           },
@@ -53,27 +53,42 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               includePaths: [
-                'source/_bower/bootstrap-sass/assets/stylesheets',
-                'source/_bower/bootstrap-material-design/sass',
-                'source/_bower/font-awesome/scss',
-                'source/assets',
-                /*
-                - _bower
-                - _assets/makotokw2016/javascripts
-                - _assets/makotokw2016/stylesheets
-                - _assets/makotokw2016/images*/
-
+                'bower_components/bootstrap-sass/assets/stylesheets',
               ],
             },
           },
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+            },
+          },
         ],
       },
     ],
+  },
+  resolve: {
+    alias: {
+      assets: path.join(__dirname, '../source/_assets'),
+      bower: path.join(__dirname, '../bower_components'),
+    },
   },
 };

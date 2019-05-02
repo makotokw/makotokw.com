@@ -1,6 +1,6 @@
 {
   "name": "makotokw.com",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "dependencies": {
     "jquery": "~1.9.0",
     "jquery.easing": "~1.3.0",
@@ -13,45 +13,10 @@
     "font-awesome": "~4.6",
     "isotope": "~2.0.0",
     "bootstrap-material-design": "~0.5.10",
-    "jquery.githubRepoWidget": "./source/_assets/bower_packages/jquery.githubRepoWidget.zip",
-    "headroom.js": "./source/_assets/bower_packages/headroom.js.zip"
+    "jquery.githubRepoWidget": "./build/bower_packages/jquery.githubRepoWidget.zip",
+    "headroom.js": "./build/bower_packages/headroom.js.zip"
   },
   "resolutions": {
     "jquery": "1.9.1"
-  },
-  "overrides_comment": "for main-bower-file: https://github.com/ck86/main-bower-files#overrides-options",
-  "overrides": {
-    "bootstrap-sass": {
-      "main": [
-        "assets/fonts/bootstrap/*"
-      ],
-      "normalize": {
-        "fonts": [
-          "glyphicons-*"
-        ]
-      }
-    },
-    "font-awesome": {
-      "comment": "directly access sass files in _bower_components",
-      "main": [
-        "fonts/*"
-      ],
-      "normalize": {
-        "fonts": [
-          "*.otf",
-          "*-webfont.*"
-        ]
-      }
-    },
-    "github-widget": {
-      "main": [
-        "dist/widget.js"
-      ]
-    },
-    "queryloader2": {
-      "main": [
-        "jquery.queryloader2.js"
-      ]
-    }
   }
 }

@@ -5,6 +5,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "bower:install": "bower install",
     "eleventy": "npx eleventy",
     "eleventy-debug": "cross-env DEBUG=* npx eleventy",
     "eleventy-debug-watch": "cross-env DEBUG=* npx eleventy --watch",

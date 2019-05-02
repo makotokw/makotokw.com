@@ -7,6 +7,7 @@
 /_tmp
 /source/_assets/vendor/
 /source/assets/vendor/
+/bundles
 
 ### OSX ###
 .DS_Store
@@ -15,7 +16,7 @@
 Icon
 
 ### Bower ###
-source/_bower*
+bower_components
 
 ### Node ###
 npm-debug.log

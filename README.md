@@ -11,14 +11,14 @@ Require Git, Node.js(npm), Gulp, Bower and Ruby(Bundler) for setup.
 ```
 git clone git@github.com:makotokw/makotokw.com.git www.makotokw.com
 cd www.makotokw.com
-bundle install --path=vendor/bundle
-npm install
+yarn
+yarn run bower:install
 ```
 
 ## Development
 
 ```
-gulp debug
+yarn run dev
 ```
 
 

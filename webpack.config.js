@@ -1,3 +1,3 @@
 module.exports = function (env) {
-  return require(`./_config/webpack.${env}.js`);
+  return require(`./build/webpack.${env}.js`);
 };
