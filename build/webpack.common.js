@@ -4,9 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: {
     app: [
-      './source/_assets/scripts/app.js',
       './source/_assets/styles/app.scss',
-    ],
+    ]
   },
   module: {
     rules: [

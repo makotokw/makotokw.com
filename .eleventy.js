@@ -10,7 +10,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./source/googleca9b70e876030815.html');
 
   const dummyTags = [
-    'asset_path',
     'github',
     'download_url',
     'portfolio_url',
@@ -27,19 +26,19 @@ module.exports = function (eleventyConfig) {
     });
   });
 
-  eleventyConfig.addLiquidTag('bundle', function (Liquid) {
+  eleventyConfig.addLiquidTag('asset_path', function (Liquid) {
     return {
       parse: function (tagToken, remainTokens) {
         this.str = tagToken.args;
       },
       render: async function (scope, hash) {
         const str = await Liquid.evalValue(this.str, scope);
-        let bundlePath = `/bundles/${str}`;
+        let bundlePath = `/assets/${str}`;
         if (process.env.NODE_ENV === 'production') {
           if (manifest[str]) {
             Promise.reject(`'${str}' bundle path is not found in manifest.json`);
           }
-          bundlePath = `/bundles/${manifest[str]}`;
+          bundlePath = `/assets/${manifest[str]}`;
         }
         return Promise.resolve(bundlePath);
       },

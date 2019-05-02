@@ -10,8 +10,8 @@ module.exports = Merge(CommonConfig, {
   mode: 'production',
   output: {
     filename: '[name]-[hash].js',
-    path: path.resolve('bundles'),
-    publicPath: '/bundles/',
+    path: path.resolve('dist/assets'),
+    publicPath: '/assets/',
   },
   plugins: [
     new CleanWebpackPlugin(['bundles'], {root: path.resolve(__dirname, '..'), verbose: true}),

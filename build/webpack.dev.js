@@ -9,8 +9,8 @@ module.exports = Merge(CommonConfig, {
   mode: 'development',
   output: {
     filename: '[name].js',
-    path: path.resolve('bundles'),
-    publicPath: '/bundles/',
+    path: path.resolve('.tmp/dist.webpack/assets'),
+    publicPath: '/assets/',
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -19,8 +19,8 @@ module.exports = Merge(CommonConfig, {
         host: 'localhost',
         port: 3000,
         proxy: 'http://localhost:8080',
-        files: ['dist', 'source'],
-        open: false,
+        files: ['source'],
+        open: true,
       },
       {
         reload: false,
@@ -34,9 +34,10 @@ module.exports = Merge(CommonConfig, {
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
     contentBase: [
+      path.resolve('.tmp/dist.gulp'),
       path.resolve('dist'),
     ],
-    open: true,
+    open: false,
     hot: true,
   },
 });

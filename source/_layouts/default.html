@@ -21,6 +21,7 @@
 </div>
 {% endif %}
 {% include footer.html %}
-<script src="{% bundle 'app.js' %}"></script>
+<script src="{% asset_path 'vendor.js' %}"></script>
+<script src="{% asset_path 'main.js' %}"></script>
 </body>
 </html>
