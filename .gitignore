@@ -2,7 +2,6 @@
 .tmp
 .env
 .idea
-/_site
 /dist
 /dist.*
 /_tmp

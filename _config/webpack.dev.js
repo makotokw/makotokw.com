@@ -19,7 +19,7 @@ module.exports = Merge(CommonConfig, {
         host: 'localhost',
         port: 3000,
         proxy: 'http://localhost:8080',
-        files: ['_site', 'source'],
+        files: ['dist', 'source'],
         open: false,
       },
       {
@@ -34,7 +34,7 @@ module.exports = Merge(CommonConfig, {
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
     contentBase: [
-      path.resolve('_site'),
+      path.resolve('dist'),
     ],
     open: true,
     hot: true,
