@@ -76,7 +76,12 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name(file) {
+                if (process.env.NODE_ENV === 'development') {
+                  return '[name].[ext]';
+                }
+                return '[name]-[hash].[ext]';
+              },
               outputPath: 'images/',
             },
           },
