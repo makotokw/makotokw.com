@@ -2,18 +2,12 @@
 .tmp
 .env
 .idea
+/_site
 /dist
+/dist.*
 /_tmp
 /source/_assets/vendor/
 /source/assets/vendor/
-
-### Ruby, Jekyll, Sass ###
-.ruby-version
-.asset-cache
-.sass-cache
-.rspec
-/.bundle
-/vendor/bundle
 
 ### OSX ###
 .DS_Store
