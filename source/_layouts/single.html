@@ -8,12 +8,12 @@ is_single: true
     {{ content }}
   </div>
   <footer class="entry-footer">
-    {% if env == 'production' and sharing != false %}
+    {% if eleventy.env == 'production' and sharing != false %}
     {% include post/sharing.html %}
     {% endif %}
   </footer>
 </article>
 
-{% if env == 'production' and site.disqus_short_name and comment != false %}
+{% if eleventy.env == 'production' and site.disqus_short_name and comment != false %}
 {% include post/disqus_comment.html %}
 {% endif %}

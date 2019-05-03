@@ -1,14 +1,10 @@
 const fs = require('fs');
 const moment = require('moment');
-const site = fs.existsSync('./source/_data/site.json') ?
-  JSON.parse(fs.readFileSync('./source/_data/site.json', 'utf8')) :
-  {};
-const manifest = fs.existsSync('./source/_data/manifest.json') ?
-  JSON.parse(fs.readFileSync('./source/_data/manifest.json', 'utf8')) :
-  {};
-const portfolioTags = fs.existsSync('./source/_data/portfolio_tags.json') ?
-  JSON.parse(fs.readFileSync('./source/_data/portfolio_tags.json', 'utf8')) :
-  {};
+
+const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const site = JSON.parse(fs.readFileSync('./source/_data/site.json', 'utf8'));
+const portfolioTags = JSON.parse(fs.readFileSync('./source/_data/portfolio_tags.json', 'utf8'));
+const manifest = fs.existsSync('./source/_data/manifest.json') ? JSON.parse(fs.readFileSync('./source/_data/manifest.json', 'utf8')) : {};
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./source/assets');
@@ -26,29 +22,19 @@ module.exports = function (eleventyConfig) {
   };
   eleventyConfig.setLibrary('md', markdownIt(options));
 
-  eleventyConfig.addLiquidTag('env', function (Liquid) {
-    return {
-      render: async function (scope, hash) {
-        return Promise.resolve(process.env.NODE_ENV);
-      },
-    };
-  });
-
   eleventyConfig.addLiquidTag('asset_path', function (Liquid) {
     return {
       parse: function (tagToken, remainTokens) {
-        this.str = tagToken.args;
+        this.path = tagToken.args;
       },
-      render: async function (scope, hash) {
-        const str = await Liquid.evalValue(this.str, scope);
-        let bundlePath = `/assets/${str}`;
+      render: function (scope, hash) {
+        let bundlePath = `/assets/${this.path}?v=${pkg.version}`;
         if (process.env.NODE_ENV === 'production') {
-          if (manifest[str]) {
-            Promise.reject(`'${str}' bundle path is not found in manifest.json`);
+          if (manifest[this.path]) {
+            bundlePath = `/assets/${manifest[this.path]}`;
           }
-          bundlePath = `/assets/${manifest[str]}`;
         }
-        return Promise.resolve(bundlePath);
+        return bundlePath;
       },
     };
   });

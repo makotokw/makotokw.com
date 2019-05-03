@@ -20,6 +20,8 @@
     "build:gulp": "cross-env NODE_ENV=production npx gulp build",
     "build:webpack": "cross-env NODE_ENV=production npx webpack --env=prod --progress --profile --colors",
     "build:eleventy": "cross-env NODE_ENV=production npx eleventy",
+    "prod:server": "npm-run-all build prod:eleventy-server",
+    "prod:eleventy-server": "cross-env NODE_ENV=production npx eleventy --serve",
     "clean:project": "node ./build/scripts/clean.js"
   },
   "dependencies": {},
