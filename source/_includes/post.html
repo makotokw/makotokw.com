@@ -23,7 +23,7 @@
 {% else %}
 <div class="entry-content">{{ content }}</div>
 <footer class="entry-footer">
-  {% if site.development != true and page.sharing != false %}
+  {% if env == 'production' != true and page.sharing != false %}
   {% include post/sharing.html %}
   {% endif %}
 </footer>

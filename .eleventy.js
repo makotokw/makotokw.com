@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const manifest = fs.existsSync('./source/_data/manifest.json') ?
   JSON.parse(fs.readFileSync('./source/_data/manifest.json', 'utf8')) :
   {};
@@ -25,6 +26,15 @@ module.exports = function (eleventyConfig) {
       };
     });
   });
+
+  eleventyConfig.addLiquidTag('env', function (Liquid) {
+    return {
+      render: async function (scope, hash) {
+        return Promise.resolve(process.env.NODE_ENV);
+      },
+    };
+  });
+
 
   eleventyConfig.addLiquidTag('asset_path', function (Liquid) {
     return {
