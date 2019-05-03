@@ -1,6 +1,11 @@
 ---
 permalink: "{{ page.fileSlug }}"
 eleventyExcludeFromCollections: true
+pagination:
+  data: collections.posts
+  size: 20
+  alias: posts
+  reverse: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -9,10 +14,10 @@ eleventyExcludeFromCollections: true
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}/</link>
     <atom:link href="{{ "/atom.xml" | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Eleventy</generator>
-    {% for post in collections.posts limit:20 %}
+    <pubDate>{{ null | date_to_rfc2822 }}</pubDate>
+    <lastBuildDate>{{ null | date_to_rfc2822 }}</lastBuildDate>
+    <generator>Eleventy v{{ eleventy.version }}</generator>
+    {% for post in posts %}
     <item>
       <title>{{ post.data.title | xml_escape }}</title>
       <description>

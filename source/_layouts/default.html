@@ -13,11 +13,12 @@
 {{ content }}
 </div>
 {% else %}
+
 <div class="mainContent" role="main">
-    <div id="content" class="container">
-        {{ content }}
-    </div>
-    <div id="footerMargin"></div>
+  <div id="content" class="container">
+    {{ content }}
+  </div>
+  <div id="footerMargin"></div>
 </div>
 {% endif %}
 {% include footer.html %}
