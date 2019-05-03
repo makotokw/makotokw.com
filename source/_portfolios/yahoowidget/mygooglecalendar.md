@@ -35,7 +35,7 @@ My Google Calendar is for all busy businesspeople who use Google Calendar. On th
 
 ## See Also
 
-* [Japanese document]({% portfolio_url yahoowidget/mygooglecalendar.ja %})
+* [Japanese document](/ja/portfolio/yahoowidget/mygooglecalendar/)
 
 ## License
 

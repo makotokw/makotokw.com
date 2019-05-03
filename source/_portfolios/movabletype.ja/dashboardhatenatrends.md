@@ -32,7 +32,7 @@ Movable Type 4 の Dashboard ではてな注目キーワードを表示する Wi
 
 ## See Also
 
-* [Yahoo Widget Version]({% portfolio_url yahoowidget/hatenatrends.ja %})
+* [Yahoo Widget Version](/ja/portfolio/yahoowidget/hatenatrends/)
 
 ## License
 

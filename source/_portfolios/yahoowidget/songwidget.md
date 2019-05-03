@@ -77,7 +77,7 @@ active: false
 
 ## See Also
 
-* [Japanese document]({% portfolio_url yahoowidget/songwidget.ja %})
+* [Japanese document](/ja/portfolio/yahoowidget/songwidget/)
 
 ## License
 

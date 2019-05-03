@@ -1,7 +1,13 @@
 const fs = require('fs');
 
+const site = fs.existsSync('./source/_data/site.json') ?
+  JSON.parse(fs.readFileSync('./source/_data/site.json', 'utf8')) :
+  {};
 const manifest = fs.existsSync('./source/_data/manifest.json') ?
   JSON.parse(fs.readFileSync('./source/_data/manifest.json', 'utf8')) :
+  {};
+const portfolioTags = fs.existsSync('./source/_data/portfolio_tags.json') ?
+  JSON.parse(fs.readFileSync('./source/_data/portfolio_tags.json', 'utf8')) :
   {};
 
 module.exports = function (eleventyConfig) {
@@ -11,9 +17,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./source/googleca9b70e876030815.html');
 
   const dummyTags = [
-    'github',
-    'download_url',
-    'portfolio_url',
     'highlight',
     'endhighlight',
   ];
@@ -35,7 +38,6 @@ module.exports = function (eleventyConfig) {
     };
   });
 
-
   eleventyConfig.addLiquidTag('asset_path', function (Liquid) {
     return {
       parse: function (tagToken, remainTokens) {
@@ -55,6 +57,29 @@ module.exports = function (eleventyConfig) {
     };
   });
 
+  eleventyConfig.addLiquidTag('github', function (Liquid) {
+    return {
+      parse: function (tagToken, remainTokens) {
+        this.path = tagToken.args;
+      },
+      render: function (scope, hash) {
+        return `<div class="github-widget" data-repo="${this.path}"></div>`;
+      },
+    };
+  });
+
+  eleventyConfig.addLiquidTag('download_url', function (Liquid) {
+    return {
+      parse: function (tagToken, remainTokens) {
+        this.path = tagToken.args;
+      },
+      render: function (scope, hash) {
+        return site.download_url + this.path;
+      },
+    };
+  });
+
+  // post collections by category
   const categories = ['product', 'programing', 'computing'];
   categories.forEach(function (category) {
     eleventyConfig.addCollection(category, function (collection) {
@@ -66,6 +91,24 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('jsonify', function (variable) {
     return JSON.stringify(variable);
+  });
+
+  eleventyConfig.addFilter('sort_portfolio', function (items) {
+    return items.sort(function (a, b) {
+      const ay = a.copyright_year ? a.copyright_year : 2000;
+      const by = b.copyright_year ? b.copyright_year : 2000;
+      return by - ay;
+    });
+  });
+
+  eleventyConfig.addFilter('portfolio_tag_name', function (slug) {
+    const tag = portfolioTags.find(function(t) {
+      return t.id === slug;
+    });
+    if (tag) {
+      return tag.name;
+    }
+    return slug;
   });
 
   return {

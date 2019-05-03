@@ -1,13 +1,19 @@
 ---
 layout: default
-title: Portfolio
 cls: site-archives-portfolio
 ---
 <div class="archives archives-portfolio">
+
+  {% assign sorted_portfolios = portfolios | sort_portfolio %}
+
   <div class="archives-entries">
     <div class="container-fluid">
-      {% for p in page.portfolios %}
+      {% for p in sorted_portfolios %}
       {% capture this_year %}{{ p.copyright_year }}{% endcapture %}
+      {% assign portfolio_name = p.name %}
+      {% if lang == 'ja' and p['name.ja'] %}
+        {% assign portfolio_name = p['name.ja'] %}
+      {% endif %}
       <div class="row">
         <div class="col-md-2">
           {% unless year == this_year %}
@@ -26,13 +32,13 @@ cls: site-archives-portfolio
           {% endif %}
           <article class="entry entry-post {{entry_class}}">
             {% for c in p.categories %}
-            <span class="label label-portfolio label-portfolio-{{ c }}">{{ c|portfolio_tag_name }}</span>
+            <span class="label label-portfolio label-portfolio-{{ c }}">{{ c | portfolio_tag_name }}</span>
             {% endfor %}
             <h1 class="entry-title">
               {% if p.url %}
-              <a href="{{ p.url }}">{{p.name}}</a>
+              <a href="{{ p.url }}">{{portfolio_name}}</a>
               {% else %}
-              {{p.name}}
+              {{portfolio_name}}
               {% endif %}
             </h1>
             {% if p.source_url %}

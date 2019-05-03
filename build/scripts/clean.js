@@ -1,11 +1,36 @@
+const glob = require('glob');
 const fs = require('fs');
 const rimraf = require('rimraf');
 
-fs.unlink('source/_data/manifest.json', (err) => {
+glob('source/_data/*.json', function (er, generatedDataFiles) {
+  if (er) {
+    console.log(er);
+    return;
+  }
+  generatedDataFiles.forEach((f) => {
+    fs.unlink(f, (err) => {
+      if (err) {
+        console.log(dir, err);
+        return;
+      }
+      console.log(`deleted '${f}' file`);
+    });
+  });
+
 });
-rimraf('dist', (err) => {
-});
-rimraf('.tmp/dist.gulp', (err) => {
-});
-rimraf('.tmp/dist.webpack', (err) => {
+
+const distDir = [
+  'dist',
+  '.tmp/dist.gulp',
+  '.tmp/dist.webpack'
+];
+
+distDir.forEach((dir) => {
+  rimraf(dir, (err) => {
+    if (err) {
+      console.log(dir, err);
+      return;
+    }
+    console.log(`deleted '${dir}' directory`);
+  });
 });

@@ -88,11 +88,14 @@ gulp.task('js:main', ['jst'], function () {
     ;
 });
 
-// Fixtures(json data)
+// Fixtures(yaml to json)
 gulp.task('fixtures', function () {
   //noinspection JSUnresolvedFunction
-  return gulp.src(appConfig.source + '/_data/*.yml')
+  return gulp.src(appConfig.source + '/_assets/fixtures/*.yml')
     .pipe(plugins.yaml())
+    // output for 11ty/data
+    .pipe(gulp.dest(appConfig.source + '/_data'))
+    // output for js application
     .pipe(gulp.dest(appConfig.dist + '/data'))
     ;
 });

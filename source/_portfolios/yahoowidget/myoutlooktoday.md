@@ -81,7 +81,7 @@ My Outlook Today is for all busy businesspeople who use Microsoft Outlook. For e
 
 ## See Also
 
-* [Japanese document]({% portfolio_url yahoowidget/myoutlooktoday.ja %})
+* [Japanese document](/ja/portfolio/yahoowidget/myoutlooktoday/)
 
 ## License
 

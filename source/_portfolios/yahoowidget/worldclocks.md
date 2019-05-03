@@ -23,7 +23,7 @@ World Clocks and Weather.
  
 ## See Also
 
-* [Japanese document]({% portfolio_url yahoowidget/worldclocks.ja %})
+* [Japanese document](/ja/portfolio/yahoowidget/worldclocks/)
 
 ## License
 

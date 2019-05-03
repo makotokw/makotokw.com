@@ -52,7 +52,7 @@ active: false
 
 ## See Also
 
-* [Movable Type Plugin Version]({% portfolio_url movabletype/dashboardhatenatrends %})
+* [Movable Type Plugin Version](/portfolio/movabletype/dashboardhatenatrends/)
 
 ## License
 
