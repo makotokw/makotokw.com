@@ -1,6 +1,5 @@
 {% if category %}
 <span class="entry-categories">
-  <i class="fa fa-folder"></i>
-  {{ category }}
+  <i class="fa fa-folder"></i> <a href="/blog/{{ category | downcase }}/">{{ category }}</a>
 </span>
 {% endif %}

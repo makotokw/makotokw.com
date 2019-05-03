@@ -2,9 +2,9 @@
     <meta charset="utf-8">
     <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
     <meta name="author" content="{{ site.author.screen_name }}">
-    {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+    {% capture description %}{% if description %}{{ description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
     <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
-    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+    {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ site.url }}{{ page.url | remove:'index.html' | strip_slash }}">
     {% if is_top %}
