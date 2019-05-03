@@ -45,7 +45,7 @@ is_top: true
         <div class="row">
           <div class="col-md-6">
             <div class="topSubSection topSubSection-blog">
-              {% if page.lang == 'ja' %}
+              {% if lang == 'ja' %}
               <h3 class="topSubSectionTitle">Blog</h3>
               <div id="feedBlogContent" class="feedContent feedContent-blog">
                 <i class="fa fa-spinner fa-spin"></i>
@@ -58,13 +58,14 @@ is_top: true
               <h3 class="topSubSectionTitle">Blog</h3>
               <div class="feedContent feedContent-blog">
                 <ul class="feedArticleList list-unstyled">
-                  {% for post in site.posts limit: 5 %}
+                  {% assign posts = collections.posts | reverse %}
+                  {% for post in posts limit: 5 %}
                   <li class="entry">
                     <div class="entry-header">
-                      <span class="entry-date">{{ post.date|date: "%Y/%m/%d" }}</span>
-                      <span class="entry-title"><a href="{{ site.path }}{{ post.url }}">{{ post.title }}</a></span>
+                      <span class="entry-date">{{ post.date | date: "%Y/%m/%d" }}</span>
+                      <span class="entry-title"><a href="{{ site.path }}{{ post.url }}">{{ post.data.title }}</a></span>
                     </div>
-                    <p class="entry-summary">{{ post.content|strip_html|truncate:100 }}</p>
+                    <p class="entry-summary">{{ post.templateContent | strip_html | truncate:100 }}</p>
                   </li>
                   {% endfor %}
                 </ul>
