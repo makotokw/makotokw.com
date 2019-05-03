@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Flat UI Colors for iOS UIColor"
 category: "Programing"
 ---

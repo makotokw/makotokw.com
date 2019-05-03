@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "SyntaxHighlighter for Movable Type 0.1.1 is here!"
 category: "Product"
 tag: ["Movable Type"]

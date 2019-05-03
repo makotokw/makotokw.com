@@ -1,8 +1,6 @@
 ---
-layout: portfolio
 lang: en
 title: SongWidget
-category: Yahoo Widget
 date: 2009-07-29
 active: false
 ---

@@ -1,7 +1,5 @@
 ---
-layout: portfolio
 title: "Gravatar for Movable Type"
-category: Movable Type
 date: 2009-09-21
 ---
 Displays the Gravatar image into comments by using [Gravator](http://gravatar.com/).

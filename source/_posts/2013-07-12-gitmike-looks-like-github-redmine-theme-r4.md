@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Redmine theme looks like GitHub Revision 4"
 category: "Product"
 ---

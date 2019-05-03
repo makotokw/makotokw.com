@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How to clone git project form github by using Egit on Windows (sygwin)?"
 category: "Programing"
 tag: ["git","Eclipse"]

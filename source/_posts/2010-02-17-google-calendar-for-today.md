@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Google Calendar for Today"
 category: "Product"
 tag: ["Google Chrome"]

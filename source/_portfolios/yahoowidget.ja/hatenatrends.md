@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: HatenaTrends
-category: Yahoo Widget
 date: 2009-10-21
 active: false
 ---

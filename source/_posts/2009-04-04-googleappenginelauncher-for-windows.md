@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Google App Engine Launcher for Windows (GoogleAppEngineLauncher.NET)"
 category: "Product"
 tag: ["Google App Engine"]

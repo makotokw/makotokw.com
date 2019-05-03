@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: MylynExporter
-category: Win32
 date: 2008-02-02
 active: false
 ---

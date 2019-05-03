@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: MTSocialBookmarks
-category: Movable Type
 date: 2009-02-28
 active: false
 ---

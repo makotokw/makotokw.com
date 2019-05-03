@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: MTmylo
-category: Movable Type
 date: 2008-09-07
 active: false
 ---

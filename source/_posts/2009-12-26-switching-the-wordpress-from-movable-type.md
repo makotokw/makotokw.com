@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Switching the WordPress from Movable Type"
 category: "Computing"
 tag: ["Movable Type","WordPress"]

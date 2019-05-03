@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I was back to Yahoo! Widgets"
 category: "Product"
 tag: ["Yahoo Widgets"]

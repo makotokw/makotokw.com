@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "highlightcode legacy style by Syntaxhighlighter Evolved"
 category: "Product"
 tag: ["WordPress"]

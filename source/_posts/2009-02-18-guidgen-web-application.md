@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "guidgen web application"
 category: "Product"
 date: 2009-02-18

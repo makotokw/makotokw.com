@@ -1,8 +1,6 @@
 ---
-layout: portfolio
 lang: en
 title: MyOutlookToday
-category: Yahoo Widget
 date: 2009-07-04
 active: false
 ---

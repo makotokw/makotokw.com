@@ -1,8 +1,6 @@
 ---
-layout: portfolio
 lang: en
 title: MyGoogleCalendar
-category: Yahoo Widget
 date: 2009-07-07
 active: false
 ---

@@ -1,6 +1,9 @@
 {
+  "layout": "single",
+  "lang": "en",
   "permalink": "/blog/{{ page.date | date: '%Y/%m/%d' }}/{{ page.fileSlug }}/index.html",
   "tags": [
     "posts"
-  ]
+  ],
+  "cls": "site-single site-single-post"
 }

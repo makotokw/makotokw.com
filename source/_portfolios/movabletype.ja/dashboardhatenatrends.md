@@ -1,9 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: DashboardHatenaTrends
-foo: "bar"
-category: Movable Type
 date: 2009-10-04
 active: false
 ---

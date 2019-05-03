@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: ReadOnlyCanceler
-category: Win32
 date: 2008-12-30
 active: false
 ---

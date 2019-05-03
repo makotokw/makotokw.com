@@ -1,0 +1,19 @@
+---
+layout: default
+cls: site-single
+is_single: true
+---
+<article role="article" class="entry">
+  <div class="entry-content autoTableBordered">
+    {{ content }}
+  </div>
+  <footer class="entry-footer">
+    {% if env == 'production' and sharing != false %}
+    {% include post/sharing.html %}
+    {% endif %}
+  </footer>
+</article>
+
+{% if env == 'production' and site.disqus_short_name and comment != false %}
+{% include post/disqus_comment.html %}
+{% endif %}

@@ -1,7 +1,5 @@
 ---
-layout: portfolio
 title: "SyntaxHighlighter for Movable Type"
-category: Movable Type
 date: 2009-03-23
 ---
 

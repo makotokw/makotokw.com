@@ -1,7 +1,10 @@
 {
+  "layout": "single",
+  "lang": "en",
   "permalink": "/portfolio/{{ page.data.foo }}/{{ page.fileSlug }}/index.html",
   "tags": [
     "portfolio"
   ],
+  "cls": "site-single site-single-post",
   "meta": false
 }

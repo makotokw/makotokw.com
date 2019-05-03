@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: VoiceClientOcx
-category: Win32
 date: 2008-12-28
 active: false
 ---

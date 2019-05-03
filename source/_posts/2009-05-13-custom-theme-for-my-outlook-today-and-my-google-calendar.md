@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Custom Theme for My Outlook Today and My Google Calendar"
 category: "Product"
 tag: ["Yahoo Widgets"]

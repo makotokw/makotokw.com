@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "php-twient is PHP Twitter library works without cURL"
 category: "Programing"
 tag: ["php","twitter"]

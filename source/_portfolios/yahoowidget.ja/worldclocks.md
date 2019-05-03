@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: WorldClocks
-category: Yahoo Widget
 date: 2008-09-07
 active: false
 ---

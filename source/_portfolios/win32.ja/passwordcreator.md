@@ -1,8 +1,5 @@
 ---
-layout: portfolio
-lang: ja
 title: PasswordCreator
-category: Win32
 date: 2008-12-28
 active: false
 ---

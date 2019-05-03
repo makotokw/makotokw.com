@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Import tag and basename of Movable Type to WordPress"
 category: "Product"
 tag: ["Movable Type","WordPress"]

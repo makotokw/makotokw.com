@@ -6,8 +6,12 @@
       {% if is_single == true %}
       {% unless meta == false %}
       <div class="header-meta">
-        {% include post/categories.html %}
-        {% include post/date.html %}
+        {% if category %}
+        <span class="entry-categories">
+          <i class="fa fa-folder"></i> {{ category }}
+        </span>
+        {% endif %}
+        <span class="entry-date"><time datetime="{{ page.date | datetime | date_to_xmlschema }}" class="published" pubdate{% if updated %} data-updated="true"{% endif %}>{{ page.date | date: '%B %d, %Y' }}</time></span>
       </div>
       {% endunless %}
       {% endif %}

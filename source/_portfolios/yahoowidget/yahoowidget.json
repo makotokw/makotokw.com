@@ -1,3 +1,4 @@
 {
-  "permalink": "/portfolio/yahoowidget/{{ page.fileSlug }}/index.html"
+  "permalink": "/portfolio/yahoowidget/{{ page.fileSlug }}/index.html",
+  "category": "Yahoo Widget"
 }

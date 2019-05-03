@@ -1,3 +1,4 @@
 {
-  "permalink": "/portfolio/movabletype/{{ page.fileSlug }}/index.html"
+  "permalink": "/portfolio/movabletype/{{ page.fileSlug }}/index.html",
+  "category": "Movable Type"
 }
