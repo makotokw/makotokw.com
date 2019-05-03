@@ -1,6 +1,4 @@
-source/_assets/*/javascripts/livereload.js
-source/_assets/*/javascripts/vendor/**
-source/_assets/*/javascripts/templates/**
+source/_assets/scripts/templates/
 source/_data/
 build/
 .*.js

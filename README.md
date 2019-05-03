@@ -27,22 +27,13 @@ yarn run dev
 ```
 source/
 ├── _assets             assets source
-│   ├── components          vendor assets installed by Bower
-│   └── makotokw2016        theme assets source
-│       ├── images
-│       ├── javascripts
-│       └── stylesheets
-├── _drafts             [page] draft post page
-├── _fixtures           static data
 ├── _includes           [template] partial template
-│   └── post                [template] partial template for post
+│   └── post            [template] partial template for post
 ├── _layouts            [template] layout template
 ├── _portfolios         [page] portolio page
 ├── _posts              [page] post page
 ├── assets              static assets
-│   ├── components          vendor static assets
-│   ├── makotokw2016        theme static assets
-│   └── site                common static assets (not depend on theme)
+│   └── site            common static assets (not depend on theme)
 ├── blog                [page] blog archive page
 └── ja                  [page] japanese page
 ```
@@ -51,22 +42,22 @@ source/
 ## Build for production
 
 ```
-gulp build
+yarn build
 ```
 
 ## Depends / Tools
 
 * Build tools
- * [Jekyll](http://jekyllrb.com/)
- * [Jekyll::AssetsPlugin](https://github.com/ixti/jekyll-assets)
- * [gulp](http://gulpjs.com/)
- * [Bower](http://bower.io/)
- * [Sass](http://sass-lang.com/)
-* Assets
- * [jQuery](http://jquery.com/) v1.x
- * [Underscore.js](http://underscorejs.org/) v1.x
- * [Backbone.js](http://backbonejs.org/) v1.x
- * [Twitter Bootstrap](http://getbootstrap.com/) v3.x
- * [Material Design for Bootstrap](http://fezvrasta.github.io/bootstrap-material-design/) v3.x
- * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) v4.x
- * [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget)
+    * [11ty](https://github.com/11ty/eleventy/)
+    * [Bower](http://bower.io/)
+    * [gulp](https://gulpjs.com/)
+    * [Webpack](https://webpack.js.org/)
+    * [node-sass](https://github.com/sass/node-sass)
+* Frontend Libraries
+    * [jQuery](https://jquery.com/) v1.x
+    * [Underscore.js](https://underscorejs.org/) v1.x
+    * [Backbone.js](https://backbonejs.org/) v1.x
+    * [Twitter Bootstrap](https://getbootstrap.com/) v3.x
+    * [Material Design for Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/) v3.x
+    * [Font Awesome](https://fontawesome.com/) v4.x
+    * [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget)
