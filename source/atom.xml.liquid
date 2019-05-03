@@ -20,15 +20,9 @@ eleventyExcludeFromCollections: true
         {{ post.templateContent }}
       ]]>
       </description>
-      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <pubDate>{{ post.date | date_to_rfc2822 }}</pubDate>
       <link>{{ post.url | prepend: site.url }}</link>
       <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
-      {% for tag in post.tags %}
-      <category>{{ tag | xml_escape }}</category>
-      {% endfor %}
-      {% for cat in post.categories %}
-      <category>{{ cat | xml_escape }}</category>
-      {% endfor %}
     </item>
     {% endfor %}
   </channel>

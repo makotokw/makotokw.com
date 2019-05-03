@@ -5,10 +5,7 @@
 /dist
 /dist.*
 /_tmp
-/source/_assets/vendor/
-/source/assets/vendor/
-/bundles
-source/_data/manifest.json
+/source/_data/manifest.json
 
 ### OSX ###
 .DS_Store

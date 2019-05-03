@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const moment = require('moment');
 const site = fs.existsSync('./source/_data/site.json') ?
   JSON.parse(fs.readFileSync('./source/_data/site.json', 'utf8')) :
   {};
@@ -89,6 +89,14 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(variable);
   });
 
+  eleventyConfig.addFilter('date_to_xmlschema', function (s) {
+    return moment(s).toISOString(true);
+  });
+
+  eleventyConfig.addFilter('date_to_rfc2822', function (s) {
+    return moment(s).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ');
+  });
+
   eleventyConfig.addFilter('condense_spaces', function (content) {
     let result = content.replace(/\r?\n/g, ' ');
     return result.replace(/\s{2,}/g, ' ');
@@ -98,7 +106,16 @@ module.exports = function (eleventyConfig) {
     return items.sort(function (a, b) {
       const ay = a.copyright_year ? a.copyright_year : 2000;
       const by = b.copyright_year ? b.copyright_year : 2000;
-      return by - ay;
+      let ret = by - ay;
+      if (ret === 0) {
+        if (a.categories.length > 0 && b.categories.length > 0) {
+          ret = a.categories[0].localeCompare(b.categories[0]);
+        }
+      }
+      if (ret === 0) {
+        ret = a.name.localeCompare(b.name);
+      }
+      return ret;
     });
   });
 
