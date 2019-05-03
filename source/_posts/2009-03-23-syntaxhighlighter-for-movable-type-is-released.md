@@ -6,11 +6,11 @@ date: 2009-03-23
 ---
 You might think why Movable Type.
 
-As you see, I used the WrodPress for this blog.
+As you see, I used the WordPress for this blog.
 
 In Japan, the Movable Type is more popular more than other countries because we could use the Movable Type freely(only individual use) before the Movable Type Open Source is released. And now also.
 
-I also have another Japanse blog with the Movable Type and develop some Movable Type plugins.
+I also have another Japanese blog with the Movable Type and develop some Movable Type plugins.
 
 I found the SyntaxHighlighter plugin for WordPress, but didn't find for Movable Type. So I have developed it.
 

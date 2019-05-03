@@ -16,6 +16,8 @@ CD-ROM からコピーしたファイルはすべて読取専用ファイルに�
 * [rocancel120.zip ( 8,405 byte )]({% download_url trac_attachments/ReadOnlyCanceler/rocancel120.zip %}) 2004.01.11 Update
 * [ミラー(vector)](http://www.vector.co.jp/soft/win95/util/se207261.html)
 
+|||
+|:--|:--|
 |インストール方法|上のファイルをダウンロードして解凍してください。あとは解凍してできたフォルダの中の実行ファイルを実行するだけです。レジストリはいじっていません。 |
 |対応 OS|Windows 98/Me/NT4.0/2000/XP|
 |必要ランタイム|なし(Ver1.10まではMFC 6.0 ランタイムが必要)|
@@ -24,6 +26,7 @@ CD-ROM からコピーしたファイルはすべて読取専用ファイルに�
 ## 掲載情報
 
 |日付|雑誌|バージョン|
+|:--|:--|:--|
 |2003.11.08|enter brain 『フリーフェア500 2003 Autumn』|Ver1.00|
 |2002.11.18|ASCII 『WindowsPower12月号』|Ver1.00|
 |2001.11.13|『Windows100% 12月号』|Ver1.00|

@@ -16,19 +16,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./source/BingSiteAuth.xml');
   eleventyConfig.addPassthroughCopy('./source/googleca9b70e876030815.html');
 
-  const dummyTags = [
-    'highlight',
-    'endhighlight',
-  ];
-  dummyTags.forEach(function (tag) {
-    eleventyConfig.addLiquidTag(tag, function (liquidEngine) {
-      return {
-        render: function (scope, hash) {
-          return Promise.resolve('');
-        },
-      };
-    });
-  });
+  // Markdown
+  let markdownIt = require('markdown-it');
+  // https://github.com/markdown-it/markdown-it#init-with-presets-and-options
+  let options = {
+    html: true,
+    breaks: false,
+    linkify: true,
+  };
+  eleventyConfig.setLibrary('md', markdownIt(options));
 
   eleventyConfig.addLiquidTag('env', function (Liquid) {
     return {

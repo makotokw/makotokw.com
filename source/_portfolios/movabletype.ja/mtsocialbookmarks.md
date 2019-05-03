@@ -89,6 +89,7 @@ active: false
 ### テンプレートタグ一覧
 
 |タグ|image(表示する画像)|text(表示する文字列)|users|domain(デフォルト)|note|
+|:--|:--|:--|:--|:--|:--|
 |MTSBHatenaBookmark|○("hatenabookmark.gif")|○("はてなBookmark")|○|-|はてなBookmark|
 |MTSBBuzzurl|○("buzzurl.gif")|○("Buzzurl")|○|-|Buzzurl|
 |MTSBLivedoorClip|○("livedoorclip.gif")|○("livedoorクリップ")|○|-|livedoorクリップ|

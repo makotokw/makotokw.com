@@ -9,54 +9,45 @@ description: "Simple Drop Down Menu for jQuery"
   #contents {
     white-space: nowrap;
   }
-
   #menu1 {
     white-space: nowrap;
   }
-
   #menu2 {
     clear: both;
     width: 140px;
     margin-top: 10px;
   }
-
   .potato-menu-item {
     width: 160px;
     font-size: 12px;
     font-weight: bold;
     background: #16a085;
   }
-
   .potato-menu-group {
     z-index: 1000;
   }
-
   .potato-menu-item a {
     padding: 10px 20px 10px 12px;
     color: #fff;
   }
-
   .potato-menu-hover {
     background-color: #1abc9c;
   }
-
   .potato-menu-has-vertical > a {
     background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAENSURBVDjLpZM/SwNREMTnxBRpFYmctaKCfwrBSCrRLuL3iEW6+EEUG8XvIVjYWNgJdhFjIXamv3s7u/ssrtO7hFy2fcOPmd03SYwR88xi1cPgpRdjjDB1mBquju+TMt1CFcDd0V7q4GilAwpnd2A0qCvcHRSdHUBqAYgOyaUGIBQAc4fkNSJIIGgGj4ZQx4EEAY3waPUiSC5FhLoOQkbQCJvioPQfnN2ctpuNJugKNUWYsMR/gO71yYPk8tRaboGmoCvS1RQ7/c1sq7f+OBUQcjkPGb9+xmOoF6ckCQb9pmj3rz6pKtPB5e5rmq7tmxk+hqO34e1or0yXTGrj9sXGs1Ib73efh1WaZN46/wI8JLfHaN24FwAAAABJRU5ErkJggg==) right no-repeat;
   }
-
   .potato-menu-has-horizontal > a {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADvSURBVDjLY/z//z8DJYCJgUIwxAwImOWx22uSExvZBvz68cvm5/dfV5HFGEGxUHoiExwVf//8Zfjz+w/D719/GH79/A3UAMK/GH4CMYiWFJJk+PXrN8PN27cunWq/oA/SwwIzyUrYluHvP6AB//7A8e+/f4H4N8Pvf0D8Fyb2h+HLl696WllqJ69Nu2XOArMZpBCuGajoN1jxbwT9FyH36/dvkCt/w10Acvb+h3uxOhvoZzCbi4OLQVJSiuH1q9cMt2/cvXB7zj0beBgQAwwKtS2AFuwH2vwIqFmd5Fi40H/1BFDzQaBrdTFiYYTnBQAI58A33Wys0AAAAABJRU5ErkJggg==) right no-repeat;
   }
-
   .potato-menu-item ul {
     border-top: 2px solid #16a085;
     border-left: 2px solid #16a085;
   }
 </style>
 
-<p>jquery.ui.potato.menu is simple drop down menu.</p>
+jquery.ui.potato.menu is simple drop down menu.
 
-<h2>Demo</h2>
+## Demo
 
 <ul id="contents">
   <li><a href="#download">Dowload</a></li>
@@ -87,18 +78,20 @@ description: "Simple Drop Down Menu for jQuery"
 </ul>
 
 <a name="source"></a>
-<h2>Source</h2>
+
+## Source
 
 <ul>
   <li><a href="https://github.com/makotokw/jquery.ui.potato.menu">Source</a> MIT License</li>
 </ul>
 
 <a name="overview"></a>
-<h2>Overview</h2>
 
-<p>Apply to ul &gt; li &gt; a tags:</p>
+## Overview
 
-{% highlight html %}
+Apply to ``ul > li > a`` tags:
+
+```html
 <ul id="menu1">
   <li><a href="#">Menu1</a>
     <ul>
@@ -140,12 +133,13 @@ description: "Simple Drop Down Menu for jQuery"
     </ul>
   </li>
 </ul>
-{% endhighlight %}
+```
 
-<p>Plugin has no style ( sepalate layout and style in stylesheet). Please read <a href="#style">it</a></p>
+Plugin has no style (separate layout and style in stylesheet). Please read <a href="#style">it</a>.
 
 <a name="horizontal"></a>
-<h2>Horizontal</h2>
+
+## Horizontal
 
 <ul id="menu1">
   <li><a href="#">Menu1</a>
@@ -188,13 +182,12 @@ description: "Simple Drop Down Menu for jQuery"
     </ul>
   </li>
 </ul>
-<br/>
-
 
 <a name="horizontal-code"></a>
-<h3>Sample Code</h3>
 
-{% highlight html %}
+### Sample Code
+
+```html
 <link rel="stylesheet" type="text/css" media="screen" href="jquery.ui.potato.menu.css"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.ui.potato.menu.js"></script>
@@ -205,10 +198,11 @@ description: "Simple Drop Down Menu for jQuery"
     });
   })(jQuery);
 </script>
-{% endhighlight %}
+```
 
-<a name="vertical"></a>
-<h2 style="margin-top:20px;">Vertical</h2>
+<a style="margin-top:20px;" name="vertical"></a>
+
+## Vertical
 
 <ul id="menu2">
   <li><a href="#">Menu1</a>
@@ -253,9 +247,10 @@ description: "Simple Drop Down Menu for jQuery"
 </ul>
 
 <a name="vertical-code"></a>
-<h3>Sample Code</h3>
 
-{% highlight html %}
+### Sample Code
+
+```html
 <link rel="stylesheet" type="text/css" media="screen" href="jquery.ui.potato.menu.css"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.ui.potato.menu.js"></script>
@@ -266,51 +261,59 @@ description: "Simple Drop Down Menu for jQuery"
     });
   })(jQuery);
 </script>
-{% endhighlight %}
+```
 
 <a name="style"></a>
-<h2>How to Apply Style</h2>
+## How to Apply Style
 
-<p>style of examples.</p>
+style of examples.
 
-{% highlight css %}
+```css
 #menu1 {
-white-space: nowrap;
+  white-space: nowrap;
 }
-#menu2 {
-clear: both;
-width: 140px;
-margin-top: 10px;
-}
-.potato-menu-item {
-width:160px;
-font-size:12px;
-font-weight: bold;
-background:#16a085;
-}
-.potato-menu-group {
-z-index:1000;
-}
-.potato-menu-item a {
-padding:10px 20px 10px 12px;
-color: #fff;
-}
-.potato-menu-hover {
-background-color: #1abc9c;
-}
-.potato-menu-has-vertical > a {
-background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAENSURBVDjLpZM/SwNREMTnxBRpFYmctaKCfwrBSCrRLuL3iEW6+EEUG8XvIVjYWNgJdhFjIXamv3s7u/ssrtO7hFy2fcOPmd03SYwR88xi1cPgpRdjjDB1mBquju+TMt1CFcDd0V7q4GilAwpnd2A0qCvcHRSdHUBqAYgOyaUGIBQAc4fkNSJIIGgGj4ZQx4EEAY3waPUiSC5FhLoOQkbQCJvioPQfnN2ctpuNJugKNUWYsMR/gO71yYPk8tRaboGmoCvS1RQ7/c1sq7f+OBUQcjkPGb9+xmOoF6ckCQb9pmj3rz6pKtPB5e5rmq7tmxk+hqO34e1or0yXTGrj9sXGs1Ib73efh1WaZN46/wI8JLfHaN24FwAAAABJRU5ErkJggg==) right no-repeat;
-}
-.potato-menu-has-horizontal > a {
-background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADvSURBVDjLY/z//z8DJYCJgUIwxAwImOWx22uSExvZBvz68cvm5/dfV5HFGEGxUHoiExwVf//8Zfjz+w/D719/GH79/A3UAMK/GH4CMYiWFJJk+PXrN8PN27cunWq/oA/SwwIzyUrYluHvP6AB//7A8e+/f4H4N8Pvf0D8Fyb2h+HLl696WllqJ69Nu2XOArMZpBCuGajoN1jxbwT9FyH36/dvkCt/w10Acvb+h3uxOhvoZzCbi4OLQVJSiuH1q9cMt2/cvXB7zj0beBgQAwwKtS2AFuwH2vwIqFmd5Fi40H/1BFDzQaBrdTFiYYTnBQAI58A33Wys0AAAAABJRU5ErkJggg==) right no-repeat;
-}
-.potato-menu-item ul {
-border-top:2px solid #16a085;
-border-left:2px solid #16a085;
-}
-{% endhighlight %}
 
-<h3>Selector</h3>
+#menu2 {
+  clear: both;
+  width: 140px;
+  margin-top: 10px;
+}
+
+.potato-menu-item {
+  width: 160px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #16a085;
+}
+
+.potato-menu-group {
+  z-index: 1000;
+}
+
+.potato-menu-item a {
+  padding: 10px 20px 10px 12px;
+  color: #fff;
+}
+
+.potato-menu-hover {
+  background-color: #1abc9c;
+}
+
+.potato-menu-has-vertical > a {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAENSURBVDjLpZM/SwNREMTnxBRpFYmctaKCfwrBSCrRLuL3iEW6+EEUG8XvIVjYWNgJdhFjIXamv3s7u/ssrtO7hFy2fcOPmd03SYwR88xi1cPgpRdjjDB1mBquju+TMt1CFcDd0V7q4GilAwpnd2A0qCvcHRSdHUBqAYgOyaUGIBQAc4fkNSJIIGgGj4ZQx4EEAY3waPUiSC5FhLoOQkbQCJvioPQfnN2ctpuNJugKNUWYsMR/gO71yYPk8tRaboGmoCvS1RQ7/c1sq7f+OBUQcjkPGb9+xmOoF6ckCQb9pmj3rz6pKtPB5e5rmq7tmxk+hqO34e1or0yXTGrj9sXGs1Ib73efh1WaZN46/wI8JLfHaN24FwAAAABJRU5ErkJggg==) right no-repeat;
+}
+
+.potato-menu-has-horizontal > a {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADvSURBVDjLY/z//z8DJYCJgUIwxAwImOWx22uSExvZBvz68cvm5/dfV5HFGEGxUHoiExwVf//8Zfjz+w/D719/GH79/A3UAMK/GH4CMYiWFJJk+PXrN8PN27cunWq/oA/SwwIzyUrYluHvP6AB//7A8e+/f4H4N8Pvf0D8Fyb2h+HLl696WllqJ69Nu2XOArMZpBCuGajoN1jxbwT9FyH36/dvkCt/w10Acvb+h3uxOhvoZzCbi4OLQVJSiuH1q9cMt2/cvXB7zj0beBgQAwwKtS2AFuwH2vwIqFmd5Fi40H/1BFDzQaBrdTFiYYTnBQAI58A33Wys0AAAAABJRU5ErkJggg==) right no-repeat;
+}
+
+.potato-menu-item ul {
+  border-top: 2px solid #16a085;
+  border-left: 2px solid #16a085;
+}
+```
+
+### Selector
 
 <table class="table table-bordered">
   <tr>

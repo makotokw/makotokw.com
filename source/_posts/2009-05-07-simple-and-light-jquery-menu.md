@@ -4,32 +4,36 @@ category: "Product"
 tag: ["jQuery"]
 date: 2009-05-07
 ---
-
 <link rel="stylesheet" type="text/css" media="screen" href="/assets/site/css/jquery.ui.potato.menu.css"/>
-<style>
 
-#potatoMenuExample {
+<style>
+  #potatoMenuExample {
     margin: 10px;
-}
-.potato-menu li {
-	font-size:12px;
-}
-.potato-menu li ul {
-	border-top: 2px solid #666;
-	background: #333;
-}
-.potato-menu li ul a {
-	width: 160px;
-}
-.potato-menu a {
-	padding:5px 12px 5px 12px;
-	background: #333;
-	color: #fff;
-	padding-right:20px;
-}
-.potato-menu a:hover {
-	background: #666;
-}
+  }
+
+  .potato-menu li {
+    font-size: 12px;
+  }
+
+  .potato-menu li ul {
+    border-top: 2px solid #666;
+    background: #333;
+  }
+
+  .potato-menu li ul a {
+    width: 160px;
+  }
+
+  .potato-menu a {
+    padding: 5px 12px 5px 12px;
+    background: #333;
+    color: #fff;
+    padding-right: 20px;
+  }
+
+  .potato-menu a:hover {
+    background: #666;
+  }
 </style>
 
 Demo: <a href="/portfolio/jquery/ui_potato_menu/">jquery.ui.potato.menu</a>

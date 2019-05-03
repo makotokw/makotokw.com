@@ -29,6 +29,7 @@ active: false
 ### Player
  
 |アプリ|Yahoo(Win)|Yahoo(Mac)|note|
+|:--|:--|:--|:--|
 |iTunes|○(0.1-)|○(0.1-)|-|
 |Windows Media Player|○(0.1-)|-|-|
 |Yahoo Music Jukebox|○(0.1.1-0.3.2)|-|-|
@@ -44,6 +45,7 @@ active: false
 ### WebService
 
 |WebService|note|
+|:--|:--|:--|
 |Amazon|アルバムのレビューコメント取得、商品情報取得、似た商品の取得|
 |YouTube|アルバムの動画検索|
 

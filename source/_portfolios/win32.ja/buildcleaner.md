@@ -14,6 +14,8 @@ BuildClearnerを使えば、指定されたフォルダから中間ファイル�
 * [bcleaner130.zip ( 23,320 byte )]({% download_url trac_attachments/BuildCleaner/bcleaner130.zip %}) 2004.01.11 Update
 * [ミラー(vector)](http://www.vector.co.jp/soft/win95/prog/se207027.html)
 
+|||
+|:--|:--|
 |インストール方法|上のファイルをダウンロードして解凍してください。あとは解凍してできたフォルダの中の実行ファイルを実行するだけです|
 |対応 OS|Windows 98/Me/NT4.0/2000/XP|
 |必要ランタイム|なし|
@@ -22,6 +24,7 @@ BuildClearnerを使えば、指定されたフォルダから中間ファイル�
 ## 雑誌掲載
 
 |日付|雑誌|バージョン|
+|:--|:--|:--|
 |2003.11.08|enter brain 『フリーフェア500 2003 Autumn』|Ver1.22|
 |2002.11.18|ASCII 『WindowsPower12月号』|Ver1.22|
 

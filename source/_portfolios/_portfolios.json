@@ -1,7 +1,7 @@
 {
   "layout": "single",
   "lang": "en",
-  "permalink": "/portfolio/{{ page.data.foo }}/{{ page.fileSlug }}/index.html",
+  "permalink": "/portfolio/category/{{ page.fileSlug }}/index.html",
   "tags": [
     "portfolio"
   ],

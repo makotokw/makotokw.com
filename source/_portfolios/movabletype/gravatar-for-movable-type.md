@@ -18,7 +18,7 @@ Outputs the image tag of the current avatar image by author's e-mail address.
 This tag is only into ``<$mt:Comments$>``, and to display the image is required to register it by same e-mail address to the Gravatar.
 
 |attribute|description|in default|
-|:-----------|------------:|:------------:|
+|:-----------|:------------|:------------:|
 |rating|rating||
 |size|size of image(between 1 and 512 pixels)|32|
 |default|default image url||

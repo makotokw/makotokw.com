@@ -12,15 +12,15 @@ active: false
   * download
     * [SongWidget_yw_0.3.3_200907280.zip]({% download_url trac_attachments/SongWidget/SongWidget_yw_0.3.3_200907280.zip %})
   * Fixes
-    * Fixed corver art for WMP
+    * Fixed to convert art for WMP
     * Fixed play mode for WMP
-    * Impleved to search album information with "Disc No" string
-    * Reduceed to call Amazon API
+    * Improved to search album information with "Disc No" string
+    * Reduced to call Amazon API
   * Changes
     * Supported Amazon Product Advertising API
     * Removed Yahoo Music Jukebox support
     * Supported Yahoo Widget 4.5 or later
-    * Using ExtJS core 3.0 insteat of prototype.js
+    * Using ExtJS core 3.0 instead of prototype.js
     * Windows: Handle event for COM
 
 ## Progress
@@ -28,6 +28,7 @@ active: false
 ### Player
  
 |Application|Yahoo(Win)|Yahoo(Mac)|note|
+|:--|:--|:--|:--|
 |iTunes|○(0.1-)|○(0.1-)|-|
 |Windows Media Player|○(0.1-)|-|-|
 |Yahoo Music Jukebox|○(0.1.1-0.3.2)|-|-|
@@ -43,7 +44,8 @@ active: false
 ### WebService
 
 |WebService|note|
-|Amazon|ReviewComment、Infomatoin、SimilarProduct|
+|:--|:--|:--|
+|Amazon|ReviewComment、Information、SimilarProduct|
 |YouTube|Search Movie|
 
 ## History
