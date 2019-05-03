@@ -93,6 +93,11 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(variable);
   });
 
+  eleventyConfig.addFilter('condense_spaces', function (content) {
+    let result = content.replace(/\r?\n/g, ' ');
+    return result.replace(/\s{2,}/g, ' ');
+  });
+
   eleventyConfig.addFilter('sort_portfolio', function (items) {
     return items.sort(function (a, b) {
       const ay = a.copyright_year ? a.copyright_year : 2000;
