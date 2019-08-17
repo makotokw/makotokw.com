@@ -1,26 +1,4 @@
 -
-  name: Mineclock
-  name.ja: Mineclock
-  description: Pebble watchface that looks like Minecraft clock.
-  categories: [pebble]
-  tags: [c]
-  url: https://apps.getpebble.com/applications/568aa41c6518afe93f000012
-  source_url: https://github.com/makotokw/pebble-mineclock
-  copyright_year: 2016
-  last_updated_year: 2016
-  status: pending
--
-  name: IRKit Remote
-  name.ja: IRKit Remote
-  description: Pebble watchapp that sends IR signal to IRKit. (IRKit device is IR remote controller and is seller in only Japan)
-  categories: [pebble]
-  tags: [c, js]
-  url: https://apps.getpebble.com/applications/54b7e129986a229c5700004c
-  source_url: https://github.com/makotokw/pebble-irkit-remote
-  copyright_year: 2015
-  last_updated_year: 2016
-  status: pending
--
   name: fukidashi generator
   name.ja: ふきだしジェネレーター
   categories: [web]
@@ -39,7 +17,18 @@
   url: https://github.com/makotokw/redmine-theme-gitmike
   source_url: https://github.com/makotokw/redmine-theme-gitmike
   copyright_year: 2012
-  last_updated_year: 2015
+  last_updated_year: 2017
+  status: active
+-
+  name: Redmine Render Markdown in Repository
+  name.ja: Redmine Render Markdown in Repository
+  description: Redmine plugin render Markdown in Repository.
+  categories: [redmine]
+  tags: []
+  url: https://github.com/makotokw/redmine_render_markdown_in_repository
+  source_url: https://github.com/makotokw/redmine_render_markdown_in_repository
+  copyright_year: 2013
+  last_updated_year: 2019
   status: active
 -
   name: Garanchu
@@ -102,7 +91,7 @@
   source_url: https://github.com/makotokw/wp-amazonjs
   tags: [php, js]
   copyright_year: 2011
-  last_updated_year: 2016
+  last_updated_year: 2018
   status: active
 -
   name: GitHub Flavored Markdown for WordPress
@@ -114,7 +103,7 @@
   download_url: https://github.com/makotokw/wp-gfm/releases
   source_url: https://github.com/makotokw/wp-gfm
   copyright_year: 2013
-  last_updated_year: 2014
+  last_updated_year: 2018
   status: active
 -
   name: Awasete Yomitai for WordPress
@@ -205,6 +194,82 @@
   last_updated_year: 2009
   status: done
 -
+  name: BuildCleaner
+  categories: [win32]
+  tags: [cpp,mfc]
+  url: /ja/portfolio/win32/buildcleaner/
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2004
+  status: done
+-
+  name: MylynExporter
+  categories: [win32]
+  tags: [csharp,dotnet]
+  url: /ja/portfolio/win32/mylynexporter/
+  copyright_year: 2007
+  last_updated_year: 2007
+  status: done
+-
+  name: PasswordCreator
+  categories: [win32]
+  tags: [cpp,mfc]
+  url: /ja/portfolio/win32/passwordcreator/
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2007
+  status: done
+-
+  name: ReadOnlyCanceler
+  categories: [win32]
+  tags: [cpp,mfc]
+  url: /ja/portfolio/win32/readonlycanceler/
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2004
+  status: done
+-
+  name: ReversiGamma
+  categories: [win32]
+  tags: [cpp,mfc]
+  url: /ja/portfolio/win32/reversigamma/
+  locales: [ja]
+  copyright_year: 2001
+  last_updated_year: 2007
+  status: done
+-
+  name: VoiceClientOcx
+  categories: [win32]
+  tags: [cpp]
+  url: /ja/portfolio/win32/voiceclientocx/
+  copyright_year: 2002
+  last_updated_year: 2002
+  status: done
+-
+  name: Mineclock
+  name.ja: Mineclock
+  description: Pebble watchface that looks like Minecraft clock.
+  categories: [pebble]
+  tags: [c]
+  url: https://apps.getpebble.com/applications/568aa41c6518afe93f000012
+  source_url: https://github.com/makotokw/pebble-mineclock
+  copyright_year: 2016
+  last_updated_year: 2016
+  status: done
+  deprecated: true
+-
+  name: IRKit Remote
+  name.ja: IRKit Remote
+  description: Pebble watchapp that sends IR signal to IRKit. (IRKit device is IR remote controller and is seller in only Japan)
+  categories: [pebble]
+  tags: [c, js]
+  url: https://apps.getpebble.com/applications/54b7e129986a229c5700004c
+  source_url: https://github.com/makotokw/pebble-irkit-remote
+  copyright_year: 2015
+  last_updated_year: 2016
+  status: done
+  deprecated: true
+-
   name: HatenaTrends
   categories: [yw]
   tags: [js]
@@ -259,55 +324,3 @@
   last_updated_year: 2007
   status: done
   deprecated: true
--
-  name: BuildCleaner
-  categories: [win32]
-  tags: [cpp,mfc]
-  url: /ja/portfolio/win32/buildcleaner/
-  locales: [ja]
-  copyright_year: 2001
-  last_updated_year: 2004
-  status: done
--
-  name: MylynExporter
-  categories: [win32]
-  tags: [csharp,dotnet]
-  url: /ja/portfolio/win32/mylynexporter/
-  copyright_year: 2007
-  last_updated_year: 2007
-  status: done
--
-  name: PasswordCreator
-  categories: [win32]
-  tags: [cpp,mfc]
-  url: /ja/portfolio/win32/passwordcreator/
-  locales: [ja]
-  copyright_year: 2001
-  last_updated_year: 2007
-  status: done
--
-  name: ReadOnlyCanceler
-  categories: [win32]
-  tags: [cpp,mfc]
-  url: /ja/portfolio/win32/readonlycanceler/
-  locales: [ja]
-  copyright_year: 2001
-  last_updated_year: 2004
-  status: done
--
-  name: ReversiGamma
-  categories: [win32]
-  tags: [cpp,mfc]
-  url: /ja/portfolio/win32/reversigamma/
-  locales: [ja]
-  copyright_year: 2001
-  last_updated_year: 2007
-  status: done
--
-  name: VoiceClientOcx
-  categories: [win32]
-  tags: [cpp]
-  url: /ja/portfolio/win32/voiceclientocx/
-  copyright_year: 2002
-  last_updated_year: 2002
-  status: done
