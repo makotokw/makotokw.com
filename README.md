@@ -1,11 +1,11 @@
 makotokw.com
 ==============
 
-Project for [makotokw.com](http://makotokw.com)
+Project for [makotokw.com](https://makotokw.com)
 
 ## Setup Project
 
-Require Git, Node.js(npm), Gulp, Bower and Ruby(Bundler) for setup.
+Require Git, Node.js, Yarn, gulp and Bower to setup.
 
 
 ```
@@ -49,8 +49,8 @@ yarn build
 
 * Build tools
     * [11ty](https://github.com/11ty/eleventy/)
-    * [Bower](http://bower.io/)
     * [gulp](https://gulpjs.com/)
+    * [Bower](http://bower.io/)
     * [Webpack](https://webpack.js.org/)
     * [node-sass](https://github.com/sass/node-sass)
 * Frontend Libraries
