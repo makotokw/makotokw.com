@@ -92,18 +92,6 @@ return __p
 (function() {
 window["JST"] = window["JST"] || {};
 
-window["JST"]["portfolio_tag.html"] = function(obj) {
-obj || (obj = {});
-var __t, __p = '';
-with (obj) {
-__p += '<a href="#"></a>\n\n';
-
-}
-return __p
-}})();
-(function() {
-window["JST"] = window["JST"] || {};
-
 window["JST"]["portfolio_tag_category.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __j = Array.prototype.join;
