@@ -9,9 +9,8 @@
     "eleventy": "npx eleventy",
     "eleventy-debug": "cross-env DEBUG=* npx eleventy",
     "eleventy-debug-watch": "cross-env DEBUG=* npx eleventy --watch",
-    "dev": "npm-run-all clean:project dev:gulp dev:webpack dev:server",
+    "dev": "npm-run-all clean:project dev:gulp dev:server",
     "dev:gulp": "cross-env NODE_ENV=development npx gulp build",
-    "dev:webpack": "cross-env NODE_ENV=development npx webpack --env=dev --progress --profile --colors",
     "dev:server": "npm-run-all --parallel dev:webpack-server dev:eleventy",
     "dev:webpack-server": "cross-env NODE_ENV=development npx webpack-dev-server --env=dev",
     "dev:eleventy": "cross-env NODE_ENV=development npx eleventy --watch",
@@ -22,7 +21,8 @@
     "build:eleventy": "cross-env NODE_ENV=production npx eleventy",
     "prod:server": "npm-run-all build prod:eleventy-server",
     "prod:eleventy-server": "cross-env NODE_ENV=production npx eleventy --serve",
-    "clean:project": "node ./build/scripts/clean.js"
+    "clean:project": "node ./build/scripts/clean.js",
+    "deploy": "gulp deploy"
   },
   "dependencies": {},
   "devDependencies": {
