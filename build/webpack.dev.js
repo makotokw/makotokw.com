@@ -2,7 +2,6 @@ const Merge = require('webpack-merge');
 const CommonConfig = require('./webpack.common.js');
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
@@ -28,13 +27,6 @@ module.exports = Merge(CommonConfig, {
       },
     ),
     new webpack.HotModuleReplacementPlugin(),
-    new CopyPlugin([
-      {
-        from: 'source/_assets/images/*.png',
-        to: 'images',
-        flatten: true,
-      },
-    ]),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),

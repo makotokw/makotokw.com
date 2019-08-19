@@ -1,4 +1,3 @@
-/*jshint node: true */
 'use strict';
 
 require('dotenv').config();
@@ -20,14 +19,6 @@ var appConfig = {
 
 appConfig.dist = process.env.NODE_ENV === 'production' ? appConfig.distProduction : appConfig.distDevelopment;
 
-// Javascripts
-gulp.task('jshint', function () {
-  //noinspection JSUnresolvedVariable,JSUnresolvedFunction
-  return gulp.src(['gulpfile.js', appConfig.assets + '/scripts/**/*.js'])
-    .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter('jshint-stylish'))
-    ;
-});
 gulp.task('jst', function () {
   //noinspection JSUnresolvedFunction
   gulp.src(appConfig.assets + '/scripts/templates/*.html')

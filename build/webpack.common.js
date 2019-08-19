@@ -1,14 +1,27 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
     app: [
+      './source/_assets/scripts.webpack/main.js',
       './source/_assets/styles/app.scss',
     ]
   },
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'eslint-loader',
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -20,13 +33,11 @@ module.exports = {
         },
       },
       {
-        test: /\.js$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-      },
-      {
         test: /\.(css|scss)$/,
         use: [
+          {
+            loader: 'vue-style-loader',
+          },
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
@@ -89,8 +100,20 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new VueLoaderPlugin(),
+    new CopyPlugin([
+      {
+        from: 'source/_assets/images/*.png',
+        to: 'images',
+        flatten: true,
+      },
+    ]),
+  ],
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
+      '@': path.join(__dirname, '../source/_assets/scripts.webpack'),
       assets: path.join(__dirname, '../source/_assets'),
       bower: path.join(__dirname, '../bower_components'),
     },

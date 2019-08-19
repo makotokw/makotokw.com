@@ -1,0 +1,17 @@
+# /node_modules/* and /bower_components/* in the project root are ignored by default
+
+# include dotfiles
+!/.*
+
+# static files
+source/assets/
+
+# old school
+source/_assets/scripts/
+
+# built files
+dist/
+.tmp/
+
+# configuration files
+.idea/
