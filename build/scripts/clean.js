@@ -4,25 +4,24 @@ const rimraf = require('rimraf');
 
 glob('source/_data/*.json', function (er, generatedDataFiles) {
   if (er) {
-    console.log(er);
+    console.error(er);
     return;
   }
   generatedDataFiles.forEach((f) => {
     fs.unlink(f, (err) => {
       if (err) {
-        console.log(dir, err);
+        console.error(err);
         return;
       }
       console.log(`deleted '${f}' file`);
     });
   });
-
 });
 
 const distDir = [
   'dist',
   '.tmp/dist.gulp',
-  '.tmp/dist.webpack'
+  '.tmp/dist.webpack',
 ];
 
 distDir.forEach((dir) => {

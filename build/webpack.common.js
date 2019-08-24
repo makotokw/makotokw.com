@@ -8,7 +8,7 @@ module.exports = {
     app: [
       './source/_assets/scripts.webpack/main.js',
       './source/_assets/styles/app.scss',
-    ]
+    ],
   },
   module: {
     rules: [

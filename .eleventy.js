@@ -13,9 +13,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./source/googleca9b70e876030815.html');
 
   // Markdown
-  let markdownIt = require('markdown-it');
+  const markdownIt = require('markdown-it');
   // https://github.com/markdown-it/markdown-it#init-with-presets-and-options
-  let options = {
+  const options = {
     html: true,
     breaks: false,
     linkify: true,
@@ -84,8 +84,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('condense_spaces', function (content) {
-    let result = content.replace(/\r?\n/g, ' ');
-    return result.replace(/\s{2,}/g, ' ');
+    return content.replace(/\r?\n/g, ' ').replace(/\s{2,}/g, ' ');
   });
 
   eleventyConfig.addFilter('sort_portfolio', function (items) {
@@ -106,7 +105,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('portfolio_tag_name', function (slug) {
-    const tag = portfolioTags.find(function(t) {
+    const tag = portfolioTags.find(function (t) {
       return t.id === slug;
     });
     if (tag) {
