@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const Merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const WebpackAssetsManifest = require('webpack-assets-manifest');
 const CommonConfig = require('./webpack.common.js');
 
 module.exports = Merge(CommonConfig, {
@@ -20,9 +19,5 @@ module.exports = Merge(CommonConfig, {
       debug: false,
     }),
     new MiniCssExtractPlugin({ filename: '[name]-[hash].css' }),
-    // https://github.com/webdeveric/webpack-assets-manifest
-    new WebpackAssetsManifest({
-      output: path.resolve('src/site/_data/manifest.json'),
-    }),
   ],
 });

@@ -54,7 +54,7 @@ gulp.task('js:vendor', function () {
     `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/ripples.js`,
     `${appConfig.bowerComponent}/jquery.githubRepoWidget/index.js`,
   ])
-    .pipe(plugins.concat('vendor.js'))
+    .pipe(plugins.concat('vendor2.js'))
     .pipe(gulp.dest(`${appConfig.dist}/assets`));
 });
 
@@ -68,7 +68,7 @@ gulp.task('js:main', ['jst'], function () {
     `${appConfig.scripts}/views/*.js`,
   ])
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.concat('main.js'))
+    .pipe(plugins.concat('main2.js'))
     .pipe(plugins.sourcemaps.write('.', {}))
     .pipe(gulp.dest(`${appConfig.dist}/assets`));
 });

@@ -2,9 +2,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 module.exports = {
   entry: {
+    vendor: [
+      'jquery',
+    ],
     app: [
       './src/assets/scripts/main.js',
       './src/assets/styles/app.scss',
@@ -21,6 +25,16 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+      },
+      {
+        test: require.resolve('jquery'),
+        use: [{
+          loader: 'expose-loader',
+          options: 'jQuery',
+        }, {
+          loader: 'expose-loader',
+          options: '$',
+        }],
       },
       {
         test: /\.js$/,
@@ -109,6 +123,10 @@ module.exports = {
         flatten: true,
       },
     ]),
+    // https://github.com/webdeveric/webpack-assets-manifest
+    new WebpackAssetsManifest({
+      output: path.resolve('src/site/_data/manifest.json'),
+    }),
   ],
   resolve: {
     extensions: ['.js', '.vue'],

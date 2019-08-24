@@ -16,12 +16,8 @@
     {% endif %}
     <link rel="alternate" href="{{ site.subscribe_url }}" title="{{site.title}}" type="application/atom+xml">
     {% include link_icon.html %}
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{% asset_path app.css %}">
-    <script src="{% asset_path vendor_first.js %}"></script>
+  <script src="{% asset_path vendor.js %}"></script>
     {% include google_analytics.html %}
 </head>
