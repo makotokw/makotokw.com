@@ -25,17 +25,18 @@ yarn run dev
 ### Directory Structure
 
 ```
-source/
-├── _assets             assets source
-├── _includes           [template] partial template
-│   └── post            [template] partial template for post
-├── _layouts            [template] layout template
-├── _portfolios         [page] portolio page
-├── _posts              [page] post page
-├── assets              static assets
-│   └── site            common static assets (not depend on theme)
-├── blog                [page] blog archive page
-└── ja                  [page] japanese page
+src
+├── assets                  source files for webpack
+└── site                    source files for 11ty
+    ├── _includes           [template] partial template
+    │   └── post            [template] partial template for post
+    ├── _layouts            [template] layout template
+    ├── _portfolios         [page] portolio page
+    ├── _posts              [page] post page
+    ├── assets              static assets
+    │   └── site            common static assets (not depend on theme)
+    ├── blog                [page] blog archive page
+    └── ja                  [page] japanese page
 ```
 
 

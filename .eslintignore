@@ -4,10 +4,10 @@
 !/.*
 
 # static files
-source/assets/
+src/site/assets/
 
 # old school
-source/_assets/scripts/
+src/assets/scripts.gulp/
 
 # built files
 dist/

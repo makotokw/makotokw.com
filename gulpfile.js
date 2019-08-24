@@ -7,9 +7,10 @@ const fs = require('fs');
 
 // configurable paths
 const appConfig = {
-  source: 'source',
+  source: 'src/site',
   bowerComponent: 'bower_components',
-  assets: 'source/_assets',
+  scripts: 'src/assets/scripts.gulp',
+  fixtures: 'src/assets/fixtures',
   bowerRc: JSON.parse(fs.readFileSync('.bowerrc')),
   distProduction: 'dist',
   distDevelopment: '.tmp/dist.gulp',
@@ -18,7 +19,7 @@ const appConfig = {
 appConfig.dist = process.env.NODE_ENV === 'production' ? appConfig.distProduction : appConfig.distDevelopment;
 
 gulp.task('jst', function () {
-  gulp.src(`${appConfig.assets}/scripts/templates/*.html`)
+  gulp.src(`${appConfig.scripts}/templates/*.html`)
     .pipe(plugins.templateCompile({
       namespace: 'JST',
       name: function (file) {
@@ -26,7 +27,7 @@ gulp.task('jst', function () {
       },
     }))
     .pipe(plugins.concat('templates.js'))
-    .pipe(gulp.dest(`${appConfig.assets}/scripts/templates`));
+    .pipe(gulp.dest(`${appConfig.scripts}/templates`));
 });
 
 gulp.task('js:vendorFirst', function () {
@@ -59,12 +60,12 @@ gulp.task('js:vendor', function () {
 
 gulp.task('js:main', ['jst'], function () {
   return gulp.src([
-    `${appConfig.assets}/scripts/libs/main.js`,
-    `${appConfig.assets}/scripts/routes/*.js`,
-    `${appConfig.assets}/scripts/models/*.js`,
-    `${appConfig.assets}/scripts/collections/*.js`,
-    `${appConfig.assets}/scripts/templates/*.js`,
-    `${appConfig.assets}/scripts/views/*.js`,
+    `${appConfig.scripts}/libs/main.js`,
+    `${appConfig.scripts}/routes/*.js`,
+    `${appConfig.scripts}/models/*.js`,
+    `${appConfig.scripts}/collections/*.js`,
+    `${appConfig.scripts}/templates/*.js`,
+    `${appConfig.scripts}/views/*.js`,
   ])
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.concat('main.js'))
@@ -74,7 +75,7 @@ gulp.task('js:main', ['jst'], function () {
 
 // Fixtures(yaml to json)
 gulp.task('fixtures', function () {
-  return gulp.src(`${appConfig.source}/_assets/fixtures/*.yml`)
+  return gulp.src(`${appConfig.fixtures}/*.yml`)
     .pipe(plugins.yaml())
     // output for 11ty/data
     .pipe(gulp.dest(`${appConfig.source}/_data`))

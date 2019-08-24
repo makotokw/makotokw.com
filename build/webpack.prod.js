@@ -22,7 +22,7 @@ module.exports = Merge(CommonConfig, {
     new MiniCssExtractPlugin({ filename: '[name]-[hash].css' }),
     // https://github.com/webdeveric/webpack-assets-manifest
     new WebpackAssetsManifest({
-      output: path.resolve('source/_data/manifest.json'),
+      output: path.resolve('src/site/_data/manifest.json'),
     }),
   ],
 });

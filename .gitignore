@@ -5,7 +5,7 @@
 /dist
 /dist.*
 /_tmp
-/source/_data/manifest.json
+/src/site/_data/manifest.json
 
 ### OSX ###
 .DS_Store

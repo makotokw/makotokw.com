@@ -1,16 +1,17 @@
 const fs = require('fs');
 const moment = require('moment');
 
+const src = './src/site';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-const site = JSON.parse(fs.readFileSync('./source/_data/site.json', 'utf8'));
-const portfolioTags = JSON.parse(fs.readFileSync('./source/_data/portfolio_tags.json', 'utf8'));
-const manifest = fs.existsSync('./source/_data/manifest.json') ? JSON.parse(fs.readFileSync('./source/_data/manifest.json', 'utf8')) : {};
+const site = JSON.parse(fs.readFileSync(`${src}/_data/site.json`, 'utf8'));
+const portfolioTags = JSON.parse(fs.readFileSync(`${src}/_data/portfolio_tags.json`, 'utf8'));
+const manifest = fs.existsSync(`${src}/_data/manifest.json`) ? JSON.parse(fs.readFileSync(`${src}/_data/manifest.json`, 'utf8')) : {};
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('./source/assets');
-  eleventyConfig.addPassthroughCopy('./source/favicon.ico');
-  eleventyConfig.addPassthroughCopy('./source/BingSiteAuth.xml');
-  eleventyConfig.addPassthroughCopy('./source/googleca9b70e876030815.html');
+  eleventyConfig.addPassthroughCopy(`${src}/assets`);
+  eleventyConfig.addPassthroughCopy(`${src}/favicon.ico`);
+  eleventyConfig.addPassthroughCopy(`${src}/BingSiteAuth.xml`);
+  eleventyConfig.addPassthroughCopy(`${src}/googleca9b70e876030815.html`);
 
   // Markdown
   const markdownIt = require('markdown-it');
@@ -120,7 +121,7 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'liquid',
     passthroughFileCopy: true,
     dir: {
-      input: './source',
+      input: `${src}`,
       includes: '_includes',
       layouts: '_layouts',
       data: '_data',

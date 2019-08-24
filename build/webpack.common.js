@@ -6,8 +6,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
     app: [
-      './source/_assets/scripts.webpack/main.js',
-      './source/_assets/styles/app.scss',
+      './src/assets/scripts/main.js',
+      './src/assets/styles/app.scss',
     ],
   },
   module: {
@@ -104,7 +104,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new CopyPlugin([
       {
-        from: 'source/_assets/images/*.png',
+        from: 'src/assets/images/*.png',
         to: 'images',
         flatten: true,
       },
@@ -113,9 +113,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      '@': path.join(__dirname, '../source/_assets/scripts.webpack'),
-      assets: path.join(__dirname, '../source/_assets'),
-      bower: path.join(__dirname, '../bower_components'),
+      '@': path.join(__dirname, '../src/assets/scripts'),
+      '@assets': path.join(__dirname, '../src/assets'),
+      '@bower': path.join(__dirname, '../bower_components'),
     },
   },
 };
