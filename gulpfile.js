@@ -19,7 +19,7 @@ const appConfig = {
 appConfig.dist = process.env.NODE_ENV === 'production' ? appConfig.distProduction : appConfig.distDevelopment;
 
 gulp.task('jst', function () {
-  gulp.src(`${appConfig.scripts}/templates/*.html`)
+  return gulp.src(`${appConfig.scripts}/templates/*.html`)
     .pipe(plugins.templateCompile({
       namespace: 'JST',
       name: function (file) {
@@ -30,14 +30,14 @@ gulp.task('jst', function () {
     .pipe(gulp.dest(`${appConfig.scripts}/templates`));
 });
 
-gulp.task('js:vendorFirst', function () {
-  return gulp.src([
-    `${appConfig.bowerComponent}/modernizr/modernizr.js`,
-    `${appConfig.bowerComponent}/jquery/jquery.js`,
-  ])
-    .pipe(plugins.concat('vendor_first.js'))
-    .pipe(gulp.dest(`${appConfig.dist}/assets`));
-});
+// gulp.task('js:vendorFirst', function () {
+//   return gulp.src([
+//     `${appConfig.bowerComponent}/modernizr/modernizr.js`,
+//     `${appConfig.bowerComponent}/jquery/jquery.js`,
+//   ])
+//     .pipe(plugins.concat('vendor_first.js'))
+//     .pipe(gulp.dest(`${appConfig.dist}/assets`));
+// });
 
 gulp.task('js:vendor', function () {
   return gulp.src([
@@ -86,7 +86,7 @@ gulp.task('fixtures', function () {
 // Build
 gulp.task('build', function (cb) {
   return runSequence(
-    ['js:main', 'js:vendorFirst', 'js:vendor', 'fixtures'],
+    ['js:main', 'js:vendor', 'fixtures'],
     cb,
   );
 });
