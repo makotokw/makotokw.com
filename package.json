@@ -32,6 +32,7 @@
   "dependencies": {
     "core-js": "^2.6.9",
     "jquery": "^1.9.1",
+    "loglevel": "^1.6.3",
     "vue": "^2.6.10"
   },
   "devDependencies": {

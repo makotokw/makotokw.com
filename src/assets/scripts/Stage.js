@@ -1,12 +1,12 @@
-/* eslint-disable no-console */
 import Vue from 'vue';
 import $ from '@/vendor/jQuery';
 import Host from '@/lib/Host';
+import Logger from '@/lib/Logger';
 import HomePage from '@/vue/pages/HomePage';
 
 Vue.config.productionTip = false;
 
-console.log(`isDebugHost=${Host.isDebugHost}`);
+Logger.debug(`isDebugHost: ${Host.isDebugHost}`);
 
 class Stage {
   init() {
