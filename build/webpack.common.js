@@ -86,6 +86,18 @@ module.exports = {
           },
         ],
       },
+      // https://github.com/okonet/yaml-loader
+      {
+        test: /\.ya?ml$/,
+        use: [
+          {
+            loader: 'json-loader',
+          },
+          {
+            loader: 'yaml-loader',
+          },
+        ],
+      },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [

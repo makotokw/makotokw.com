@@ -103,7 +103,7 @@ class Stage {
   initTopPage() {
     this.vue = new Vue({
       render: (h) => h(HomePage),
-    }).$mount('#app');
+    }).$mount('#homeView');
   }
 }
 
