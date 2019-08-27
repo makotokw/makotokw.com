@@ -30,7 +30,12 @@
     "deploy": "gulp deploy"
   },
   "dependencies": {
+    "bootstrap-material-design": "^0.5.10",
+    "bootstrap-sass": "^3.4.1",
     "core-js": "^2.6.9",
+    "font-awesome": "^4.7.0",
+    "github-repo-widget.js": "^1.0.2",
+    "headroom.js": "^0.9.4",
     "jquery": "^1.9.1",
     "loglevel": "^1.6.3",
     "vue": "^2.6.10"

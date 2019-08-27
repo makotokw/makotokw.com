@@ -8,7 +8,7 @@ makotokw.Views = makotokw.Views || {};
    */
   makotokw.Views.StageView = Backbone.View.extend({
 
-    stickyHeaderTop: 100,
+    // stickyHeaderTop: 100,
 
     constructor: function () {
       if (!makotokw.Views.StageView.instance) {
@@ -19,9 +19,9 @@ makotokw.Views = makotokw.Views || {};
     },
 
     initialize: function () {
-      $('#mainNavBar').headroom({
-        offset: this.stickyHeaderTop
-      });
+      // $('#mainNavBar').headroom({
+      //   offset: this.stickyHeaderTop
+      // });
     }
   });
 })();

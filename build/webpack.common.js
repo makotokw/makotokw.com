@@ -21,6 +21,9 @@ module.exports = {
         test: /\.(js|vue)$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+        },
       },
       {
         test: /\.vue$/,
@@ -77,7 +80,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               includePaths: [
-                'bower_components/bootstrap-sass/assets/stylesheets',
+                path.resolve(__dirname, '../node_modules/bootstrap-sass/assets/stylesheets'),
               ],
             },
           },
@@ -131,9 +134,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      '@': path.join(__dirname, '../src/assets/scripts'),
-      '@assets': path.join(__dirname, '../src/assets'),
-      '@bower': path.join(__dirname, '../bower_components'),
+      '@': path.resolve(__dirname, '../src/assets/scripts'),
+      '@assets': path.resolve(__dirname, '../src/assets'),
     },
   },
 };

@@ -41,18 +41,18 @@ gulp.task('jst', function () {
 
 gulp.task('js:vendor', function () {
   return gulp.src([
-    `${appConfig.bowerComponent}/jquery.easing/js/jquery.easing.js`,
-    `${appConfig.bowerComponent}/headroom.js/dist/headroom.js`,
-    `${appConfig.bowerComponent}/headroom.js/dist/jQuery.headroom.js`,
-    `${appConfig.bowerComponent}/isotope/dist/isotope.pkgd.js`,
+    // `${appConfig.bowerComponent}/jquery.easing/js/jquery.easing.js`,
+    // `${appConfig.bowerComponent}/headroom.js/dist/headroom.js`,
+    // `${appConfig.bowerComponent}/headroom.js/dist/jQuery.headroom.js`,
+    // `${appConfig.bowerComponent}/isotope/dist/isotope.pkgd.js`,
     `${appConfig.bowerComponent}/moment/moment.js`,
     `${appConfig.bowerComponent}/underscore/underscore.js`,
     `${appConfig.bowerComponent}/underscore.string/lib/underscore.string.js`,
     `${appConfig.bowerComponent}/backbone/backbone.js`,
-    `${appConfig.bowerComponent}/bootstrap-sass/assets/javascripts/bootstrap.js`,
-    `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/material.js`,
-    `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/ripples.js`,
-    `${appConfig.bowerComponent}/jquery.githubRepoWidget/index.js`,
+    // `${appConfig.bowerComponent}/bootstrap-sass/assets/javascripts/bootstrap.js`,
+    // `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/material.js`,
+    // `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/ripples.js`,
+    // `${appConfig.bowerComponent}/jquery.githubRepoWidget/index.js`,
   ])
     .pipe(plugins.concat('vendor2.js'))
     .pipe(gulp.dest(`${appConfig.dist}/assets`));

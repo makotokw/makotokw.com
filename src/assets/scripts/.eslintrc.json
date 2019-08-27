@@ -8,7 +8,8 @@
     "parser": "babel-eslint"
   },
   "rules": {
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   },
   "settings": {
     "import/resolver": {
