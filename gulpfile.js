@@ -73,20 +73,20 @@ gulp.task('js:main', ['jst'], function () {
     .pipe(gulp.dest(`${appConfig.dist}/assets`));
 });
 
-// Fixtures(yaml to json)
-gulp.task('fixtures', function () {
-  return gulp.src(`${appConfig.fixtures}/*.yml`)
-    .pipe(plugins.yaml())
-    // output for 11ty/data
-    .pipe(gulp.dest(`${appConfig.source}/_data`))
-    // output for js application
-    .pipe(gulp.dest(`${appConfig.dist}/data`));
-});
+// // Fixtures(yaml to json)
+// gulp.task('fixtures', function () {
+//   return gulp.src(`${appConfig.fixtures}/*.yml`)
+//     .pipe(plugins.yaml())
+//     // output for 11ty/data
+//     .pipe(gulp.dest(`${appConfig.source}/_data`))
+//     // output for js application
+//     .pipe(gulp.dest(`${appConfig.dist}/data`));
+// });
 
 // Build
 gulp.task('build', function (cb) {
   return runSequence(
-    ['js:main', 'js:vendor', 'fixtures'],
+    ['js:main', 'js:vendor'],
     cb,
   );
 });
