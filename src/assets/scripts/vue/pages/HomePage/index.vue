@@ -1,3 +1,4 @@
+<!--suppress HtmlUnknownTarget, JSUnresolvedVariable -->
 <template>
   <div>
     <section id="portfolio" class="topSection topSection-portfolio">
@@ -7,7 +8,7 @@
             <div class="col-md-6">
               <div class="topSubSection topSubSection-software">
                 <h3 class="topSubSectionTitle">Software</h3>
-                <recent-portfolio></recent-portfolio>
+                <recent-portfolio :display-count="resentPortfolioEntries"></recent-portfolio>
                 <div class="topSubSectionFooter">
                   <a href="./portfolio/" class="btn archiveButton" title="Portfolio Archives">
                     Archives
@@ -20,7 +21,7 @@
                 <h3 class="topSubSectionTitle">
                   <i class="fa fa-github" aria-hidden="true"></i> Code
                 </h3>
-                <git-hub></git-hub>
+                <git-hub :user-name="site.author.github" :num-of-repo="gitHubRepoEntries"></git-hub>
                 <div class="topSubSectionFooter">
                   <a :href="site.github_url" class="btn archiveButton" title="GitHub Archives"
                      target="_blank">Archives</a>
@@ -48,6 +49,14 @@ export default {
   data() {
     return {
       site,
+      resentPortfolioEntries: 8,
+      gitHubRepoEntries: 8,
+      feedNumEntries: 5,
+      feedConfig: {
+        blog: 'https://blog.makotokw.com/feed/',
+        // https://qiita.com/Qiita/items/9c0a57ad98a511e566ed
+        qiita: 'https://qiita.com/makoto_kw/feed.atom',
+      },
     };
   },
 };

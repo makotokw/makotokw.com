@@ -9,6 +9,7 @@
   },
   "rules": {
     "class-methods-use-this": "off",
+    "max-len": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   },
   "settings": {

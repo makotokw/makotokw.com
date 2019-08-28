@@ -5,13 +5,15 @@ import Headroom from 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
 import Vue from 'vue';
 import $ from '@/vendor/jQuery';
-import Host from '@/lib/Host';
 import Logger from '@/lib/Logger';
 import HomePage from '@/vue/pages/HomePage';
+import filters from '@/vue/filters';
 
+// eslint-disable-next-line guard-for-in,no-unused-vars,no-restricted-syntax
+for (const name in filters) {
+  Vue.filter(name, filters[name]);
+}
 Vue.config.productionTip = false;
-
-Logger.debug(`isDebugHost: ${Host.isDebugHost}`);
 
 const stickyHeaderTop = 100;
 
