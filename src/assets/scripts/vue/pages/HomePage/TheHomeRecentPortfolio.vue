@@ -12,7 +12,7 @@
           </span>
         </span>
       </div>
-      <p class="entry-summary">{{  p.description }}</p>
+      <p class="entry-summary">{{ p.description }}</p>
     </div>
   </div>
 </template>
@@ -21,11 +21,11 @@
 import portfolios from '@assets/fixtures/portfolios.yml';
 
 export default {
-  name: 'RecentPortfolio',
+  name: 'TheHomeRecentPortfolio',
   props: {
-    displayCount: {
+    num: {
       type: Number,
-      required: true,
+      default: 5,
     },
   },
   data() {
@@ -33,7 +33,7 @@ export default {
       portfolios: portfolios
         .filter((/** Portfolio */p) => p.status === 'active')
         .sort((/** Portfolio */a, /** Portfolio */b) => `${b.last_updated_year}-${b.copyright_year}`.localeCompare(`${a.last_updated_year}-${a.copyright_year}`))
-        .slice(0, this.displayCount),
+        .slice(0, this.num),
     };
   },
 };

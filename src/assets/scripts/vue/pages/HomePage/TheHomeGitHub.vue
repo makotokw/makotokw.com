@@ -25,7 +25,7 @@
 import GitHub from '@/lib/GitHub';
 
 export default {
-  name: 'GitHub',
+  name: 'TheHomeGitHub',
   props: {
     userName: {
       type: String,
@@ -33,7 +33,7 @@ export default {
     },
     numOfRepo: {
       type: Number,
-      required: true,
+      default: 5,
     },
   },
   data() {
