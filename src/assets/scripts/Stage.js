@@ -6,7 +6,7 @@ import 'headroom.js/dist/jQuery.headroom';
 import Vue from 'vue';
 import $ from '@/vendor/jQuery';
 import Logger from '@/lib/Logger';
-import HomePage from '@/vue/pages/HomePage';
+import VueApp from '@/vue/App';
 import filters from '@/vue/filters';
 
 // eslint-disable-next-line guard-for-in,no-unused-vars,no-restricted-syntax
@@ -99,13 +99,19 @@ class Stage {
    * @returns {boolean}
    */
   get isTopPage() {
-    return ($('.topSection').length > 0);
+    return ($('#app').length > 0);
   }
 
   initTopPage() {
+    // console.log($('body').getClass());
     this.vue = new Vue({
-      render: (h) => h(HomePage),
-    }).$mount('#homeView');
+      el: '#app',
+      render: (createElement) => createElement(VueApp, {
+        props: {
+          lang: this.lang,
+        },
+      }),
+    });
   }
 }
 

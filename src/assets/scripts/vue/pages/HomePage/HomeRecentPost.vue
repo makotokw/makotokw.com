@@ -8,7 +8,7 @@
       <div class="entry" :key="entry.name" v-for="entry in entries">
         <div class="entry-header">
           <span class="entry-date">{{ entry.date | moment('YYYY/MM/DD') }}</span>
-          <span class="entry-title"><a :href="entry.link">{{ entry.title }}</a></span>
+          <span class="entry-title"><a :href="replaceLink(entry.link)" :target="linkTarget">{{ entry.title }}</a></span>
         </div>
         <p class="entry-summary">{{ entry.contentSnippet }}</p>
       </div>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+/** @var {Site} site */
+import site from '@assets/fixtures/site.yml';
 import Feed from '@/lib/Feed';
 
 export default {
@@ -33,6 +35,10 @@ export default {
     maxContentLength: {
       type: Number,
       default: 180,
+    },
+    linkTarget: {
+      type: String,
+      default: '_blank',
     },
   },
   data() {
@@ -58,6 +64,15 @@ export default {
         return entry;
       });
     });
+  },
+  methods: {
+    /**
+     * @param {string} link
+     * @returns {string}
+     */
+    replaceLink(link) {
+      return link.replace(site.blog_url, '/blog/');
+    },
   },
 };
 </script>

@@ -3,17 +3,17 @@
 {% include html_head.html %}
 <body class="site site-{{lang}} {{cls}}">
 <div id="top"></div>
+
 {% if is_top != true %}
 <a href="#content" class="sr-only">Skip to content</a>
 {% endif %}
+
 {% include navbar.html %}
 {% include header.html %}
-{% if is_top == true %}
-<div role="main">
-{{ content }}
-</div>
-{% else %}
 
+{% if is_top == true %}
+<div id="app" role="main"></div>
+{% else %}
 <div class="mainContent" role="main">
   <div id="content" class="container">
     {{ content }}

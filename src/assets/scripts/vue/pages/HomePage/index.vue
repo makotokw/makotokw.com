@@ -8,7 +8,7 @@
             <div class="col-md-6">
               <div class="topSubSection topSubSection-software">
                 <h3 class="topSubSectionTitle">Software</h3>
-                <the-home-recent-portfolio :num="resentPortfolioEntries"></the-home-recent-portfolio>
+                <the-home-recent-portfolio :num="feedNumEntries"></the-home-recent-portfolio>
                 <div class="topSubSectionFooter">
                   <a href="./portfolio/" class="btn archiveButton" title="Portfolio Archives">
                     Archives
@@ -21,7 +21,7 @@
                 <h3 class="topSubSectionTitle">
                   <i class="fa fa-github" aria-hidden="true"></i> Code
                 </h3>
-                <the-home-git-hub :user-name="site.author.github" :num-of-repo="gitHubRepoEntries"></the-home-git-hub>
+                <the-home-git-hub :user-name="site.author.github" :num-of-repo="feedNumEntries"></the-home-git-hub>
                 <div class="topSubSectionFooter">
                   <a :href="site.github_url" class="btn archiveButton" title="GitHub Archives"
                      target="_blank">Archives</a>
@@ -40,42 +40,22 @@
             <div class="col-md-6">
               <div class="topSubSection topSubSection-blog">
                 <h3 class="topSubSectionTitle">Blog</h3>
-                <div class="feedContent feedContent-blog">
-                  <home-recent-post :url="feedConfig.blog_ja"></home-recent-post>
-                </div>
-                <div class="topSubSectionFooter">
-                  <a :href="site.blog_ja_url" class="btn archiveButton" title="Blog Archives" target="_blank">Archives</a>
-                </div>
+                  <div class="feedContent feedContent-blog">
+                    <home-recent-post :url="blog.feedUrl" :num="feedNumEntries" :link-target="blog.linkTarget"></home-recent-post>
+                  </div>
+                  <div class="topSubSectionFooter">
+                    <a :href="blog.url" class="btn archiveButton" title="Blog Archives" :target="blog.linkTarget">Archives</a>
+                  </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="topSubSection topSubSection-qiita">
                 <h3 class="topSubSectionTitle">Qiita</h3>
                 <div class="feedContent feedContent-qiita">
-                  <home-recent-post :url="feedConfig.qiita"></home-recent-post>
+                  <home-recent-post :url="qiita.feedUrl" :num="feedNumEntries"></home-recent-post>
                 </div>
                 <div class="topSubSectionFooter">
-                  <a :href="site.qiita_url" class="btn archiveButton" title="Qiita Archives" target="_blank">Archives</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="topSection topSection-article">
-      <div class="container">
-        <div class="topSectionContent">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="topSubSection topSubSection-blog">
-                <h3 class="topSubSectionTitle">Blog</h3>
-                <div class="feedContent feedContent-blog">
-                  <home-recent-post :url="feedConfig.blog_en"></home-recent-post>
-                </div>
-                <div class="topSubSectionFooter">
-                  <a :href="site.blogEnUrl" class="btn archiveButton" title="Blog Archives" target="_blank">Archives</a>
+                  <a :href="qiita.url" class="btn archiveButton" title="Qiita Archives" target="_blank">Archives</a>
                 </div>
               </div>
             </div>
@@ -87,6 +67,7 @@
 </template>
 
 <script>
+/** @var {Site} site */
 import site from '@assets/fixtures/site.yml';
 import TheHomeGitHub from './TheHomeGitHub';
 import TheHomeRecentPortfolio from './TheHomeRecentPortfolio';
@@ -99,19 +80,26 @@ export default {
     TheHomeRecentPortfolio,
     HomeRecentPost,
   },
+  props: {
+    lang: {
+      type: String,
+      default: 'en',
+    },
+  },
   data() {
-    const blogEnUrl = `${site.path}/blog/`;
+    const isJa = this.lang === 'ja';
     return {
       site,
-      blogEnUrl,
-      resentPortfolioEntries: 8,
-      gitHubRepoEntries: 8,
       feedNumEntries: 5,
-      feedConfig: {
-        blog_ja: 'https://blog.makotokw.com/feed/',
-        blog_en: `${site.path}/atom.xml`,
+      blog: {
+        url: isJa ? site.blog_ja_url : site.blog_url,
+        feedUrl: isJa ? `${site.blog_ja_url}/feed/` : `${site.path}/atom.xml`,
+        linkTarget: isJa ? '_blank' : '_self',
+      },
+      qiita: {
+        url: site.qiita_url,
         // https://qiita.com/Qiita/items/9c0a57ad98a511e566ed
-        qiita: 'https://qiita.com/makoto_kw/feed.atom',
+        feedUrl: 'https://qiita.com/makoto_kw/feed.atom',
       },
     };
   },

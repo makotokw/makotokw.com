@@ -41,6 +41,7 @@
  * @property {string} title
  * @property {string} url
  * @property {string} subscribe_url
+ * @property {string} blog_url
  * @property {string} blog_ja_url
  * @property {string} github_url
  * @property {string} qiita_url

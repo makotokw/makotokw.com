@@ -47,9 +47,7 @@ class Feed {
    */
   fetchFromOrigin({ maxItem = 10 }) {
     const parser = new RSSParser();
-    return parser.parseURL(this.url).then((feed) => {
-      return this.parseEntries({ feed, maxItem });
-    });
+    return parser.parseURL(this.url).then((feed) => this.parseEntries({ feed, maxItem }));
   }
 
   /**
