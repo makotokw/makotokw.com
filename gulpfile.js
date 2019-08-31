@@ -30,29 +30,29 @@ gulp.task('jst', function () {
     .pipe(gulp.dest(`${appConfig.scripts}/templates`));
 });
 
-// gulp.task('js:vendorFirst', function () {
-//   return gulp.src([
-//     `${appConfig.bowerComponent}/modernizr/modernizr.js`,
-//     `${appConfig.bowerComponent}/jquery/jquery.js`,
-//   ])
-//     .pipe(plugins.concat('vendor_first.js'))
-//     .pipe(gulp.dest(`${appConfig.dist}/assets`));
-// });
+gulp.task('js:vendorFirst', function () {
+  return gulp.src([
+    `${appConfig.bowerComponent}/modernizr/modernizr.js`,
+    `${appConfig.bowerComponent}/jquery/jquery.js`,
+  ])
+    .pipe(plugins.concat('vendor_first.js'))
+    .pipe(gulp.dest(`${appConfig.dist}/assets`));
+});
 
 gulp.task('js:vendor', function () {
   return gulp.src([
-    // `${appConfig.bowerComponent}/jquery.easing/js/jquery.easing.js`,
-    // `${appConfig.bowerComponent}/headroom.js/dist/headroom.js`,
-    // `${appConfig.bowerComponent}/headroom.js/dist/jQuery.headroom.js`,
-    // `${appConfig.bowerComponent}/isotope/dist/isotope.pkgd.js`,
+    `${appConfig.bowerComponent}/jquery.easing/js/jquery.easing.js`,
+    `${appConfig.bowerComponent}/headroom.js/dist/headroom.js`,
+    `${appConfig.bowerComponent}/headroom.js/dist/jQuery.headroom.js`,
+    `${appConfig.bowerComponent}/isotope/dist/isotope.pkgd.js`,
     `${appConfig.bowerComponent}/moment/moment.js`,
     `${appConfig.bowerComponent}/underscore/underscore.js`,
     `${appConfig.bowerComponent}/underscore.string/lib/underscore.string.js`,
     `${appConfig.bowerComponent}/backbone/backbone.js`,
-    // `${appConfig.bowerComponent}/bootstrap-sass/assets/javascripts/bootstrap.js`,
-    // `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/material.js`,
-    // `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/ripples.js`,
-    // `${appConfig.bowerComponent}/jquery.githubRepoWidget/index.js`,
+    `${appConfig.bowerComponent}/bootstrap-sass/assets/javascripts/bootstrap.js`,
+    `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/material.js`,
+    `${appConfig.bowerComponent}/bootstrap-material-design/dist/js/ripples.js`,
+    `${appConfig.bowerComponent}/jquery.githubRepoWidget/index.js`,
   ])
     .pipe(plugins.concat('vendor2.js'))
     .pipe(gulp.dest(`${appConfig.dist}/assets`));
@@ -73,20 +73,23 @@ gulp.task('js:main', ['jst'], function () {
     .pipe(gulp.dest(`${appConfig.dist}/assets`));
 });
 
-// // Fixtures(yaml to json)
-// gulp.task('fixtures', function () {
-//   return gulp.src(`${appConfig.fixtures}/*.yml`)
-//     .pipe(plugins.yaml())
-//     // output for 11ty/data
-//     .pipe(gulp.dest(`${appConfig.source}/_data`))
-//     // output for js application
-//     .pipe(gulp.dest(`${appConfig.dist}/data`));
-// });
+// Fixtures(yaml to json)
+gulp.task('fixtures', function () {
+  return gulp.src(`${appConfig.fixtures}/*.yml`)
+    .pipe(plugins.yaml())
+    // output for 11ty/data
+    .pipe(gulp.dest(`${appConfig.source}/_data`))
+    // output for js application
+    .pipe(gulp.dest(`${appConfig.dist}/data`));
+});
 
 // Build
 gulp.task('build', function (cb) {
+  cb(new Error('No longer use gulp build'));
+});
+gulp.task('deprecated:build', function (cb) {
   return runSequence(
-    ['js:main', 'js:vendor'],
+    ['js:main', 'js:vendorFirst', 'js:vendor', 'fixtures'],
     cb,
   );
 });
