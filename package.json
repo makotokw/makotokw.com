@@ -43,6 +43,7 @@
     "jquery": "^1.9.1",
     "loglevel": "^1.6.3",
     "moment": "^2.24.0",
+    "rss-parser": "^3.7.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -69,7 +70,6 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-vue": "^5.2.3",
     "expose-loader": "^0.7.5",
-    "feedparser": "^2.2.9",
     "file-loader": "^3.0.1",
     "glob": "^7.1.4",
     "gulp": "^3.9.1",

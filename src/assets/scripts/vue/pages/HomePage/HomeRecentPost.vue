@@ -41,14 +41,15 @@ export default {
     };
   },
   created() {
-    const feed = new Feed({ url: this.url });
+    const useCache = !!this.url.match(/^https?:/);
+    const feed = new Feed({ url: this.url, useCache });
     feed.fetch({ maxItem: this.num }).then((entries) => {
       this.entries = entries.map((entry) => {
-        let contentText = entry.description;
+        let contentText = entry.content;
         try {
           // strip html tags
           const el = document.createElement('div');
-          el.innerHTML = entry.description;
+          el.innerHTML = contentText;
           contentText = el.innerText;
         } catch (e) {
         }

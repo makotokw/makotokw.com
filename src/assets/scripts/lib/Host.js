@@ -1,13 +1,20 @@
 class Host {
   constructor() {
-    this.hostname = window.location.hostname;
+    this.location = window.location;
+  }
+
+  /**
+   * @returns {string}
+   */
+  get origin() {
+    return this.location.origin;
   }
 
   /**
    * @returns {boolean}
    */
   get isDebugHost() {
-    return !!this.hostname.match(/^(localhost)$/);
+    return !!this.location.hostname.match(/^(localhost)$/);
   }
 }
 

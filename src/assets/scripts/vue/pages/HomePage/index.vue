@@ -41,7 +41,7 @@
               <div class="topSubSection topSubSection-blog">
                 <h3 class="topSubSectionTitle">Blog</h3>
                 <div class="feedContent feedContent-blog">
-                  <home-recent-post :url="feedConfig.blog"></home-recent-post>
+                  <home-recent-post :url="feedConfig.blog_ja"></home-recent-post>
                 </div>
                 <div class="topSubSectionFooter">
                   <a :href="site.blog_ja_url" class="btn archiveButton" title="Blog Archives" target="_blank">Archives</a>
@@ -56,6 +56,26 @@
                 </div>
                 <div class="topSubSectionFooter">
                   <a :href="site.qiita_url" class="btn archiveButton" title="Qiita Archives" target="_blank">Archives</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topSection topSection-article">
+      <div class="container">
+        <div class="topSectionContent">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="topSubSection topSubSection-blog">
+                <h3 class="topSubSectionTitle">Blog</h3>
+                <div class="feedContent feedContent-blog">
+                  <home-recent-post :url="feedConfig.blog_en"></home-recent-post>
+                </div>
+                <div class="topSubSectionFooter">
+                  <a :href="site.blogEnUrl" class="btn archiveButton" title="Blog Archives" target="_blank">Archives</a>
                 </div>
               </div>
             </div>
@@ -80,13 +100,16 @@ export default {
     HomeRecentPost,
   },
   data() {
+    const blogEnUrl = `${site.path}/blog/`;
     return {
       site,
+      blogEnUrl,
       resentPortfolioEntries: 8,
       gitHubRepoEntries: 8,
       feedNumEntries: 5,
       feedConfig: {
-        blog: 'https://blog.makotokw.com/feed/',
+        blog_ja: 'https://blog.makotokw.com/feed/',
+        blog_en: `${site.path}/atom.xml`,
         // https://qiita.com/Qiita/items/9c0a57ad98a511e566ed
         qiita: 'https://qiita.com/makoto_kw/feed.atom',
       },
