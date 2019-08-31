@@ -47,5 +47,6 @@ module.exports = Merge(CommonConfig, {
     ],
     open: false,
     hot: true,
+    clientLogLevel: 'silent',
   },
 });
