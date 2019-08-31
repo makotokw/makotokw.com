@@ -5,14 +5,13 @@ Project for [makotokw.com](https://makotokw.com)
 
 ## Setup Project
 
-Require Git, Node.js, Yarn, gulp and Bower to setup.
+Require Git, Node.js and Yarn to setup.
 
 
 ```
 git clone git@github.com:makotokw/makotokw.com.git www.makotokw.com
 cd www.makotokw.com
 yarn
-yarn run bower:install
 ```
 
 ## Development
@@ -51,7 +50,6 @@ yarn build
 * Build tools
     * [11ty](https://github.com/11ty/eleventy/)
     * [gulp](https://gulpjs.com/)
-    * [Bower](http://bower.io/)
     * [Webpack](https://webpack.js.org/)
     * [node-sass](https://github.com/sass/node-sass)
 * Frontend Libraries

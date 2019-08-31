@@ -19,7 +19,7 @@ module.exports = {
       {
         enforce: 'pre',
         test: /\.(js|vue)$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: 'eslint-loader',
         options: {
           emitWarning: true,
@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {

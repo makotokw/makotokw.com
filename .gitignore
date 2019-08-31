@@ -13,9 +13,6 @@
 .LSOverride
 Icon
 
-### Bower ###
-bower_components
-
 ### Node ###
 npm-debug.log
 node_modules
