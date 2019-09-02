@@ -17,7 +17,7 @@
     "dev:webpack-server": "cross-env NODE_ENV=development npx webpack-dev-server --env=dev",
     "dev:eleventy": "cross-env NODE_ENV=development npx eleventy --watch",
     "build": "npm-run-all clean:project build:all",
-    "build:all": "npm-run-all build:data build:gulp build:webpack build:eleventy",
+    "build:all": "npm-run-all build:data build:webpack build:eleventy",
     "build:data": "node ./build/scripts/fixtures-to-json.js && node ./build/scripts/feeds-to-json.js",
     "build:webpack": "cross-env NODE_ENV=production npx webpack --env=prod --progress --profile --colors",
     "build:eleventy": "cross-env NODE_ENV=production npx eleventy",
@@ -25,7 +25,7 @@
     "prod:eleventy-server": "cross-env NODE_ENV=production npx eleventy --serve",
     "clean:project": "node ./build/scripts/clean.js",
     "lint": "eslint --ext .js,.vue .",
-    "deploy": "gulp deploy"
+    "deploy": "node ./build/scripts/deploy.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -79,6 +79,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.0.0",
     "rimraf": "^2.7.1",
+    "rsync": "^0.6.1",
     "run-sequence": "^1.2.2",
     "sass-loader": "^7.2.0",
     "vue-loader": "^15.7.1",
