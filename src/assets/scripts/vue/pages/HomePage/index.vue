@@ -92,7 +92,7 @@ export default {
       site,
       feedNumEntries: 5,
       blog: {
-        url: isJa ? site.blog_ja_url : site.blog_url,
+        url: isJa ? site.blog_ja_url : `${site.path}/blog/`,
         feedUrl: isJa ? `${site.blog_ja_url}/feed/` : `${site.path}/atom.xml`,
         linkTarget: isJa ? '_blank' : '_self',
       },
