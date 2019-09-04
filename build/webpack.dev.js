@@ -48,5 +48,9 @@ module.exports = Merge(CommonConfig, {
     open: false,
     hot: true,
     clientLogLevel: 'silent',
+    // https://github.com/bripkens/connect-history-api-fallback
+    historyApiFallback: {
+      index: '/404.html',
+    },
   },
 });
