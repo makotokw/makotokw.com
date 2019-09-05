@@ -1,6 +1,7 @@
 ---
 title: jquery.ui.potato.menu
 description: "Simple Drop Down Menu for jQuery"
+date: 2010-01-04
 ---
 
 <link href="/assets/site/css/jquery.ui.potato.menu.css" rel="stylesheet">
