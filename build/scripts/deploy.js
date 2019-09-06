@@ -1,5 +1,6 @@
 const Rsync = require('rsync');
 const path = require('path');
+const glob = require('glob');
 
 require('dotenv').config();
 
@@ -13,10 +14,16 @@ if (projectDir !== process.cwd()) {
   throw new Error(`Invalid current dir: ${process.cwd()}`);
 }
 
+glob(`${process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH}/assets/app-*.js`, function (er, files) {
+  if (er || !files || files.length === 0) {
+    throw new Error('app-*.js is not found. development build?');
+  }
+});
+
 // https://github.com/mattijs/node-rsync#readme
 const rsync = new Rsync()
   .shell('ssh')
-  .flags('avn')
+  .flags('av')
   .delete()
   .source(process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH)
   .destination(`${process.env.MAKOTOKWCOM_DEPLOY_DEST_HOST}:${process.env.MAKOTOKWCOM_DEPLOY_DEST_PATH}`);
@@ -28,6 +35,7 @@ rsync.execute(
     if (error) {
       console.error(error);
     }
+    console.log(`done ${process.env.MAKOTOKWCOM_DEPLOY_DEST_HOST}:${process.env.MAKOTOKWCOM_DEPLOY_DEST_PATH}`);
   },
   // stdoutHandler
   (data) => {
