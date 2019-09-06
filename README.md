@@ -7,7 +7,6 @@ Project for [makotokw.com](https://makotokw.com)
 
 Require Git, Node.js and Yarn to setup.
 
-
 ```
 git clone git@github.com:makotokw/makotokw.com.git www.makotokw.com
 cd www.makotokw.com
@@ -49,14 +48,12 @@ yarn build
 
 * Build tools
     * [11ty](https://github.com/11ty/eleventy/)
-    * [gulp](https://gulpjs.com/)
     * [Webpack](https://webpack.js.org/)
+    * [Babel](https://babeljs.io/)
     * [node-sass](https://github.com/sass/node-sass)
-* Frontend Libraries
+* Frontend Framework
     * [jQuery](https://jquery.com/) v1.x
-    * [Underscore.js](https://underscorejs.org/) v1.x
-    * [Backbone.js](https://backbonejs.org/) v1.x
+    * [Vue.js](https://vuejs.org/) v2.x
     * [Twitter Bootstrap](https://getbootstrap.com/) v3.x
     * [Material Design for Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/) v3.x
     * [Font Awesome](https://fontawesome.com/) v4.x
-    * [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget)
