@@ -4,18 +4,18 @@ import 'github-repo-widget.js';
 import Headroom from 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
 import Vue from 'vue';
-import $ from '@/vendor/jQuery';
 import Logger from '@/lib/Logger';
 import VueApp from '@/vue/App';
-import filters from '@/vue/filters';
+import VueFilters from '@/vue/filters';
+
+const $ = window.jQuery;
+const StickyHeaderTop = 100;
 
 // eslint-disable-next-line guard-for-in,no-unused-vars,no-restricted-syntax
-for (const name in filters) {
-  Vue.filter(name, filters[name]);
+for (const name in VueFilters) {
+  Vue.filter(name, VueFilters[name]);
 }
 Vue.config.productionTip = false;
-
-const stickyHeaderTop = 100;
 
 class Stage {
   init() {
@@ -38,35 +38,37 @@ class Stage {
 
   redirectPageByContentNegotiation() {
     // content negotiation on top page
-    const referer = document.referrer;
-    Logger.debug(`refer = ${referer}, origin = ${document.location.origin}`);
-    if ($.type(referer) !== 'string' || referer.length) {
+    if (!document || !document.location) {
       return;
     }
-    if (!document.location || !document.location.origin) {
-      return;
-    }
+    const referer = document.referrer || '';
+    const pathname = document.location.pathname || '';
+    const origin = document.location.origin || '';
+    Logger.debug(`refer = ${referer}, origin = ${origin}, path = ${pathname}`);
+
     // redirect only a referer is a external url
-    if (referer.indexOf(document.location.origin) === 0) {
+    if (!origin || referer.indexOf(origin) === 0) {
       return;
     }
-    const userLanguage = navigator.language;
-    const langCodes = ['ja'];
-    for (let i = 0; i < langCodes.length; i++) {
-      const langCode = langCodes[i];
-      if (userLanguage.substr(0, 2) === langCodes[i]) {
-        const pathname = document.location.pathname || '';
-        if ($.type(pathname) === 'string') {
-          if (pathname.match(new RegExp(`^/${langCode}(/|$)`))) {
-            return;
-          }
-        }
-        this.redirectPage(`/${langCodes[i]}${pathname}${document.location.search}${document.location.hash}`);
-        return;
-      }
+    if (this.lang === this.userLang || this.lang !== 'en' || pathname.match(new RegExp(`^/${this.userLang}(/|$)`))) {
+      return;
+    }
+    if (pathname === '/' || pathname.match(/^\/portfolio(\/|)$/)) {
+      this.redirectPage(`/${this.userLang}${pathname}${document.location.search}${document.location.hash}`);
     }
   }
 
+  /**
+   * @returns {string}
+   */
+  get userLang() {
+    const userLanguage = navigator.language || '';
+    return ['ja'].find((langCode) => userLanguage.substr(0, 2) === langCode) || 'en';
+  }
+
+  /**
+   * @returns {string}
+   */
   get lang() {
     if (document.location && document.location.pathname) {
       if (document.location.pathname.match(/^\/ja\//)) {
@@ -79,7 +81,7 @@ class Stage {
   initHeadroom() {
     window.Headroom = Headroom;
     $('#mainNavBar').headroom({
-      offset: stickyHeaderTop,
+      offset: StickyHeaderTop,
     });
   }
 

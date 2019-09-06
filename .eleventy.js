@@ -7,11 +7,17 @@ const site = JSON.parse(fs.readFileSync(`${src}/_data/site.json`, 'utf8'));
 const portfolioTags = JSON.parse(fs.readFileSync(`${src}/_data/portfolio_tags.json`, 'utf8'));
 const manifest = fs.existsSync(`${src}/_data/manifest.json`) ? JSON.parse(fs.readFileSync(`${src}/_data/manifest.json`, 'utf8')) : {};
 
+const staticPaths = [
+  'assets',
+  'favicon.ico',
+  'BingSiteAuth.xml',
+  'googleca9b70e876030815.html',
+  'downloads/reserverd.txt',
+];
+
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy(`${src}/assets`);
-  eleventyConfig.addPassthroughCopy(`${src}/favicon.ico`);
-  eleventyConfig.addPassthroughCopy(`${src}/BingSiteAuth.xml`);
-  eleventyConfig.addPassthroughCopy(`${src}/googleca9b70e876030815.html`);
+  // copy static
+  staticPaths.forEach((staticPath) => eleventyConfig.addPassthroughCopy(`${src}/${staticPath}`));
 
   // Markdown
   const markdownIt = require('markdown-it');
