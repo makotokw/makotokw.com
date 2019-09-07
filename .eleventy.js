@@ -13,7 +13,7 @@ const staticPaths = [
   'favicon.ico',
   'BingSiteAuth.xml',
   'googleca9b70e876030815.html',
-  'downloads/reserverd.txt',
+  'downloads/reserved.txt',
 ];
 
 module.exports = function (eleventyConfig) {
