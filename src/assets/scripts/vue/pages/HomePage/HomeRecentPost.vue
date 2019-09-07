@@ -71,7 +71,7 @@ export default {
      * @returns {string}
      */
     replaceLink(link) {
-      return link.replace(site.blog_url, '/blog/');
+      return link.replace(`${site.url}/blog/`, '/blog/');
     },
   },
 };
