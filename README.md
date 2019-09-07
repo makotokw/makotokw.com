@@ -47,7 +47,7 @@ yarn build
 ## Depends / Tools
 
 * Build tools
-    * [11ty](https://github.com/11ty/eleventy/) v0.8
+    * [11ty](https://github.com/11ty/eleventy/) v0.9
     * [Webpack](https://webpack.js.org/) v4
     * [Babel](https://babeljs.io/) v7
     * [node-sass](https://github.com/sass/node-sass) v4
