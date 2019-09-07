@@ -51,7 +51,7 @@ Select *SyntaxHighlighter* or *SyntaxHighlighter + Convert Line Breaks* as Forma
 
 Write source code as following format:
 
-```
+```text
 [code:language]
 source code
 [/code]

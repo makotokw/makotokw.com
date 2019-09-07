@@ -6,41 +6,41 @@ date: 2009-05-13
 ---
 (last updated) 2009-05-17
 
-I would like to intoduce adding custom theme to widgets I developed.
+I would like to introduce adding custom theme to widgets I developed.
 
 "My Outlook Today" and "My Google Calendar" are calendar widgets. My Outlook Today 1.2 of and My Google Calendar have a function to change appearance. And My Outlook Today 1.2.1 and My Google Calendar 1.0.1 will search custom theme on widget folder when its start up.
 
 ## Custom Theme file structure
 
-```
+```text
 /MyWidgets/MyOutlookToday/theme  (/MyWidgets/MyGoogleCalendar/theme)
    /theme1      -- theme name. displayed on widget preferences.
       /theme.js   -- style settings
       /*.png     -- image files
 ```
 
-MyWidgets folder is at C:\Users\{UserName}\Documents\My Widgets on Windows Vista, C: \Documents and Settings\{UserName}\My Documents\My Widgets  on Windows XP, or ~/Documents/Widgets on MacOSX.
+MyWidgets folder is at ``C:\Users\{UserName}\Documents\My Widgets`` on Windows Vista, ``C: \Documents and Settings\{UserName}\My Documents\My Widgets``  on Windows XP, or ``~/Documents/Widgets`` on MacOSX.
 
 ## theme.js
 
 theme.js is simply json data follow:
 
-```
+```js
 {
-	padding:[0,0,0,0],  // padding for background
-	defaultFont:'Catull', // default font 
-	titleCss:{textAlign:'center'}, // header text style
-	titleColor:['#9EA8AF',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}], // color, shadow settings
-	textColor:['#808080',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	headerColor:['#514A4C',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	remainColor:['#f7d60a',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	emptyItemColor:['#808080',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	completedItemColor:['#DE7008',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	justbeforeItemColor:['#d92d29',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	currentItemColor:['#DADADA',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	footerColor:['#9EA8AF',{color:'#000000',vOffset:0,hOffset:-1,opacity:190}],
-	apptIconColor:['#808080'], // Appointment colorize
-	taskIconColor:['#EFA763','#6767F2','#808080','#EF5656'] // Done,Low,Normal,High for Task
+    padding: [0, 0, 0, 0], // padding for background
+    defaultFont: 'Catull', // default font
+    titleCss: { textAlign: 'center' }, // header text style
+    titleColor: ['#9EA8AF', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }], // color, shadow settings
+    textColor: ['#808080', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    headerColor: ['#514A4C', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    remainColor: ['#f7d60a', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    emptyItemColor: ['#808080', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    completedItemColor: ['#DE7008', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    justbeforeItemColor: ['#d92d29', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    currentItemColor: ['#DADADA', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    footerColor: ['#9EA8AF', { color: '#000000', vOffset: 0, hOffset: -1, opacity: 190 }],
+    apptIconColor: ['#808080'], // Appointment colorize
+    taskIconColor: ['#EFA763', '#6767F2', '#808080', '#EF5656'], // Done,Low,Normal,High for Task
 }
 ```
 
@@ -106,8 +106,6 @@ I tried to create new theme named "wood".
 
 That's all!
 
-<a href="/assets/site/images/2009/wood.zip"><strong>sample theme download</strong></a>
-
-I understand this function is very simple and is not usefule yet. Please let me know you have any problems , questions and ideas. # give me beautiful theme you designed also :)
+I understand this function is very simple and is not useful yet. Please let me know you have any problems , questions and ideas. # give me beautiful theme you designed also :)
 
 

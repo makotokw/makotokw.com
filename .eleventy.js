@@ -1,5 +1,6 @@
 const fs = require('fs');
 const moment = require('moment');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const src = './src/site';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
@@ -16,10 +17,9 @@ const staticPaths = [
 ];
 
 module.exports = function (eleventyConfig) {
-  // copy static
-  staticPaths.forEach((staticPath) => eleventyConfig.addPassthroughCopy(`${src}/${staticPath}`));
+  eleventyConfig.addPlugin(syntaxHighlight);
 
-  // Markdown
+  // https://www.11ty.io/docs/languages/markdown/
   const markdownIt = require('markdown-it');
   // https://github.com/markdown-it/markdown-it#init-with-presets-and-options
   const options = {
@@ -28,6 +28,9 @@ module.exports = function (eleventyConfig) {
     linkify: true,
   };
   eleventyConfig.setLibrary('md', markdownIt(options));
+
+  // copy static
+  staticPaths.forEach((staticPath) => eleventyConfig.addPassthroughCopy(`${src}/${staticPath}`));
 
   eleventyConfig.addLiquidTag('asset_path', function (Liquid) {
     return {

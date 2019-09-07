@@ -41,11 +41,13 @@
     "jquery": "^3.4.1",
     "loglevel": "^1.6.3",
     "moment": "^2.24.0",
+    "prism-themes": "^1.1.0",
     "rss-parser": "^3.7.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@vue/babel-preset-app": "^3.10.0",

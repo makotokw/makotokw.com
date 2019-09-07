@@ -11,7 +11,7 @@ I have updated gitmike redmine theme. It looks like GitHub.
 
 You can install this theme by using Git.
 
-```
+```bash
 cd redmine/public/theme
 git clone git://github.com/makotokw/redmine-theme-gitmike.git gitmike
 ```
