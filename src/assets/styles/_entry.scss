@@ -28,6 +28,10 @@
     line-height: 1.831;
     color: lighten($text-color, 25%);
     @include clearfix;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .entry-meta {
