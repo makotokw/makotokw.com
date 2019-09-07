@@ -9,7 +9,7 @@
   id: wp
   name: WordPress
   category: platform
-  icon_class: fa fa-wordpress
+  icon_class: fab fa-wordpress
 -
   id: mt
   name: Movable Type

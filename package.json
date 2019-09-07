@@ -28,6 +28,7 @@
     "deploy": "node ./build/scripts/deploy.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.10.2",
     "axios": "^0.19.0",
     "axios-jsonp": "^1.0.2",
     "bootstrap-material-design": "^0.5.10",

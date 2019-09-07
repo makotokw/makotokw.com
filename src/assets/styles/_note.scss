@@ -1,7 +1,6 @@
 /* = Note styling
 -------------------------------------------------------------- */
 
-
 @mixin note-block ($color, $bg, $border) {
   display: block;
   margin: 24px 0;
@@ -15,7 +14,6 @@
   }
 
   &:before {
-    @include block-withAwesomeIcon(2em);
     color: $color;
   }
   &:after {
@@ -53,13 +51,13 @@
 .enclosure {
   @extend .note;
   &:before {
-    @extend .fa-file-o:before;
+    @extend .fa-file:before;
   }
 }
 .enclosure-evernote {
   @extend .enclosure;
   &:before {
-    @extend .fa-file-o:before;
+    @extend .fa-file:before;
   }
 }
 .enclosure-qiita {
@@ -72,6 +70,7 @@
   @include note-block(#333, #f3f3f3, #f3f3f3);
   @extend .enclosure;
   &:before {
+    @include block-before-withAwesomeBrandIcon(2em);
     @extend .fa-github-alt:before;
   }
 }

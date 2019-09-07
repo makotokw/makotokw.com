@@ -56,4 +56,4 @@ yarn build
     * [Vue.js](https://vuejs.org/) v2
     * [Twitter Bootstrap](https://getbootstrap.com/) v3
         * [Material Design for Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/) v0.5
-    * [Font Awesome](https://fontawesome.com/) v4
+    * [Font Awesome](https://fontawesome.com/) v5 (I'm Kickstarter Backer)
