@@ -1,23 +1,23 @@
 <head>
-    <meta charset="utf-8">
-    <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
-    <meta name="author" content="{{ site.author.screen_name }}">
-    {% capture description %}{% if description %}{{ description }}{% else %}{{ content }}{% endif %}{% endcapture %}
-    <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
-    {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="{{ site.url }}{{ page.url | remove:'index.html' | strip_slash }}">
-    {% if is_top %}
-    {% if lang == 'ja' %}
-    <link rel="alternate" hreflang="en" href="{{ site.url }}/"/>
-    {% else %}
-    <link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/"/>
-    {% endif %}
-    {% endif %}
-    <link rel="alternate" href="{{ site.subscribe_url }}" title="{{site.title}}" type="application/atom+xml">
-    {% include link_icon.html %}
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{% asset_path app.css %}">
+  <meta charset="utf-8">
+  <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
+  <meta name="author" content="{{ site.author.screen_name }}">
+  {% capture description %}{% if description %}{{ description }}{% else %}{{ content }}{% endif %}{% endcapture %}
+  <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | remove:'index.html' | strip_slash }}">
+  {% if is_top %}
+  {% if lang == 'ja' %}
+  <link rel="alternate" hreflang="en" href="{{ site.url }}/"/>
+  {% else %}
+  <link rel="alternate" hreflang="ja" href="{{ site.url }}/ja/"/>
+  {% endif %}
+  {% endif %}
+  <link rel="alternate" href="{{ site.subscribe_url }}" title="{{site.title}}" type="application/atom+xml">
+  {% include link_icon.html %}
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{% asset_path app.css %}">
   <script src="{% asset_path vendor.js %}"></script>
-    {% include google_analytics.html %}
+  {% include google_analytics.html %}
 </head>

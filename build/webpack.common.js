@@ -27,17 +27,14 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        use: ['vue-loader'],
       },
       {
         test: require.resolve('jquery'),
-        use: [{
-          loader: 'expose-loader',
-          options: 'jQuery',
-        }, {
-          loader: 'expose-loader',
-          options: '$',
-        }],
+        use: [
+          { loader: 'expose-loader', options: 'jQuery' },
+          { loader: 'expose-loader', options: '$' },
+        ],
       },
       {
         test: /\.js$/,
@@ -89,14 +86,7 @@ module.exports = {
       // https://github.com/okonet/yaml-loader
       {
         test: /\.ya?ml$/,
-        use: [
-          {
-            loader: 'json-loader',
-          },
-          {
-            loader: 'yaml-loader',
-          },
-        ],
+        use: ['json-loader', 'yaml-loader'],
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,

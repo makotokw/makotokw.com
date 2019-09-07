@@ -47,13 +47,13 @@ yarn build
 ## Depends / Tools
 
 * Build tools
-    * [11ty](https://github.com/11ty/eleventy/)
-    * [Webpack](https://webpack.js.org/)
-    * [Babel](https://babeljs.io/)
-    * [node-sass](https://github.com/sass/node-sass)
+    * [11ty](https://github.com/11ty/eleventy/) v0.8
+    * [Webpack](https://webpack.js.org/) v4
+    * [Babel](https://babeljs.io/) v7
+    * [node-sass](https://github.com/sass/node-sass) v4
 * Frontend Framework
-    * [jQuery](https://jquery.com/) v1.x
-    * [Vue.js](https://vuejs.org/) v2.x
-    * [Twitter Bootstrap](https://getbootstrap.com/) v3.x
-    * [Material Design for Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/) v3.x
-    * [Font Awesome](https://fontawesome.com/) v4.x
+    * [jQuery](https://jquery.com/) v3
+    * [Vue.js](https://vuejs.org/) v2
+    * [Twitter Bootstrap](https://getbootstrap.com/) v3
+        * [Material Design for Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/) v0.5
+    * [Font Awesome](https://fontawesome.com/) v4
