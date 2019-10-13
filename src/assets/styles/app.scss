@@ -7,6 +7,7 @@
 @import "~@fortawesome/fontawesome-pro/scss/solid";
 @import "~@fortawesome/fontawesome-pro/scss/brands";
 @import "~@fortawesome/fontawesome-pro/scss/regular";
+@import '~prism-themes/themes/prism-ghcolors';
 @import "functions";
 @import "global";
 @import "navbar";
@@ -17,4 +18,3 @@
 @import "entry";
 @import "archives";
 @import "top";
-//@import "pygments";

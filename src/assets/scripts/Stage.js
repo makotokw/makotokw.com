@@ -3,7 +3,6 @@ import 'bootstrap-material-design';
 import 'github-repo-widget.js';
 import Headroom from 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
-import 'prism-themes/themes/prism-ghcolors.css';
 import Vue from 'vue';
 import Logger from '@/lib/Logger';
 import VueApp from '@/vue/App';
@@ -106,7 +105,6 @@ class Stage {
   }
 
   initTopPage() {
-    // console.log($('body').getClass());
     this.vue = new Vue({
       el: '#app',
       render: (createElement) => createElement(VueApp, {
