@@ -24,6 +24,8 @@ glob(`${process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH}/assets/app-*.js`, function (er,
 const rsync = new Rsync()
   .shell('ssh')
   .flags('av')
+  // for cert-bot (Let's Encrypt)
+  .exclude(['.well-know'])
   .delete()
   .source(process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH)
   .destination(`${process.env.MAKOTOKWCOM_DEPLOY_DEST_HOST}:${process.env.MAKOTOKWCOM_DEPLOY_DEST_PATH}`);
