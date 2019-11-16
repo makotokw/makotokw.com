@@ -50,9 +50,6 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: [
           {
-            loader: 'vue-style-loader',
-          },
-          {
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: process.env.NODE_ENV === 'development',
@@ -62,12 +59,12 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              importLoaders: 1,
             },
           },
           {
             loader: 'postcss-loader',
             options: {
+              sourceMap: true,
               config: {
                 path: 'build/postcss.config.js',
               },
@@ -76,6 +73,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
+              sourceMap: true,
               includePaths: [
                 path.resolve(__dirname, '../node_modules/bootstrap-sass/assets/stylesheets'),
               ],
