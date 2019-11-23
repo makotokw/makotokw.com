@@ -1,27 +1,36 @@
 $mainNavBarHeight: 65px;
+$mainNavLogoSize: 48px;
 
 .mainNavBar {
   min-height: $mainNavBarHeight;
   line-height: $mainNavBarHeight;
-  background: rgba($main-navbar-bg, 0.5);
 
+  // reset bootstrap navbar
+  &.navbar {
+    margin: 0;
+    padding: 0 10px;
+    background: rgba($main-navbar-bg, 0.5);
+  }
   a, button {
     outline: none;
   }
 
+  // layout brand
   .navbar-brand {
-    margin-top: -2px;
+    margin: -4px 0 0 0;
+    padding: 0;
+    min-height: $mainNavBarHeight;
   }
 
   .navbar-brand {
     text-decoration: none;
     .logo-image,
     .logo-suffixText {
-      width: 3em;
-      height: 3em;
+      width: $mainNavLogoSize;
+      height: $mainNavLogoSize;
+      line-height: $mainNavLogoSize;
       border-radius: 1.5em;
       display: inline-block;
-      line-height: 3;
       vertical-align: middle;
       box-sizing: border-box;
     }
@@ -29,6 +38,7 @@ $mainNavBarHeight: 65px;
     .logo-suffixText {
       background: $main-navbar-logo-bg;
       color: white;
+      font-size: 16px;
       font-weight: bold;
       margin-left: -0.75em;
       padding: 0 1.25em 0 0.75em;
@@ -79,6 +89,19 @@ $mainNavBarHeight: 65px;
         color: $main-navbar-color;
         &:hover {
           color: $main-navbar-hover-color;
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    &.show, &.collapsing {
+      .navbar-nav {
+        padding: .5em;
+        background: rgba($main-navbar-bg, 0.8);
+        .nav-link {
+          min-height: $mainNavBarHeight * 0.6;
+          line-height: $mainNavBarHeight * 0.6;
         }
       }
     }
