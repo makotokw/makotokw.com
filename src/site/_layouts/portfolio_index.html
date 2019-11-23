@@ -32,7 +32,7 @@ cls: site-archives-portfolio
           {% endif %}
           <article class="entry entry-post {{entry_class}}">
             {% for c in p.categories %}
-            <span class="label label-portfolio label-portfolio-{{ c }}">{{ c | portfolio_tag_name }}</span>
+            <span class="badge badge-portfolio badge-portfolio-{{ c }}">{{ c | portfolio_tag_name }}</span>
             {% endfor %}
             <h1 class="entry-title">
               {% if p.url %}
@@ -42,7 +42,7 @@ cls: site-archives-portfolio
               {% endif %}
             </h1>
             {% if p.source_url %}
-            <span class="label label-portfolio label-portfolio-source">
+            <span class="badge badge-portfolio badge-portfolio-source">
               <a href="{{ p.source_url }}" title="Source Code"><i class="fab fa-github"></i></a>
             </span>
             {% endif %}

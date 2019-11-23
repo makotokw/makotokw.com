@@ -14,12 +14,12 @@ $page-home-width: 1170px;
   }
 }
 %entry-title {
-  font-size: $font-size-h4;
+  font-size: $font-size-large;
   display: inline;
   font-weight: normal;
 }
-%entry-dateLabel {
-  @extend .label;
+%entry-dateBadge {
+  @extend .badge;
   border-radius: 0;
   font-size: $font-size-small;
   display: inline;
@@ -99,7 +99,7 @@ $page-home-width: 1170px;
 
   .archiveButton {
     @extend %topSection-ghostButton;
-    @extend .pull-right;
+    @extend .float-right;
   }
 
   .entry {
@@ -112,7 +112,7 @@ $page-home-width: 1170px;
         @extend %entry-title;
       }
       .entry-date {
-        @extend %entry-dateLabel;
+        @extend %entry-dateBadge;
       }
     }
     .entry-summary {
