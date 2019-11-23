@@ -1,5 +1,4 @@
-import 'bootstrap-sass';
-import 'bootstrap-material-design';
+import 'bootstrap';
 import 'github-repo-widget.js';
 import Headroom from 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
@@ -22,7 +21,6 @@ class Stage {
     this.redirectPageByContentNegotiation();
     this.initHeadroom();
     this.initAddThis();
-    this.initBootstrap();
     if (this.isTopPage) {
       this.initTopPage();
     }
@@ -91,12 +89,7 @@ class Stage {
     addthisConfig.data_track_addressbar = false;
     window.addthis_config = addthisConfig;
   }
-
-  initBootstrap() {
-    // bootstrap-material-design
-    $.material.init();
-  }
-
+  
   /**
    * @returns {boolean}
    */

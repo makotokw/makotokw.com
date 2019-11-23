@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -121,6 +122,9 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new webpack.ProvidePlugin({
+      Popper: ['popper.js', 'default'],
+    }),
     new CopyPlugin([
       {
         from: 'src/assets/images/*.png',
