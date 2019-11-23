@@ -26,7 +26,7 @@
   .entry-content,
   .entry-summary {
     line-height: 1.831;
-    color: lighten($text-color, 25%);
+    color: lighten($body-color, 25%);
     @include clearfix;
 
     img {

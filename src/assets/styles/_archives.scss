@@ -1,15 +1,15 @@
 .archives {
 
   .archives-title {
-    font-family: $pageTitle-font;
-    font-weight: $pageTitle-fontWeight;
+    font-family: $font-family-page-title;
+    font-weight: $font-weight-page-title;
   }
 
   .year {
     color: $blue-dark;
     margin-top: 0;
-    font-weight: normal;
-    font-family: 'NovecentowideBookBold';
+    font-family: $font-family-page-title;
+    font-weight: $font-weight-page-title;
   }
 
   .entry {

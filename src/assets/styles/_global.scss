@@ -14,15 +14,19 @@
   font-style: normal;
 }
 
+html {
+  font-size: $root-font-size;
+}
+
 .year, .month, .day,
 .published {
-  font-family: $font-family-sans-serif-alt;
+  font-family: $font-family-date;
   text-transform: uppercase;
   color: $gray-light;
 }
 
 .block-content {
-  @include block($border-radius-base);
+  @include block($border-radius);
   color: $white;
   a {
     color: $white;

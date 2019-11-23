@@ -1,12 +1,9 @@
 $mainNavBarHeight: 65px;
-$mainNavBarBackgroundColor: $white;
-$mainNavLinkColor: $mainNav-color;
-$mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
 
 .mainNavBar {
   min-height: $mainNavBarHeight;
   line-height: $mainNavBarHeight;
-  background: rgba($mainNavBarBackgroundColor, 0.5);
+  background: rgba($main-navbar-bg, 0.5);
 
   a, button {
     outline: none;
@@ -30,7 +27,7 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
     }
 
     .logo-suffixText {
-      background: $logo-backgroundColor;
+      background: $main-navbar-logo-bg;
       color: white;
       font-weight: bold;
       margin-left: -0.75em;
@@ -69,7 +66,7 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
   // reset bootstrap navbar-nav
   .navbar-nav {
     .nav-item {
-      font-size: $font-size-small;
+      font-size: $font-size-sm;
       margin-top: 0;
       margin-bottom: 0;
       .nav-link {
@@ -79,9 +76,9 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
         text-transform: uppercase;
         min-height: $mainNavBarHeight;
         line-height: $mainNavBarHeight;
-        color: $mainNavLinkColor;
+        color: $main-navbar-color;
         &:hover {
-          color: $mainNavLinkOverColor;
+          color: $main-navbar-hover-color;
         }
       }
     }
@@ -116,12 +113,12 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
 }
 .headroom--not-top {
   &.mainNavBar {
-    background: $mainNavBarBackgroundColor;
+    background: $main-navbar-bg;
   }
 }
 .headroom--top {
   &.mainNavBar {
     border-bottom: none;
-    background: rgba($mainNavBarBackgroundColor, 0.5);
+    background: rgba($main-navbar-bg, 0.5);
   }
 }

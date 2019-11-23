@@ -17,15 +17,15 @@
       text-align: center;
 
       h1 {
-        font-family: $pageTitle-font;
-        font-weight: $pageTitle-fontWeight;
+        font-family: $font-family-page-title;
+        font-weight: $font-weight-page-title;
         margin: 90px auto 0;
         font-size: 46px;
         word-wrap: break-word;
         color: $white;
 
         .site-single & {
-          font-family: $default-font;
+          font-family: $font-family-sans-serif;
           font-weight: 400;
         }
       }

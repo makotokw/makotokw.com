@@ -35,7 +35,7 @@ pre {
   white-space: pre-wrap;
   border: $baseBorderWidth solid $tableBorder;
   background-color: $white;
-  @include border-radius($border-radius-base);
+  @include border-radius($border-radius);
 
   // Make prettyprint styles more spaced out for readability
   &.prettyprint {

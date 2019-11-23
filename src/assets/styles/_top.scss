@@ -8,20 +8,20 @@ $page-home-height: 450px;
 $page-home-width: 1170px;
 
 %entry-link {
-  color: $text-color;
+  color: $body-color;
   &:hover {
     color: $link-hover-color;
   }
 }
 %entry-title {
-  font-size: $font-size-large;
+  font-size: $font-size-lg;
   display: inline;
   font-weight: normal;
 }
 %entry-dateBadge {
   @extend .badge;
   border-radius: 0;
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
   display: inline;
   margin-right: .5em;
   padding: 3px 6px;
@@ -30,7 +30,7 @@ $page-home-width: 1170px;
   background-color: $blue;
 }
 %entry-summary {
-  font-size: $font-size-small;
+  font-size: $font-size-sm;
   color: $gray-dark;
   padding: 6px 0;
 }
