@@ -32,13 +32,6 @@ $main-navbar-logo-bg: #3E5771;
 // Scaffolding for bootstrap
 // ------------------------------
 
-//** Deprecated
-$screen-xs:                  480px !default;
-$screen-xs-min:              $screen-xs !default;
-$screen-sm:                  768px !default;
-$screen-sm-min:              $screen-sm !default;
-$screen-xs-max:              ($screen-sm-min - 1) !default;
-
 $body-bg: $white;
 $body-color: $gray-darker;
 

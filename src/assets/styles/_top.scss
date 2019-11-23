@@ -194,12 +194,9 @@ $page-home-width: 1170px;
 // ======================================
 
 @include desktopScreen() {
-  .topSection-last {
-    min-height: $screen-sm-min + 50px;
-  }
 }
 
-@include unlessDesktopScreen() {
+@include mobileScreen() {
   .topSection {
     padding: 30px 20px 30px 20px;
   }
