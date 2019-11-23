@@ -7,31 +7,28 @@
 {% assign home_url = "/" %}
 {% endif %}
 {% endif %}
-<nav id="mainNavBar" class="mainNavBar">
-  <div class="navbar" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <div class="navBarItems">
-          <div class="navItem navItem-home">
-            <a href="{{ home_url }}">
-              <img class="logo-image" src="{% asset_path images/logo-200.png %}" alt="{{ site.author.screen_name }}" />
-              <div class="logo-suffixText"><span class="logo-suffixText-first">AKOTO_</span><span class="logo-suffixText-last">KW</span></div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <ul class="nav navbar-nav navbar-content navBarItems">
-        {% if lang == 'ja' %}
-        <li class="navItem navItem-portfolio"><a href="/ja/portfolio"><i class="fa fa-briefcase"></i> Software</a></li>
-        <li class="navItem navItem-gitHub"><a href="{{ site.github_url }}"><i class="fab fa-github"></i> Code</a></li>
-        <li class="navItem navItem-blog"><a href="{{ site.blog_ja_url }}"><i class="fab fa-wordpress-simple"></i> Blog</a></li>
-        <li class="navItem navItem-qiita"><a href="{{ site.qiita_url }}"><i class="fas fa-search"></i> Qiita</a></li>
-        {% else %}
-        <li class="navItem navItem-portfolio"><a href="/portfolio"><i class="fa fa-briefcase"></i> Software</a></li>
-        <li class="navItem navItem-gitHub"><a href="{{ site.github_url }}"><i class="fab fa-github"></i> Code</a></li>
-        <li class="navItem navItem-blog"><a href="/blog"><i class="fa fa-book"></i> Blog</a></li>
-        {% endif %}
-      </ul>
-    </div><!-- /.container -->
-  </div><!-- /.navbar -->
+<nav id="mainNavBar" class="mainNavBar navbar navbar-expand-sm navbar-light" role="navigation">
+  <a class="navbar-brand" href="{{ home_url }}">
+    <img class="logo-image" src="{% asset_path images/logo-200.png %}" alt="{{ site.author.screen_name }}" />
+    <div class="logo-suffixText"><span class="logo-suffixText-first">AKOTO_</span><span class="logo-suffixText-last">KW</span></div>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      {% if lang == 'ja' %}
+      <li class="nav-item nav-item-portfolio"><a class="nav-link" href="/ja/portfolio"><i class="fa fa-briefcase"></i> Software</a></li>
+      <li class="nav-item nav-item-gitHub"><a class="nav-link" href="{{ site.github_url }}"><i class="fab fa-github"></i> Code</a></li>
+      <li class="nav-item nav-item-blog"><a class="nav-link" href="{{ site.blog_ja_url }}"><i class="fab fa-wordpress-simple"></i> Blog</a></li>
+      <li class="nav-item nav-item-qiita"><a class="nav-link" href="{{ site.qiita_url }}"><i class="fas fa-search"></i> Qiita</a></li>
+      {% else %}
+      <li class="nav-item nav-item-portfolio"><a class="nav-link" href="/portfolio"><i class="fa fa-briefcase"></i> Software</a></li>
+      <li class="nav-item nav-item-gitHub"><a class="nav-link" href="{{ site.github_url }}"><i class="fab fa-github"></i> Code</a></li>
+      <li class="nav-item nav-item-blog"><a class="nav-link" href="/blog"><i class="fa fa-book"></i> Blog</a></li>
+      {% endif %}
+    </ul>
+  </div>
 </nav>
+

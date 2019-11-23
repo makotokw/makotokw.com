@@ -89,7 +89,7 @@ class Stage {
     addthisConfig.data_track_addressbar = false;
     window.addthis_config = addthisConfig;
   }
-  
+
   /**
    * @returns {boolean}
    */

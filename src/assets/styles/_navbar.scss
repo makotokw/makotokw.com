@@ -6,76 +6,18 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
 .mainNavBar {
   min-height: $mainNavBarHeight;
   line-height: $mainNavBarHeight;
+  background: rgba($mainNavBarBackgroundColor, 0.5);
 
-  // reset bootstrap nav-nav
-  .navbar {
-    background: none;
-    .navbar-content {
-      > li > a {
-        padding-top: 0;
-        padding-bottom: 0;
-        color: $mainNavLinkColor;
-        &:hover {
-          color: $mainNavLinkOverColor;
-        }
-      }
-    }
-  }
-  
-  .navbar-header {
-    maring: 0;
-    .navBarItems {
-      float: left;
-    }
+  a, button {
+    outline: none;
   }
 
-  .navItem {
-    font-size: $font-size-small;
-    margin-top: 0;
-    margin-bottom: 0;
-
-    > a {
-      font-weight: 400;
-      text-transform: uppercase;
-      min-height: $mainNavBarHeight;
-      line-height: $mainNavBarHeight;
-    }
-  }
-
-  .navItem-home {
+  .navbar-brand {
     margin-top: -2px;
   }
 
-  @include unlessMobileScreen() {
-    .navbar-header {
-      float: left;
-      margin: 0 0 0 0;
-    }
-    .navbar-content {
-      float: right;
-      margin: 0 -5px 0 0;
-    }
-    .navItem {
-      float: left;
-    }
-  }
-
-  @include mobileScreen() {
-    .navbar-content {
-      line-height: normal;
-      margin: 0 0 5px 5px;
-    }
-    .navItem {
-      display: inline-block;
-      > a {
-        min-height: unset;
-        line-height: normal;
-        padding: 5px 5px;
-      }
-    }
-  }
-
-  .navItem-home {
+  .navbar-brand {
+    text-decoration: none;
     .logo-image,
     .logo-suffixText {
       width: 3em;
@@ -102,23 +44,44 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
       .logo-suffixText-first {
         display: none;
       }
+
       .logo-suffixText-last {
         display: inline;
       }
     }
+  }
 
-    a {
-      text-decoration: none;
-      &:hover,
-      &:active,
-      &:focus {
-        .logo-suffixText {
-          width: 7.25em;
-        }
-        .logo-suffixText-first {
-          display: inline;
-        }
-        .logo-suffixText-last {
+  .navbar-brand {
+    &:hover,
+    &:active,
+    &:focus {
+      .logo-suffixText {
+        width: 7.25em;
+      }
+      .logo-suffixText-first {
+        display: inline;
+      }
+      .logo-suffixText-last {
+      }
+    }
+  }
+
+  // reset bootstrap navbar-nav
+  .navbar-nav {
+    .nav-item {
+      font-size: $font-size-small;
+      margin-top: 0;
+      margin-bottom: 0;
+      .nav-link {
+        padding-top: 0;
+        padding-bottom: 0;
+        font-weight: 400;
+        text-transform: uppercase;
+        min-height: $mainNavBarHeight;
+        line-height: $mainNavBarHeight;
+        color: $mainNavLinkColor;
+        &:hover {
+          color: $mainNavLinkOverColor;
         }
       }
     }
@@ -144,7 +107,7 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
 }
 .headroom--pinned {
   transform: translateY(0%);
-  .navbar {
+  &.mainNavBar {
     border-bottom: 1px solid rgba($grey-300, 0.3);
   }
 }
@@ -152,12 +115,12 @@ $mainNavLinkOverColor: lighten($mainNavLinkColor, 10%);
   transform: translateY(-100%);
 }
 .headroom--not-top {
-  .navbar {
+  &.mainNavBar {
     background: $mainNavBarBackgroundColor;
   }
 }
 .headroom--top {
-  .navbar {
+  &.mainNavBar {
     border-bottom: none;
     background: rgba($mainNavBarBackgroundColor, 0.5);
   }
