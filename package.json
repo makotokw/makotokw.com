@@ -18,7 +18,7 @@
     "dev:eleventy": "cross-env NODE_ENV=development npx eleventy --watch",
     "build": "npm-run-all clean:project build:all",
     "build:all": "npm-run-all build:data build:webpack build:eleventy",
-    "build:data": "node ./build/scripts/fixtures-to-json.js && node ./build/scripts/feeds-to-json.js",
+    "build:data": "node ./build/scripts/fixtures-to-json.js && node ./build/scripts/feeds-to-json.js && node ./build/scripts/fixture-portfolio-to-template-data.js",
     "build:webpack": "cross-env NODE_ENV=production npx webpack --env=prod --progress --profile --colors",
     "build:eleventy": "cross-env NODE_ENV=production npx eleventy",
     "prod:server": "npm-run-all build prod:eleventy-server",
