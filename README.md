@@ -54,6 +54,5 @@ yarn build
 * Frontend Framework
     * [jQuery](https://jquery.com/) v3
     * [Vue.js](https://vuejs.org/) v2
-    * [Twitter Bootstrap](https://getbootstrap.com/) v3
-        * [Material Design for Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/) v0.5
+    * [Twitter Bootstrap](https://getbootstrap.com/) v4
     * [Font Awesome](https://fontawesome.com/) v5 (I'm Kickstarter Backer)
