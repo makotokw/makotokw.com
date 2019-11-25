@@ -17,7 +17,7 @@
   url: https://github.com/makotokw/redmine-theme-gitmike
   source_url: https://github.com/makotokw/redmine-theme-gitmike
   copyright_year: 2012
-  last_updated_year: 2017
+  last_updated_year: 2019
   status: active
 -
   name: Redmine Render Markdown in Repository
@@ -91,7 +91,7 @@
   source_url: https://github.com/makotokw/wp-amazonjs
   tags: [php, js]
   copyright_year: 2011
-  last_updated_year: 2018
+  last_updated_year: 2019
   status: active
 -
   name: GitHub Flavored Markdown for WordPress
