@@ -14,6 +14,11 @@
 {% if is_top == true %}
 <div id="app" role="main"></div>
 {% else %}
+{% if portfolio and portfolio.deprecated %}
+<div class="alert alert-warning text-center" role="alert">
+  This software is no longer in maintenance.
+</div>
+{% endif %}
 <div class="mainContent" role="main">
   <div id="content" class="container">
     {{ content }}
