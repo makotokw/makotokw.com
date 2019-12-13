@@ -1,8 +1,6 @@
 {
-  "env": {
-    "node": true,
-    "es6": true
-  },
+  "root": true,
+  "plugins": [],
   "extends": [
     "eslint:recommended",
     "airbnb-base"
@@ -11,6 +9,11 @@
     "sourceType": "module",
     "ecmaVersion": 2017
   },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "globals": {},
   "rules": {
     "func-names": ["error", "never"],
     "global-require": "off",

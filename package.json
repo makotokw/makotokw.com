@@ -24,7 +24,7 @@
     "prod:server": "npm-run-all build prod:eleventy-server",
     "prod:eleventy-server": "cross-env NODE_ENV=production npx eleventy --serve",
     "clean:project": "node ./build/scripts/clean.js",
-    "lint": "eslint --ext .js,.vue .",
+    "lint": "eslint --ext .js,.vue src *.js",
     "deploy": "node ./build/scripts/deploy.js"
   },
   "dependencies": {
