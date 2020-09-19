@@ -30,40 +30,40 @@
 .note-link {
   @extend .note;
   &:before {
-    @extend .fa-bookmark:before;
+    @extend .fa-bookmark, :before;
   }
 }
 
 .note-comment {
   @extend .note;
   &:before {
-    @extend .fa-comment:before;
+    @extend .fa-comment, :before;
   }
 }
 
 .note-ins {
   @extend .note;
   &:before {
-    @extend .fa-comment:before;
+    @extend .fa-comment, :before;
   }
 }
 
 .enclosure {
   @extend .note;
   &:before {
-    @extend .fa-file:before;
+    @extend .fa-file, :before;
   }
 }
 .enclosure-evernote {
   @extend .enclosure;
   &:before {
-    @extend .fa-file:before;
+    @extend .fa-file, :before;
   }
 }
 .enclosure-qiita {
   @extend .enclosure;
   &:before {
-    @extend .fa-search:before;
+    @extend .fa-search, :before;
   }
 }
 .enclosure-github {
@@ -71,6 +71,6 @@
   @extend .enclosure;
   &:before {
     @include block-before-withAwesomeBrandIcon(2em);
-    @extend .fa-github-alt:before;
+    @extend .fa-github-alt, :before;
   }
 }

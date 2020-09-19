@@ -8,7 +8,7 @@ const WebpackAssetsManifest = require('webpack-assets-manifest');
 module.exports = {
   entry: {
     vendor: [
-      'jquery',
+      'expose-loader?exposes[]=$&exposes[]=jQuery!jquery',
     ],
     app: [
       './src/assets/scripts/main.js',
@@ -31,13 +31,6 @@ module.exports = {
         use: ['vue-loader'],
       },
       {
-        test: require.resolve('jquery'),
-        use: [
-          { loader: 'expose-loader', options: 'jQuery' },
-          { loader: 'expose-loader', options: '$' },
-        ],
-      },
-      {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
@@ -58,23 +51,18 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
-              config: {
-                path: 'build/postcss.config.js',
+              postcssOptions: {
+                config: 'build/postcss.config.js',
               },
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
               sassOptions: {
                 includePaths: [
                   path.resolve(__dirname, '../node_modules/bootstrap-sass/assets/stylesheets'),
@@ -125,13 +113,15 @@ module.exports = {
     new webpack.ProvidePlugin({
       Popper: ['popper.js', 'default'],
     }),
-    new CopyPlugin([
-      {
-        from: 'src/assets/images/*.png',
-        to: 'images',
-        flatten: true,
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'src/assets/images/*.png',
+          to: 'images',
+          flatten: true,
+        },
+      ],
+    }),
     // https://github.com/webdeveric/webpack-assets-manifest
     new WebpackAssetsManifest({
       output: path.resolve('src/site/_data/manifest.json'),

@@ -1,4 +1,4 @@
-const yaml = require('js-yaml');
+const YAML = require('yaml');
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
@@ -17,7 +17,7 @@ try {
     files.forEach((srcFile) => {
       const srcFileInfo = path.parse(srcFile);
       const jsonFileName = srcFileInfo.base.replace(/\.ya?ml$/, '.json');
-      const doc = yaml.safeLoad(fs.readFileSync(srcFile, 'utf8'));
+      const doc = YAML.parse(fs.readFileSync(srcFile, 'utf8'));
       fs.writeFileSync(`${siteDataDir}/${jsonFileName}`, JSON.stringify(doc, null, null));
     });
   });

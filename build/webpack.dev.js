@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const Merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CommonConfig = require('./webpack.common.js');
@@ -8,7 +8,7 @@ const CommonConfig = require('./webpack.common.js');
 const port = 3000;
 const webpackDevServerPort = 9000;
 
-module.exports = Merge(CommonConfig, {
+module.exports = merge(CommonConfig, {
   mode: 'development',
   output: {
     filename: '[name].js',
