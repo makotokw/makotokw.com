@@ -18,7 +18,6 @@
  * @property {string} category
  */
 
-
 /**
  * @typedef {Object} GoogleAnalytics
  * @property {string} account

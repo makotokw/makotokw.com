@@ -24,7 +24,7 @@
     "prod:server": "npm-run-all build prod:eleventy-server",
     "prod:eleventy-server": "cross-env NODE_ENV=production npx eleventy --serve",
     "clean:project": "node ./build/scripts/clean.js",
-    "lint": "eslint --ext .js,.vue src *.js",
+    "lint": "eslint -f unix --ext .js,.vue src *.js",
     "deploy": "node ./build/scripts/deploy.js"
   },
   "dependencies": {
@@ -61,10 +61,10 @@
     "css-loader": "^4.3.0",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-import-resolver-webpack": "^0.12.2",
-    "eslint-loader": "^3.0.3",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-vue": "^6.2.2",
     "expose-loader": "^1.0.0",

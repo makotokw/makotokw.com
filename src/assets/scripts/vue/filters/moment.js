@@ -5,6 +5,6 @@ import moment from 'moment';
  * @param {string} format
  * @returns {string}
  */
-export default function (value, format) {
+export default function toDateFormat(value, format) {
   return moment(value).format(format);
 }
