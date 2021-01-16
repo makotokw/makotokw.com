@@ -1,18 +1,20 @@
 <template>
   <div>
-    <div class="entry" :key="p.name" v-for="p in portfolios">
+    <div v-for="p in portfolios" :key="p.name" class="entry">
       <div class="entry-header">
         <span class="entry-date">{{ p.last_updated_year }}</span>
         <span class="entry-title">
-          <a :href="p.url">{{  p.name }}</a>
+          <a :href="p.url">{{ p.name }}</a>
         </span>
         <span class="entry-categories">
-          <span :key="slug" class="label label-portfolio" :class="`label-portfolio-${slug}`" v-for="slug in p.categories">
-            {{ slug | tag_name }}
+          <span v-for="slug in p.categories" :key="slug" class="label label-portfolio" :class="`label-portfolio-${slug}`">
+            {{ $filters.tag_name(slug) }}
           </span>
         </span>
       </div>
-      <p class="entry-summary">{{ p.description }}</p>
+      <p class="entry-summary">
+        {{ p.description }}
+      </p>
     </div>
   </div>
 </template>

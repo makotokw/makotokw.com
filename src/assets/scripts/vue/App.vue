@@ -1,5 +1,5 @@
 <template>
-  <home-page :lang="lang"></home-page>
+  <home-page :lang="lang" />
 </template>
 
 <script>

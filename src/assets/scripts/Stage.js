@@ -2,19 +2,13 @@ import 'bootstrap';
 import 'github-repo-widget.js';
 import Headroom from 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
-import Vue from 'vue';
+import { createApp } from 'vue';
 import Logger from '@/lib/Logger';
 import VueApp from '@/vue/App';
 import VueFilters from '@/vue/filters';
 
 const $ = window.jQuery;
 const StickyHeaderTop = 100;
-
-// eslint-disable-next-line guard-for-in,no-unused-vars,no-restricted-syntax
-for (const name in VueFilters) {
-  Vue.filter(name, VueFilters[name]);
-}
-Vue.config.productionTip = false;
 
 class Stage {
   init() {
@@ -98,14 +92,12 @@ class Stage {
   }
 
   initTopPage() {
-    this.vue = new Vue({
-      el: '#app',
-      render: (createElement) => createElement(VueApp, {
-        props: {
-          lang: this.lang,
-        },
-      }),
+    const app = createApp(VueApp, {
+      lang: this.lang,
     });
+    app.config.globalProperties.$filters = VueFilters;
+    app.mount('#app');
+    this.vueApp = app;
   }
 }
 

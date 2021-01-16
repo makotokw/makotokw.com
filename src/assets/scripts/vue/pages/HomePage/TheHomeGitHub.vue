@@ -1,21 +1,23 @@
 <template>
   <div>
     <template v-if="repos.length === 0">
-      <i class="fa fa-spinner fa-spin"></i>
+      <i class="fa fa-spinner fa-spin" />
       Loading...
     </template>
     <template v-else>
-      <div class="entry" :key="repo.id" v-for="repo in repos">
+      <div v-for="repo in repos" :key="repo.id" class="entry">
         <div class="entry-header">
           <span class="entry-date">
-            {{ repo.pushed_at | moment('YYYY/MM/DD') }}
+            {{ $filters.moment(repo.pushed_at, 'YYYY/MM/DD') }}
           </span>
           <span class="entry-title">
             <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
-            <span><i class="fa fa-star" aria-hidden="true"></i>{{ repo.stargazers_count }}</span>
+            <span><i class="fa fa-star" aria-hidden="true" />{{ repo.stargazers_count }}</span>
           </span>
         </div>
-        <p class="entry-summary">{{ repo.description }}</p>
+        <p class="entry-summary">
+          {{ repo.description }}
+        </p>
       </div>
     </template>
   </div>

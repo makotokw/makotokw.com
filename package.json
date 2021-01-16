@@ -43,7 +43,7 @@
     "prism-themes": "^1.5.0",
     "rss-parser": "^3.10.0",
     "stream-browserify": "^3.0.0",
-    "vue": "^2.6.12"
+    "vue": "3.0.5"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -51,6 +51,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@vue/babel-preset-app": "^4.5.10",
+    "@vue/compiler-sfc": "3.0.5",
     "autoprefixer": "^10.2.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
@@ -82,8 +83,7 @@
     "rsync": "^0.6.1",
     "sass": "^1.32.4",
     "sass-loader": "^10.1.1",
-    "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12",
+    "vue-loader": "^16.1.2",
     "webpack": "^5.15.0",
     "webpack-assets-manifest": "^5.0.1",
     "webpack-cli": "^4.3.1",

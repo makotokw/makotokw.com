@@ -1,16 +1,18 @@
 <template>
   <div>
     <template v-if="entries.length === 0">
-      <i class="fa fa-spinner fa-spin"></i>
+      <i class="fa fa-spinner fa-spin" />
       Loading...
     </template>
     <template v-else>
-      <div class="entry" :key="entry.name" v-for="entry in entries">
+      <div v-for="entry in entries" :key="entry.name" class="entry">
         <div class="entry-header">
-          <span class="entry-date">{{ entry.date | moment('YYYY/MM/DD') }}</span>
+          <span class="entry-date">{{ $filters.moment(entry.date, 'YYYY/MM/DD') }}</span>
           <span class="entry-title"><a :href="replaceLink(entry.link)" :target="linkTarget">{{ entry.title }}</a></span>
         </div>
-        <p class="entry-summary">{{ entry.contentSnippet }}</p>
+        <p class="entry-summary">
+          {{ entry.contentSnippet }}
+        </p>
       </div>
     </template>
   </div>

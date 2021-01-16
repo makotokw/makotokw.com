@@ -7,8 +7,10 @@
           <div class="row">
             <div class="col-md-6">
               <div class="topSubSection topSubSection-software">
-                <h3 class="topSubSectionTitle"><i class="fa fa-briefcase"></i> Software</h3>
-                <the-home-recent-portfolio :num="feedNumEntries"></the-home-recent-portfolio>
+                <h3 class="topSubSectionTitle">
+                  <i class="fa fa-briefcase" /> Software
+                </h3>
+                <the-home-recent-portfolio :num="feedNumEntries" />
                 <div class="topSubSectionFooter">
                   <a href="./portfolio/" class="btn archiveButton" title="Portfolio Archives">
                     Archives
@@ -18,11 +20,12 @@
             </div>
             <div class="col-md-6">
               <div class="topSubSection topSubSection-github">
-                <h3 class="topSubSectionTitle"><i class="fab fa-github"></i> Code</h3>
-                <the-home-git-hub :user-name="site.author.github" :num-of-repo="feedNumEntries"></the-home-git-hub>
+                <h3 class="topSubSectionTitle">
+                  <i class="fab fa-github" /> Code
+                </h3>
+                <the-home-git-hub :user-name="site.author.github" :num-of-repo="feedNumEntries" />
                 <div class="topSubSectionFooter">
-                  <a :href="site.github_url" class="btn archiveButton" title="GitHub Archives"
-                     target="_blank">Archives</a>
+                  <a :href="site.github_url" class="btn archiveButton" title="GitHub Archives" target="_blank">Archives</a>
                 </div>
               </div>
             </div>
@@ -37,9 +40,11 @@
           <div class="row">
             <div class="col-md-6">
               <div class="topSubSection topSubSection-blog">
-                <h3 class="topSubSectionTitle"><i :class="blog.iconClass"></i> Blog</h3>
+                <h3 class="topSubSectionTitle">
+                  <i :class="blog.iconClass" /> Blog
+                </h3>
                 <div class="feedContent feedContent-blog">
-                  <home-recent-post :url="blog.feedUrl" :num="feedNumEntries" :link-target="blog.linkTarget"></home-recent-post>
+                  <home-recent-post :url="blog.feedUrl" :num="feedNumEntries" :link-target="blog.linkTarget" />
                 </div>
                 <div class="topSubSectionFooter">
                   <a :href="blog.url" class="btn archiveButton" title="Blog Archives" :target="blog.linkTarget">Archives</a>
@@ -48,9 +53,11 @@
             </div>
             <div class="col-md-6">
               <div class="topSubSection topSubSection-qiita">
-                <h3 class="topSubSectionTitle"><i class="fas fa-search"></i> Qiita</h3>
+                <h3 class="topSubSectionTitle">
+                  <i class="fas fa-search" /> Qiita
+                </h3>
                 <div class="feedContent feedContent-qiita">
-                  <home-recent-post :url="qiita.feedUrl" :num="feedNumEntries"></home-recent-post>
+                  <home-recent-post :url="qiita.feedUrl" :num="feedNumEntries" />
                 </div>
                 <div class="topSubSectionFooter">
                   <a :href="qiita.url" class="btn archiveButton" title="Qiita Archives" target="_blank">Archives</a>
