@@ -45,9 +45,6 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },
           },
           {
             loader: 'css-loader',
@@ -117,8 +114,7 @@ module.exports = {
       patterns: [
         {
           from: 'src/assets/images/*.png',
-          to: 'images',
-          flatten: true,
+          to: 'images/[name].[ext]',
         },
       ],
     }),
@@ -132,6 +128,15 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src/assets/scripts'),
       '@assets': path.resolve(__dirname, '../src/assets'),
+    },
+    fallback: {
+      // filenamify-url
+      path: false,
+      // rss-parser
+      stream: require.resolve('stream-browserify'),
+      timers: false,
+      http: false,
+      https: false,
     },
   },
 };
