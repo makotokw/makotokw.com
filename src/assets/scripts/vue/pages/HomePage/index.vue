@@ -101,7 +101,7 @@ export default {
       feedNumEntries: 5,
       blog: {
         url: isJa ? site.blog_ja_url : `${site.path}/blog/`,
-        feedUrl: isJa ? `${site.blog_ja_url}/feed/` : `${site.path}/atom.xml`,
+        feedUrl: isJa ? `${site.blog_ja_url}/feed/` : `${site.url}/atom.xml`,
         linkTarget: isJa ? '_blank' : '_self',
         iconClass: isJa ? 'fab fa-wordpress-simple' : 'fa fa-book',
       },

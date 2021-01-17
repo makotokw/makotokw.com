@@ -39,5 +39,6 @@ async function feedToJson({ url }) {
   fs.writeFileSync(`${dataDir}/${filenamifyUrl(url)}.json`, JSON.stringify(feed, null, null));
 }
 
-feedToJson({ url: 'https://blog.makotokw.com/feed/' }).then(() => console.log('cached blog feed'));
+feedToJson({ url: 'https://makotokw.com/atom.xml' }).then(() => console.log('blog feed'));
+feedToJson({ url: 'https://blog.makotokw.com/feed/' }).then(() => console.log('cached blog.ja feed'));
 feedToJson({ url: 'https://qiita.com/makoto_kw/feed.atom' }).then(() => console.log('cached qiita feed'));
