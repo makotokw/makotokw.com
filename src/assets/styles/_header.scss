@@ -59,24 +59,4 @@
       }
     }
   }
-
-  .authorIcon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    width: 100px;
-    position: relative;
-    border: 2px solid $white;
-    border-radius: 50px;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
-  }
-  .authorIcon-isPinned {
-    top: -50px;
-    margin-bottom: -50px;
-  }
-  .authorSummary {
-    margin-top: 1em;
-    text-align: center;
-  }
 }

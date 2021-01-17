@@ -29,6 +29,7 @@
  * @property {string} name
  * @property {string} email
  * @property {string} screen_name
+ * @property {string} gravator_hash
  * @property {string} github
  * @property {string} twitter
  * @property {string} twitter_ja

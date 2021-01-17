@@ -7,6 +7,30 @@ $page-home-title-font-size: 60px;
 $page-home-height: 450px;
 $page-home-width: 1170px;
 
+.profile {
+  text-align: center;
+
+  .authorIcon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    border: 2px solid $white;
+    border-radius: 50px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
+  }
+  .authorIcon-isPinned {
+    top: -50px;
+    margin-bottom: -50px;
+  }
+  .authorSummary {
+    margin-top: 1em;
+    text-align: center;
+  }
+}
+
 %entry-link {
   color: $body-color;
   &:hover {

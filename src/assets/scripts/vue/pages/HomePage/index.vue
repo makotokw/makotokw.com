@@ -1,5 +1,6 @@
 <!--suppress HtmlUnknownTarget, JSUnresolvedVariable -->
 <template>
+  <the-profile :lang="lang" />
   <div>
     <section id="portfolio" class="topSection topSection-portfolio">
       <div class="container">
@@ -74,6 +75,7 @@
 <script>
 /** @var {Site} site */
 import site from '@assets/fixtures/site.yml';
+import TheProfile from './TheProfile';
 import TheHomeGitHub from './TheHomeGitHub';
 import TheHomeRecentPortfolio from './TheHomeRecentPortfolio';
 import HomeRecentPost from './HomeRecentPost';
@@ -81,6 +83,7 @@ import HomeRecentPost from './HomeRecentPost';
 export default {
   name: 'HomePage',
   components: {
+    TheProfile,
     TheHomeGitHub,
     TheHomeRecentPortfolio,
     HomeRecentPost,
