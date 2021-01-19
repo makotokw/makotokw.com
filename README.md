@@ -3,24 +3,18 @@ makotokw.com
 
 Project for [makotokw.com](https://makotokw.com)
 
-## Setup Project
+## Getting Started
 
-Require Git, Node.js and Yarn to setup.
+Require Git, Node.js and Yarn to set up.
 
 ```
 git clone git@github.com:makotokw/makotokw.com.git www.makotokw.com
 cd www.makotokw.com
 yarn
-```
-
-## Development
-
-```
 yarn run dev
 ```
 
-
-### Directory Structure
+## Directory Structure
 
 ```
 src
