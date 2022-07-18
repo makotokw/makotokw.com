@@ -18,12 +18,12 @@
   </div>
 </template>
 
-<script>
-/** @var {Site} site */
-import site from '@assets/fixtures/site.yml';
-import Feed from '@/lib/Feed';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import site from '@assets/fixtures/site.yaml';
+import Feed, { FeedEntry } from '@/lib/feed';
 
-export default {
+export default defineComponent({
   name: 'HomeRecentPost',
   props: {
     url: {
@@ -45,15 +45,15 @@ export default {
   },
   data() {
     return {
-      entries: [],
+      entries: [] as FeedEntry[],
     };
   },
   created() {
     const useCache = !!this.url.match(/^https?:/);
-    const feed = new Feed({ url: this.url, useCache });
-    feed.fetch({ maxItem: this.num }).then((entries) => {
+    const feed = new Feed(this.url, useCache);
+    feed.fetch(this.num).then((entries) => {
       this.entries = entries.map((entry) => {
-        let contentText = entry.content;
+        let contentText = entry.content || '';
         try {
           // strip html tags
           const el = document.createElement('div');
@@ -62,21 +62,17 @@ export default {
         } catch (e) {
         }
         // eslint-disable-next-line no-param-reassign
-        entry.contentSnippet = contentText.length > this.maxContentLength ? `${contentText.substr(0, this.maxContentLength)}...` : contentText;
+        entry.contentSnippet = contentText.length > this.maxContentLength ? `${contentText.substring(0, this.maxContentLength)}...` : contentText;
         return entry;
       });
     });
   },
   methods: {
-    /**
-     * @param {string} link
-     * @returns {string}
-     */
-    replaceLink(link) {
+    replaceLink(link: string): string {
       return link.replace(`${site.url}/blog/`, '/blog/');
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

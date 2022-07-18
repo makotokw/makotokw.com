@@ -11,7 +11,7 @@ module.exports = {
       'expose-loader?exposes[]=$&exposes[]=jQuery!jquery',
     ],
     app: [
-      './src/assets/scripts/main.js',
+      './src/assets/scripts/main.ts',
       './src/assets/styles/app.scss',
     ],
   },
@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.(js|vue)$/,
+        test: /\.(ts|js|vue)$/,
         exclude: /(node_modules)/,
         loader: 'eslint-loader',
         options: {
@@ -31,12 +31,12 @@ module.exports = {
         use: ['vue-loader'],
       },
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            appendTsSuffixTo: [/\.vue$/],
           },
         },
       },
@@ -124,7 +124,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.ts', '.vue'],
     alias: {
       '@': path.resolve(__dirname, '../src/assets/scripts'),
       '@assets': path.resolve(__dirname, '../src/assets'),

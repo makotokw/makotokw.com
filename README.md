@@ -17,16 +17,21 @@ yarn run dev
 ## Directory Structure
 
 ```
+dist
+├── assets                  output directory by 11ty and webpack
+│    └── (app|vendor)-*.*   output files by webpack
+└── *                       output directory/files by 11ty
+
 src
 ├── assets                  source files for webpack
 └── site                    source files for 11ty
     ├── _includes           [template] partial template
-    │   └── post            [template] partial template for post
+    │    └── post           [template] partial template for post
     ├── _layouts            [template] layout template
     ├── _portfolios         [page] portolio page
     ├── _posts              [page] post page
     ├── assets              static assets
-    │   └── site            common static assets (not depend on theme)
+    │    └── site            common static assets (not depend on theme)
     ├── blog                [page] blog archive page
     └── ja                  [page] japanese page
 ```
@@ -40,14 +45,17 @@ yarn build
 
 ## Depends / Tools
 
-* Build tools
-    * [11ty](https://github.com/11ty/eleventy/) v0.11
-    * [Webpack](https://webpack.js.org/) v5
-    * [Babel](https://babeljs.io/) v7
-    * [dart-sass](https://github.com/sass/dart-sass)
-    * [ESLint](https://eslint.org/) v7
-* Frontend Framework
-    * [jQuery](https://jquery.com/) v3
-    * [Vue.js](https://vuejs.org/) v3
-    * [Twitter Bootstrap](https://getbootstrap.com/) v4
-    * [Font Awesome](https://fontawesome.com/) v5
+* Node.js
+* TypeScript
+* [ESLint](https://eslint.org/) v7
+* Static Site
+    * [11ty](https://github.com/11ty/eleventy/) v0.11 
+* Frontend
+    * Build tools
+        * [Webpack](https://webpack.js.org/) v5
+        * [dart-sass](https://github.com/sass/dart-sass)
+    * Framework
+        * [jQuery](https://jquery.com/) v3
+        * [Vue.js](https://vuejs.org/) v3
+        * [Twitter Bootstrap](https://getbootstrap.com/) v4
+        * [Font Awesome](https://fontawesome.com/) v5

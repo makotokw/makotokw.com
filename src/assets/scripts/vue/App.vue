@@ -2,10 +2,11 @@
   <home-page :lang="lang" />
 </template>
 
-<script>
-import HomePage from '@/vue/pages/HomePage/index';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import HomePage from '@/vue/pages/HomePage/index.vue';
 
-export default {
+export default defineComponent({
   components: { HomePage },
   props: {
     lang: {
@@ -13,5 +14,5 @@ export default {
       default: 'en',
     },
   },
-};
+});
 </script>

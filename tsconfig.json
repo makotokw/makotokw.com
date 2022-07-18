@@ -1,0 +1,20 @@
+{
+  "include": ["src/assets/**/*", "src/assets/**/*.vue"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "lib": [
+      "dom",
+      "es2020"
+    ],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2020",
+    "strict": true,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/assets/scripts/*"]
+    }
+  }
+}

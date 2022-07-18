@@ -18,12 +18,12 @@
   </div>
 </template>
 
-<script>
-/** @var {Site} site */
-import site from '@assets/fixtures/site.yml';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import site from '@assets/fixtures/site.yaml';
 
-export default {
-  name: 'Profile',
+export default defineComponent({
+  name: 'TheProfile',
   props: {
     lang: {
       type: String,
@@ -38,7 +38,7 @@ export default {
       author: site.author,
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

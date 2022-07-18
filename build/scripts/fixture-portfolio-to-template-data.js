@@ -2,7 +2,7 @@ const YAML = require('yaml');
 const fs = require('fs');
 const path = require('path');
 
-const fixturePath = path.resolve(__dirname, '../../src/assets/fixtures/portfolios.yml');
+const fixturePath = path.resolve(__dirname, '../../src/assets/fixtures/portfolios.yaml');
 const portfolios = YAML.parse(fs.readFileSync(fixturePath, 'utf8'));
 const portfoliosPageDir = path.resolve(__dirname, '../../src/site/_portfolios');
 

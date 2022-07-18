@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CommonConfig = require('./webpack.common.js');
+const CommonConfig = require('./webpack.common');
 
 const port = 3000;
 const webpackDevServerPort = 9000;

@@ -19,10 +19,11 @@
   </div>
 </template>
 
-<script>
-import portfolios from '@assets/fixtures/portfolios.yml';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import portfolios from '@assets/fixtures/portfolios.yaml';
 
-export default {
+export default defineComponent({
   name: 'TheHomeRecentPortfolio',
   props: {
     num: {
@@ -33,12 +34,12 @@ export default {
   data() {
     return {
       portfolios: portfolios
-        .filter((/** Portfolio */p) => p.status === 'active')
-        .sort((/** Portfolio */a, /** Portfolio */b) => `${b.last_updated_year}-${b.copyright_year}`.localeCompare(`${a.last_updated_year}-${a.copyright_year}`))
+        .filter((p) => p.status === 'active')
+        .sort((a, b) => `${b.last_updated_year}-${b.copyright_year}`.localeCompare(`${a.last_updated_year}-${a.copyright_year}`))
         .slice(0, this.num),
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

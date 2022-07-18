@@ -1,4 +1,3 @@
-<!--suppress HtmlUnknownTarget, JSUnresolvedVariable -->
 <template>
   <the-profile :lang="lang" />
   <div>
@@ -72,15 +71,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 /** @var {Site} site */
-import site from '@assets/fixtures/site.yml';
-import TheProfile from './TheProfile';
-import TheHomeGitHub from './TheHomeGitHub';
-import TheHomeRecentPortfolio from './TheHomeRecentPortfolio';
-import HomeRecentPost from './HomeRecentPost';
+import site from '@assets/fixtures/site.yaml';
+import TheProfile from './TheProfile.vue';
+import TheHomeGitHub from './TheHomeGitHub.vue';
+import TheHomeRecentPortfolio from './TheHomeRecentPortfolio.vue';
+import HomeRecentPost from './HomeRecentPost.vue';
 
-export default {
+export default defineComponent({
   name: 'HomePage',
   components: {
     TheProfile,
@@ -112,7 +112,7 @@ export default {
       },
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

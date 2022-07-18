@@ -3,13 +3,13 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-// fixtures/*.yml: to edit by human
+// fixtures/*.yaml: to edit by human
 const fixturesDir = path.resolve(__dirname, '../../src/assets/fixtures');
 // site/_data/*.json: to read by 11ty
 const siteDataDir = path.resolve(__dirname, '../../src/site/_data');
 
 try {
-  glob(`${fixturesDir}/*.yml`, {}, function (er, files) {
+  glob(`${fixturesDir}/*.yaml`, {}, function (er, files) {
     if (er) {
       console.error(er);
       return;

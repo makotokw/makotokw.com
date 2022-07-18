@@ -23,10 +23,11 @@
   </div>
 </template>
 
-<script>
-import GitHub from '@/lib/GitHub';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import GitHub, { GitHubRepo } from '@/lib/gitHub';
 
-export default {
+export default defineComponent({
   name: 'TheHomeGitHub',
   props: {
     userName: {
@@ -40,16 +41,16 @@ export default {
   },
   data() {
     return {
-      repos: [],
+      repos: [] as GitHubRepo[],
     };
   },
   created() {
-    this.gitHub = new GitHub({ userName: this.userName });
-    this.gitHub.fetchRepos().then((repos) => {
+    const gitHub = new GitHub(this.userName);
+    gitHub.fetchRepos().then((repos) => {
       this.repos = repos.filter((repo) => repo.stargazers_count > 3).slice(0, this.numOfRepo);
     });
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
