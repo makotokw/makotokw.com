@@ -13,6 +13,7 @@ declare module '*/portfolios.yaml' {
     interface Portfolio {
         name: string,
         "name.ja"?: string,
+        description?: string,
         categories: string[],
         tags: string[],
         url?: string,

@@ -2,11 +2,11 @@
   .catchImage {
     min-height: 300px;
     background-color: $blue-dark;
-    background: linear-gradient(rgba($blue-dark, .4), rgba($blue-dark, .4)), 50% url('~@assets/images/bg_header_shirahigejinja.jpg');
+    background: linear-gradient(rgba($blue-dark, .4), rgba($blue-dark, .4)), 50% url('@assets/images/bg_header_shirahigejinja.jpg');
     background-size: cover;
 
     .site-top & {
-      background: 50% url('~@assets/images/bg_header_shirahigejinja.jpg');
+      background: 50% url('@assets/images/bg_header_shirahigejinja.jpg');
       background-size: cover;
     }
 

@@ -14,6 +14,7 @@ module.exports = merge(CommonConfig, {
     filename: '[name].js',
     path: path.resolve('dist/assets'),
     publicPath: '/assets/',
+    assetModuleFilename: 'images/[name][ext][query]',
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -41,13 +42,18 @@ module.exports = merge(CommonConfig, {
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
     port: webpackDevServerPort,
-    contentBase: [
-      path.resolve('.tmp/dist.gulp'),
-      path.resolve('dist'),
-    ],
+    static: {
+      directory: path.resolve('dist'),
+    },
     open: false,
     hot: true,
-    clientLogLevel: 'silent',
+    client: {
+      logging: 'warn',
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    },
     // https://github.com/bripkens/connect-history-api-fallback
     historyApiFallback: {
       index: '/404.html',

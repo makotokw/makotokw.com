@@ -4,11 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: {
     vendor: [
-      'expose-loader?exposes[]=$&exposes[]=jQuery!jquery',
+      'expose-loader?exposes=$,jQuery!jquery',
     ],
     app: [
       './src/assets/scripts/main.ts',
@@ -17,15 +18,15 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(ts|js|vue)$/,
-        exclude: /(node_modules)/,
-        loader: 'eslint-loader',
-        options: {
-          emitWarning: true,
-        },
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.(ts|js|vue)$/,
+      //   exclude: /(node_modules)/,
+      //   loader: 'eslint-loader',
+      //   options: {
+      //     emitWarning: true,
+      //   },
+      // },
       {
         test: /\.vue$/,
         use: ['vue-loader'],
@@ -72,36 +73,29 @@ module.exports = {
       // https://github.com/okonet/yaml-loader
       {
         test: /\.ya?ml$/,
-        use: ['json-loader', 'yaml-loader'],
+        use: [
+          {
+            loader: 'json-loader',
+          },
+          {
+            loader: 'yaml-loader',
+            // https://github.com/eemeli/yaml-loader
+            options: {
+              asJSON: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
       {
         test: /\.(jpg|png)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name(file) {
-                if (process.env.NODE_ENV === 'development') {
-                  return '[name].[ext]';
-                }
-                return '[name]-[hash].[ext]';
-              },
-              outputPath: 'images/',
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
     ],
   },
@@ -114,13 +108,16 @@ module.exports = {
       patterns: [
         {
           from: 'src/assets/images/*.png',
-          to: 'images/[name].[ext]',
+          to: 'images/[name][ext]',
         },
       ],
     }),
     // https://github.com/webdeveric/webpack-assets-manifest
     new WebpackAssetsManifest({
       output: path.resolve('src/site/_data/manifest.json'),
+    }),
+    new ESLintPlugin({
+      extensions: ['.js', '.ts', '.vue'],
     }),
   ],
   resolve: {
@@ -134,6 +131,8 @@ module.exports = {
       path: false,
       // rss-parser
       stream: require.resolve('stream-browserify'),
+      buffer: false,
+      url: false,
       timers: false,
       http: false,
       https: false,

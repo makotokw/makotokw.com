@@ -183,7 +183,7 @@ $page-home-width: 1170px;
 
   @include mobileScreen {
     margin: 10px auto;
-    width: ($lang-menu-item-width/2 + 20) * 2 + 10;
+    width: (($lang-menu-item-width / 2) + 20) * 2 + 10;
     .menuLangButton {
       width: auto;
     }

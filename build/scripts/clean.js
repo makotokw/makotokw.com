@@ -20,7 +20,6 @@ glob('src/site/_data/*.json', function (er, generatedDataFiles) {
 
 const distDir = [
   'dist',
-  '.tmp/dist.gulp',
   '.tmp/dist.webpack',
 ];
 
