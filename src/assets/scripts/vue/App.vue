@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HomePage from '@/vue/pages/HomePage/index.vue';
+import HomePage from '@/vue/pages/HomePage/HomePage.vue';
 
 export default defineComponent({
   components: { HomePage },

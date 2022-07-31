@@ -5,9 +5,9 @@
       Loading...
     </template>
     <template v-else>
-      <div v-for="entry in entries" :key="entry.name" class="entry">
+      <div v-for="entry in entries" :key="entry.id" class="entry">
         <div class="entry-header">
-          <span class="entry-date">{{ $filters.moment(entry.date, 'YYYY/MM/DD') }}</span>
+          <span class="entry-date">{{ $formatters.dateTime(entry.date, 'YYYY/MM/DD') }}</span>
           <span class="entry-title"><a :href="replaceLink(entry.link)" :target="linkTarget">{{ entry.title }}</a></span>
         </div>
         <p class="entry-summary">
@@ -21,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import site from '@assets/fixtures/site.yaml';
-import Feed, { FeedEntry } from '@/lib/feed';
+import Feed, { FeedEntry } from '@/lib/Feed';
 
 export default defineComponent({
   name: 'HomeRecentPost',

@@ -8,7 +8,7 @@
         </span>
         <span class="entry-categories">
           <span v-for="slug in p.categories" :key="slug" class="label label-portfolio" :class="`label-portfolio-${slug}`">
-            {{ $filters.tag_name(slug) }}
+            {{ $formatters.tagName(slug) }}
           </span>
         </span>
       </div>

@@ -8,7 +8,7 @@
       <div v-for="repo in repos" :key="repo.id" class="entry">
         <div class="entry-header">
           <span class="entry-date">
-            {{ $filters.moment(repo.pushed_at, 'YYYY/MM/DD') }}
+            {{ $formatters.dateTime(repo.pushed_at, 'YYYY/MM/DD') }}
           </span>
           <span class="entry-title">
             <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import GitHub, { GitHubRepo } from '@/lib/gitHub';
+import GitHub, { GitHubRepo } from '@/lib/GitHub';
 
 export default defineComponent({
   name: 'TheHomeGitHub',

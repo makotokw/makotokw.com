@@ -1,3 +1,4 @@
-import Stage from './stage';
+import Stage from './Stage';
 
-Stage.init();
+const stage = new Stage();
+stage.init();

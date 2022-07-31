@@ -6,27 +6,10 @@ import 'github-repo-widget.js';
 // @ts-ignore
 import Headroom from 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
-import { createApp, App } from 'vue';
-import Logger from '@/lib/logger';
-import VueApp from '@/vue/App.vue';
-import VueFilters from '@/vue/filters/index';
+import { App } from 'vue';
+import log from '@/lib/log';
+import createVueApp from '@/vue/createVueApp';
 
-type AddThisConfig = {
-  data_track_addressbar?: boolean,
-};
-
-declare global {
-  interface Window {
-    jQuery: typeof jQuery,
-    Headroom: Headroom,
-    addthis_config: AddThisConfig
-  }
-  interface JQuery {
-    headroom(options?: HeadroomOptions): JQuery
-  }
-}
-
-const $ = window.jQuery;
 const StickyHeaderTop = 100;
 
 class Stage {
@@ -47,7 +30,7 @@ class Stage {
   }
 
   get isTopPage(): boolean {
-    return ($('#app').length > 0);
+    return (window.jQuery('#app').length > 0);
   }
 
   init() {
@@ -75,9 +58,9 @@ class Stage {
     const referer = document.referrer || '';
     const pathname = document.location.pathname || '';
     const origin = document.location.origin || '';
-    Logger.debug(`refer = ${referer}, origin = ${origin}, path = ${pathname}`);
+    log.debug(`refer = ${referer}, origin = ${origin}, path = ${pathname}`);
 
-    // redirect only a referer is a external url
+    // redirect only a referer is an external url
     if (!origin || referer.indexOf(origin) === 0) {
       return;
     }
@@ -91,7 +74,7 @@ class Stage {
 
   private static initHeadroom(): void {
     window.Headroom = Headroom;
-    $('#mainNavBar').headroom({
+    window.jQuery('#mainNavBar').headroom({
       offset: StickyHeaderTop,
     });
   }
@@ -104,13 +87,10 @@ class Stage {
   }
 
   private initTopPage(): void {
-    const app = createApp(VueApp, {
-      lang: this.lang,
-    });
-    app.config.globalProperties.$filters = VueFilters;
+    const app = createVueApp(this.lang);
     app.mount('#app');
     this.vueApp = app;
   }
 }
 
-export default new Stage();
+export default Stage;
