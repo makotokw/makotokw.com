@@ -1,6 +1,4 @@
 import axios from 'axios';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import jsonpAdapter from 'axios-jsonp';
 
 export interface GitHubRepo {

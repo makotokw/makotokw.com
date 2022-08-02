@@ -2,8 +2,6 @@
 
 import 'bootstrap';
 import 'github-repo-widget.js';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import Headroom from 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
 import { App } from 'vue';

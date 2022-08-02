@@ -5,14 +5,14 @@ import RSSParser, { Item } from 'rss-parser';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type RSSParserFeed = { [key: string]: any } & RSSParser.Output<{ [key: string]: any }>;
 
-export interface FeedEntry {
+export type FeedEntry = {
   id?: string,
   link?: string,
   title?: string,
   date?: string,
   content?: string,
   contentSnippet?: string,
-}
+};
 
 class Feed {
   constructor(private url: string, private useCache :boolean = true) {
@@ -21,7 +21,6 @@ class Feed {
   private static parseEntries(feed: RSSParserFeed, maxItem: number): FeedEntry[] {
     let items: FeedEntry[] = [];
     if (Array.isArray(feed.items)) {
-      // noinspection JSUnresolvedVariable
       items = feed.items.slice(0, maxItem).map((item: Item) => ({
         id: item.guid,
         link: item.link,
