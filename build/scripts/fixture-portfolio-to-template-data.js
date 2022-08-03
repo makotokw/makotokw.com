@@ -6,7 +6,7 @@ const fixturePath = path.resolve(__dirname, '../../src/assets/fixtures/portfolio
 const portfolios = YAML.parse(fs.readFileSync(fixturePath, 'utf8'));
 const portfoliosPageDir = path.resolve(__dirname, '../../src/site/_portfolios');
 
-portfolios.forEach(function (portfolio) {
+portfolios.forEach((portfolio) => {
   if (!portfolio.url) {
     return;
   }
@@ -16,7 +16,7 @@ portfolios.forEach(function (portfolio) {
   }
   const [, , category, page] = matched;
 
-  ['', '.ja'].forEach(function (categorySuffix) {
+  ['', '.ja'].forEach((categorySuffix) => {
     const pagePath = `${portfoliosPageDir}/${category}${categorySuffix}/${page}.md`;
     if (!fs.existsSync(pagePath)) {
       return;

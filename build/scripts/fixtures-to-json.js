@@ -9,7 +9,7 @@ const fixturesDir = path.resolve(__dirname, '../../src/assets/fixtures');
 const siteDataDir = path.resolve(__dirname, '../../src/site/_data');
 
 try {
-  glob(`${fixturesDir}/*.yaml`, {}, function (er, files) {
+  glob(`${fixturesDir}/*.yaml`, {}, (er, files) => {
     if (er) {
       console.error(er);
       return;

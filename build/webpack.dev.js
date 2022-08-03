@@ -22,7 +22,7 @@ module.exports = merge(CommonConfig, {
     new BrowserSyncPlugin(
       {
         host: 'localhost',
-        port: port,
+        port,
         proxy: `http://localhost:${webpackDevServerPort}`,
         // watch 11ty output files
         files: ['dist'],

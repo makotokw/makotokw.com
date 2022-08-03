@@ -14,7 +14,7 @@ if (projectDir !== process.cwd()) {
   throw new Error(`Invalid current dir: ${process.cwd()}`);
 }
 
-glob(`${process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH}/assets/app-*.js`, function (er, files) {
+glob(`${process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH}/assets/app-*.js`, (er, files) => {
   if (er || !files || files.length === 0) {
     throw new Error('app-*.js is not found. development build?');
   }

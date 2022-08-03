@@ -2,7 +2,7 @@ const glob = require('glob');
 const fs = require('fs');
 const rimraf = require('rimraf');
 
-glob('src/site/_data/*.json', function (er, generatedDataFiles) {
+glob('src/site/_data/*.json', (er, generatedDataFiles) => {
   if (er) {
     console.error(er);
     return;
