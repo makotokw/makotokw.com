@@ -46,14 +46,14 @@ yarn build
 ## Depends / Tools
 
 * Node.js
-* TypeScript
-* [ESLint](https://eslint.org/) v7
+* [ESLint](https://eslint.org/) v8
 * Static Site
-    * [11ty](https://github.com/11ty/eleventy/) v0.11 
+    * [11ty](https://github.com/11ty/eleventy/) v1
 * Frontend
+    * TypeScript
     * Build tools
-        * [Webpack](https://webpack.js.org/) v5
-        * [dart-sass](https://github.com/sass/dart-sass)
+      * [Webpack](https://webpack.js.org/) v5
+      * [dart-sass](https://github.com/sass/dart-sass)
     * Framework
         * [jQuery](https://jquery.com/) v3
         * [Vue.js](https://vuejs.org/) v3

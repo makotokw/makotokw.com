@@ -46,8 +46,9 @@
     "vue": "3.2.37"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@11ty/eleventy-upgrade-help": "^1.0.1",
     "@types/headroom": "^0.12.1",
     "@types/jquery": "^3.5.14",
     "@types/node": "14.18.22",
@@ -77,6 +78,7 @@
     "file-loader": "^6.2.0",
     "glob": "^8.0.3",
     "json-loader": "^0.5.7",
+    "markdown-it": "^13.0.1",
     "mini-css-extract-plugin": "^2.6.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.14",

@@ -1,6 +1,10 @@
+// noinspection JSUnusedLocalSymbols
+
 const fs = require('fs');
 const moment = require('moment');
+const markdownIt = require('markdown-it');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const UpgradeHelper = require('@11ty/eleventy-upgrade-help');
 
 const src = './src/site';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
@@ -16,11 +20,22 @@ const staticPaths = [
   'downloads/reserved.txt',
 ];
 
+// eslint-disable-next-line func-names
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(UpgradeHelper);
+
+  // https://www.11ty.dev/docs/languages/liquid/#optional-use-your-own-options
+  // https://liquidjs.com/tutorials/options.html#dynamicPartials
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: false,
+    strictFilters: false,
+  });
+  // https://www.11ty.dev/docs/data-deep-merge/
+  eleventyConfig.setDataDeepMerge(false);
+
   eleventyConfig.addPlugin(syntaxHighlight);
 
   // https://www.11ty.io/docs/languages/markdown/
-  const markdownIt = require('markdown-it');
   // https://github.com/markdown-it/markdown-it#init-with-presets-and-options
   const options = {
     html: true,
@@ -32,92 +47,70 @@ module.exports = function (eleventyConfig) {
   // copy static
   staticPaths.forEach((staticPath) => eleventyConfig.addPassthroughCopy(`${src}/${staticPath}`));
 
-  eleventyConfig.addLiquidTag('asset_path', function (Liquid) {
-    return {
-      parse: function (tagToken, remainTokens) {
-        this.path = tagToken.args;
-      },
-      render: function (scope, hash) {
-        let bundlePath = `/assets/${this.path}?v=${pkg.version}`;
-        if (process.env.NODE_ENV === 'production') {
-          if (manifest[this.path]) {
-            bundlePath = `/assets/${manifest[this.path]}`;
-          }
+  eleventyConfig.addLiquidTag('asset_path', (Liquid) => ({
+    parse(tagToken, remainTokens) {
+      this.path = tagToken.args;
+    },
+    render(scope, hash) {
+      let bundlePath = `/assets/${this.path}?v=${pkg.version}`;
+      if (process.env.NODE_ENV === 'production') {
+        if (manifest[this.path]) {
+          bundlePath = `/assets/${manifest[this.path]}`;
         }
-        return bundlePath;
-      },
-    };
-  });
+      }
+      return bundlePath;
+    },
+  }));
 
-  eleventyConfig.addLiquidTag('github', function (Liquid) {
-    return {
-      parse: function (tagToken, remainTokens) {
-        this.path = tagToken.args;
-      },
-      render: function (scope, hash) {
-        return `<div class="github-widget" data-repo="${this.path}"></div>`;
-      },
-    };
-  });
+  eleventyConfig.addLiquidTag('github', (Liquid) => ({
+    parse(tagToken, remainTokens) {
+      this.path = tagToken.args;
+    },
+    render(scope, hash) {
+      return `<div class="github-widget" data-repo="${this.path}"></div>`;
+    },
+  }));
 
-  eleventyConfig.addLiquidTag('download_url', function (Liquid) {
-    return {
-      parse: function (tagToken, remainTokens) {
-        this.path = tagToken.args;
-      },
-      render: function (scope, hash) {
-        return site.download_url + this.path;
-      },
-    };
-  });
+  eleventyConfig.addLiquidTag('download_url', (Liquid) => ({
+    parse(tagToken, remainTokens) {
+      this.path = tagToken.args;
+    },
+    render(scope, hash) {
+      return site.download_url + this.path;
+    },
+  }));
 
   // post collections by category
   const categories = ['product', 'programing', 'computing'];
-  categories.forEach(function (category) {
-    eleventyConfig.addCollection(category, function (collection) {
-      return collection.getFilteredByTag('posts').filter(function (item) {
-        return 'category' in item.data && item.data.category.toLowerCase() === category;
-      });
-    });
+  categories.forEach((category) => {
+    eleventyConfig.addCollection(category, (collection) => collection.getFilteredByTag('posts').filter((item) => 'category' in item.data && item.data.category.toLowerCase() === category));
   });
 
-  eleventyConfig.addFilter('jsonify', function (variable) {
-    return JSON.stringify(variable);
-  });
+  eleventyConfig.addFilter('jsonify', (variable) => JSON.stringify(variable));
 
-  eleventyConfig.addFilter('date_to_xmlschema', function (s) {
-    return moment(s).toISOString(true);
-  });
+  eleventyConfig.addFilter('date_to_xmlschema', (s) => moment(s).toISOString(true));
 
-  eleventyConfig.addFilter('date_to_rfc2822', function (s) {
-    return moment(s).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ');
-  });
+  eleventyConfig.addFilter('date_to_rfc2822', (s) => moment(s).locale('en').format('ddd, DD MMM YYYY HH:mm:ss ZZ'));
 
-  eleventyConfig.addFilter('condense_spaces', function (content) {
-    return content.replace(/\r?\n/g, ' ').replace(/\s{2,}/g, ' ');
-  });
+  eleventyConfig.addFilter('condense_spaces', (content) => content.replace(/\r?\n/g, ' ').replace(/\s{2,}/g, ' '));
 
-  eleventyConfig.addFilter('sort_portfolio', function (items) {
-    return items.sort(function (a, b) {
-      const ay = a.copyright_year ? a.copyright_year : 2000;
-      const by = b.copyright_year ? b.copyright_year : 2000;
-      let ret = by - ay;
-      if (ret === 0) {
-        if (a.categories.length > 0 && b.categories.length > 0) {
-          ret = a.categories[0].localeCompare(b.categories[0]);
-        }
+  eleventyConfig.addFilter('sort_portfolio', (items) => items.sort((a, b) => {
+    const ay = a.copyright_year ? a.copyright_year : 2000;
+    const by = b.copyright_year ? b.copyright_year : 2000;
+    let ret = by - ay;
+    if (ret === 0) {
+      if (a.categories.length > 0 && b.categories.length > 0) {
+        ret = a.categories[0].localeCompare(b.categories[0]);
       }
-      if (ret === 0) {
-        ret = a.name.localeCompare(b.name);
-      }
-      return ret;
-    });
-  });
+    }
+    if (ret === 0) {
+      ret = a.name.localeCompare(b.name);
+    }
+    return ret;
+  }));
 
-  eleventyConfig.addFilter('portfolio_tag_name', function (slug) {
-    const tag = portfolioTags.find(function (t) {
-      return t.id === slug;
-    });
+  eleventyConfig.addFilter('portfolio_tag_name', (slug) => {
+    const tag = portfolioTags.find((t) => t.id === slug);
     if (tag) {
       return tag.name;
     }
