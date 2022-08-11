@@ -33,6 +33,7 @@
 
 // ======================================
 // responsive
+// @see https://getbootstrap.com/docs/5.0/layout/breakpoints/#media-queries
 // ======================================
 
 @mixin desktopScreen() {
@@ -42,7 +43,7 @@
 }
 
 @mixin mobileScreen() {
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     @content;
   }
 }

@@ -31,7 +31,7 @@ class Stage {
     return (window.jQuery('#app').length > 0);
   }
 
-  init() {
+  public init() {
     this.redirectPageByContentNegotiation();
     Stage.initHeadroom();
     Stage.initAddThis();

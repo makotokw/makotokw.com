@@ -12,12 +12,12 @@
     <img class="logo-image" src="{% asset_path images/logo-200.png %}" alt="{{ site.author.screen_name }}" />
     <div class="logo-suffixText"><span class="logo-suffixText-first">AKOTO_</span><span class="logo-suffixText-last">KW</span></div>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ms-auto">
       {% if lang == 'ja' %}
       <li class="nav-item nav-item-portfolio"><a class="nav-link" href="/ja/portfolio"><i class="fa fa-briefcase"></i> Software</a></li>
       <li class="nav-item nav-item-gitHub"><a class="nav-link" href="{{ site.github_url }}"><i class="fab fa-github"></i> Code</a></li>
