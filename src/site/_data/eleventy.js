@@ -7,6 +7,5 @@ module.exports = function () {
   const e = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../../node_modules/@11ty/eleventy/package.json'), 'utf8'));
   return {
     version: e.version,
-    env: process.env.NODE_ENV || 'production',
   };
 };
