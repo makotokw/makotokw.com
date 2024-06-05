@@ -6,13 +6,13 @@ path: ''
 subscribe_url: https://makotokw.com/atom.xml
 blog_ja_url: https://blog.makotokw.com
 github_url: https://github.com/makotokw
-qiita_url: http://qiita.com/makoto_kw
+qiita_url: https://qiita.com/makoto_kw
 twitter_url: https://twitter.com/makotokw
 twitter_ja_url: https://twitter.com/makoto_kw
 linkedin_url: https://www.linkedin.com/in/makotokw
 disqus_short_name: makotokw
 google_analytics:
-  account: UA-730110-3
+  measurement_id: G-F5MJ2KHMQ6
   domain: makotokw.com
 download_url: https://makotokw.com/downloads/
 addthis_profile_id: ra-51d5a54a1c992276
