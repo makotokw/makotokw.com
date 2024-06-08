@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -20,6 +19,7 @@ module.exports = merge(CommonConfig, {
   plugins: [
     // use browserSync to reload a page after 11ty build.
     new BrowserSyncPlugin(
+      // https://browsersync.io/docs/options/
       {
         host: 'localhost',
         port,
@@ -29,12 +29,12 @@ module.exports = merge(CommonConfig, {
         // Wait for building all files by 11ty.
         reloadDelay: 2000,
         open: true,
+        ui: false,
       },
       {
         reload: false,
       },
     ),
-    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
@@ -46,7 +46,6 @@ module.exports = merge(CommonConfig, {
       directory: path.resolve('dist'),
     },
     open: false,
-    hot: true,
     client: {
       logging: 'warn',
       overlay: {

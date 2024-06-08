@@ -1,6 +1,6 @@
-const glob = require('glob');
+const { glob } = require('glob');
 const fs = require('fs');
-const rimraf = require('rimraf');
+const { rimraf } = require('rimraf');
 
 glob('src/site/_data/*.json', (er, generatedDataFiles) => {
   if (er) {
@@ -24,11 +24,13 @@ const distDir = [
 ];
 
 distDir.forEach((dir) => {
-  rimraf(dir, (err) => {
-    if (err) {
-      console.log(dir, err);
+  rimraf(dir).then((result) => {
+    if (!result) {
+      console.error(`unable to delete '${dir}' directory`);
       return;
     }
     console.log(`deleted '${dir}' directory`);
+  }).catch((reason) => {
+    console.error(`unable to delete '${dir}' directory`, reason);
   });
 });

@@ -1,7 +1,7 @@
 const YAML = require('yaml');
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
+const { glob } = require('glob');
 
 // fixtures/*.yaml: to edit by human
 const fixturesDir = path.resolve(__dirname, '../../src/assets/fixtures');
