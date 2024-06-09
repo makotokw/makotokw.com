@@ -6,9 +6,6 @@
 # static files
 src/site/assets/
 
-# old school
-src/assets/scripts.gulp/
-
 # built files
 dist/
 .tmp/
