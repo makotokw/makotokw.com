@@ -4,7 +4,7 @@ const fs = require('fs');
 const moment = require('moment');
 const markdownIt = require('markdown-it');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const UpgradeHelper = require('@11ty/eleventy-upgrade-help');
+// const UpgradeHelper = require('@11ty/eleventy-upgrade-help');
 
 const src = './src/site';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
@@ -22,7 +22,7 @@ const staticPaths = [
 
 // eslint-disable-next-line func-names
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(UpgradeHelper);
+  // eleventyConfig.addPlugin(UpgradeHelper);
 
   // https://www.11ty.dev/docs/languages/liquid/#optional-use-your-own-options
   // https://liquidjs.com/tutorials/options.html#dynamicPartials
