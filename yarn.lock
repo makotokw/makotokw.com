@@ -526,10 +526,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/headroom@^0.12.4":
+"@types/headroom.js@^0.12.4":
   version "0.12.4"
-  resolved "https://registry.yarnpkg.com/@types/headroom/-/headroom-0.12.4.tgz#f2b78f36c65fd8c4486eaf07b3ac71fa4f7db260"
-  integrity sha512-rZTvauq5OHubPtwKrctKLw+o8TssRVstVx4KbivsJXbOjZfG+CEvxMqkL4OftPO5C3VazSYDFhwTOA9pFehPzg==
+  resolved "https://registry.yarnpkg.com/@types/headroom.js/-/headroom.js-0.12.4.tgz#2e6151667e96c3e46afc298faddc25d742322b15"
+  integrity sha512-9Z6GHzjkq/MToVC0PNoiTMbeDZjjjKv6SCxv1XonspR7ssohjNb0+bg7K6Fbz5hDh/aFT9qLfhRa3jYYs4aMuQ==
 
 "@types/http-errors@*":
   version "2.0.4"
@@ -576,6 +576,11 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
+
+"@types/luxon@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-3.4.2.tgz#e4fc7214a420173cea47739c33cdf10874694db7"
+  integrity sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA==
 
 "@types/mime@^1":
   version "1.3.2"
@@ -4640,7 +4645,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-luxon@^3.3.0:
+luxon@^3.3.0, luxon@^3.4.4:
   version "3.4.4"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.4.4.tgz#cf20dc27dc532ba41a169c43fdcc0063601577af"
   integrity sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==
@@ -4889,11 +4894,6 @@ mkdirp@^0.5.1:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
-
-moment@^2.30.1:
-  version "2.30.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
-  integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
 
 moo@^0.5.2:
   version "0.5.2"

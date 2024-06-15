@@ -8,7 +8,7 @@
       <div v-for="repo in repos" :key="repo.id" class="entry">
         <div class="entry-header">
           <span class="entry-date">
-            {{ $formatters.dateTime(repo.pushed_at, 'YYYY/MM/DD') }}
+            {{ $formatters.dateTime(repo.pushed_at, 'yyyy/MM/dd') }}
           </span>
           <span class="entry-title">
             <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>

@@ -2,7 +2,7 @@
 
 import 'bootstrap';
 import 'github-repo-widget.js';
-import Headroom from 'headroom.js';
+import * as Headroom from 'headroom.js';
 import { App } from 'vue';
 import log from '@/lib/log';
 import createVueApp from '@/vue/createVueApp';
@@ -70,7 +70,10 @@ class Stage {
   }
 
   private static initHeadroom(): void {
-    const headerElement = document.querySelector('#mainNavBar');
+    const headerElement = document.getElementById('mainNavBar');
+    if (!headerElement) {
+      return;
+    }
     const headroom = new Headroom(headerElement, {
       offset: StickyHeaderTop,
     });

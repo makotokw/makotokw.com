@@ -3,7 +3,12 @@
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $formatters: {
-      dateTime: (value: string, format: string) => string,
+      /**
+       * @param {string|undefined} value
+       * @param {string} luxonFormat
+       * @see https://moment.github.io/luxon/#/formatting
+       */
+      dateTime: (value: string | undefined, luxonFormat: string) => string,
       tagName: (value: string) => string,
     }
   }

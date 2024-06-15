@@ -7,7 +7,7 @@
     <template v-else>
       <div v-for="entry in entries" :key="entry.id" class="entry">
         <div class="entry-header">
-          <span class="entry-date">{{ $formatters.dateTime(entry.date, 'YYYY/MM/DD') }}</span>
+          <span class="entry-date">{{ $formatters.dateTime(entry.date, 'yyyy/MM/dd') }}</span>
           <span class="entry-title"><a :href="replaceLink(entry.link)" :target="linkTarget">{{ entry.title }}</a></span>
         </div>
         <p class="entry-summary">
@@ -68,7 +68,10 @@ export default defineComponent({
     });
   },
   methods: {
-    replaceLink(link: string): string {
+    replaceLink(link: string | undefined): string {
+      if (!link) {
+        return '#';
+      }
       return link.replace(`${site.url}/blog/`, '/blog/');
     },
   },
