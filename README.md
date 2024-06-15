@@ -48,14 +48,13 @@ yarn build
 * Node.js
 * [ESLint](https://eslint.org/) v8
 * Static Site
-    * [11ty](https://github.com/11ty/eleventy/) v1
+    * [11ty](https://www.11ty.dev/) v2
 * Frontend
     * TypeScript
     * Build tools
       * [Webpack](https://webpack.js.org/) v5
-      * [dart-sass](https://github.com/sass/dart-sass)
+      * [Dart Sass](https://github.com/sass/dart-sass)
     * Framework
-        * [jQuery](https://jquery.com/) v3
         * [Vue.js](https://vuejs.org/) v3
-        * [Twitter Bootstrap](https://getbootstrap.com/) v4
-        * [Font Awesome](https://fontawesome.com/) v5
+        * [Twitter Bootstrap](https://getbootstrap.com/) v5
+        * [Font Awesome](https://fontawesome.com/) v6
