@@ -1,5 +1,4 @@
 import axios from 'axios';
-import jsonpAdapter from 'axios-jsonp';
 
 export interface GitHubRepo {
   id: number,
@@ -29,8 +28,7 @@ class GitHub {
     return axios({
       // https://developer.github.com/v3/repos/
       url: `https://api.github.com/users/${this.userName}/repos?sort=pushed&per_page=100`,
-      adapter: jsonpAdapter,
-    }).then(({ data: { data } }) => {
+    }).then(({ data }) => {
       this.repos = [];
       data.forEach((repo: GitHubRepo) => {
         if (repo.fork) {
