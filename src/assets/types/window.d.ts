@@ -5,7 +5,5 @@ interface AddThisConfig {
 }
 
 interface Window {
-  jQuery: typeof jQuery,
-  Headroom: Headroom,
   addthis_config: AddThisConfig
 }

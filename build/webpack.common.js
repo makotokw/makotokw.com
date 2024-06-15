@@ -8,9 +8,6 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: {
-    vendor: [
-      'expose-loader?exposes=$,jQuery!jquery',
-    ],
     app: [
       './src/assets/scripts/main.ts',
       './src/assets/styles/app.scss',

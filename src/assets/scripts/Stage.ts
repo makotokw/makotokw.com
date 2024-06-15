@@ -2,8 +2,7 @@
 
 import 'bootstrap';
 import 'github-repo-widget.js';
-import Headroom from 'headroom.js/dist/headroom';
-import 'headroom.js/dist/jQuery.headroom';
+import Headroom from 'headroom.js';
 import { App } from 'vue';
 import log from '@/lib/log';
 import createVueApp from '@/vue/createVueApp';
@@ -28,7 +27,7 @@ class Stage {
   }
 
   get isTopPage(): boolean {
-    return (window.jQuery('#app').length > 0);
+    return document.querySelector('#app') !== null;
   }
 
   init() {
@@ -71,10 +70,11 @@ class Stage {
   }
 
   private static initHeadroom(): void {
-    window.Headroom = Headroom;
-    window.jQuery('#mainNavBar').headroom({
+    const headerElement = document.querySelector('#mainNavBar');
+    const headroom = new Headroom(headerElement, {
       offset: StickyHeaderTop,
     });
+    headroom.init();
   }
 
   private static initAddThis(): void {
