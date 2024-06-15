@@ -10,7 +10,7 @@ pre {
   @include font-family-monospace;
   font-size: $font-size-base - 2;
   color: $gray-dark;
-  @include border-radius(3px);
+  @include border-radius($border-radius);
 }
 
 // Inline code
@@ -31,7 +31,6 @@ pre {
   line-height: $baseLineHeight;
   word-break: break-all;
   word-wrap: break-word;
-  white-space: pre;
   white-space: pre-wrap;
   border: $baseBorderWidth solid $tableBorder;
   background-color: $white;
@@ -46,7 +45,6 @@ pre {
   code {
     padding: 0;
     color: inherit;
-    white-space: pre;
     white-space: pre-wrap;
     background-color: transparent;
     border: 0;

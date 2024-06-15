@@ -46,7 +46,7 @@ $mainNavLogoSize: 48px;
       -webkit-transition: width ease-out 0.2s;
       -moz-transition: width ease-out 0.2s;
       transition: width ease-out 0.2s;
-      -webkit-transform: translateZ(0px);
+      transform: translateZ(0px);
 
       .logo-suffixText-first {
         display: none;

@@ -15,15 +15,16 @@
   vertical-align: text-bottom;
 }
 
-@mixin ghostButton($witdh, $height, $paddingLeft, $paddingTop) {
+@mixin ghostButton($width, $height, $paddingLeft, $paddingTop) {
   @include transition(all .3s ease);
   //font-family: 'NovecentowideBookBold';
   font-family: 'NovecentowideLightRegular', serif;
   border-radius: 0;
   background: transparent;
   padding: $paddingLeft $paddingTop;
-  width: $witdh;
+  width: $width;
   height: $height;
+  line-height: 1.2;
   //display: block;
   display: table-cell;
   vertical-align: middle;
@@ -36,13 +37,13 @@
 // ======================================
 
 @mixin desktopScreen() {
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     @content;
   }
 }
 
 @mixin mobileScreen() {
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     @content;
   }
 }
