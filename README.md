@@ -48,7 +48,7 @@ yarn build
 * Node.js
 * [ESLint](https://eslint.org/) v8
 * Static Site
-    * [11ty](https://www.11ty.dev/) v2
+    * [11ty](https://www.11ty.dev/) v3
 * Frontend
     * TypeScript
     * Build tools

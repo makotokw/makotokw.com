@@ -14,6 +14,12 @@ module.exports = merge(CommonConfig, {
     assetModuleFilename: 'images/[name]-[hash][ext][query]',
   },
   plugins: [
+    // https://ja.vuejs.org/api/compile-time-flags
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false,
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+    }),
     new CleanWebpackPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
