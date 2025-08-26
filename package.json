@@ -25,6 +25,7 @@
     "prod:eleventy-server": "cross-env NODE_ENV=production npx eleventy --serve",
     "clean:project": "node ./build/scripts/clean.js",
     "lint": "eslint -f unix --ext .ts,.js,.vue src build *.js",
+    "lint:sass:check": "sass src/assets/styles/app.scss --no-source-map --silence-deprecation=import --quiet-deps --verbose --load-path=node_modules > /dev/null",
     "deploy": "node ./build/scripts/deploy.js"
   },
   "dependencies": {

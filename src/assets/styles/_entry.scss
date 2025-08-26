@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .entry {
 
   .entry-header {
@@ -26,7 +28,7 @@
   .entry-content,
   .entry-summary {
     line-height: 1.831;
-    color: lighten($body-color, 25%);
+    color: color.scale($body-color, $lightness: 25%);
     @include clearfix;
 
     img {

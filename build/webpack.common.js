@@ -57,6 +57,15 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                // Silence only the @import deprecation warnings to avoid noisy output
+                // until we fully migrate to @use/@forward.
+                silenceDeprecations: ['import'],
+                // Suppress warnings from dependencies (node_modules)
+                quietDeps: true,
+              },
+            },
           },
         ],
       },

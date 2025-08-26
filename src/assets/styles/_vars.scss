@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import url('//fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:300,400,700,900,400italic');
 
 $fonts-path: '../fonts';
@@ -25,9 +26,9 @@ $danger: #E74C3C;
 
 $main-navbar-bg: $white;
 $main-navbar-color: $blue-dark;
-$main-navbar-hover-color: lighten($main-navbar-color, 10%);
+$main-navbar-hover-color: color.scale($main-navbar-color, $lightness: 10%);
 $main-navbar-logo-bg: #3E5771;
-$main-navbar-border-color: lighten($main-navbar-color, 10%);
+$main-navbar-border-color: color.scale($main-navbar-color, $lightness: 10%);
 
 // ------------------------------
 // Scaffolding for bootstrap
@@ -41,7 +42,7 @@ $body-color: $gray-darker;
 // ------------------------------
 
 $link-color: $blue-light;
-$link-hover-color: lighten($link-color, 5%);
+$link-hover-color: color.scale($link-color, $lightness: 5%);
 
 // ------------------------------
 // text for bootstrap

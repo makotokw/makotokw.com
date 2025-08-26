@@ -16,7 +16,6 @@
 }
 
 @mixin ghostButton($width, $height, $paddingLeft, $paddingTop) {
-  @include transition(all .3s ease);
   //font-family: 'NovecentowideBookBold';
   font-family: 'NovecentowideLightRegular', serif;
   border-radius: 0;
@@ -30,6 +29,7 @@
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
+  @include transition(all .3s ease);
 }
 
 // ======================================

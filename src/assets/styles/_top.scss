@@ -71,8 +71,10 @@ $page-home-width: 1170px;
 
 %topSection-ghostButton {
   @include ghostButton($lang-menu-item-width, $lang-menu-item-height, 12px, 8px);
-  border: 1px solid $blue-dark;
-  color: $blue-dark;
+  & {
+    border: 1px solid $blue-dark;
+    color: $blue-dark;
+  }
   &:hover {
     border: 1px solid rgba($blue-dark, .5);
     color: rgba($blue-dark, .5);
