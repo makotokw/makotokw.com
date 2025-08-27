@@ -4,6 +4,7 @@
   "description": "makotokw.com",
   "private": true,
   "license": "MIT",
+  "type": "commonjs",
   "engines": {
     "node": ">=20"
   },
