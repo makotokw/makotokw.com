@@ -43,18 +43,18 @@ src
 yarn build
 ```
 
-## Depends / Tools
+## Depends on / Tools
 
 * Node.js
-* [ESLint](https://eslint.org/) v8
+* [ESLint](https://eslint.org/)
 * Static Site
-    * [11ty](https://www.11ty.dev/) v3
+    * [11ty](https://www.11ty.dev/)
 * Frontend
     * TypeScript
     * Build tools
-      * [Webpack](https://webpack.js.org/) v5
+      * [Webpack](https://webpack.js.org/)
       * [Dart Sass](https://github.com/sass/dart-sass)
     * Framework
-        * [Vue.js](https://vuejs.org/) v3
-        * [Twitter Bootstrap](https://getbootstrap.com/) v5
-        * [Font Awesome](https://fontawesome.com/) v6
+        * [Vue.js](https://vuejs.org/)
+        * [Twitter Bootstrap](https://getbootstrap.com/)
+        * [Font Awesome](https://fontawesome.com/)
