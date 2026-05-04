@@ -2,11 +2,7 @@ const { glob } = require('glob');
 const fs = require('fs');
 const { rimraf } = require('rimraf');
 
-glob('src/site/_data/*.json', (er, generatedDataFiles) => {
-  if (er) {
-    console.error(er);
-    return;
-  }
+glob('src/site/_data/*.json').then((generatedDataFiles) => {
   generatedDataFiles.forEach((f) => {
     fs.unlink(f, (err) => {
       if (err) {
@@ -16,6 +12,9 @@ glob('src/site/_data/*.json', (er, generatedDataFiles) => {
       console.log(`deleted '${f}' file`);
     });
   });
+}).catch((e) => {
+  console.error(e);
+  process.exit(1);
 });
 
 const distDir = [
