@@ -7,12 +7,13 @@
       "es2020"
     ],
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "target": "es2020",
     "strict": true,
     "module": "es2020",
-    "moduleResolution": "node",
-    "baseUrl": ".",
+    "moduleResolution": "bundler",
+    // Suppress type errors in third-party declaration files (e.g. filenamify-url, rss-parser)
+    // that are incompatible with moduleResolution:"bundler" but cannot be fixed locally.
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/assets/scripts/*"]
     }

@@ -2,7 +2,7 @@
 
 import 'bootstrap';
 import 'github-repo-widget.js';
-import * as Headroom from 'headroom.js';
+import Headroom from 'headroom.js';
 import { App } from 'vue';
 import log from '@/lib/log';
 import createVueApp from '@/vue/createVueApp';
