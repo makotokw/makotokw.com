@@ -1,6 +1,6 @@
 const YAML = require('yaml');
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const fixturePath = path.resolve(__dirname, '../../src/assets/fixtures/portfolios.yaml');
 const portfolios = YAML.parse(fs.readFileSync(fixturePath, 'utf8'));

@@ -4,7 +4,7 @@ import portfolioTags from '@assets/fixtures/portfolio_tags.yaml';
 
 export default {
   install: (app: App) => {
-    // eslint-disable-next-line no-param-reassign
+     
     app.config.globalProperties.$formatters = {
       dateTime(value: string | undefined, luxonFormat: string): string {
         if (!value) {

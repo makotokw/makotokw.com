@@ -59,9 +59,9 @@ export default defineComponent({
           const el = document.createElement('div');
           el.innerHTML = contentText;
           contentText = el.innerText;
-        } catch (e) {
+        } catch {
         }
-        // eslint-disable-next-line no-param-reassign
+         
         entry.contentSnippet = contentText.length > this.maxContentLength ? `${contentText.substring(0, this.maxContentLength)}...` : contentText;
         return entry;
       });

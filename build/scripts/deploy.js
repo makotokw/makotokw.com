@@ -1,5 +1,5 @@
 const Rsync = require('rsync');
-const path = require('path');
+const path = require('node:path');
 const { glob } = require('glob');
 
 require('dotenv').config();

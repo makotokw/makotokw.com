@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -117,6 +117,7 @@ module.exports = {
     }),
     new ESLintPlugin({
       extensions: ['.js', '.ts', '.vue'],
+      configType: 'flat',
     }),
   ],
   resolve: {

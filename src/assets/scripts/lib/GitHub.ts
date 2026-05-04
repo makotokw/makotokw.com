@@ -1,17 +1,17 @@
 import axios from 'axios';
 
 export interface GitHubRepo {
-  id: number,
-  name: string,
-  html_url: string,
-  description: string,
-  fork: boolean,
-  forks_count: number,
-  stargazers_count: number,
-  watchers_count: number,
-  pushed_at: string,
-  created_at: string,
-  updated_at: string,
+  id: number;
+  name: string;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
 }
 
 /**

@@ -3,19 +3,19 @@ import filenamifyUrl from 'filenamify-url';
 import RSSParser, { Item } from 'rss-parser';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type RSSParserFeed = { [key: string]: any } & RSSParser.Output<{ [key: string]: any }>;
+type RSSParserFeed = Record<string, any> & RSSParser.Output<Record<string, any>>;
 
-export type FeedEntry = {
-  id?: string,
-  link?: string,
-  title?: string,
-  date?: string,
-  content?: string,
-  contentSnippet?: string,
-};
+export interface FeedEntry {
+  id?: string;
+  link?: string;
+  title?: string;
+  date?: string;
+  content?: string;
+  contentSnippet?: string;
+}
 
 class Feed {
-  constructor(private url: string, private useCache :boolean = true) {
+  constructor(private url: string, private useCache = true) {
   }
 
   private static parseEntries(feed: RSSParserFeed, maxItem: number): FeedEntry[] {

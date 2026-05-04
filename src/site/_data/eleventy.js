@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 // https://www.11ty.dev/docs/data-js/
 module.exports = function () {

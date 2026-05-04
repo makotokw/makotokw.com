@@ -1,5 +1,5 @@
 const { glob } = require('glob');
-const fs = require('fs');
+const fs = require('node:fs');
 const { rimraf } = require('rimraf');
 
 glob('src/site/_data/*.json').then((generatedDataFiles) => {
