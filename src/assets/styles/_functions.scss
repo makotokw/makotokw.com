@@ -11,7 +11,8 @@
   margin-right: 20px;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font: normal $fontSize 'Font Awesome 5 Brands';
+  font: var(--#{$fa-css-prefix}-font-brands);
+  font-size: $fontSize;
   vertical-align: text-bottom;
 }
 

@@ -30,47 +30,41 @@
 .note-link {
   @extend .note;
   &:before {
-    @extend .fa-bookmark, :before;
+    @include fa-icon-solid($fa-var-bookmark);
   }
 }
 
 .note-comment {
   @extend .note;
   &:before {
-    @extend .fa-comment, :before;
+    @include fa-icon-solid($fa-var-comment);
   }
 }
 
 .note-ins {
   @extend .note;
   &:before {
-    @extend .fa-comment, :before;
+    @include fa-icon-solid($fa-var-comment);
   }
 }
 
-.enclosure {
+.enclosure-file {
   @extend .note;
   &:before {
-    @extend .fa-file, :before;
-  }
-}
-.enclosure-evernote {
-  @extend .enclosure;
-  &:before {
-    @extend .fa-file, :before;
+    @include fa-icon-solid($fa-var-file);
   }
 }
 .enclosure-qiita {
-  @extend .enclosure;
+  @extend .note;
   &:before {
-    @extend .fa-search, :before;
+    @include fa-icon-solid($fa-var-search);
   }
 }
 .enclosure-github {
   @include note-block(#333, #f3f3f3, #f3f3f3);
-  @extend .enclosure;
+  @extend .note;
   &:before {
     @include block-before-withAwesomeBrandIcon(2em);
-    @extend .fa-github-alt, :before;
+    @include fa-icon-solid($fa-var-github);
   }
 }
