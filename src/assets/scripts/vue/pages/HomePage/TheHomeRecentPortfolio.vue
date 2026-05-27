@@ -7,7 +7,7 @@
           <a :href="p.url">{{ p.name }}</a>
         </span>
         <span class="entry-categories">
-          <span v-for="slug in p.categories" :key="slug" class="label label-portfolio" :class="`label-portfolio-${slug}`">
+          <span v-for="slug in p.categories" :key="slug" class="badge badge-portfolio badge badge-portfolio--inverse badge-portfolio--small" :class="`badge-portfolio-${slug}`">
             {{ $formatters.tagName(slug) }}
           </span>
         </span>

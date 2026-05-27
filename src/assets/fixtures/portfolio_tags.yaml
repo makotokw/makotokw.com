@@ -55,6 +55,10 @@
   name: JavaScript
   category: toolkit
 -
+  id: ts
+  name: TypeScript
+  category: toolkit
+-
   id: objc
   name: Objective-C
   category: toolkit
@@ -129,4 +133,8 @@
 -
   id: 2016
   name: 2016
+  category: date
+-
+  id: 2026
+  name: 2026
   category: date

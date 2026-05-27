@@ -47,7 +47,6 @@ $page-home-width: 1170px;
   border-radius: 0;
   font-size: $font-size-sm;
   display: inline;
-  margin-right: .5em;
   padding: 3px 6px;
   line-height: 1.2em;
   color: $white;
@@ -134,11 +133,15 @@ $page-home-width: 1170px;
       @extend %entry-link;
     }
     .entry-header {
-      .entry-title {
-        @extend %entry-title;
+      > * {
+        vertical-align: middle;
+        margin-right: .5em;
       }
       .entry-date {
         @extend %entry-dateBadge;
+      }
+      .entry-title {
+        @extend %entry-title;
       }
     }
     .entry-summary {
@@ -164,6 +167,11 @@ $page-home-width: 1170px;
     }
     .archiveButton {
       @extend %topSection-ghostButton-isInverted;
+    }
+    .badge-portfolio {
+      background-color: $white;
+      color: $blue-dark;
+      font-size: 0.7em;
     }
   }
 }
