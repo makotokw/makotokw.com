@@ -17,3 +17,8 @@ Icon
 npm-debug.log
 yarn-error.log
 node_modules
+
+### AI ###
+# Claude
+CLAUDE.local.md
+.claude/*.local.json
