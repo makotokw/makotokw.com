@@ -87,30 +87,32 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection(category, (collection) => collection.getFilteredByTag('posts').filter((item) => 'category' in item.data && item.data.category.toLowerCase() === category));
   });
 
-  eleventyConfig.addFilter('jsonify', (/* any */variable) => JSON.stringify(variable));
+  eleventyConfig.addFilter('jsonify', (/* any */ variable) => JSON.stringify(variable));
 
-  eleventyConfig.addFilter('date_to_xmlschema', (/* Date */date) => DateTime.fromJSDate(date).toISO());
+  eleventyConfig.addFilter('date_to_xmlschema', (/* Date */ date) => DateTime.fromJSDate(date).toISO());
 
-  eleventyConfig.addFilter('date_to_rfc2822', (/* Date */date) => DateTime.fromJSDate(date).setLocale('en').toRFC2822());
+  eleventyConfig.addFilter('date_to_rfc2822', (/* Date */ date) => DateTime.fromJSDate(date).setLocale('en').toRFC2822());
 
-  eleventyConfig.addFilter('condense_spaces', (/* string */content) => content.replace(/\r?\n/g, ' ').replace(/\s{2,}/g, ' '));
+  eleventyConfig.addFilter('condense_spaces', (/* string */ content) => content.replace(/\r?\n/g, ' ').replace(/\s{2,}/g, ' '));
 
-  eleventyConfig.addFilter('sort_portfolio', (/* Portfolio[] */items) => items.sort((a, b) => {
-    const ay = a.copyright_year ? a.copyright_year : 2000;
-    const by = b.copyright_year ? b.copyright_year : 2000;
-    let ret = by - ay;
-    if (ret === 0) {
-      if (a.categories.length > 0 && b.categories.length > 0) {
-        ret = a.categories[0].localeCompare(b.categories[0]);
+  eleventyConfig.addFilter('sort_portfolio', (/* Portfolio[] */ items) =>
+    items.sort((a, b) => {
+      const ay = a.copyright_year ? a.copyright_year : 2000;
+      const by = b.copyright_year ? b.copyright_year : 2000;
+      let ret = by - ay;
+      if (ret === 0) {
+        if (a.categories.length > 0 && b.categories.length > 0) {
+          ret = a.categories[0].localeCompare(b.categories[0]);
+        }
       }
-    }
-    if (ret === 0) {
-      ret = a.name.localeCompare(b.name);
-    }
-    return ret;
-  }));
+      if (ret === 0) {
+        ret = a.name.localeCompare(b.name);
+      }
+      return ret;
+    }),
+  );
 
-  eleventyConfig.addFilter('portfolio_tag_name', (/* string */slug) => {
+  eleventyConfig.addFilter('portfolio_tag_name', (/* string */ slug) => {
     const tag = portfolioTags.find((t) => t.id === slug);
     if (tag) {
       return tag.name;

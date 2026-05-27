@@ -1,6 +1,6 @@
 ---
 title: jquery.ui.potato.menu
-description: "Simple Drop Down Menu for jQuery"
+description: 'Simple Drop Down Menu for jQuery'
 date: 2010-01-04
 ---
 
@@ -72,6 +72,7 @@ jquery.ui.potato.menu is simple drop down menu.
 <br/>
 
 <a name="dowload"></a>
+
 <h2>Download</h2>
 
 <ul>
@@ -90,11 +91,12 @@ jquery.ui.potato.menu is simple drop down menu.
 
 ## Overview
 
-Apply to ``ul > li > a`` tags:
+Apply to `ul > li > a` tags:
 
 ```html
 <ul id="menu1">
-  <li><a href="#">Menu1</a>
+  <li>
+    <a href="#">Menu1</a>
     <ul>
       <li><a href="#">a</a></li>
       <li><a href="#">bb</a></li>
@@ -189,7 +191,7 @@ Plugin has no style (separate layout and style in stylesheet). Please read <a hr
 ### Sample Code
 
 ```html
-<link rel="stylesheet" type="text/css" media="screen" href="jquery.ui.potato.menu.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="jquery.ui.potato.menu.css" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.ui.potato.menu.js"></script>
 <script type="text/javascript">
@@ -252,19 +254,20 @@ Plugin has no style (separate layout and style in stylesheet). Please read <a hr
 ### Sample Code
 
 ```html
-<link rel="stylesheet" type="text/css" media="screen" href="jquery.ui.potato.menu.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="jquery.ui.potato.menu.css" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.ui.potato.menu.js"></script>
 <script type="text/javascript">
   (function ($) {
     $(document).ready(function () {
-      $('#menu2').ptMenu({vertical: true});
+      $('#menu2').ptMenu({ vertical: true });
     });
   })(jQuery);
 </script>
 ```
 
 <a name="style"></a>
+
 ## How to Apply Style
 
 style of examples.

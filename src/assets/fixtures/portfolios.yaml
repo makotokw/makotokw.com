@@ -1,5 +1,4 @@
--
-  name: World Clocks
+- name: World Clocks
   name.ja: 世界時計
   description: A simple world clocks browser extension.
   categories: [crx]
@@ -9,8 +8,7 @@
   copyright_year: 2010
   last_updated_year: 2026
   status: active
--
-  name: fukidashi generator
+- name: fukidashi generator
   name.ja: ふきだしジェネレーター
   categories: [web]
   tags: [js]
@@ -19,8 +17,7 @@
   copyright_year: 2014
   last_updated_year: 2014
   status: pending
--
-  name: gitmike theme
+- name: gitmike theme
   name.ja: gitmike テーマ
   description: This is github-like theme for Redmine.
   categories: [redmine]
@@ -30,8 +27,7 @@
   copyright_year: 2012
   last_updated_year: 2019
   status: active
--
-  name: Redmine Render Markdown in Repository
+- name: Redmine Render Markdown in Repository
   name.ja: Redmine Render Markdown in Repository
   description: Redmine plugin render Markdown in Repository.
   categories: [redmine]
@@ -41,8 +37,7 @@
   copyright_year: 2013
   last_updated_year: 2019
   status: pending
--
-  name: Garanchu
+- name: Garanchu
   name.ja: ガランチュ
   description: iOS TV application for GaraponTV (Japanese TV tuner).
   categories: [ios]
@@ -53,8 +48,7 @@
   last_updated_year: 2015
   status: pending
   deprecated: true
--
-  name: Tokyo Ame
+- name: Tokyo Ame
   name.ja: Tokyo Ame
   description: Chrome application that displays rain-map in Tokyo.
   categories: [crx]
@@ -64,8 +58,7 @@
   copyright_year: 2015
   last_updated_year: 2015
   status: pending
--
-  name: Today’s Schedule in Google Calendar™
+- name: Today’s Schedule in Google Calendar™
   name.ja: 今日の予定 in Google Calendar™
   categories: [crx]
   tags: [js]
@@ -74,8 +67,7 @@
   last_updated_year: 2014
   status: pending
   deprecated: true
--
-  name: jquery.ui.potato.menu
+- name: jquery.ui.potato.menu
   categories: [jquery]
   tags: [js]
   url: /portfolio/jquery/ui_potato_menu/
@@ -83,8 +75,7 @@
   copyright_year: 2010
   last_updated_year: 2017
   status: pending
--
-  name: AmazonJS
+- name: AmazonJS
   description: Wordpress Pluign. Easy to add an Amazon product to your post and you can customize display it by using jQuery template.
   categories: [wp]
   url: http://wordpress.org/plugins/amazonjs/
@@ -95,8 +86,7 @@
   copyright_year: 2011
   last_updated_year: 2019
   status: active
--
-  name: GitHub Flavored Markdown for WordPress
+- name: GitHub Flavored Markdown for WordPress
   description: WordPress Plugin for PHP-Markdown and GitHub Flavored Markdown.
   categories: [wp]
   tags: [php]
@@ -107,8 +97,7 @@
   copyright_year: 2013
   last_updated_year: 2018
   status: active
--
-  name: Awasete Yomitai for WordPress
+- name: Awasete Yomitai for WordPress
   name.ja: あわせてよみたい for WordPress
   categories: [wp]
   tags: [php]
@@ -120,8 +109,7 @@
   last_updated_year: 2009
   status: done
   deprecated: true
--
-  name: Inline Archives
+- name: Inline Archives
   categories: [wp]
   tags: [php]
   url: https://wordpress.org/plugins/inline-archives/
@@ -130,8 +118,7 @@
   copyright_year: 2012
   last_updated_year: 2012
   status: pending
--
-  name: PukiWiki for WordPress
+- name: PukiWiki for WordPress
   categories: [wp]
   tags: [php]
   url: http://blog.makotokw.com/portfolio/wordpress/pukiwiki_for_wordpress/
@@ -140,8 +127,7 @@
   copyright_year: 2009
   last_updated_year: 2009
   status: pending
--
-  name: PukiWiki for Movable Type
+- name: PukiWiki for Movable Type
   categories: [mt]
   tags: [php, perl]
   url: http://blog.makotokw.com/portfolio/movabletype/pukiwiki_for_movable_type/
@@ -149,8 +135,7 @@
   copyright_year: 2009
   last_updated_year: 2009
   status: done
--
-  name: SyntaxHighlighter for Movable Type
+- name: SyntaxHighlighter for Movable Type
   categories: [mt]
   tags: [php, perl, js]
   url: /portfolio/movabletype/syntaxhighlighter/
@@ -158,8 +143,7 @@
   copyright_year: 2009
   last_updated_year: 2009
   status: done
--
-  name: Gravatar for Movable Type
+- name: Gravatar for Movable Type
   categories: [mt]
   tags: [php, perl]
   url: /portfolio/movabletype/gravatar-for-movable-type/
@@ -167,8 +151,7 @@
   copyright_year: 2009
   last_updated_year: 2009
   status: done
--
-  name: MTmylo
+- name: MTmylo
   categories: [mt]
   tags: [perl]
   url: /ja/portfolio/movabletype/mtmylo/
@@ -176,8 +159,7 @@
   copyright_year: 2008
   last_updated_year: 2008
   status: done
--
-  name: DashboardHatenaTrends
+- name: DashboardHatenaTrends
   categories: [mt]
   tags: [perl]
   url: /ja/portfolio/movabletype/dashboardhatenatrends/
@@ -186,8 +168,7 @@
   copyright_year: 2007
   last_updated_year: 2009
   status: done
--
-  name: MTSocialBookmarks
+- name: MTSocialBookmarks
   categories: [mt]
   tags: [perl]
   url: /ja/portfolio/movabletype/mtsocialbookmarks/
@@ -195,60 +176,53 @@
   copyright_year: 2007
   last_updated_year: 2009
   status: done
--
-  name: BuildCleaner
+- name: BuildCleaner
   categories: [win32]
-  tags: [cpp,mfc]
+  tags: [cpp, mfc]
   url: /ja/portfolio/win32/buildcleaner/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2004
   status: done
--
-  name: MylynExporter
+- name: MylynExporter
   categories: [win32]
-  tags: [csharp,dotnet]
+  tags: [csharp, dotnet]
   url: /ja/portfolio/win32/mylynexporter/
   copyright_year: 2007
   last_updated_year: 2007
   status: done
--
-  name: PasswordCreator
+- name: PasswordCreator
   categories: [win32]
-  tags: [cpp,mfc]
+  tags: [cpp, mfc]
   url: /ja/portfolio/win32/passwordcreator/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2007
   status: done
--
-  name: ReadOnlyCanceler
+- name: ReadOnlyCanceler
   categories: [win32]
-  tags: [cpp,mfc]
+  tags: [cpp, mfc]
   url: /ja/portfolio/win32/readonlycanceler/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2004
   status: done
--
-  name: ReversiGamma
+- name: ReversiGamma
   categories: [win32]
-  tags: [cpp,mfc]
+  tags: [cpp, mfc]
   url: /ja/portfolio/win32/reversigamma/
   locales: [ja]
   copyright_year: 2001
   last_updated_year: 2007
   status: done
--
-  name: VoiceClientOcx
+- name: VoiceClientOcx
   categories: [win32]
   tags: [cpp]
   url: /ja/portfolio/win32/voiceclientocx/
   copyright_year: 2002
   last_updated_year: 2002
   status: done
--
-  name: Mineclock
+- name: Mineclock
   name.ja: Mineclock
   description: Pebble watchface that looks like Minecraft clock.
   categories: [pebble]
@@ -258,8 +232,7 @@
   copyright_year: 2016
   last_updated_year: 2026
   status: active
--
-  name: IRKit Remote
+- name: IRKit Remote
   name.ja: IRKit Remote
   description: Pebble watchapp that sends IR signal to IRKit. (IRKit device is IR remote controller and is seller in only Japan)
   categories: [pebble]
@@ -269,8 +242,7 @@
   copyright_year: 2015
   last_updated_year: 2016
   status: done
--
-  name: HatenaTrends
+- name: HatenaTrends
   categories: [yw]
   tags: [js]
   url: /ja/portfolio/yahoowidget/hatenatrends/
@@ -280,8 +252,7 @@
   last_updated_year: 2009
   status: done
   deprecated: true
--
-  name: MyGoogleCalendar
+- name: MyGoogleCalendar
   categories: [yw]
   tags: [js]
   url: /portfolio/yahoowidget/mygooglecalendar/
@@ -291,8 +262,7 @@
   last_updated_year: 2009
   status: done
   deprecated: true
--
-  name: MyOutlookToday
+- name: MyOutlookToday
   categories: [yw]
   tags: [js]
   url: /portfolio/yahoowidget/myoutlooktoday/
@@ -302,8 +272,7 @@
   last_updated_year: 2009
   status: done
   deprecated: true
--
-  name: SongWidget
+- name: SongWidget
   categories: [yw]
   tags: [js]
   url: /portfolio/yahoowidget/songwidget/
@@ -313,8 +282,7 @@
   last_updated_year: 2009
   status: done
   deprecated: true
--
-  name: WorldClocks
+- name: WorldClocks
   categories: [yw]
   tags: [js]
   url: /portfolio/yahoowidget/worldclocks/

@@ -1,6 +1,5 @@
 class Host {
-  constructor(private location: Location) {
-  }
+  constructor(private location: Location) {}
 
   get isDebugHost(): boolean {
     return !!this.location.hostname.match(/^(localhost)$/);

@@ -1,9 +1,10 @@
 ---
-title: "Custom Theme for My Outlook Today and My Google Calendar"
-category: "Product"
-tag: ["Yahoo Widgets"]
+title: 'Custom Theme for My Outlook Today and My Google Calendar'
+category: 'Product'
+tag: ['Yahoo Widgets']
 date: 2009-05-13
 ---
+
 (last updated) 2009-05-17
 
 I would like to introduce adding custom theme to widgets I developed.
@@ -19,7 +20,7 @@ I would like to introduce adding custom theme to widgets I developed.
       /*.png     -- image files
 ```
 
-MyWidgets folder is at ``C:\Users\{UserName}\Documents\My Widgets`` on Windows Vista, ``C: \Documents and Settings\{UserName}\My Documents\My Widgets``  on Windows XP, or ``~/Documents/Widgets`` on MacOSX.
+MyWidgets folder is at `C:\Users\{UserName}\Documents\My Widgets` on Windows Vista, `C: \Documents and Settings\{UserName}\My Documents\My Widgets` on Windows XP, or `~/Documents/Widgets` on MacOSX.
 
 ## theme.js
 
@@ -44,7 +45,7 @@ theme.js is simply json data follow:
 }
 ```
 
-image files are for background and icon. 
+image files are for background and icon.
 
 ## background image files
 
@@ -107,5 +108,3 @@ I tried to create new theme named "wood".
 That's all!
 
 I understand this function is very simple and is not useful yet. Please let me know you have any problems , questions and ideas. # give me beautiful theme you designed also :)
-
-

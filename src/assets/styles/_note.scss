@@ -1,7 +1,7 @@
 /* = Note styling
 -------------------------------------------------------------- */
 
-@mixin note-block ($color, $bg, $border) {
+@mixin note-block($color, $bg, $border) {
   display: block;
   margin: 24px 0;
   padding: 24px;

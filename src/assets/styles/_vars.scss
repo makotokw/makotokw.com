@@ -14,11 +14,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 // Brand colors for bootstrap
 // ------------------------------
 
-$primary: #2C3E50;
-$success: #18BC9C;
-$info: #3498DB;
-$warning: #F39C12;
-$danger: #E74C3C;
+$primary: #2c3e50;
+$success: #18bc9c;
+$info: #3498db;
+$warning: #f39c12;
+$danger: #e74c3c;
 
 // ------------------------------
 // colors additional
@@ -27,7 +27,7 @@ $danger: #E74C3C;
 $main-navbar-bg: $white;
 $main-navbar-color: $blue-dark;
 $main-navbar-hover-color: color.scale($main-navbar-color, $lightness: 10%);
-$main-navbar-logo-bg: #3E5771;
+$main-navbar-logo-bg: #3e5771;
 $main-navbar-border-color: color.scale($main-navbar-color, $lightness: 10%);
 
 // ------------------------------
@@ -49,7 +49,7 @@ $link-hover-color: color.scale($link-color, $lightness: 5%);
 // ------------------------------
 
 $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
-$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
 $font-family-base: $font-family-sans-serif;
 
 $font-size-base: 1rem;
@@ -67,7 +67,7 @@ $blockquote-font-size: $font-size-base;
 
 $font-family-page-title: 'NovecentowideBookBold';
 $font-weight-page-title: 400;
-$font-family-date: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-date: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // ------------------------------
 // border for bootstrap
@@ -87,4 +87,3 @@ $focus-ring-width: 0.1rem;
 // NaviBar for bootstrap
 // ------------------------------
 $navbar-light-toggler-border-color: $main-navbar-border-color;
-

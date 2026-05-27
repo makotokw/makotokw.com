@@ -11,7 +11,8 @@ $mainNavLogoSize: 48px;
     padding: 0 10px;
     background: rgba($main-navbar-bg, 0.5);
   }
-  a, button {
+  a,
+  button {
     outline: none;
   }
 
@@ -95,9 +96,10 @@ $mainNavLogoSize: 48px;
   }
 
   .navbar-collapse {
-    &.show, &.collapsing {
+    &.show,
+    &.collapsing {
       .navbar-nav {
-        padding: .5em;
+        padding: 0.5em;
         background: rgba($main-navbar-bg, 0.8);
         .nav-link {
           min-height: $mainNavBarHeight * 0.6;
@@ -120,8 +122,8 @@ $mainNavLogoSize: 48px;
 }
 
 .headroom {
-  -webkit-transition-duration: .5s;
-  transition-duration: .5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   will-change: transform;
   transition: transform 200ms linear;
 }

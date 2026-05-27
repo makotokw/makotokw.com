@@ -1,9 +1,10 @@
 ---
-title: "Simple and Light jQuery Menu"
-category: "Product"
-tag: ["jQuery"]
+title: 'Simple and Light jQuery Menu'
+category: 'Product'
+tag: ['jQuery']
 date: 2009-05-07
 ---
+
 <link rel="stylesheet" type="text/css" media="screen" href="/assets/site/css/jquery.ui.potato.menu.css"/>
 
 <style>

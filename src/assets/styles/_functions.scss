@@ -1,5 +1,4 @@
-
-@mixin block ($borderRadius) {
+@mixin block($borderRadius) {
   padding: 24px;
   background-color: $blue-light;
   border: 2px solid $blue-light;
@@ -30,7 +29,7 @@
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
-  @include transition(all .3s ease);
+  @include transition(all 0.3s ease);
 }
 
 // ======================================
@@ -48,4 +47,3 @@
     @content;
   }
 }
-

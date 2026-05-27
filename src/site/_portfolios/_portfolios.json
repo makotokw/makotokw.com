@@ -2,9 +2,7 @@
   "layout": "single",
   "lang": "en",
   "permalink": "/portfolio/category/{{ page.fileSlug }}/index.html",
-  "tags": [
-    "portfolio"
-  ],
+  "tags": ["portfolio"],
   "cls": "site-single site-single-portfolio",
   "meta": false
 }

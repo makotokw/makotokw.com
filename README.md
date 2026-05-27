@@ -1,5 +1,4 @@
-makotokw.com
-==============
+# makotokw.com
 
 Project for [makotokw.com](https://makotokw.com)
 
@@ -36,7 +35,6 @@ src
     └── ja                  [page] japanese page
 ```
 
-
 ## Build for production
 
 ```
@@ -45,16 +43,16 @@ yarn build
 
 ## Depends on / Tools
 
-* Node.js
-* [ESLint](https://eslint.org/)
-* Static Site
-    * [11ty](https://www.11ty.dev/)
-* Frontend
-    * TypeScript
-    * Build tools
-      * [Webpack](https://webpack.js.org/)
-      * [Dart Sass](https://github.com/sass/dart-sass)
-    * Framework
-        * [Vue.js](https://vuejs.org/)
-        * [Twitter Bootstrap](https://getbootstrap.com/)
-        * [Font Awesome](https://fontawesome.com/)
+- Node.js
+- [ESLint](https://eslint.org/)
+- Static Site
+  - [11ty](https://www.11ty.dev/)
+- Frontend
+  - TypeScript
+  - Build tools
+    - [Webpack](https://webpack.js.org/)
+    - [Dart Sass](https://github.com/sass/dart-sass)
+  - Framework
+    - [Vue.js](https://vuejs.org/)
+    - [Twitter Bootstrap](https://getbootstrap.com/)
+    - [Font Awesome](https://fontawesome.com/)

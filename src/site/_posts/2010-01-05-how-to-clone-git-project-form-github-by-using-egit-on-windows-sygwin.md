@@ -1,7 +1,7 @@
 ---
-title: "How to clone git project form github by using Egit on Windows (sygwin)?"
-category: "Programing"
-tag: ["git","Eclipse"]
+title: 'How to clone git project form github by using Egit on Windows (sygwin)?'
+category: 'Programing'
+tag: ['git', 'Eclipse']
 date: 2010-01-05
 ---
 
@@ -14,17 +14,10 @@ Egit try to find .ssh on HOME directory on Windows(C:\Users\makoto_kw), but it i
 I could relate to .git with Egit after importing a project
 
 1. git clone on cygwin
-    * ```git clone git@github.com:makotokw/php-twient.git```
+   - `git clone git@github.com:makotokw/php-twient.git`
 1. Create new project on Eclipse
-    * Chose directory cloned above
-1. Context menu of the project  > Team > Share Project... > Git
-    * Egit find .git automatically and select "Finish" button
+   - Chose directory cloned above
+1. Context menu of the project > Team > Share Project... > Git
+   - Egit find .git automatically and select "Finish" button
 
 That's all!
-
-
-
-
-
-
-

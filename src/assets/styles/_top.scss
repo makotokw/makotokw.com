@@ -19,7 +19,7 @@ $page-home-width: 1170px;
     position: relative;
     border: 2px solid $white;
     border-radius: 50px;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.35);
   }
   .authorIcon-isPinned {
     top: -50px;
@@ -75,8 +75,8 @@ $page-home-width: 1170px;
     color: $blue-dark;
   }
   &:hover {
-    border: 1px solid rgba($blue-dark, .5);
-    color: rgba($blue-dark, .5);
+    border: 1px solid rgba($blue-dark, 0.5);
+    color: rgba($blue-dark, 0.5);
     background: transparent;
   }
 }
@@ -85,8 +85,8 @@ $page-home-width: 1170px;
   border: 1px solid $white;
   color: $white;
   &:hover {
-    border: 1px solid rgba($white, .5);
-    color: rgba($white, .5);
+    border: 1px solid rgba($white, 0.5);
+    color: rgba($white, 0.5);
     background: transparent;
   }
 }
@@ -135,7 +135,7 @@ $page-home-width: 1170px;
     .entry-header {
       > * {
         vertical-align: middle;
-        margin-right: .5em;
+        margin-right: 0.5em;
       }
       .entry-date {
         @extend %entry-dateBadge;
@@ -240,7 +240,6 @@ $page-home-width: 1170px;
     margin-bottom: 20px;
   }
 }
-
 
 @media print {
   .header {

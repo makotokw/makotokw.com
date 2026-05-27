@@ -4,6 +4,7 @@ import pluginImportX from 'eslint-plugin-import-x';
 import pluginN from 'eslint-plugin-n';
 import pluginVue from 'eslint-plugin-vue';
 import checkFile from 'eslint-plugin-check-file';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 const airbnbPlugins = [
   plugins.stylistic,
@@ -30,7 +31,7 @@ export default defineConfigWithVueTs(
     extends: [...airbnbPlugins, ...configs.node.recommended],
     plugins: {
       'import-x': pluginImportX,
-      'n': pluginN,
+      n: pluginN,
     },
     rules: {
       'global-require': 'off',
@@ -53,7 +54,7 @@ export default defineConfigWithVueTs(
     extends: [...airbnbPlugins, ...configs.node.recommended],
     plugins: {
       'import-x': pluginImportX,
-      'n': pluginN,
+      n: pluginN,
     },
     rules: {
       'import-x/no-extraneous-dependencies': 'off',
@@ -97,4 +98,6 @@ export default defineConfigWithVueTs(
       'vue/max-attributes-per-line': 'off',
     },
   },
+
+  eslintConfigPrettier,
 );

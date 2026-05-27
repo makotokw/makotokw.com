@@ -1,6 +1,6 @@
 ---
-title: "Flat UI Colors for iOS UIColor"
-category: "Programing"
+title: 'Flat UI Colors for iOS UIColor'
+category: 'Programing'
 ---
 
 <style>
@@ -33,7 +33,6 @@ category: "Programing"
 .concreteFlatColor { background-color: #95A5A6;}
 .asbestosFlatColor { background-color: #7F8C8D;}
 </style>
-
 
 [Flat UI Colors](http://flatuicolors.com/) to iOS UIColor instance.
 

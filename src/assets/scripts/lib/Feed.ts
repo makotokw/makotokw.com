@@ -15,8 +15,10 @@ export interface FeedEntry {
 }
 
 class Feed {
-  constructor(private url: string, private useCache = true) {
-  }
+  constructor(
+    private url: string,
+    private useCache = true,
+  ) {}
 
   private static parseEntries(feed: RSSParserFeed, maxItem: number): FeedEntry[] {
     let items: FeedEntry[] = [];

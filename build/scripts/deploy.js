@@ -14,14 +14,16 @@ if (projectDir !== process.cwd()) {
   throw new Error(`Invalid current dir: ${process.cwd()}`);
 }
 
-glob(`${process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH}/assets/app-*.js`).then((files) => {
-  if (!files || files.length === 0) {
-    throw new Error('app-*.js is not found. development build?');
-  }
-}).catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+glob(`${process.env.MAKOTOKWCOM_DEPLOY_SRC_PATH}/assets/app-*.js`)
+  .then((files) => {
+    if (!files || files.length === 0) {
+      throw new Error('app-*.js is not found. development build?');
+    }
+  })
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
 
 // https://github.com/mattijs/node-rsync#readme
 const rsync = new Rsync()

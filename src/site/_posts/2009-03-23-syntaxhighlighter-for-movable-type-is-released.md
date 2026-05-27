@@ -1,9 +1,10 @@
 ---
-title: "SyntaxHighlighter for Movable Type is released!!"
-category: "Product"
-tag: ["Movable Type"]
+title: 'SyntaxHighlighter for Movable Type is released!!'
+category: 'Product'
+tag: ['Movable Type']
 date: 2009-03-23
 ---
+
 You might think why Movable Type.
 
 As you see, I used the WordPress for this blog.
@@ -16,5 +17,3 @@ I found the SyntaxHighlighter plugin for WordPress, but didn't find for Movable 
 
 I have submitted it to Movable Type Plugin Directory. And you can download following page:
 <a href="http://blogspot.makotokw.com/portfolio/movable/syntaxhighlighter/">http://blogspot.makotokw.com/portfolio/movable/syntaxhighlighter/</a>
-
-

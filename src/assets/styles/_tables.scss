@@ -1,4 +1,3 @@
-
 table {
   border-bottom: $baseBorderWidth solid $tableBorder;
   border-collapse: collapse;
@@ -38,7 +37,7 @@ td {
   background-color: #fff;
 
   th {
-    background-color: rgba($tableBorder, .3);
+    background-color: rgba($tableBorder, 0.3);
   }
 
   th,
